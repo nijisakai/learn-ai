@@ -2,6 +2,9 @@
 <html>
     <head>
         <title>Servo Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name=viewport content="width=device-width, initial-scale=1">
         <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <style type="text/css">
@@ -16,7 +19,7 @@
         </style>
     </head>
     <body>
-        <H1>Welcome To Servo Test</H1>
+        <H1>控制你的机械臂</H1>
         <form id=myForm action=/set-servo>
 
 
@@ -32,7 +35,7 @@
             function debug(){
                 var angles = []
                 for (var i = 0; i < 12; i++) {
-                    angles[i] = document.getElementById('d'+i).value;
+                    angles[i] = document.getElementById('d'+i).value;   
                 }
                 console.log('uint8_t angles = {',angles.join(' , '),'}')
                 trims = angles.map(e => e - 90);
@@ -52,25 +55,26 @@
                 var xmlHttp = '';
                 var requstData = '';
                 var html = '';
-                if (window.XMLHttpRequest) {
-                    xmlHttp = new XMLHttpRequest();
-                } else {
-                    xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
-                xmlHttp.open('GET', '/set-servo?di='+di+'&vi='+vi, true);
-                xmlHttp.send();
-                xmlHttp.onreadystatechange = function() {
-                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                    requstData = xmlHttp.responseText;
-                    console.log(requstData);
-                }
-                };
-            }
+                if (window.XMLHttpRequest) {                    
+                    xmlHttp = new XMLHttpRequest();                
+                } else {                    
+                    xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');                
+                }                
+                xmlHttp.open('GET', '/set-servo?di='+di+'&vi='+vi, true);                 
+                xmlHttp.send();                 
+                xmlHttp.onreadystatechange = function() {                    
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
+                    requstData = xmlHttp.responseText;                         
+                    console.log(requstData);                    
+                }                
+                };            
+            } 
 
-            function Submit(i){
+            function Submit(i){   
                 debug()
-                var vi = document.getElementById('d'+i).value;
-                console.log(i,vi);
-                setAngle(i,vi);
+                var vi = document.getElementById('d'+i).value;   
+                console.log(i,vi);   
+                setAngle(i,vi); 
             }
 
 
