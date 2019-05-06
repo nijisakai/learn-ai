@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Turn on a light,</title>
+    <script src="../google-blockly/blockly_compressed.js"></script>
+    <script src="../google-blockly/blocks_compressed.js"></script>
+    <script src="../google-blockly/msg/js/zh-hans.js"></script>
+    <script src="../google-blockly/javascript_compressed.js"></script>
+
+    <style>
+        body {
+            background-color:white;
+            font-family: sans-serif;
+        }
+        h1 {
+            font-weight: normal;
+            font-size: 140%;
+        }
+        #circle {
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            background-color: rgb(253, 254, 255);
+            border: solid 1px black;
+            position: absolute;
+            left: 760px;
+            top:110px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <p>
+        <button onclick="showCode()">显示代码</button>
+        <button onclick="runCode()">执行</button>
+    </p>
+   
+
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    <xml id="toolbox" style="display: none">
+        <category name="测试" colour="20">
+            <block type="light"></block>
+        </category>
+    </xml>
+    <div id="circle"></div>  
+    
+
+
+    <script>
+
+        var demoWorkspace = Blockly.inject('blocklyDiv',
+        {media: '../google-blockly/media/',
+         toolbox: document.getElementById('toolbox')});
+        
+        //Custom Blocks
+        //https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#ya97nm
+        Blockly.Blocks['light'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("turn the light")
+                    .appendField(new Blockly.FieldDropdown([["on","ON"], ["off","OFF"]]), "switch");
+                this.setColour(150);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+        
+        //stub
+        Blockly.JavaScript['light'] = function(block) {
+            var dropdown_switch = block.getFieldValue('switch');
+            if (dropdown_switch=="ON") {
+                var code = "document.getElementById('circle').style.backgroundColor='red'";
+            }
+            if (dropdown_switch=="OFF") {
+                var code = "document.getElementById('circle').style.backgroundColor='white'";
+            }
+            return code;
+        };
+
+
+
+
+        function showCode() {
+        // Generate JavaScript code and display it.
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+            alert(code);
+        }
+
+        function runCode() {
+        // Generate JavaScript code and run it.
+            window.LoopTrap = 1000;
+            Blockly.JavaScript.INFINITE_LOOP_TRAP =
+                'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+            var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            try {
+                eval(code);
+                } catch (e) {
+            alert(e);
+            }
+        }
+    </script>
+</body>
+</html>
