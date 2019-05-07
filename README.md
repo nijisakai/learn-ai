@@ -1062,7 +1062,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 1. 通过HDMI显示器连接树莓派，并使用USB键盘鼠标进行控制
 2. 在桌面上面找到名字为`learn-ai`的文件夹,打开路径`chapter2/part3/self_driving_car/`
-3. 在桌面按`ctrl`+`alt`+`T`来打开终端
+3. 在桌面按`ctrl`+`alt`+`t`来打开终端
 4. 打开终端后，执行以下命令
 
 ```bash
