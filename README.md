@@ -21,7 +21,7 @@
 	* [Part 1.5 综合与进阶](#part-15-综合与进阶)
 	* [尾声](#尾声)
 * [**Part 2 物联网开源平台HomeAssistant创意应用**](#part-2-物联网开源平台homeassistant创意应用)
-	* [Part 2.1 HomeAssistant安装](#part-21-homeassistant安装)
+	* [Part 2.1 HomeAssistant安装和配置](#part-21-homeassistant安装和配置)
 	* [Part 2.2 HomeAssistant控制esp8266彩色灯](#part-22-homeassistant控制esp8266彩色灯)
 	* [Part 2.3 HomeAssistant进行人脸识别和语音播报](#part-23-homeassistant进行人脸识别和语音播报)
 * [**Part 3 进阶项目-物联网机器人小绿**](#part-3-进阶项目-物联网机器人小绿)
@@ -865,14 +865,46 @@ do something
     树莓派是运行Linux操作系统的微型卡片电脑，拥有GPIO端口与其他硬件通信，也具有HDMI，USB端口连接显示设备等。
     树莓派的操作系统在SD卡上，分发给同学的SD卡默认安装了所有的环境和依赖，相关的文档在桌面上。
 
-### Part 2.1 HomeAssistant安装
+### Part 2.1 HomeAssistant安装和配置
 
 本课程采用[Docker](https://baike.baidu.com/item/Docker/13344470?fr=aladdin)方式进行安装
 
 #### **硬件部分**
 
+##### 硬件清单
+
+* 树莓派
+
+##### 硬件连接
+
+<center><img src=https://md.hass.live/404.gif></center>
 
 #### **算法及程序**
+
+##### 安装过程
+
+在树莓派上打开终端，执行
+
+```bash {.line-numbers}
+//安装Docker
+curl -ssl https://get.docker.com | sh
+
+//安装指定版本的Home Assistant，本部分指定版本为0.82.0
+sudo docker run --init -d --name="home-assistant" -v /home/pi/homeassistant:/config -v /etc/localtime:/etc/localtime:ro --net=host homeassistant/raspberrypi3-homeassistant:0.82.0
+
+//启动Docker镜像
+sudo docker start home-assistant
+
+//进入镜像
+sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
+```
+
+正常情况下显示应和下图类似：
+<center><img src="https://md.hass.live/Xnip2019-05-07_18-35-34.png"></center>
+
+本处即为Home Assistant的配置文件。  
+主要配置在`configuration.yaml`中
+文件夹`custom_components`存放自定义组件
 
 ### Part 2.2 HomeAssistant控制esp8266彩色灯
 
