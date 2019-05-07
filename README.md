@@ -484,7 +484,7 @@ void loop() {
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_11-51-26.png?iimageView2/2/w/600/h/600/q/33|imageslim></center>
+<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_17-10-07.png></center>
 
 #### **算法及程序**
 
