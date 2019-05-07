@@ -151,10 +151,17 @@ Arduino项目文件的后缀是*.ino。项目文件应在与项目名相同的�
 3. 在`工具`--`开发板`--`开发板管理器`中搜索esp8266,点击对应项进行安装  
 ![2019-04-29 22.10.50](https://md.hass.live/2019-04-29%2022.10.50.gif)
 4. 打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹。然后重启IDE。
+<<<<<<< HEAD
 ![arduino-config-2](https://md.hass.live/arduinoconfig2.png?imageView2/0/interlace/1/q/46|imageslim)
 默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
 如果安装成功，会在`工具`菜单下看到下图选项。
 <center><img src=https://md.hass.live/Xnip2019-05-05_18-39-45.png?imageView2/0/interlace/1/q/46|imageslim></center>
+=======
+![arduino-config-2](http://md.hass.live/arduinoconfig2.png)
+默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
+如果安装成功，会在`工具`菜单下看到下图选项。
+<center><img src=https://md.hass.live/Xnip183945.png></center>
+>>>>>>> e8f34f49ad0bfeb73ed515f4a17bdd2a02664d55
 
 5. 设置开发板和端口
 <center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png?imageView2/0/interlace/1/q/46|imageslim></center>
