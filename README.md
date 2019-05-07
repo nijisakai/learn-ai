@@ -1126,14 +1126,16 @@ sudo python3 stream_client.py
 
 ##### 硬件清单
 
-* 白纸
+* 纸
 * 胶带
 
-##### 硬件连接
+##### 硬件搭建-跑道
+  
+* 地面颜色为纯色，与所用纸张的颜色对比度应较大
+* 跑道的宽度稍大于车的宽度  
+* 可以把拐弯处的弯度设计得稍大一些
 
-* 搭建跑道
-
-<center><img src=https://md.hass.live/404.gif?imageView2/0/interlace/1/q/46|imageslim></center>
+<center><img src=https://md.hass.live/track.jpg></center>
 
 #### **算法及程序**
 
