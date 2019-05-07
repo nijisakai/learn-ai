@@ -58,7 +58,7 @@
 
 Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以方便安装。  
 下载链接：<https://www.anaconda.com/distribution>
-![Xnip2019-04-30_10-37-45](https://md.hass.live/Xnip2019-04-30_10-37-45.png)
+![Xnip2019-04-30_10-37-45](https://md.hass.live/Xnip2019-04-30_10-37-45.png?imageView2/0/interlace/1/q/46|imageslim)
 选择适合自己的操作系统，并选择Python 3.7版本。
 
 #### 基本命令
@@ -147,21 +147,14 @@ Arduino项目文件的后缀是*.ino。项目文件应在与项目名相同的�
 
 1. 下载安装Arduino IDE  
 2. 在`文件`--`首选项`--`附加开发板管理器网址`一栏中输入<https://arduino.esp8266.com/stable/package_esp8266com_index.json>，重启IDE
-![arduino-config-1](https://md.hass.live/arduino-config-1.png)
+![arduino-config-1](https://md.hass.live/arduino-config-1.png?imageView2/0/interlace/1/q/46|imageslim)
 3. 在`工具`--`开发板`--`开发板管理器`中搜索esp8266,点击对应项进行安装  
-![2019-04-29 22.10.50](https://md.hass.live/2019-04-29%2022.10.50.gif)
+![2019-04-29 22.10.50](https://md.hass.live/2019-04-29%2022.10.50.gif?imageView2/0/interlace/1/q/46|imageslim)
 4. 打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹。然后重启IDE。
-<<<<<<< HEAD
 ![arduino-config-2](https://md.hass.live/arduinoconfig2.png?imageView2/0/interlace/1/q/46|imageslim)
 默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
 如果安装成功，会在`工具`菜单下看到下图选项。
 <center><img src=https://md.hass.live/Xnip2019-05-05_18-39-45.png?imageView2/0/interlace/1/q/46|imageslim></center>
-=======
-![arduino-config-2](http://md.hass.live/arduinoconfig2.png)
-默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
-如果安装成功，会在`工具`菜单下看到下图选项。
-<center><img src=https://md.hass.live/Xnip183945.png></center>
->>>>>>> e8f34f49ad0bfeb73ed515f4a17bdd2a02664d55
 
 5. 设置开发板和端口
 <center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png?imageView2/0/interlace/1/q/46|imageslim></center>
@@ -169,7 +162,7 @@ Arduino项目文件的后缀是*.ino。项目文件应在与项目名相同的�
 ### 其他
 
 路由器设置SSID名字为**AI**，密码为**raspberry**  
-路由器管理地址设置为<https://192.168.0.1>或默认地址
+路由器管理地址设置为<http://192.168.0.1>或默认地址
 Xshell（Windows）、FinalShell（macOS）、Google Chrome、VNC Viewer等
 
 ### 下载课程所需文件
@@ -501,7 +494,7 @@ void loop() {
 3. 使用Arduino IDE打开文件`esp8266_wificar_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上。
 
@@ -694,7 +687,7 @@ void loop(void){
 3. 使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上。
 
