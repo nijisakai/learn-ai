@@ -65,7 +65,7 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 
 #### 基本命令
 
-#####创建环境
+##### 创建环境
 
 ```bash
 # conda create -n 环境名字
