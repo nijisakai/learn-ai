@@ -172,11 +172,11 @@ Xshell（Windows）、FinalShell（macOS）、Google Chrome、VNC Viewer等
 macOS用户打开`终端`
 Windows用户打开`Anaconda Prompt`  
 
-macOS用户执行`git clone https://github.com/nijisakai/learn-ai.git ~/Desktop/ai/`  
-文件被下载到桌面下面的ai文件夹
+macOS用户执行`git clone https://github.com/nijisakai/learn-ai.git ~/Desktop/learn-ai/`  
+文件被下载到桌面下面的learn-ai文件夹
 
-Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/ai`  
-文件被下载到C盘根目录下面的ai文件夹
+Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn-ai`  
+文件被下载到C盘根目录下面的learn-ai文件夹
 
 ---
 
@@ -217,7 +217,7 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/ai`
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_https`
+1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_https`
 2. 将esp8266通过数据线连接到电脑
 3. 使用Arduino IDE打开文件`esp8266_dht11_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
@@ -491,7 +491,7 @@ void loop() {
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_wificar_https`
+1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_wificar_https`
 2. 将esp8266通过数据线连接到电脑
 3. 使用Arduino IDE打开文件`esp8266_wificar_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
@@ -684,7 +684,7 @@ void loop(void){
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_https`
+1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_https`
 2. 将esp8266通过数据线连接到电脑
 3. 使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
@@ -818,7 +818,7 @@ void loop() {
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter1/part1/
+1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/
 2. TBC
 
 ##### 代码详解
@@ -1028,12 +1028,15 @@ do something
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter2/part3/`
-2. 打开终端，执行以下命令
+1. 通过HDMI显示器连接树莓派，并使用USB键盘鼠标进行控制
+2. 在桌面上面找到名字为`learn-ai`的文件夹,打开路径`chapter2/part3/self_driving_car/`
+3. 在桌面按`ctrl`+`alt`+`T`来打开终端
+4. 打开终端后，执行以下命令
 
 ```bash
 sudo apt update
-sudo apt install
+install python3 ???
+sudo apt install sklearn ???
 ```
 
 ### Part 3.2 电机和摄像头驱动测试
@@ -1042,15 +1045,46 @@ sudo apt install
 
 #### **算法及程序**
 
-##### 操作步骤
+##### 操作步骤-电机测试
 
-1. 打开`ai`文件夹，打开路径`chapter2/part3/`
+1. 打开桌面上的`learn-ai`文件夹，打开路径`chapter2/part3/self_driving_car/`
 2. 打开终端，执行以下命令
 
-```bash
-sudo apt update
-sudo apt install
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+sudo python3 drive_api2.py -s 150  //-s 150作为可选的参数，来指定行驶速度。可选范围是0-256
 ```
+
+3. 打开树莓派上的网络浏览器，在地址栏输入路由器管理地址，查看树莓派IP地址
+4. 在浏览器地址栏输入树莓派IP:81/drive,例如（192.168.0.100:81/drive）
+5. 在打开的界面上按键盘上的上下左右方向键来测试小车
+6. 测试完毕后，在终端输入`Ctrl`+`C`来结束当前任务
+##### 操作步骤-摄像头测试
+
+1. 打开桌面上的`learn-ai`文件夹，打开路径`chapter2/part3/self_driving_car/`
+2. 打开终端，执行以下命令
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd test
+sudo python3 stream_server_test.py
+```
+
+3. 新建一个终端窗口
+
+<center><img src="https://md.hass.live/terminal.png"></center>
+4. 在新的终端窗口中输入
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd raspberryPi
+sudo python3 stream_client.py
+```
+
+如果有正常的视频画面输出，则测试通过。
+
+5. 在终端输入`Ctrl`+`C`来结束当前任务
 
 ### Part 3.3 无人驾驶数据采集及训练
 
@@ -1060,39 +1094,70 @@ sudo apt install
 
 ##### 硬件清单
 
-* 树莓派
-* 树莓派电机扩展板
-* 摄像头
-* 小车套件
+* 白纸
+* 胶带
 
 ##### 硬件连接
+
+* 搭建跑道
 
 <center><img src=https://md.hass.live/404.gif?imageView2/0/interlace/1/q/46|imageslim></center>
 
 #### **算法及程序**
 
-##### 操作步骤
+##### 操作步骤-驾驶数据采集
 
-1. 打开`ai`文件夹，打开路径`chapter2/part3/`
+1. 打开`learn-ai`文件夹，打开路径`chapter2/part3/`
 2. 打开终端，执行以下命令
 
 ```bash
-sudo apt update
-sudo apt install
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+sudo python3 collect_training_data2.py
 ```
+
+3. 新建一个终端窗口，输入
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd raspberryPi
+sudo python3 stream_client.py
+```
+
+4. 描述训练过程，按`q`结束训练
+
+##### 操作步骤-驾驶数据训练
+
+1. 新建一个终端窗口，输入
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+sudo python3 model_training.py
+```
+配图
+2. 训练完成后，训练文件在`文件路径`
 
 ### Part 3.4 开始无人驾驶
 
-    根据训练好的神经网络模型，现在我们可以实现自动驾驶了
+    根据训练好的神经网络模型，现在我们可以实现自动驾驶
 
 #### **算法及程序**
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter2/part3/`
-2. 打开终端，执行以下命令
+1. 打开终端，输入
 
-```bash
-sudo apt update
-sudo apt install
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+sudo python3 rc_drive_nn_only.py
+```
+
+2. 新建一个终端窗口，输入
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd raspberryPi
+sudo stream——client.py
 ```
