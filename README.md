@@ -154,7 +154,7 @@ Arduino项目文件的后缀是*.ino。项目文件应在与项目名相同的�
 ![arduino-config-2](http://md.hass.live/arduinoconfig2.png)
 默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
 如果安装成功，会在`工具`菜单下看到下图选项。
-<center><img src=https://md.hass.live/Xnip2019-05-05_18-39-45.png></center>
+<center><img src=https://md.hass.live/Xnip183945.png></center>
 
 5. 设置开发板和端口
 <center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png></center>
