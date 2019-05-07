@@ -52,29 +52,31 @@
 环境准备相关所有相关软件，**请[点击这里](ftp://home.hass.live)来下载**  
 所需的用户名和密码均为`sli`  
 也可以选择在下方提供的官方网址下载  
-推荐按顺序依次安装以下软件，以避免因依赖问题报错。
+推荐按顺序依次安装以下软件，以避免因依赖问题报错
 
 ### Anaconda
 
-Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以方便安装。  
+Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以方便安装
 下载链接：<https://www.anaconda.com/distribution>
+
 ![Xnip2019-04-30_10-37-45](https://md.hass.live/Xnip2019-04-30_10-37-45.png?imageView2/0/interlace/1/q/46|imageslim)
-选择适合自己的操作系统，并选择Python 3.7版本。
+
+选择适合自己的操作系统，并选择Python 3.7版本
 
 #### 基本命令
 
-> **创建环境**
+#####创建环境
 
 ```bash
 # conda create -n 环境名字
 例如：  
 # conda create -n py27 python=2.7
-表示创建一个名字为py27，运行python2.7的虚拟环境。  
-后面的python=2.7是可选输入。  
-不输入时默认环境是python3。
+表示创建一个名字为py27，运行python2.7的虚拟环境
+后面的python=2.7是可选输入
+不输入时默认环境是python3
 ```
 
-> **进入环境**
+##### 进入环境
 
 ```bash
 # conda activate 环境名字
@@ -82,7 +84,7 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 # conda activate py27
 ```
 
-> **安装指定包**  
+##### 安装指定包  
 
 ```bash
 # conda install 包名  
@@ -90,7 +92,7 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 # conda install opencv
 ```
 
-> **其他命令**  
+##### 其他命令
 
 ```bash
 退出环境
@@ -104,7 +106,7 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 #### setup
 
 1.下载安装Anaconda  
-2.在开始菜单找到Anaconda Prompt并进入  
+2.macOS用户打开`终端`, Windows用户在开始菜单打开`Anaconda Prompt`  
 3.创建并进入环境 (python版本为默认的3.x)  
 4.在新环境中安装TensorFlow和OpenCV（若电脑有独立显卡应安装GPU版本的TensorFlow）
 
@@ -119,15 +121,17 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 
 ### VSCode
 
-VSCode是微软出品的免费代码编辑软件。在Windows，Mac、Linux上均可以方便安装。  
+VSCode是微软出品的免费代码编辑软件。在Windows、Mac、Linux上均可以方便安装
 下载链接：<https://code.visualstudio.com>
 
 #### setup
 
-1. 下载安装VSCode  
-2. 安装插件“Settings Sync”  
+1.下载安装VSCode  
+2.安装插件`Settings Sync`
+
 ![2019-04-29 21.49.44](https://md.hass.live/2019-04-29%2021.49.44.gif)
-3. 输入`Shift` + `Alt` + `D`,输入GitHub Token和Gist Token([点击获取](http://lab.playwithai.com:8999/))，即可从服务端同步设置。免去自己配置的麻烦。
+
+3.输入`Shift`+`Alt`+`D`,输入GitHub Token和Gist Token([点击获取](http://lab.playwithai.com:8999/))，即可从服务端同步设置。免去自己配置的麻烦
 
 ### CP2102驱动
 
@@ -139,26 +143,31 @@ VSCode是微软出品的免费代码编辑软件。在Windows，Mac、Linux上�
 
 *[IDE.]:Integrated Development Environment,集成开发环境
 
-Arduino IDE 是针对Arduino控制板的编程和下载平台。在Windows，Mac、Linux上均可以方便安装。  
-Arduino项目文件的后缀是*.ino。项目文件应在与项目名相同的文件夹中。
+Arduino IDE 是针对Arduino控制板的编程和下载平台。在Windows，Mac、Linux上均可以方便安装，Arduino项目文件的后缀是`*.ino`
+项目文件应在与项目名相同的文件夹中
 下载链接：<https://www.arduino.cc/en/Main/Software>
 
 #### setup
 
-1. 下载安装Arduino IDE  
-2. 在`文件`--`首选项`--`附加开发板管理器网址`一栏中输入<https://arduino.esp8266.com/stable/package_esp8266com_index.json>，重启IDE
+1.下载安装Arduino IDE  
+2.在`文件`--`首选项`--`附加开发板管理器网址`一栏中输入<https://arduino.esp8266.com/stable/package_esp8266com_index.json>，重启IDE
+
 ![arduino-config-1](https://md.hass.live/arduino-config-1.png?imageView2/0/interlace/1/q/46|imageslim)
-3. 在`工具`--`开发板`--`开发板管理器`中搜索esp8266,点击对应项进行安装  
+
+3.在`工具`--`开发板`--`开发板管理器`中搜索esp8266,点击对应项进行安装  
+
 ![2019-04-29 22.10.50](https://md.hass.live/2019-04-29%2022.10.50.gif?imageView2/0/interlace/1/q/46|imageslim)
-4. 打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹。然后重启IDE。
+
+4.打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹，然后重启IDE
+
 ![arduino-config-2](https://md.hass.live/arduinoconfig2.png?imageView2/0/interlace/1/q/46|imageslim)
+
 默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
-如果安装成功，会在`工具`菜单下看到下图选项。
+如果安装成功，会在`工具`菜单下看到下图选项:
 
-<center><img src=https://md.hass.live/Xnip183945.png?imageView2/0/interlace/1/q/46|imageslim></center>
+<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-41-38.png></center>
 
-5. 设置开发板和端口
-
+5.设置开发板和端口
 <center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 ### 其他
@@ -182,21 +191,21 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 ## **Chapter 1 物联网与机器人**
 
-    本章内容是关于使用可编程的开源硬件，将功能点进行分解，并最终实现综合项目。
-    主要包括
+    本章内容是关于使用可编程的开源硬件，将功能点进行分解，并最终实现综合项目
+    主要包括:
      1. 使用物联网开发板来读取和控制传感器、灯和舵机等设备
      2. 安装和配置物联网平台，实现语音控制和人脸解锁
-     3. 自主设计制作一个融合了多种功能的基于3D打印物联网机器人或小车。
+     3. 自主设计制作一个融合了多种功能的基于3D打印物联网机器人或小车
 
 ## **Part 1 使用esp8266开发板读取和控制传感器、舵机和电机**
 
-    esp8266是一个价格低廉的开发板，包含WiFi模块和GPIO，可以连接传感器、舵机、马达等各种设备。使用Arduino IDE进行开发编程。可通过网络、串口和蓝牙等多种方式进行通信。
+    esp8266是一个价格低廉的开发板，包含WiFi模块和GPIO，可以连接传感器、舵机、马达等各种设备。使用Arduino IDE进行开发编程。可通过网络、串口和蓝牙等多种方式进行通信
 
 ### Part 1.1 使用esp8266在网页上读取传感器数据
 
-    这部分让你熟悉操作esp8266的步骤。是第一章的基础。
-    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等。
-    这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器。
+    这部分让你熟悉操作esp8266的步骤。是第一章的基础
+    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等
+    这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
 
 #### **硬件部分**
 
@@ -217,18 +226,15 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 ##### 操作步骤
 
-1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_https`
-2. 将esp8266通过数据线连接到电脑
-3. 使用Arduino IDE打开文件`esp8266_dht11_https.ino`
-4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_https`
+2.将esp8266通过数据线连接到电脑
+3.使用Arduino IDE打开文件`esp8266_dht11_https.ino`
+4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-49-09.png></center>
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
-
-5. 打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址。  
-
-6. 在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数。
-
-7. 连接另一个esp8266开发板，打开路径`chapter1/part1/esp8266_projects/esp8266_ultrasonic_https`,再次执行2-6步骤来使用超声波传感器。
+5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
+6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数
+7.连接另一个esp8266开发板，打开路径`chapter1/part1/esp8266_projects/esp8266_ultrasonic_https`,再次执行2-6步骤来使用超声波传感器
 
 ##### 代码详解
 
@@ -472,7 +478,7 @@ void loop() {
 
 ### Part 1.2 WiFi遥控小车
 
-    使用esp8266，通过网页端发送命令，遥控一辆小车。
+    使用esp8266，通过网页端发送命令，遥控一辆小车
 
 #### **硬件部分**
 
@@ -491,20 +497,17 @@ void loop() {
 
 ##### 操作步骤
 
-1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_wificar_https`
-2. 将esp8266通过数据线连接到电脑
-3. 使用Arduino IDE打开文件`esp8266_wificar_https.ino`
-4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_wificar_https`
+2.将esp8266通过数据线连接到电脑
+3.使用Arduino IDE打开文件`esp8266_wificar_https.ino`
+4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
+<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-49-09.png></center>
 
-5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上。
-
-6. 打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址。  
-
-7. 将esp8266与电脑连接断开，连接到移动电源上。
-
-8. 在浏览器中打开esp8266获取到的局域网地址，通过点击上下左右按钮或键盘的光标键来控制小车。
+5.点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上
+6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
+7.将esp8266与电脑连接断开，连接到移动电源上
+8.在浏览器中打开esp8266获取到的局域网地址，通过点击上下左右按钮或键盘的光标键来控制小车
 
 ##### 代码详解
 
@@ -660,7 +663,7 @@ void loop(void){
 
 ### Part 1.3 使用esp8266通过WiFi控制机械臂舵机
 
-    使用esp8266，通过网页端发送命令，控制多个舵机。
+    使用esp8266，通过网页端发送命令，控制多个舵机
 
 #### **硬件部分**
 
@@ -684,20 +687,17 @@ void loop(void){
 
 ##### 操作步骤
 
-1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_https`
-2. 将esp8266通过数据线连接到电脑
-3. 使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
-4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_https`
+2.将esp8266通过数据线连接到电脑
+3.使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
+4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
+<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-49-09.png></center>
 
-5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上。
-
-6. 打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址。  
-
-7. 将esp8266与电脑连接断开，连接到移动电源上。
-
-8. 在浏览器中打开esp8266获取到的局域网地址，通过拖动滑块来控制机械臂。
+5.点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上
+6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
+7.将esp8266与电脑连接断开，连接到移动电源上
+8.在浏览器中打开esp8266获取到的局域网地址，通过拖动滑块来控制机械臂
 
 ##### 代码详解
 
@@ -818,8 +818,8 @@ void loop() {
 
 ##### 操作步骤
 
-1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/
-2. TBC
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/
+2.TBC
 
 ##### 代码详解
 
@@ -902,7 +902,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 正常情况下显示应和下图类似：
 <center><img src="https://md.hass.live/Xnip2019-05-07_18-35-34.png"></center>
 
-本处即为Home Assistant的配置文件。  
+本处即为Home Assistant的配置文件  
 主要配置在`configuration.yaml`中
 文件夹`custom_components`存放自定义组件
 
@@ -1018,7 +1018,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ### Part 2.2 OpenCV机械臂自动抓取特定形状物体
 
-    使用OpenCV来识别圆形物体，若识别到则发送串口指令给Arduino。Arduino控制机械臂进行抓取。
+    使用OpenCV来识别圆形物体，若识别到则发送串口指令给Arduino。Arduino控制机械臂进行抓取
 
 #### **硬件部分**
 
@@ -1026,7 +1026,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ### Part 2.3 OpenCV分类器训练，让小车追踪特定物体
 
-    通过拍照、爬虫等方式获取待训练图片，使用python进行简单的文件处理，用OpenCV训练后，可实现对特定物体的识别和追踪。
+    通过拍照、爬虫等方式获取待训练图片，使用python进行简单的文件处理，用OpenCV训练后，可实现对特定物体的识别和追踪
 
 #### **硬件部分**
 
@@ -1060,10 +1060,10 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ##### 操作步骤
 
-1. 通过HDMI显示器连接树莓派，并使用USB键盘鼠标进行控制
-2. 在桌面上面找到名字为`learn-ai`的文件夹,打开路径`chapter2/part3/self_driving_car/`
-3. 在桌面按`ctrl`+`alt`+`t`来打开终端
-4. 打开终端后，执行以下命令
+1.通过HDMI显示器连接树莓派，并使用USB键盘鼠标进行控制
+2.在桌面上面找到名字为`learn-ai`的文件夹,打开路径`chapter2/part3/self_driving_car/`
+3.在桌面按`ctrl`+`alt`+`T`来打开终端
+4.打开终端后，执行以下命令
 
 ```bash
 sudo apt update
@@ -1079,8 +1079,8 @@ sudo apt install sklearn ???
 
 ##### 操作步骤-电机测试
 
-1. 打开桌面上的`learn-ai`文件夹，打开路径`chapter2/part3/self_driving_car/`
-2. 打开终端，执行以下命令
+1.打开桌面上的`learn-ai`文件夹，打开路径`chapter2/part3/self_driving_car/`
+2.打开终端，执行以下命令
 
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
@@ -1088,14 +1088,15 @@ cd computer
 sudo python3 drive_api2.py -s 150  //-s 150作为可选的参数，来指定行驶速度。可选范围是0-256
 ```
 
-3. 打开树莓派上的网络浏览器，在地址栏输入路由器管理地址，查看树莓派IP地址
-4. 在浏览器地址栏输入树莓派IP:81/drive,例如（192.168.0.100:81/drive）
-5. 在打开的界面上按键盘上的上下左右方向键来测试小车
-6. 测试完毕后，在终端输入`Ctrl`+`C`来结束当前任务
+3.打开树莓派上的网络浏览器，在地址栏输入路由器管理地址，查看树莓派IP地址
+4.在浏览器地址栏输入树莓派IP:81/drive,例如（192.168.0.100:81/drive）
+5.在打开的界面上按键盘上的上下左右方向键来测试小车
+6.测试完毕后，在终端输入`Ctrl`+`C`来结束当前任务
+
 ##### 操作步骤-摄像头测试
 
-1. 打开桌面上的`learn-ai`文件夹，打开路径`chapter2/part3/self_driving_car/`
-2. 打开终端，执行以下命令
+1.打开桌面上的`learn-ai`文件夹，打开路径`chapter2/part3/self_driving_car/`
+2.打开终端，执行以下命令
 
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
@@ -1103,10 +1104,11 @@ cd test
 sudo python3 stream_server_test.py
 ```
 
-3. 新建一个终端窗口
+3.新建一个终端窗口
 
 <center><img src="https://md.hass.live/terminal.png"></center>
-4. 在新的终端窗口中输入
+
+4.在新的终端窗口中输入以下命令，如果有正常的视频画面输出，则测试通过
 
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
@@ -1114,9 +1116,7 @@ cd raspberryPi
 sudo python3 stream_client.py
 ```
 
-如果有正常的视频画面输出，则测试通过。
-
-5. 在终端输入`Ctrl`+`C`来结束当前任务
+5.在终端输入`Ctrl`+`C`来结束当前任务
 
 ### Part 3.3 无人驾驶数据采集及训练
 
@@ -1141,8 +1141,8 @@ sudo python3 stream_client.py
 
 ##### 操作步骤-驾驶数据采集
 
-1. 打开`learn-ai`文件夹，打开路径`chapter2/part3/`
-2. 打开终端，执行以下命令
+1.打开`learn-ai`文件夹，打开路径`chapter2/part3/`
+2.打开终端，执行以下命令
 
 ```bash
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
@@ -1150,7 +1150,7 @@ cd computer
 sudo python3 collect_training_data2.py
 ```
 
-3. 新建一个终端窗口，输入
+3.新建一个终端窗口，输入
 
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
@@ -1158,19 +1158,21 @@ cd raspberryPi
 sudo python3 stream_client.py
 ```
 
-4. 描述训练过程，按`q`结束训练
+4.描述训练过程，按`q`结束训练
 
 ##### 操作步骤-驾驶数据训练
 
-1. 新建一个终端窗口，输入
+1.新建一个终端窗口，输入
 
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
 cd computer
 sudo python3 model_training.py
 ```
-配图
-2. 训练完成后，训练文件在`文件路径`
+
+<center><img src='https://md.hass.live/404.gif'></center>
+
+2.训练完成后，训练文件在`文件路径`
 
 ### Part 3.4 开始无人驾驶
 
@@ -1180,7 +1182,7 @@ sudo python3 model_training.py
 
 ##### 操作步骤
 
-1. 打开终端，输入
+1.打开终端，输入
 
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
@@ -1188,7 +1190,7 @@ cd computer
 sudo python3 rc_drive_nn_only.py
 ```
 
-2. 新建一个终端窗口，输入
+2.新建一个终端窗口，输入
 
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
