@@ -56,7 +56,7 @@
 
 ### Anaconda
 
-Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以方便安装
+Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以方便安装  
 下载链接：<https://www.anaconda.com/distribution>
 
 ![Xnip2019-04-30_10-37-45](https://md.hass.live/Xnip2019-04-30_10-37-45.png?imageView2/0/interlace/1/q/46|imageslim)
@@ -121,7 +121,7 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 
 ### VSCode
 
-VSCode是微软出品的免费代码编辑软件。在Windows、Mac、Linux上均可以方便安装
+VSCode是微软出品的免费代码编辑软件。在Windows、Mac、Linux上均可以方便安装  
 下载链接：<https://code.visualstudio.com>
 
 #### setup
@@ -136,15 +136,15 @@ VSCode是微软出品的免费代码编辑软件。在Windows、Mac、Linux上�
 ### CP2102驱动
 
 这个驱动用于使用USB串口连接esp8266  
-注意选择对应的操作系统和版本进行下载和安装
+注意选择对应的操作系统和版本进行下载和安装  
 下载链接: <https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers>
 
 ### Arduino IDE.
 
 *[IDE.]:Integrated Development Environment,集成开发环境
 
-Arduino IDE 是针对Arduino控制板的编程和下载平台。在Windows，Mac、Linux上均可以方便安装，Arduino项目文件的后缀是`*.ino`
-项目文件应在与项目名相同的文件夹中
+Arduino IDE 是针对Arduino控制板的编程和下载平台。在Windows，Mac、Linux上均可以方便安装，Arduino项目文件的后缀是`*.ino`  
+项目文件应在与项目名相同的文件夹中  
 下载链接：<https://www.arduino.cc/en/Main/Software>
 
 #### setup
@@ -178,11 +178,11 @@ Xshell（Windows）、FinalShell（macOS）、Google Chrome、VNC Viewer等
 
 ### 下载课程所需文件
 
-macOS用户打开`终端`
+macOS用户打开`终端`  
 Windows用户打开`Anaconda Prompt`  
 
 macOS用户执行`git clone https://github.com/nijisakai/learn-ai.git ~/Desktop/learn-ai/`  
-文件被下载到桌面下面的learn-ai文件夹
+文件被下载到桌面下面的learn-ai文件夹  
 
 Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn-ai`  
 文件被下载到C盘根目录下面的learn-ai文件夹
@@ -191,8 +191,8 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 ## **Chapter 1 物联网与机器人**
 
-    本章内容是关于使用可编程的开源硬件，将功能点进行分解，并最终实现综合项目
-    主要包括:
+    本章内容是关于使用可编程的开源硬件，将功能点进行分解，并最终实现综合项目  
+    主要包括:  
      1. 使用物联网开发板来读取和控制传感器、灯和舵机等设备
      2. 安装和配置物联网平台，实现语音控制和人脸解锁
      3. 自主设计制作一个融合了多种功能的基于3D打印物联网机器人或小车
@@ -203,8 +203,8 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 ### Part 1.1 使用esp8266在网页上读取传感器数据
 
-    这部分让你熟悉操作esp8266的步骤。是第一章的基础
-    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等
+    这部分让你熟悉操作esp8266的步骤。是第一章的基础  
+    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等  
     这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
 
 #### **硬件部分**
@@ -903,7 +903,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 <center><img src="https://md.hass.live/Xnip2019-05-07_18-35-34.png"></center>
 
 本处即为Home Assistant的配置文件  
-主要配置在`configuration.yaml`中
+主要配置在`configuration.yaml`中  
 文件夹`custom_components`存放自定义组件
 
 ### Part 2.2 HomeAssistant控制esp8266彩色灯
