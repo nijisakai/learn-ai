@@ -58,7 +58,7 @@
 
 Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以方便安装。  
 下载链接：<https://www.anaconda.com/distribution>
-![Xnip2019-04-30_10-37-45](http://md.hass.live/Xnip2019-04-30_10-37-45.png)
+![Xnip2019-04-30_10-37-45](https://md.hass.live/Xnip2019-04-30_10-37-45.png)
 选择适合自己的操作系统，并选择Python 3.7版本。
 
 #### 基本命令
@@ -126,7 +126,7 @@ VSCode是微软出品的免费代码编辑软件。在Windows，Mac、Linux上�
 
 1. 下载安装VSCode  
 2. 安装插件“Settings Sync”  
-![2019-04-29 21.49.44](http://md.hass.live/2019-04-29%2021.49.44.gif)
+![2019-04-29 21.49.44](https://md.hass.live/2019-04-29%2021.49.44.gif)
 3. 输入`Shift` + `Alt` + `D`,输入GitHub Token和Gist Token([点击获取](http://lab.playwithai.com:8999/))，即可从服务端同步设置。免去自己配置的麻烦。
 
 ### CP2102驱动
@@ -146,23 +146,23 @@ Arduino项目文件的后缀是*.ino。项目文件应在与项目名相同的�
 #### setup
 
 1. 下载安装Arduino IDE  
-2. 在`文件`--`首选项`--`附加开发板管理器网址`一栏中输入<http://arduino.esp8266.com/stable/package_esp8266com_index.json>，重启IDE
-![arduino-config-1](http://md.hass.live/arduino-config-1.png)
+2. 在`文件`--`首选项`--`附加开发板管理器网址`一栏中输入<https://arduino.esp8266.com/stable/package_esp8266com_index.json>，重启IDE
+![arduino-config-1](https://md.hass.live/arduino-config-1.png)
 3. 在`工具`--`开发板`--`开发板管理器`中搜索esp8266,点击对应项进行安装  
-![2019-04-29 22.10.50](http://md.hass.live/2019-04-29%2022.10.50.gif)
+![2019-04-29 22.10.50](https://md.hass.live/2019-04-29%2022.10.50.gif)
 4. 打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹。然后重启IDE。
-![arduino-config-2](http://md.hass.live/arduino-config-2.png)
+![arduino-config-2](https://md.hass.live/arduinoconfig2.png?imageView2/0/interlace/1/q/46|imageslim)
 默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
 如果安装成功，会在`工具`菜单下看到下图选项。
-<center><img src=https://md.hass.live/Xnip2019-05-05_18-39-45.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_18-39-45.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 5. 设置开发板和端口
-<center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 ### 其他
 
 路由器设置SSID名字为**AI**，密码为**raspberry**  
-路由器管理地址设置为<http://192.168.0.1>或默认地址
+路由器管理地址设置为<https://192.168.0.1>或默认地址
 Xshell（Windows）、FinalShell（macOS）、Google Chrome、VNC Viewer等
 
 ### 下载课程所需文件
@@ -207,26 +207,26 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/ai`
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_11-52-46.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_11-52-46.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_12-02-00.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_12-02-00.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 #### **算法及程序**
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_http`
+1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_https`
 2. 将esp8266通过数据线连接到电脑
-3. 使用Arduino IDE打开文件`esp8266_dht11_http.ino`
+3. 使用Arduino IDE打开文件`esp8266_dht11_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 5. 打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址。  
 
 6. 在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数。
 
-7. 连接另一个esp8266开发板，打开路径`chapter1/part1/esp8266_projects/esp8266_ultrasonic_http`,再次执行2-6步骤来使用超声波传感器。
+7. 连接另一个esp8266开发板，打开路径`chapter1/part1/esp8266_projects/esp8266_ultrasonic_https`,再次执行2-6步骤来使用超声波传感器。
 
 ##### 代码详解
 
@@ -321,7 +321,7 @@ void setup() {
   server.onNotFound(handle_NotFound);
 
   server.begin();
-  Serial.println("HTTP server started");
+  Serial.println("http server started");
 }
 
 void handle_OnConnect() {
@@ -342,13 +342,13 @@ String SendHTML(float Temperaturestat,float Humiditystat){
   ptr +="<script>\n";
   ptr +="setInterval(loadDoc,200);\n";
   ptr +="function loadDoc() {\n";
-  ptr +="var xhttp = new XMLHttpRequest();\n";
-  ptr +="xhttp.onreadystatechange = function() {\n";
+  ptr +="var xhttps = new XMLhttpsRequest();\n";
+  ptr +="xhttps.onreadystatechange = function() {\n";
   ptr +="if (this.readyState == 4 && this.status == 200) {\n";
   ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
   ptr +="};\n";
-  ptr +="xhttp.open(\"GET\", \"/\", true);\n";
-  ptr +="xhttp.send();\n";
+  ptr +="xhttps.open(\"GET\", \"/\", true);\n";
+  ptr +="xhttps.send();\n";
   ptr +="}\n";
   ptr +="</script>\n";
   ptr +="</head>\n";
@@ -380,7 +380,7 @@ void loop() {
 #include <Arduino.h>
 #include <esp8266WiFi.h>
 #include <esp8266WiFiMulti.h>
-#include <esp8266HTTPClient.h>
+#include <esp8266httpsClient.h>
 #include <esp8266WebServer.h>
 // utlrasonic pinout
 #define ULTRASONIC_TRIG_PIN     5   // pin TRIG to D1
@@ -394,7 +394,7 @@ esp8266WiFiMulti WiFiMulti;
 void setup() {
   Serial.begin(115200);
   Serial.println("*****************************************************");
-  Serial.println("********** Program Start : Connect Ultrasonic HC-SR04 + esp8266 to AskSensors over HTTP");
+  Serial.println("********** Program Start : Connect Ultrasonic HC-SR04 + esp8266 to AskSensors over http");
   Serial.println("Wait for WiFi... ");
   Serial.print("********** connecting to WIFI : ");
   Serial.println(wifi_ssid);
@@ -439,13 +439,13 @@ String SendHTML(long distance){
   ptr +="<script>\n";
   ptr +="setInterval(loadDoc,200);\n";
   ptr +="function loadDoc() {\n";
-  ptr +="var xhttp = new XMLHttpRequest();\n";
-  ptr +="xhttp.onreadystatechange = function() {\n";
+  ptr +="var xhttps = new XMLhttpsRequest();\n";
+  ptr +="xhttps.onreadystatechange = function() {\n";
   ptr +="if (this.readyState == 4 && this.status == 200) {\n";
   ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
   ptr +="};\n";
-  ptr +="xhttp.open(\"GET\", \"/\", true);\n";
-  ptr +="xhttp.send();\n";
+  ptr +="xhttps.open(\"GET\", \"/\", true);\n";
+  ptr +="xhttps.send();\n";
   ptr +="}\n";
   ptr +="</script>\n";
   ptr +="</head>\n";
@@ -483,15 +483,15 @@ void loop() {
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_11-51-26.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_11-51-26.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 #### **算法及程序**
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_wificar_http`
+1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_wificar_https`
 2. 将esp8266通过数据线连接到电脑
-3. 使用Arduino IDE打开文件`esp8266_wificar_http.ino`
+3. 使用Arduino IDE打开文件`esp8266_wificar_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
 <center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
@@ -575,7 +575,7 @@ void handleNotFound(){
   message += "URI: ";
   message += server.uri();
   message += "\nMethod: ";
-  message += (server.method() == HTTP_GET)?"GET":"POST";
+  message += (server.method() == https_GET)?"GET":"POST";
   message += "\nArguments: ";
   message += server.args();
   message += "\n";
@@ -648,7 +648,7 @@ const char* password = "raspberry";
   server.onNotFound(handleNotFound);
 
   server.begin();
-  Serial.println("HTTP server started");
+  Serial.println("http server started");
 }
 
 void loop(void){
@@ -671,7 +671,7 @@ void loop(void){
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_11-57-01.png></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_11-57-01.png?imageView2/0/interlace/1/q/46|imageslim></center>
 <center>此处表示舵机连接到了D0口，最多可以连9个舵机（D0-D9）<br>
 <font color=orange>黄色</font>-信号D<br>
 <font color=red>红色</font>-正极V<br>
@@ -682,9 +682,9 @@ void loop(void){
 
 ##### 操作步骤
 
-1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_http`
+1. 打开`ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_https`
 2. 将esp8266通过数据线连接到电脑
-3. 使用Arduino IDE打开文件`esp8266_servoarm_http.ino`
+3. 使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
 <center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png></center>
@@ -734,7 +734,7 @@ void handleNotFound(){
   message += "URI: ";
   message += server.uri();
   message += "\nMethod: ";
-  message += (server.method() == HTTP_GET)?"GET":"POST";
+  message += (server.method() == https_GET)?"GET":"POST";
   message += "\nArguments: ";
   message += server.args();
   message += "\n";
@@ -766,7 +766,7 @@ void setup() {
   });
   server.onNotFound(handleNotFound);
   server.begin();
-  Serial.println("HTTP server started");
+  Serial.println("http server started");
   
 
   // init the WiFi connection
@@ -1020,7 +1020,7 @@ do something
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_15-41-17.png></center>
+<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_15-41-17.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 #### **算法及程序**
 
@@ -1065,7 +1065,7 @@ sudo apt install
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/404.gif></center>
+<center><img src=https://md.hass.live/404.gif?imageView2/0/interlace/1/q/46|imageslim></center>
 
 #### **算法及程序**
 
