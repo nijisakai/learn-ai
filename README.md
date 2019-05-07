@@ -154,9 +154,10 @@ Arduino项目文件的后缀是*.ino。项目文件应在与项目名相同的�
 ![arduino-config-2](https://md.hass.live/arduinoconfig2.png?imageView2/0/interlace/1/q/46|imageslim)
 默认的路径应该是这样：`C:\Program Files (x86)\Arduino\tools\esp8266FS\tool\esp8266fs.jar`
 如果安装成功，会在`工具`菜单下看到下图选项。
-<center><img src=https://md.hass.live/Xnip2019-05-05_18-39-45.png?imageView2/0/interlace/1/q/46|imageslim></center>
+<center><img src=https://md.hass.live/Xnip183945.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 5. 设置开发板和端口
+
 <center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 ### 其他
@@ -220,7 +221,7 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/ai`
 3. 使用Arduino IDE打开文件`esp8266_dht11_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/0/interlace/1/q/46|imageslim></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/2/w/600/h/600/q/33|imageslim></center>
 
 5. 打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址。  
 
@@ -483,7 +484,7 @@ void loop() {
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_11-51-26.png?imageView2/0/interlace/1/q/46|imageslim></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_11-51-26.png?iimageView2/2/w/600/h/600/q/33|imageslim></center>
 
 #### **算法及程序**
 
@@ -494,7 +495,7 @@ void loop() {
 3. 使用Arduino IDE打开文件`esp8266_wificar_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/0/interlace/1/q/46|imageslim></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/2/w/600/h/600/q/33|imageslim></center>
 
 5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上。
 
@@ -687,7 +688,7 @@ void loop(void){
 3. 使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
 4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/0/interlace/1/q/46|imageslim></center>
+<center><img src=https://md.hass.live/Xnip2019-05-05_17-24-20.png?imageView2/2/w/600/h/600/q/33|imageslim></center>
 
 5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上。
 
