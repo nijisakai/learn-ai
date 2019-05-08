@@ -797,7 +797,7 @@ void loop(void){
 3.使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png'></center>
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
 
 5.点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上
 6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
