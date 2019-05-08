@@ -442,7 +442,7 @@ void setup() {
   pinMode(ULTRASONIC_ECHO_PIN, INPUT);
   server.on("/", handle_OnConnect);
   server.onNotFound(handle_NotFound);
-  server.begin(); 
+  server.begin();
 }
 
 void handle_OnConnect() {
@@ -504,7 +504,7 @@ void loop() {
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
- 
+
 #include "index.h" //Our HTML webpage contents with javascripts
 #include "DHTesp.h"  //DHT11 Library for ESP
   
@@ -560,7 +560,7 @@ void setup()
   Serial.println("");
 
   //Onboard LED port Direction output
-  pinMode(LED,OUTPUT); 
+  pinMode(LED,OUTPUT);
   
   // Wait for connection
   while (WiFi.status() != WL_CONNECTED) {
@@ -597,7 +597,7 @@ void loop()
 
 #### **demo**
 
-<center><iframe src="http://hass.live:9000" width="600" height="300" scrolling="no"></iframe></center>
+<center><iframe src="http://hass.live:9000" width="800" height="300" scrolling="no" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
 #### **硬件部分**
 
@@ -786,7 +786,7 @@ void loop(void){
 
 #### **demo**
 
-<center><iframe src="http://hass.live:9001" width="600" height="300" scrolling="no"></iframe></center>
+<center><iframe src="http://hass.live:9001" width="800" height="600" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
 #### **硬件部分**
 
