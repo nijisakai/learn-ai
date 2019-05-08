@@ -6,11 +6,11 @@
 const char* WIFI_SSID = "AI";
 const char* WIFI_PASSWORD = "raspberry";
 
-Servo servos[12];
-uint8_t servo_pins[12] = {D0,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11};
-uint8_t count = 12;
+Servo servos[9];
+uint8_t servo_pins[9] = {D0,D1,D2,D3,D4,D5,D6,D7,D8};
+uint8_t count = 9;
 void setAngle(uint8_t di,uint8_t vi){
-  if(di< 12 && vi < 180)
+  if(di< 9 && vi < 180)
     servos[di].write(vi);
 }
 void attachServos(){

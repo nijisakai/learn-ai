@@ -14,7 +14,7 @@
 	* [下载课程所需文件](#下载课程所需文件)
 * [**Chapter 1 物联网与机器人**](#chapter-1-物联网与机器人)
 * [**Part 1 使用esp8266开发板读取和控制传感器、舵机和电机**](#part-1-使用esp8266开发板读取和控制传感器-舵机和电机)
-	* [Part 1.1 使用esp8266在网页上读取传感器数据](#part-11-使用esp8266在网页上读取传感器数据)
+	* [Part 1.1 使用esp8266在网页上读取传感器数据，绘制成实时变化曲线](#part-11-使用esp8266在网页上读取传感器数据绘制成实时变化曲线)
 	* [Part 1.2 WiFi遥控小车](#part-12-wifi遥控小车)
 	* [Part 1.3 使用esp8266通过WiFi控制机械臂舵机](#part-13-使用esp8266通过wifi控制机械臂舵机)
 	* [Part 1.4 esp32网络摄像头与人脸识别](#part-14-esp32网络摄像头与人脸识别)
@@ -201,10 +201,10 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
     esp8266是一个价格低廉的开发板，包含WiFi模块和GPIO，可以连接传感器、舵机、马达等各种设备。使用Arduino IDE进行开发编程。可通过网络、串口和蓝牙等多种方式进行通信
 
-### Part 1.1 使用esp8266在网页上读取传感器数据
+### Part 1.1 使用esp8266在网页上读取传感器数据，绘制成实时变化曲线
 
     这部分让你熟悉操作esp8266的步骤。是第一章的基础  
-    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等  
+    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等，并使用Chart.js来绘制实时变化曲线    
     这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
 
 #### **硬件部分**
@@ -224,17 +224,29 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 #### **算法及程序**
 
-##### 操作步骤
+##### 操作步骤-简单读取
 
 1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_https`
 2.将esp8266通过数据线连接到电脑
 3.使用Arduino IDE打开文件`esp8266_dht11_https.ino`
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
-<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-49-09.png></center>
+<center><img src=https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png></center>
 
 5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
 6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数
 7.连接另一个esp8266开发板，打开路径`chapter1/part1/esp8266_projects/esp8266_ultrasonic_https`,再次执行2-6步骤来使用超声波传感器
+
+##### 操作步骤-绘制实时变化曲线
+
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_http_chartjs`
+2.将esp8266通过数据线连接到电脑
+3.使用Arduino IDE打开文件`esp8266_dht11_http_chartjs.ino`
+4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png'></center>
+
+5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
+6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-13-13.png'></center>
 
 ##### 代码详解
 
@@ -476,6 +488,99 @@ void loop() {
 }
 ```
 
+* 温湿度传感器变化曲线
+
+```arduino {.line-numbers}
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
+ 
+#include "index.h" //Our HTML webpage contents with javascripts
+#include "DHTesp.h"  //DHT11 Library for ESP
+  
+#define LED 2        //On board LED
+#define DHTpin 15    //D8 of NodeMCU is GPIO15
+
+DHTesp dht;
+
+const char* ssid = "AI";
+const char* password = "raspberry";
+ 
+ESP8266WebServer server(80); //Server on port 80
+
+void handleRoot() {
+ String s = MAIN_page; //Read HTML contents
+ server.send(200, "text/html", s); //Send web page
+}
+
+float humidity, temperature;
+
+void handleADC() {
+ int a = analogRead(A0);
+
+ String data = "{\"ADC\":\""+String(a)+"\", \"Temperature\":\""+ String(temperature) +"\", \"Humidity\":\""+ String(humidity) +"\"}";
+ 
+ digitalWrite(LED,!digitalRead(LED)); //Toggle LED on data request ajax
+ server.send(200, "text/plane", data); //Send ADC value, temperature and humidity JSON to client ajax request
+
+ //Get Humidity temperatue data after request is complete
+ //Give enough time to handle client to avoid problems
+  delay(dht.getMinimumSamplingPeriod());
+
+  humidity = dht.getHumidity();
+  temperature = dht.getTemperature();
+
+  Serial.print(humidity, 1);
+  Serial.print(temperature, 1);
+  Serial.print(dht.toFahrenheit(temperature), 1);
+}
+
+//==============================================================
+//                  SETUP
+//==============================================================
+void setup()
+{
+  Serial.begin(115200);
+  Serial.println();
+
+  dht.setup(DHTpin, DHTesp::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
+  //dht.setup(DHTpin, DHTesp::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
+
+  WiFi.begin(ssid, password);     //Connect to your WiFi router
+  Serial.println("");
+ 
+  //Onboard LED port Direction output
+  pinMode(LED,OUTPUT); 
+  
+  // Wait for connection
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  //If connection successful show IP address in serial monitor
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());  //IP address assigned to your ESP
+ 
+  server.on("/", handleRoot);      //Which routine to handle at root location. This is display page
+  server.on("/readADC", handleADC); //This page is called by java Script AJAX
+ 
+  server.begin();                  //Start server
+  Serial.println("HTTP server started");
+}
+
+//==============================================================
+//                     LOOP
+//==============================================================
+void loop()
+{
+  server.handleClient();          //Handle client requests
+}
+```
+
 ### Part 1.2 WiFi遥控小车
 
     使用esp8266，通过网页端发送命令，遥控一辆小车
@@ -502,7 +607,7 @@ void loop() {
 3.使用Arduino IDE打开文件`esp8266_wificar_https.ino`
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-49-09.png></center>
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png'></center>
 
 5.点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上
 6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
@@ -692,7 +797,7 @@ void loop(void){
 3.使用Arduino IDE打开文件`esp8266_servoarm_https.ino`
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-49-09.png></center>
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png'></center>
 
 5.点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上
 6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
@@ -712,11 +817,11 @@ void loop(void){
 const char* WIFI_SSID = "AI";
 const char* WIFI_PASSWORD = "raspberry";
 
-Servo servos[12];
-uint8_t servo_pins[12] = {D0,D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11};
-uint8_t count = 12;
+Servo servos[9];
+uint8_t servo_pins[9] = {D0,D1,D2,D3,D4,D5,D6,D7,D8};
+uint8_t count = 9;
 void setAngle(uint8_t di,uint8_t vi){
-  if(di< 12 && vi < 180)
+  if(di< 9 && vi < 180)
     servos[di].write(vi);
 }
 void attachServos(){

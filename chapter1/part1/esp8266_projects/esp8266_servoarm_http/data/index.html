@@ -34,7 +34,7 @@
 
             function debug(){
                 var angles = []
-                for (var i = 0; i < 12; i++) {
+                for (var i = 0; i < 9; i++) {
                     angles[i] = document.getElementById('d'+i).value;   
                 }
                 console.log('uint8_t angles = {',angles.join(' , '),'}')
@@ -45,7 +45,7 @@
             function init(){
                 var form = document.getElementById('myForm')
                 var html = ''
-                for (var i = 0; i < 12; i++) {
+                for (var i = 0; i < 9; i++) {
                     html+='<div><label for="d'+i+'">D'+i+'</label><div></div></div><input type="range" min="15" max="165" name="d'+i+'" id="d'+i+'" value="90" onchange=Submit("'+i+'")></div>';
                 }
                 form.innerHTML = html;
