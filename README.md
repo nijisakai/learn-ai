@@ -230,7 +230,7 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 2.将esp8266通过数据线连接到电脑
 3.使用Arduino IDE打开文件`esp8266_dht11_https.ino`
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
-<center><img src=https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png></center>
+<center><img src=https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
 6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数
@@ -242,11 +242,11 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 2.将esp8266通过数据线连接到电脑
 3.使用Arduino IDE打开文件`esp8266_dht11_http_chartjs.ino`
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png'></center>
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
 
 5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
 6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-13-13.png'></center>
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-13-13.png?imageView2/0/interlace/1/q/46|imageslim'></center>
 
 ##### 代码详解
 
@@ -505,7 +505,7 @@ DHTesp dht;
 
 const char* ssid = "AI";
 const char* password = "raspberry";
- 
+
 ESP8266WebServer server(80); //Server on port 80
 
 void handleRoot() {
@@ -519,7 +519,7 @@ void handleADC() {
  int a = analogRead(A0);
 
  String data = "{\"ADC\":\""+String(a)+"\", \"Temperature\":\""+ String(temperature) +"\", \"Humidity\":\""+ String(humidity) +"\"}";
- 
+
  digitalWrite(LED,!digitalRead(LED)); //Toggle LED on data request ajax
  server.send(200, "text/plane", data); //Send ADC value, temperature and humidity JSON to client ajax request
 
@@ -548,7 +548,7 @@ void setup()
 
   WiFi.begin(ssid, password);     //Connect to your WiFi router
   Serial.println("");
- 
+
   //Onboard LED port Direction output
   pinMode(LED,OUTPUT); 
   
@@ -564,10 +564,10 @@ void setup()
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());  //IP address assigned to your ESP
- 
+
   server.on("/", handleRoot);      //Which routine to handle at root location. This is display page
   server.on("/readADC", handleADC); //This page is called by java Script AJAX
- 
+
   server.begin();                  //Start server
   Serial.println("HTTP server started");
 }
@@ -607,7 +607,7 @@ void loop()
 3.使用Arduino IDE打开文件`esp8266_wificar_https.ino`
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
 
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png'></center>
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
 
 5.点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上
 6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址
