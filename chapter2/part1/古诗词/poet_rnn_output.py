@@ -4,7 +4,7 @@ import tensorflow as tf
  
 #-------------------------------数据预处理---------------------------#
  
-poetry_file ='poetry.txt'
+poetry_file ='./chapter2/part1/古诗词/poetry.txt'
  
 # 诗集
 poetrys = []
@@ -153,7 +153,7 @@ def gen_poetry_with_head_and_type(head, type):
     with tf.Session() as sess:
         sess.run(tf.initialize_all_variables())
         saver = tf.train.Saver()
-        saver.restore(sess, 'poetry.module-49')
+        saver.restore(sess, './chapter2/part1/古诗词/poetry.module-49')
         poem = ''
         i = 0
 
