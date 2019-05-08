@@ -22,13 +22,14 @@
 	* [尾声](#尾声)
 * [**Part 2 物联网开源平台Home Assistant创意应用**](#part-2-物联网开源平台home-assistant创意应用)
 	* [Part 2.1 Home Assistant安装和配置](#part-21-home-assistant安装和配置)
-	* [Part 2.2 HomeAssistant控制esp8266彩色灯](#part-22-homeassistant控制esp8266彩色灯)
-	* [Part 2.3 HomeAssistant进行人脸识别和语音播报](#part-23-homeassistant进行人脸识别和语音播报)
+	* [Part 2.2 Home Assistant控制esp8266彩色灯](#part-22-home-assistant控制esp8266彩色灯)
+	* [Part 2.3 Home Assistant进行人脸识别和语音播报](#part-23-home-assistant进行人脸识别和语音播报)
 * [**Part 3 进阶项目-物联网机器人小绿**](#part-3-进阶项目-物联网机器人小绿)
-	* [Part 3.1 组装一个小绿](#part-31-组装一个小绿)
-	* [Part 3.2 让小绿开口说话](#part-32-让小绿开口说话)
-	* [Part 3.3 让小绿听你指挥](#part-33-让小绿听你指挥)
+	* [Part 3.1 组装一个小绿机器人](#part-31-组装一个小绿机器人)
+	* [Part 3.2 训练语音识别，开始和小绿聊天](#part-32-训练语音识别开始和小绿聊天)
+	* [Part 3.3 让小绿听你指挥，控制一切](#part-33-让小绿听你指挥控制一切)
 	* [Part 3.4 使用Google Blockly来控制小绿](#part-34-使用google-blockly来控制小绿)
+	* [Part 3.5 使用OpenPose让小绿实时模仿你的动作](#part-35-使用openpose让小绿实时模仿你的动作)
 * [**Chapter 2 人工智能与机器人**](#chapter-2-人工智能与机器人)
 * [**Part 1 人工智能算法相关案例体验**](#part-1-人工智能算法相关案例体验)
 	* [Part 1.1 Tensorflow训练自定义图片分类器](#part-11-tensorflow训练自定义图片分类器)
@@ -1030,7 +1031,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 主要配置在`configuration.yaml`中  
 文件夹`custom_components`存放自定义组件  
 
-### Part 2.2 HomeAssistant控制esp8266彩色灯
+### Part 2.2 Home Assistant控制esp8266彩色灯
 
     简单的项目描述
 
@@ -1038,7 +1039,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 #### **算法及程序**
 
-### Part 2.3 HomeAssistant进行人脸识别和语音播报
+### Part 2.3 Home Assistant进行人脸识别和语音播报
 
     简单的项目描述
 
@@ -1052,7 +1053,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
     简介
 
-### Part 3.1 组装一个小绿
+### Part 3.1 组装一个小绿机器人
 
     简单的项目描述
 
@@ -1060,7 +1061,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 #### **算法及程序**
 
-### Part 3.2 让小绿开口说话
+### Part 3.2 训练语音识别，开始和小绿聊天
 
     简单的项目描述
 
@@ -1068,7 +1069,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 #### **算法及程序**
 
-### Part 3.3 让小绿听你指挥
+### Part 3.3 让小绿听你指挥，控制一切
 
     简单的项目描述
 
@@ -1077,6 +1078,14 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 #### **算法及程序**
 
 ### Part 3.4 使用Google Blockly来控制小绿
+
+    简单的项目描述
+
+#### **硬件部分**
+
+#### **算法及程序**
+
+### Part 3.5 使用OpenPose让小绿实时模仿你的动作
 
     简单的项目描述
 
