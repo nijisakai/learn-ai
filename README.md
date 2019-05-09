@@ -23,8 +23,8 @@
 * [**Part 2 物联网开源平台Home Assistant创意应用**](#part-2-物联网开源平台home-assistant创意应用)
 	* [Part 2.1 Home Assistant安装和配置](#part-21-home-assistant安装和配置)
 	* [Part 2.2 Home Assistant控制esp8266彩色灯](#part-22-home-assistant控制esp8266彩色灯)
-	* [Part 2.3 Home Assistant进行人脸识别和语音播报](#part-23-home-assistant进行人脸识别和语音播报)
-* [**Part 3 进阶项目-物联网机器人小绿**](#part-3-进阶项目-物联网机器人小绿)v
+	* [Part 2.3 Home Assistant人脸解锁](#part-23-home-assistant人脸解锁)
+* [**Part 3 进阶项目-物联网机器人小绿**](#part-3-进阶项目-物联网机器人小绿)
 	* [Part 3.1 组装一个小绿机器人](#part-31-组装一个小绿机器人)
 	* [Part 3.2 训练语音识别，开始和小绿聊天](#part-32-训练语音识别开始和小绿聊天)
 	* [Part 3.3 让小绿听你指挥，控制一切](#part-33-让小绿听你指挥控制一切)
@@ -64,7 +64,7 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 
 选择适合自己的操作系统，并选择Python 3.7版本
 
-#### 基本命令
+#### 基本命令概览
 
 ##### 创建环境
 
@@ -97,7 +97,7 @@ conda install opencv
 
 ```bash {.line-numbers}
 //退出环境
-conda deactivate 环境名字  
+conda deactivate  
 //列出环境
 conda-env list
 //删除环境
@@ -157,13 +157,15 @@ Arduino IDE 是针对Arduino控制板的编程和下载平台。在Windows，Mac
 #### setup
 
 1.下载安装Arduino IDE  
-2.在`文件`--`首选项`--`附加开发板管理器网址`一栏中输入<https://arduino.esp8266.com/stable/package_esp8266com_index.json>，重启IDE
+2.在`文件`--`首选项`--`附加开发板管理器网址`一栏中输入<https://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json> 重启IDE
 
-![arduino-config-1](https://md.hass.live/arduino-config-1.png?imageView2/0/interlace/1/q/46|imageslim)
+![arduino-config-1](https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-19-37.png)
 
-3.在`工具`--`开发板`--`开发板管理器`中搜索esp8266,点击对应项进行安装  
+3.在`工具`--`开发板`--`开发板管理器`中分别搜索esp8266和esp32,点击对应项进行安装  
 
-![2019-04-29 22.10.50](https://md.hass.live/2019-04-29%2022.10.50.gif?imageView2/0/interlace/1/q/46|imageslim)
+![esp8266](https://md.hass.live/2019-04-29%2022.10.50.gif?imageView2/0/interlace/1/q/46|imageslim)
+
+![esp32](https://md.hass.live/niji/2019-05-09-2019-05-09%2018.22.25.gif?imageView2/0/interlace/1/q/46|imageslim)
 
 4.打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹，然后重启IDE
 
@@ -928,37 +930,163 @@ void loop() {
 
 ##### 硬件清单
 
-* esp8266主板
-* 舵机
-* 杜邦线、数据线
-* 机械臂3D打印源文件和零件
+* esp32主板
+* ov2640摄像头
+* USB转TTL编程器
+* 杜邦线
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/404.gif></center>
+<center><img src=https://md.hass.live/niji/2019-05-09-ESP32-CAM-wiring-FTDI1.webp></center>
+
+###### 注意：`IO0`口需要和它边上的`GND`口用一根杜邦线连接到一起，这样才可以正常上传代码
 
 #### **算法及程序**
 
 ##### 操作步骤
 
-1.打开`learn-ai`文件夹，打开路径`chapter1/part1/  
-2.TBC  
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp32_projects/esp32_webcam`  
+2.将上图连接好后，将USB转TTL编程器插入电脑
+3.使用Arduino IDE打开文件`esp32——webcam.ino`  
+4.配置esp32的上传环境如下图所示：
+
+<center><img src="https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-34-06.png"></center>
+
+5.上传完毕后，将`IO0`口需要和它边上的`GND`口杜邦线拔掉，按一下esp32主板上面的`reset`键
+6.打开[路由器管理地址](http://192.168.0.1)，esp32此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
+7.在浏览器中打开esp8266获取到的局域网地址，在左侧最下方选择`Start Stream`  
+
+<center><img src=https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-31-57.png></center>
 
 ##### 代码详解
 
-* 程序
+* esp32_webcam.ino
 
 ```arduino {.line-numbers}
-do something
+#include "esp_camera.h"
+#include <WiFi.h>
+
+
+
+// Select camera model
+// #define CAMERA_MODEL_WROVER_KIT
+//#define CAMERA_MODEL_ESP_EYE
+//#define CAMERA_MODEL_M5STACK_PSRAM
+//#define CAMERA_MODEL_M5STACK_WIDE
+#define CAMERA_MODEL_AI_THINKER
+
+#include "camera_pins.h"
+
+const char* ssid = "AI";
+const char* password = "raspberry";
+
+void startCameraServer();
+
+void setup() {
+  Serial.begin(115200);
+  Serial.setDebugOutput(true);
+  Serial.println();
+
+  camera_config_t config;
+  config.ledc_channel = LEDC_CHANNEL_0;
+  config.ledc_timer = LEDC_TIMER_0;
+  config.pin_d0 = Y2_GPIO_NUM;
+  config.pin_d1 = Y3_GPIO_NUM;
+  config.pin_d2 = Y4_GPIO_NUM;
+  config.pin_d3 = Y5_GPIO_NUM;
+  config.pin_d4 = Y6_GPIO_NUM;
+  config.pin_d5 = Y7_GPIO_NUM;
+  config.pin_d6 = Y8_GPIO_NUM;
+  config.pin_d7 = Y9_GPIO_NUM;
+  config.pin_xclk = XCLK_GPIO_NUM;
+  config.pin_pclk = PCLK_GPIO_NUM;
+  config.pin_vsync = VSYNC_GPIO_NUM;
+  config.pin_href = HREF_GPIO_NUM;
+  config.pin_sscb_sda = SIOD_GPIO_NUM;
+  config.pin_sscb_scl = SIOC_GPIO_NUM;
+  config.pin_pwdn = PWDN_GPIO_NUM;
+  config.pin_reset = RESET_GPIO_NUM;
+  config.xclk_freq_hz = 20000000;
+  config.pixel_format = PIXFORMAT_JPEG;
+  //init with high specs to pre-allocate larger buffers
+  if(psramFound()){
+    config.frame_size = FRAMESIZE_UXGA;
+    config.jpeg_quality = 10;
+    config.fb_count = 2;
+  } else {
+    config.frame_size = FRAMESIZE_SVGA;
+    config.jpeg_quality = 12;
+    config.fb_count = 1;
+  }
+
+#if defined(CAMERA_MODEL_ESP_EYE)
+  pinMode(13, INPUT_PULLUP);
+  pinMode(14, INPUT_PULLUP);
+#endif
+
+  // camera init
+  esp_err_t err = esp_camera_init(&config);
+  if (err != ESP_OK) {
+    Serial.printf("Camera init failed with error 0x%x", err);
+    return;
+  }
+
+  sensor_t * s = esp_camera_sensor_get();
+  //initial sensors are flipped vertically and colors are a bit saturated
+  if (s->id.PID == OV3660_PID) {
+    s->set_vflip(s, 1);//flip it back
+    s->set_brightness(s, 1);//up the blightness just a bit
+    s->set_saturation(s, -2);//lower the saturation
+  }
+  //drop down frame size for higher initial frame rate
+  s->set_framesize(s, FRAMESIZE_QVGA);
+
+#if defined(CAMERA_MODEL_M5STACK_WIDE)
+  s->set_vflip(s, 1);
+  s->set_hmirror(s, 1);
+#endif
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+
+  startCameraServer();
+
+  Serial.print("Camera Ready! Use 'http://");
+  Serial.print(WiFi.localIP());
+  Serial.println("' to connect");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  delay(10000);
+}
 ```
 
 ### Part 1.5 综合与进阶
 
     试着把前面的功能整合到一个小车上，并在一个界面上对它们进行读取和控制。
 
-#### **参考代码**
+#### **参考**
 
-* [传感器+小车+机械臂+摄像头](下载链接)
+代码在`learn-ai/chapter1/part1/part1.5`  
+代码将`Part1.2`和`Part1.3`结合到了一段程序中，对应网页文件可以输入`Part1.4`中esp32获取到的摄像头地址，实现小车画面实时显示  
+硬件连接部分可将`Part1.2`,`Part1.3`和`Part1.4`结合在一起  
+`Part1.4`部分只需将esp32上的`3.3V`和`GND`用杜邦线连接到esp8266扩展板舵机连接处的对应接口,如下图：
+
+<center><img src=https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_19-30-22.png></center>
+<center><font color=red>红色</font>-正极V<br>
+<font color=brown>棕色</font>-负极G<br>
+</center>
+
+#### **demo**
+
+<center><iframe src="http://hass.live:9002" width="800" height="600" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
 #### **抓取大赛**
 
@@ -1033,17 +1161,21 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ### Part 2.2 Home Assistant控制esp8266彩色灯
 
-    简单的项目描述
+    发放三国杀
 
 #### **硬件部分**
 
 #### **算法及程序**
 
-### Part 2.3 Home Assistant进行人脸识别和语音播报
+### Part 2.3 Home Assistant人脸解锁
 
-    简单的项目描述
+    调用百度在线人工智能服务，进行人脸识别和语音播报，识别到注册人脸后自动把小灯打开。
 
 #### **硬件部分**
+
+* 运行`Home Assistant`和`百度识别自定义组件`的树莓派
+* 安卓手机（`网络摄像头安卓APP`，提供快速稳定的视频服务。`kodi媒体中心安卓APP`，提供语音服务功能）
+* 手机也可替换为Part1.4所用的esp32摄像头
 
 #### **算法及程序**
 
