@@ -24,7 +24,7 @@
 	* [Part 2.1 Home Assistant安装和配置](#part-21-home-assistant安装和配置)
 	* [Part 2.2 Home Assistant控制esp8266彩色灯](#part-22-home-assistant控制esp8266彩色灯)
 	* [Part 2.3 Home Assistant进行人脸识别和语音播报](#part-23-home-assistant进行人脸识别和语音播报)
-* [**Part 3 进阶项目-物联网机器人小绿**](#part-3-进阶项目-物联网机器人小绿)
+* [**Part 3 进阶项目-物联网机器人小绿**](#part-3-进阶项目-物联网机器人小绿)v
 	* [Part 3.1 组装一个小绿机器人](#part-31-组装一个小绿机器人)
 	* [Part 3.2 训练语音识别，开始和小绿聊天](#part-32-训练语音识别开始和小绿聊天)
 	* [Part 3.3 让小绿听你指挥，控制一切](#part-33-让小绿听你指挥控制一切)
