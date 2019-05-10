@@ -9,14 +9,14 @@
 	* [Anaconda](#anaconda)
 	* [VSCode](#vscode)
 	* [CP2102驱动](#cp2102驱动)
-	* [Arduino IDE.](#arduino-ide)
+	* [Arduino IDE](#arduino-ide)
 	* [其他](#其他)
 	* [下载课程所需文件](#下载课程所需文件)
 * [**Chapter 1 物联网与机器人**（树莓派，esp8266&esp32）](#chapter-1-物联网与机器人树莓派esp8266esp32)
 * [**Part 1 使用esp8266开发板读取和控制传感器、舵机和电机**](#part-1-使用esp8266开发板读取和控制传感器-舵机和电机)
 	* [Part 1.1 使用esp8266在网页上读取传感器数据，绘制实时变化曲线](#part-11-使用esp8266在网页上读取传感器数据绘制实时变化曲线)
 	* [Part 1.2 WiFi遥控小车](#part-12-wifi遥控小车)
-	* [Part 1.3 使用esp8266通过WiFi控制机械臂舵机](#part-13-使用esp8266通过wifi控制机械臂舵机)
+	* [Part 1.3 WiFi机械臂](#part-13-wifi机械臂)
 	* [Part 1.4 esp32网络摄像头与人脸识别](#part-14-esp32网络摄像头与人脸识别)
 	* [Part 1.5 综合与进阶](#part-15-综合与进阶)
 	* [尾声](#尾声)
@@ -36,15 +36,18 @@
 	* [Part 1.2 使用RNN来生成古诗词](#part-12-使用rnn来生成古诗词)
 	* [Part 1.3 训练一个简单的游戏AI（Deep Q Network）](#part-13-训练一个简单的游戏aideep-q-network)
 	* [Part 1.4 使用进化算法来训练超级马里奥](#part-14-使用进化算法来训练超级马里奥)
-* [**Part 2 自动追踪小车**](#part-2-自动追踪小车)
+* [**Part 2 自动避障小车**](#part-2-自动避障小车)
 	* [Part 2.1 环境准备与硬件搭建](#part-21-环境准备与硬件搭建)
-	* [Part 2.2 OpenCV机械臂自动抓取特定形状物体](#part-22-opencv机械臂自动抓取特定形状物体)
-	* [Part 2.3 OpenCV分类器训练，让小车追踪特定物体](#part-23-opencv分类器训练让小车追踪特定物体)
-* [**Part 3 无人驾驶小车**](#part-3-无人驾驶小车)
+	* [Part 2.2 通过超声波传感器进行避障](#part-22-通过超声波传感器进行避障)
+* [**Part 3 自动追踪小车**](#part-3-自动追踪小车)
 	* [Part 3.1 环境准备与硬件搭建](#part-31-环境准备与硬件搭建)
-	* [Part 3.2 电机和摄像头驱动测试](#part-32-电机和摄像头驱动测试)
-	* [Part 3.3 无人驾驶数据采集及训练](#part-33-无人驾驶数据采集及训练)
-	* [Part 3.4 开始无人驾驶](#part-34-开始无人驾驶)
+	* [Part 3.2 OpenCV机械臂自动抓取特定形状物体](#part-32-opencv机械臂自动抓取特定形状物体)
+	* [Part 3.3 OpenCV分类器训练，让小车追踪特定物体](#part-33-opencv分类器训练让小车追踪特定物体)
+* [**Part 4 无人驾驶小车**](#part-4-无人驾驶小车)
+	* [Part 4.1 环境准备与硬件搭建](#part-41-环境准备与硬件搭建)
+	* [Part 4.2 电机和摄像头驱动测试](#part-42-电机和摄像头驱动测试)
+	* [Part 4.3 无人驾驶数据采集及训练](#part-43-无人驾驶数据采集及训练)
+	* [Part 4.4 开始无人驾驶](#part-44-开始无人驾驶)
 
 <!-- /code_chunk_output -->
 
@@ -146,11 +149,9 @@ VSCode是微软出品的免费代码编辑软件。在Windows、Mac、Linux上�
 注意选择对应的操作系统和版本进行下载和安装  
 下载链接: <https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers>
 
-### Arduino IDE.
+### Arduino IDE
 
-*[IDE.]:Integrated Development Environment,集成开发环境
-
-Arduino IDE 是针对Arduino控制板的编程和下载平台。在Windows，Mac、Linux上均可以方便安装，Arduino项目文件的后缀是`*.ino`  
+Arduino IDE （Integrated Development Environment,集成开发环境）是针对Arduino控制板的编程和下载平台。在Windows，Mac、Linux上均可以方便安装，Arduino项目文件的后缀是`*.ino`  
 项目文件应在与项目名相同的文件夹中  
 下载链接：<https://www.arduino.cc/en/Main/Software>
 
@@ -595,7 +596,7 @@ void loop()
 
 ### Part 1.2 WiFi遥控小车
 
-    使用esp8266，通过网页端发送命令，遥控一辆小车
+    使用esp8266，通过网页端发送命令，遥控一辆小车，结合超声波传感器，实现自动避障
 
 #### **demo**
 
@@ -782,7 +783,7 @@ void loop(void){
 }
 ```
 
-### Part 1.3 使用esp8266通过WiFi控制机械臂舵机
+### Part 1.3 WiFi机械臂
 
     使用esp8266，通过网页端发送命令，控制多个舵机
 
@@ -1187,7 +1188,8 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ### Part 3.1 组装一个小绿机器人
 
-    简单的项目描述
+    组装一个人形双足机器人，或仍然使用Part 1的小车  
+    如果使用后者，跳过本部分至3.2
 
 #### **硬件部分**
 
@@ -1271,7 +1273,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ---
 
-## **Part 2 自动追踪小车**
+## **Part 2 自动避障小车**
 
     项目介绍
 
@@ -1283,7 +1285,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 #### **算法及程序**
 
-### Part 2.2 OpenCV机械臂自动抓取特定形状物体
+### Part 2.2 通过超声波传感器进行避障
 
     使用OpenCV来识别圆形物体，若识别到则发送串口指令给Arduino。Arduino控制机械臂进行抓取
 
@@ -1291,7 +1293,29 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 #### **算法及程序**
 
-### Part 2.3 OpenCV分类器训练，让小车追踪特定物体
+---
+
+## **Part 3 自动追踪小车**
+
+    使用OpenCV作为数据处理和输入，电机执行对应动作
+
+### Part 3.1 环境准备与硬件搭建
+
+    简单的项目描述
+
+#### **硬件部分**
+
+#### **算法及程序**
+
+### Part 3.2 OpenCV机械臂自动抓取特定形状物体
+
+    使用OpenCV来识别圆形物体，若识别到则发送串口指令给Arduino。Arduino控制机械臂进行抓取
+
+#### **硬件部分**
+
+#### **算法及程序**
+
+### Part 3.3 OpenCV分类器训练，让小车追踪特定物体
 
     通过拍照、爬虫等方式获取待训练图片，使用python进行简单的文件处理，用OpenCV训练后，可实现对特定物体的识别和追踪
 
@@ -1301,12 +1325,12 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ---
 
-## **Part 3 无人驾驶小车**
+## **Part 4 无人驾驶小车**
 
     这部分基于树莓派以及一些开源软件构建  
     树莓派从摄像头模块获取输入，然后通过无线方式发送获得的图像数据到电脑，电脑通过之前训练好的神经网络对输入的图像数据预测小车接下来的动作，然后发送这些预测动作的控制指令到树莓派控制小车的程序中。小车根据这些获得的指令实现自动驾驶
 
-### Part 3.1 环境准备与硬件搭建
+### Part 4.1 环境准备与硬件搭建
 
     需要安装一些Python库并正确连接小车
 
@@ -1338,7 +1362,7 @@ install python3 ???
 sudo apt install sklearn ???
 ```
 
-### Part 3.2 电机和摄像头驱动测试
+### Part 4.2 电机和摄像头驱动测试
 
     测试软硬件环境的安装是否正确
 
@@ -1385,7 +1409,7 @@ sudo python3 stream_client.py
 
 5.在终端输入`Ctrl`+`C`来结束当前任务  
 
-### Part 3.3 无人驾驶数据采集及训练
+### Part 4.3 无人驾驶数据采集及训练
 
     搭建起车道，然后运行相应的收集数据的程序，按下笔记本的方向控制小车行驶，每按一次方向键，程序就会记录下一帧相应的图像。让小车平均遍历自动驾驶中可能出现的各种情况，按‘q‘退出数据采集，然后再运行相应的模型训练程序训练自动驾驶神经网络
 
@@ -1441,7 +1465,7 @@ sudo python3 model_training.py
 
 2.训练完成后，训练文件在`文件路径`
 
-### Part 3.4 开始无人驾驶
+### Part 4.4 开始无人驾驶
 
     根据训练好的神经网络模型，现在我们可以实现自动驾驶
 
