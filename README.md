@@ -954,8 +954,8 @@ void loop() {
 <center><img src="https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-34-06.png"></center>
 
 5.上传完毕后，将`IO0`口需要和它边上的`GND`口杜邦线拔掉，按一下esp32主板上面的`reset`键  
-6.打开[路由器管理地址](http://192.168.0.1)，esp32此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
-7.在浏览器中打开esp8266获取到的局域网地址，在左侧最下方选择`Start Stream`  
+6.打开[路由器管理地址](http://192.168.0.1)，esp32此时应该已经加入到了局域网中，查看esp32获取到的路由器地址  
+7.在浏览器中打开esp32获取到的局域网地址，在左侧最下方选择`Start Stream`  
 
 <center><img src=https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-31-57.png></center>
 
