@@ -12,7 +12,7 @@
 	* [Arduino IDE.](#arduino-ide)
 	* [其他](#其他)
 	* [下载课程所需文件](#下载课程所需文件)
-* [**Chapter 1 物联网与机器人**](#chapter-1-物联网与机器人)
+* [**Chapter 1 物联网与机器人**（树莓派，esp8266&esp32）](#chapter-1-物联网与机器人树莓派esp8266esp32)
 * [**Part 1 使用esp8266开发板读取和控制传感器、舵机和电机**](#part-1-使用esp8266开发板读取和控制传感器-舵机和电机)
 	* [Part 1.1 使用esp8266在网页上读取传感器数据，绘制实时变化曲线](#part-11-使用esp8266在网页上读取传感器数据绘制实时变化曲线)
 	* [Part 1.2 WiFi遥控小车](#part-12-wifi遥控小车)
@@ -30,7 +30,7 @@
 	* [Part 3.3 让小绿听你指挥，控制一切](#part-33-让小绿听你指挥控制一切)
 	* [Part 3.4 使用Google Blockly来控制小绿](#part-34-使用google-blockly来控制小绿)
 	* [Part 3.5 使用OpenPose让小绿实时模仿你的动作](#part-35-使用openpose让小绿实时模仿你的动作)
-* [**Chapter 2 人工智能与机器人**](#chapter-2-人工智能与机器人)
+* [**Chapter 2 人工智能与机器人**(jetson | 树莓派+PC)](#chapter-2-人工智能与机器人jetson-树莓派pc)
 * [**Part 1 人工智能算法相关案例体验**](#part-1-人工智能算法相关案例体验)
 	* [Part 1.1 Tensorflow训练自定义图片分类器](#part-11-tensorflow训练自定义图片分类器)
 	* [Part 1.2 使用RNN来生成古诗词](#part-12-使用rnn来生成古诗词)
@@ -198,7 +198,7 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 ---
 
-## **Chapter 1 物联网与机器人**
+## **Chapter 1 物联网与机器人**（树莓派，esp8266&esp32）
 
     本章内容是关于使用可编程的开源硬件，将功能点进行分解，并最终实现综合项目  
     主要包括:  
@@ -946,13 +946,13 @@ void loop() {
 ##### 操作步骤
 
 1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp32_projects/esp32_webcam`  
-2.将上图连接好后，将USB转TTL编程器插入电脑
+2.将上图连接好后，将USB转TTL编程器插入电脑  
 3.使用Arduino IDE打开文件`esp32——webcam.ino`  
-4.配置esp32的上传环境如下图所示：
+4.配置esp32的上传环境如下图所示：  
 
 <center><img src="https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-34-06.png"></center>
 
-5.上传完毕后，将`IO0`口需要和它边上的`GND`口杜邦线拔掉，按一下esp32主板上面的`reset`键
+5.上传完毕后，将`IO0`口需要和它边上的`GND`口杜邦线拔掉，按一下esp32主板上面的`reset`键  
 6.打开[路由器管理地址](http://192.168.0.1)，esp32此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
 7.在浏览器中打开esp8266获取到的局域网地址，在左侧最下方选择`Start Stream`  
 
@@ -1074,10 +1074,10 @@ void loop() {
 
 #### **参考**
 
-代码在`learn-ai/chapter1/part1/part1.5`  
-代码将`Part1.2`和`Part1.3`结合到了一段程序中，对应网页文件可以输入`Part1.4`中esp32获取到的摄像头地址，实现小车画面实时显示  
-硬件连接部分可将`Part1.2`,`Part1.3`和`Part1.4`结合在一起  
-`Part1.4`部分只需将esp32上的`3.3V`和`GND`用杜邦线连接到esp8266扩展板舵机连接处的对应接口,如下图：
+* 代码在`learn-ai/chapter1/part1/part1.5`  
+* 代码将`Part1.2`和`Part1.3`结合到了一段程序中，对应网页文件可以输入`Part1.4`中esp32获取到的摄像头地址，实现小车画面实时显示  
+* 硬件连接部分可将`Part1.2`,`Part1.3`和`Part1.4`结合在一起  
+* `Part1.4`部分只需将esp32上的`3.3V`和`GND`用杜邦线连接到esp8266扩展板舵机连接处的对应接口,如下图：
 
 <center><img src=https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_19-30-22.png></center>
 <center><font color=red>红色</font>-正极V<br>
@@ -1227,7 +1227,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ---
 
-## **Chapter 2 人工智能与机器人**
+## **Chapter 2 人工智能与机器人**(jetson | 树莓派+PC)
 
     这一部分包括……
 
