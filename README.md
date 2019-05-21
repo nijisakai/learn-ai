@@ -330,7 +330,7 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 ##### 操作步骤-简单读取
 
-1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_https`  
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_dht11_http`  
 2.将esp8266通过数据线连接到电脑  
 3.使用Arduino IDE打开文件`esp8266_dht11_https.ino`  
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
@@ -339,7 +339,7 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
 6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数  
-7.连接另一个esp8266开发板，打开路径`chapter1/part1/esp8266_projects/esp8266_ultrasonic_https`,再次执行2-6步骤来使用超声波传感器  
+7.连接另一个esp8266开发板，打开路径`chapter1/part1/esp8266_projects/esp8266_ultrasonic_http`,再次执行2-6步骤来使用超声波传感器  
 
 ##### 操作步骤-绘制实时变化曲线
 
@@ -1515,7 +1515,7 @@ sudo python3 stream_client.py
 * 胶带
 
 ##### 硬件搭建-跑道
-  
+
 * 地面颜色为纯色，与所用纸张的颜色对比度应较大
 * 跑道的宽度稍大于车的宽度  
 * 可以把拐弯处的弯度设计得稍大一些
