@@ -2,52 +2,113 @@
 
  <font size=5>目录</font>
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=3 orderedList=false }-->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=4 orderedList=false }-->
 <!-- code_chunk_output -->
 
 * [**环境准备**](#环境准备)
 	* [Anaconda](#anaconda)
+		* [基本命令概览](#基本命令概览)
+		* [setup](#setup)
 	* [VSCode](#vscode)
+		* [setup](#setup-1)
 	* [CP2102驱动](#cp2102驱动)
 	* [Arduino IDE](#arduino-ide)
+		* [setup](#setup-2)
 	* [其他](#其他)
 	* [下载课程所需文件](#下载课程所需文件)
 * [**Chapter 1 物联网与机器人**（树莓派，esp8266&esp32）](#chapter-1-物联网与机器人树莓派esp8266esp32)
 * [**Part 1 使用esp8266开发板读取和控制传感器、舵机和电机**](#part-1-使用esp8266开发板读取和控制传感器-舵机和电机)
 	* [Part 1.1 使用esp8266在网页上读取传感器数据，绘制实时变化曲线](#part-11-使用esp8266在网页上读取传感器数据绘制实时变化曲线)
+		* [**活动目标**](#活动目标)
+		* [**时间分配**](#时间分配)
+		* [**背景知识**](#背景知识)
+		* [**课题引入**](#课题引入)
+		* [**硬件准备**](#硬件准备)
+		* [**程序及操作**](#程序及操作)
 	* [Part 1.2 WiFi遥控小车](#part-12-wifi遥控小车)
+		* [**demo**](#demo)
+		* [**硬件准备**](#硬件准备-1)
+		* [**程序及操作**](#程序及操作-1)
 	* [Part 1.3 WiFi机械臂](#part-13-wifi机械臂)
+		* [**demo**](#demo-1)
+		* [**硬件准备**](#硬件准备-2)
+		* [**程序及操作**](#程序及操作-2)
 	* [Part 1.4 esp32网络摄像头与人脸识别](#part-14-esp32网络摄像头与人脸识别)
+		* [**硬件准备**](#硬件准备-3)
+		* [**程序及操作**](#程序及操作-3)
 	* [Part 1.5 综合与进阶](#part-15-综合与进阶)
+		* [**参考**](#参考)
+		* [**demo**](#demo-2)
+		* [**抓取大赛**](#抓取大赛)
 	* [尾声](#尾声)
 * [**Part 2 物联网开源平台Home Assistant创意应用**](#part-2-物联网开源平台home-assistant创意应用)
 	* [Part 2.1 Home Assistant安装和配置](#part-21-home-assistant安装和配置)
+		* [**硬件准备**](#硬件准备-4)
+		* [**程序及操作**](#程序及操作-4)
 	* [Part 2.2 Home Assistant控制esp8266彩色灯](#part-22-home-assistant控制esp8266彩色灯)
+		* [**硬件准备**](#硬件准备-5)
+		* [**程序及操作**](#程序及操作-5)
 	* [Part 2.3 Home Assistant人脸解锁](#part-23-home-assistant人脸解锁)
+		* [**硬件准备**](#硬件准备-6)
+		* [**程序及操作**](#程序及操作-6)
 * [**Part 3 进阶项目-物联网机器人小绿**](#part-3-进阶项目-物联网机器人小绿)
 	* [Part 3.1 组装一个小绿机器人](#part-31-组装一个小绿机器人)
+		* [**硬件准备**](#硬件准备-7)
+		* [**程序及操作**](#程序及操作-7)
 	* [Part 3.2 训练语音识别，开始和小绿聊天](#part-32-训练语音识别开始和小绿聊天)
+		* [**硬件准备**](#硬件准备-8)
+		* [**程序及操作**](#程序及操作-8)
 	* [Part 3.3 让小绿听你指挥，控制一切](#part-33-让小绿听你指挥控制一切)
+		* [**硬件准备**](#硬件准备-9)
+		* [**程序及操作**](#程序及操作-9)
 	* [Part 3.4 使用Google Blockly来控制小绿](#part-34-使用google-blockly来控制小绿)
+		* [**硬件准备**](#硬件准备-10)
+		* [**程序及操作**](#程序及操作-10)
 	* [Part 3.5 使用OpenPose让小绿实时模仿你的动作](#part-35-使用openpose让小绿实时模仿你的动作)
+		* [**硬件准备**](#硬件准备-11)
+		* [**程序及操作**](#程序及操作-11)
 * [**Chapter 2 人工智能与机器人**(jetson | 树莓派+PC)](#chapter-2-人工智能与机器人jetson-树莓派pc)
 * [**Part 1 人工智能算法相关案例体验**](#part-1-人工智能算法相关案例体验)
 	* [Part 1.1 Tensorflow训练自定义图片分类器](#part-11-tensorflow训练自定义图片分类器)
+		* [**硬件准备**](#硬件准备-12)
+		* [**程序及操作**](#程序及操作-12)
 	* [Part 1.2 使用RNN来生成古诗词](#part-12-使用rnn来生成古诗词)
+		* [**硬件准备**](#硬件准备-13)
+		* [**程序及操作**](#程序及操作-13)
 	* [Part 1.3 训练一个简单的游戏AI（Deep Q Network）](#part-13-训练一个简单的游戏aideep-q-network)
+		* [**硬件准备**](#硬件准备-14)
+		* [**程序及操作**](#程序及操作-14)
 	* [Part 1.4 使用进化算法来训练超级马里奥](#part-14-使用进化算法来训练超级马里奥)
+		* [**硬件准备**](#硬件准备-15)
+		* [**程序及操作**](#程序及操作-15)
 * [**Part 2 自动避障小车**](#part-2-自动避障小车)
 	* [Part 2.1 环境准备与硬件搭建](#part-21-环境准备与硬件搭建)
+		* [**硬件准备**](#硬件准备-16)
+		* [**程序及操作**](#程序及操作-16)
 	* [Part 2.2 通过超声波传感器进行避障](#part-22-通过超声波传感器进行避障)
+		* [**硬件准备**](#硬件准备-17)
+		* [**程序及操作**](#程序及操作-17)
 * [**Part 3 自动追踪小车**](#part-3-自动追踪小车)
 	* [Part 3.1 环境准备与硬件搭建](#part-31-环境准备与硬件搭建)
+		* [**硬件准备**](#硬件准备-18)
+		* [**程序及操作**](#程序及操作-18)
 	* [Part 3.2 OpenCV机械臂自动抓取特定形状物体](#part-32-opencv机械臂自动抓取特定形状物体)
+		* [**硬件准备**](#硬件准备-19)
+		* [**程序及操作**](#程序及操作-19)
 	* [Part 3.3 OpenCV分类器训练，让小车追踪特定物体](#part-33-opencv分类器训练让小车追踪特定物体)
+		* [**硬件准备**](#硬件准备-20)
+		* [**程序及操作**](#程序及操作-20)
 * [**Part 4 无人驾驶小车**](#part-4-无人驾驶小车)
 	* [Part 4.1 环境准备与硬件搭建](#part-41-环境准备与硬件搭建)
+		* [**硬件准备**](#硬件准备-21)
+		* [**程序及操作**](#程序及操作-21)
 	* [Part 4.2 电机和摄像头驱动测试](#part-42-电机和摄像头驱动测试)
+		* [**程序及操作**](#程序及操作-22)
 	* [Part 4.3 无人驾驶数据采集及训练](#part-43-无人驾驶数据采集及训练)
+		* [**硬件准备**](#硬件准备-22)
+		* [**程序及操作**](#程序及操作-23)
 	* [Part 4.4 开始无人驾驶](#part-44-开始无人驾驶)
+		* [**程序及操作**](#程序及操作-24)
 
 <!-- /code_chunk_output -->
 
@@ -217,7 +278,40 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
     包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等，并使用Chart.js来绘制实时变化曲线  
     这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
 
-#### **硬件部分**
+#### **活动目标**
+
+* 目标1
+* 目标2
+* 目标3
+
+#### **时间分配**
+
+* 活动准备：15分钟
+* 活动过程：30分钟
+* 活动总结：15分钟
+
+#### **背景知识**
+
+##### 物联网背景知识
+
+<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+##### 开发板背景知识
+
+文字描述
+
+#### **课题引入**
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+第一个 | 做了啥 | 5分钟
+第二个 | 做了啥 | 5分钟
+
+</center>
+
+#### **硬件准备**
 
 ##### 硬件清单
 
@@ -232,7 +326,7 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 <center><img src=https://md.hass.live/Xnip2019-05-05_12-02-00.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤-简单读取
 
@@ -602,7 +696,7 @@ void loop()
 
 <center><iframe src="http://hass.live:9000" width="800" height="300" scrolling="no" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
-#### **硬件部分**
+#### **硬件准备**
 
 ##### 硬件清单
 
@@ -615,7 +709,7 @@ void loop()
 
 <center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_17-10-07.png></center>
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤
 
@@ -791,7 +885,7 @@ void loop(void){
 
 <center><iframe src="http://hass.live:9001" width="800" height="600" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
-#### **硬件部分**
+#### **硬件准备**
 
 ##### 硬件清单
 
@@ -809,7 +903,7 @@ void loop(void){
 <font color=brown>棕色</font>-负极G<br>
 </center>
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤
 
@@ -927,7 +1021,7 @@ void loop() {
     esp32是esp8266的升级版本。拥有更强的处理能力，能够很好的处理实时视频和音频等数据。通过本部分来为小车增加实时视频的功能。  
     也许，你会希望在小车上装一个摄像头，这样就可以身临其境的遥控它了。
 
-#### **硬件部分**
+#### **硬件准备**
 
 ##### 硬件清单
 
@@ -942,7 +1036,7 @@ void loop() {
 
 ###### 注意：`IO0`口需要和它边上的`GND`口用一根杜邦线连接到一起，这样才可以正常上传代码
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤
 
@@ -1122,7 +1216,7 @@ void loop() {
 
 本课程采用[Docker](https://baike.baidu.com/item/Docker/13344470?fr=aladdin)方式进行安装
 
-#### **硬件部分**
+#### **硬件准备**
 
 ##### 硬件清单
 
@@ -1132,7 +1226,7 @@ void loop() {
 
 <center><img src=https://md.hass.live/404.gif></center>
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 安装过程
 
@@ -1164,21 +1258,21 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
     发放三国杀
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 2.3 Home Assistant人脸解锁
 
     调用百度在线人工智能服务，进行人脸识别和语音播报，识别到注册人脸后自动把小灯打开。
 
-#### **硬件部分**
+#### **硬件准备**
 
 * 运行`Home Assistant`和`百度识别自定义组件`的树莓派
 * 安卓手机（`网络摄像头安卓APP`，提供快速稳定的视频服务。`kodi媒体中心安卓APP`，提供语音服务功能）
 * 手机也可替换为Part1.4所用的esp32摄像头
 
-#### **算法及程序**
+#### **程序及操作**
 
 ---
 
@@ -1191,41 +1285,41 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
     组装一个人形双足机器人，或仍然使用Part 1的小车  
     如果使用后者，跳过本部分至3.2
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 3.2 训练语音识别，开始和小绿聊天
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 3.3 让小绿听你指挥，控制一切
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 3.4 使用Google Blockly来控制小绿
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 3.5 使用OpenPose让小绿实时模仿你的动作
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ---
 
@@ -1241,17 +1335,17 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 1.2 使用RNN来生成古诗词
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 @import "./chapter2/part1/古诗词/poet_rnn_output.py" {cmd='/anaconda3/envs/learn-ai/bin/python'}
 
@@ -1259,17 +1353,17 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 1.4 使用进化算法来训练超级马里奥
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ---
 
@@ -1281,17 +1375,17 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 2.2 通过超声波传感器进行避障
 
     使用OpenCV来识别圆形物体，若识别到则发送串口指令给Arduino。Arduino控制机械臂进行抓取
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ---
 
@@ -1303,25 +1397,25 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
     简单的项目描述
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 3.2 OpenCV机械臂自动抓取特定形状物体
 
     使用OpenCV来识别圆形物体，若识别到则发送串口指令给Arduino。Arduino控制机械臂进行抓取
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ### Part 3.3 OpenCV分类器训练，让小车追踪特定物体
 
     通过拍照、爬虫等方式获取待训练图片，使用python进行简单的文件处理，用OpenCV训练后，可实现对特定物体的识别和追踪
 
-#### **硬件部分**
+#### **硬件准备**
 
-#### **算法及程序**
+#### **程序及操作**
 
 ---
 
@@ -1334,7 +1428,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
     需要安装一些Python库并正确连接小车
 
-#### **硬件部分**
+#### **硬件准备**
 
 ##### 硬件清单
 
@@ -1347,7 +1441,7 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 <center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_15-41-17.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤
 
@@ -1366,7 +1460,7 @@ sudo apt install sklearn ???
 
     测试软硬件环境的安装是否正确
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤-电机测试
 
@@ -1413,7 +1507,7 @@ sudo python3 stream_client.py
 
     搭建起车道，然后运行相应的收集数据的程序，按下笔记本的方向控制小车行驶，每按一次方向键，程序就会记录下一帧相应的图像。让小车平均遍历自动驾驶中可能出现的各种情况，按‘q‘退出数据采集，然后再运行相应的模型训练程序训练自动驾驶神经网络
 
-#### **硬件部分**
+#### **硬件准备**
 
 ##### 硬件清单
 
@@ -1428,7 +1522,7 @@ sudo python3 stream_client.py
 
 <center><img src=https://md.hass.live/track.jpg></center>
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤-驾驶数据采集
 
@@ -1469,7 +1563,7 @@ sudo python3 model_training.py
 
     根据训练好的神经网络模型，现在我们可以实现自动驾驶
 
-#### **算法及程序**
+#### **程序及操作**
 
 ##### 操作步骤
 
@@ -1478,7 +1572,7 @@ sudo python3 model_training.py
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
 cd computer
-sudo python3 rc_drive_nn_only.py
+python3 rc_drive_nn_only.py
 ```
 
 2.新建一个终端窗口，输入  
@@ -1486,5 +1580,5 @@ sudo python3 rc_drive_nn_only.py
 ```bash {.line-numbers}
 cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
 cd raspberryPi
-sudo stream——client.py
+python stream_client.py
 ```
