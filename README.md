@@ -229,7 +229,11 @@ Arduino IDE （Integrated Development Environment,集成开发环境）是针对
 
 ![esp32](https://md.hass.live/niji/2019-05-09-2019-05-09%2018.22.25.gif?imageView2/0/interlace/1/q/46|imageslim)
 
-4.打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹，然后重启IDE
+4.在`工具`--`管理库`中搜索DHT,选择DHT sensor library by Adafruit
+
+![dht](https://md.hass.live/niji/2019-05-22-Xnip2019-05-22_13-50-38.png)
+
+5.打开链接<https://github.com/esp8266/arduino-esp8266fs-plugin/releases/tag/0.4.0>,选择.zip文件下载，将解压后的文件夹复制到`Arduino安装目录/tools`文件夹，然后重启IDE
 
 ![arduino-config-2](https://md.hass.live/arduinoconfig2.png?imageView2/0/interlace/1/q/46|imageslim)
 
@@ -238,7 +242,7 @@ Arduino IDE （Integrated Development Environment,集成开发环境）是针对
 
 <center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_23-41-38.png></center>
 
-5.设置开发板和端口
+6.设置开发板和端口
 <center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png?imageView2/0/interlace/1/q/46|imageslim></center>
 
 ### 其他
