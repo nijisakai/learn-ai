@@ -27,13 +27,25 @@
 		* [**程序及操作**](#程序及操作)
 	* [Part 1.2 WiFi遥控小车](#part-12-wifi遥控小车)
 		* [**demo**](#demo)
+		* [**活动目标**](#活动目标-1)
+		* [**时间分配**](#时间分配-1)
+		* [**背景知识**](#背景知识-1)
+		* [**课题引入**](#课题引入-1)
 		* [**硬件准备**](#硬件准备-1)
 		* [**程序及操作**](#程序及操作-1)
 	* [Part 1.3 WiFi机械臂](#part-13-wifi机械臂)
 		* [**demo**](#demo-1)
+		* [**活动目标**](#活动目标-2)
+		* [**时间分配**](#时间分配-2)
+		* [**背景知识**](#背景知识-2)
+		* [**课题引入**](#课题引入-2)
 		* [**硬件准备**](#硬件准备-2)
 		* [**程序及操作**](#程序及操作-2)
 	* [Part 1.4 esp32网络摄像头与人脸识别](#part-14-esp32网络摄像头与人脸识别)
+		* [**活动目标**](#活动目标-3)
+		* [**时间分配**](#时间分配-3)
+		* [**背景知识**](#背景知识-3)
+		* [**课题引入**](#课题引入-3)
 		* [**硬件准备**](#硬件准备-3)
 		* [**程序及操作**](#程序及操作-3)
 	* [Part 1.5 综合与进阶](#part-15-综合与进阶)
@@ -704,6 +716,39 @@ void loop()
 
 <center><iframe src="http://hass.live:9000" width="800" height="300" scrolling="no" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
+#### **活动目标**
+
+* 目标1
+* 目标2
+* 目标3
+
+#### **时间分配**
+
+* 活动准备：15分钟
+* 活动过程：30分钟
+* 活动总结：15分钟
+
+#### **背景知识**
+
+##### 物联网背景知识
+
+<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+##### 开发板背景知识
+
+文字描述
+
+#### **课题引入**
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+第一个 | 做了啥 | 5分钟
+第二个 | 做了啥 | 5分钟
+
+</center>
+
 #### **硬件准备**
 
 ##### 硬件清单
@@ -893,6 +938,39 @@ void loop(void){
 
 <center><iframe src="http://hass.live:9001" width="800" height="600" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
+#### **活动目标**
+
+* 目标1
+* 目标2
+* 目标3
+
+#### **时间分配**
+
+* 活动准备：15分钟
+* 活动过程：30分钟
+* 活动总结：15分钟
+
+#### **背景知识**
+
+##### 物联网背景知识
+
+<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+##### 开发板背景知识
+
+文字描述
+
+#### **课题引入**
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+第一个 | 做了啥 | 5分钟
+第二个 | 做了啥 | 5分钟
+
+</center>
+
 #### **硬件准备**
 
 ##### 硬件清单
@@ -1028,6 +1106,39 @@ void loop() {
 
     esp32是esp8266的升级版本。拥有更强的处理能力，能够很好的处理实时视频和音频等数据。通过本部分来为小车增加实时视频的功能。  
     也许，你会希望在小车上装一个摄像头，这样就可以身临其境的遥控它了。
+
+#### **活动目标**
+
+* 目标1
+* 目标2
+* 目标3
+
+#### **时间分配**
+
+* 活动准备：15分钟
+* 活动过程：30分钟
+* 活动总结：15分钟
+
+#### **背景知识**
+
+##### 物联网背景知识
+
+<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+##### 开发板背景知识
+
+文字描述
+
+#### **课题引入**
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+第一个 | 做了啥 | 5分钟
+第二个 | 做了啥 | 5分钟
+
+</center>
 
 #### **硬件准备**
 
