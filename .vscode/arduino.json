@@ -1,6 +1,0 @@
-{
-    "programmer": "AVRISP mkII",
-    "board": "esp8266:esp8266:nodemcuv2",
-    "configuration": "xtal=80,vt=flash,exception=disabled,eesz=4M3M,ip=lm2f,dbg=Disabled,lvl=None____,wipe=none,baud=115200",
-    "port": "/dev/cu.Bluetooth-Incoming-Port"
-}
