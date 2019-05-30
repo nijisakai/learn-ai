@@ -804,8 +804,11 @@ esp8266是一个具有WiFi功能的开发板，它是由一家名为乐鑫的科
 #include <esp8266WebServer.h>
 #include <esp8266mDNS.h>
 #include <FS.h>
-#define Motor_AE D1      //Motor A/B,E enable,D Direction
-#define Motor_AD D3
+
+
+/********定义GPIO端口*********************/
+#define Motor_AE D1      //马达A使能端，1启动马达，0停止马达
+#define Motor_AD D3      //马达A方向端   1马达正转，0马达反转
 
 #define Motor_BE D2
 #define Motor_BD D4
@@ -819,6 +822,8 @@ esp8266WebServer server(80);
 
 const int led = 13;
 
+/********定义小车行驶功能**************/
+//小车初始化，设置马达接出端口为输出模式，并且设施波特率
 void carInit(){  
   pinMode(Motor_AE, OUTPUT);
   pinMode(Motor_AD, OUTPUT);
@@ -828,37 +833,38 @@ void carInit(){
   Serial.begin(115200);
   Serial.println("Car begin");
   }
+//定义小车前进功能函数
 void goAhead(){
       digitalWrite(Motor_AE, HIGH);
       digitalWrite(Motor_AD, L_AHEAD);
       digitalWrite(Motor_BE, HIGH);
       digitalWrite(Motor_BD, R_AHEAD);
   }
-
+//定义小车后退功能函数
 void goBack(){
       digitalWrite(Motor_AE, HIGH);
       digitalWrite(Motor_AD, !L_AHEAD);
       digitalWrite(Motor_BE, HIGH);
       digitalWrite(Motor_BD, !R_AHEAD);
   }
-
+//定义小车右转功能函数（只让左边的向前转）
 void goRight(){
       digitalWrite(Motor_BE, LOW);
       digitalWrite(Motor_AE, HIGH);
       digitalWrite(Motor_AD, L_AHEAD);
   }
-
+//定义小车右转功能函数
 void goLeft(){
       digitalWrite(Motor_BE, HIGH);
       digitalWrite(Motor_AE, LOW);
       digitalWrite(Motor_BD, R_AHEAD);
   }
-
+//定义小车停车功能函数
 void stopRobot(){  
       digitalWrite(Motor_AE, LOW);
       digitalWrite(Motor_BE, LOW);
   }
-
+//定义
 void handleNotFound(){
   digitalWrite(led, 1);
   String message = "File Not Found\n\n";
@@ -875,7 +881,9 @@ void handleNotFound(){
   server.send(404, "text/plain", message);
   digitalWrite(led, 0);
 }
+/****************************************************/
 
+/*********esp8266启动时初始化函数*****************/
 void setup(void){
   carInit();
   SPIFFS.begin();
@@ -893,12 +901,14 @@ void setup(void){
   for (int i = 0; i < AP_NameString.length(); i++)
     AP_NameChar[i] = AP_NameString.charAt(i);
 
+//设置要连接得WiFi的名字，密码，将小车接入互联网
 const char* ssid = "AI";
 const char* password = "raspberry";
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   Serial.println("");
 
+//检测WiFi是否连接
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -915,7 +925,10 @@ const char* password = "raspberry";
 
   //server.on("/", handleRoot);
   server.serveStatic("/", SPIFFS, "/index.html");
-
+  
+  /*********************************************************
+  **沟通前端操作（web浏览器）与后端（esp8266跑着的服务器）响应**
+  **********************************************************/
   server.on("/get", [](){
     String uri = server.uri();
     Serial.println(uri);
@@ -941,6 +954,9 @@ const char* password = "raspberry";
   Serial.println("http server started");
 }
 
+
+/**********esp8266主程序***********************
+************无限循环处理浏览器时间******************/
 void loop(void){
   server.handleClient();
 }
