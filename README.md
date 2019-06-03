@@ -963,8 +963,8 @@ void loop(void){
 活动名称 | 活动内容 | 时间分配
 :-: | :-: | :-:
 [活动目标](#活动目标-2) | 通过WiFi操控机械臂 | 5分钟
-[背景知识](#背景知识-2) | 舵机的工作原理 | 5分钟
-背景知识 | 脉冲宽度调制 | 5分钟
+[背景知识](#舵机) | 舵机的工作原理 | 5分钟
+[背景知识](#%E8%84%89%E5%86%B2%E5%AE%BD%E5%BA%A6%E8%B0%83%E5%88%B6pwm) | 脉冲宽度调制 | 5分钟
 
 </center>
 
@@ -1068,6 +1068,7 @@ void loop(void){
 #include <Servo.h>
 #include "server.h"
 
+//被连接WiFi的名称和密码
 const char* WIFI_SSID = "AI";
 const char* WIFI_PASSWORD = "raspberry";
 
