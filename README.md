@@ -962,8 +962,9 @@ void loop(void){
 
 活动名称 | 活动内容 | 时间分配
 :-: | :-: | :-:
-[活动目标](#活动目标-2) | 了解物联网基本概念 | 5分钟
-[背景知识](#背景知识-2) | 熟悉实验中涉及到的软硬件 | 10分钟
+[活动目标](#活动目标-2) | 通过WiFi操控机械臂 | 5分钟
+[背景知识](#舵机) | 舵机的工作原理 | 5分钟
+[背景知识](#%E8%84%89%E5%86%B2%E5%AE%BD%E5%BA%A6%E8%B0%83%E5%88%B6pwm) | 脉冲宽度调制 | 5分钟
 
 </center>
 
@@ -1047,11 +1048,11 @@ void loop(void){
 
 1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_http`  
 2. 将esp8266通过数据线连接到电脑
-3. 使用Arduino IDE打开文件`esp8266_servoarm_https.ino`  
-4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
+3. 使用Arduino IDE打开文件`esp8266_servoarm_http.ino`  
+4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+   <center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'>
+   </center>
 
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'>
-</center>
 5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上  
 6. 打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
 7. 将esp8266与电脑连接断开，连接到移动电源上
@@ -1067,6 +1068,7 @@ void loop(void){
 #include <Servo.h>
 #include "server.h"
 
+//被连接WiFi的名称和密码
 const char* WIFI_SSID = "AI";
 const char* WIFI_PASSWORD = "raspberry";
 
