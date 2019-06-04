@@ -19,33 +19,29 @@
 * [**Chapter 1 物联网与机器人**（树莓派，esp8266&esp32）](#chapter-1-物联网与机器人树莓派esp8266esp32)
 * [**Part 1 使用esp8266开发板读取和控制传感器、舵机和电机**](#part-1-使用esp8266开发板读取和控制传感器-舵机和电机)
 	* [Part 1.1 使用esp8266在网页上读取传感器数据，绘制实时变化曲线](#part-11-使用esp8266在网页上读取传感器数据绘制实时变化曲线)
+		* [**学习流程**](#学习流程)
 		* [**活动目标**](#活动目标)
-		* [**时间分配**](#时间分配)
 		* [**背景知识**](#背景知识)
-		* [**课题引入**](#课题引入)
 		* [**硬件准备**](#硬件准备)
 		* [**程序及操作**](#程序及操作)
 	* [Part 1.2 WiFi遥控小车](#part-12-wifi遥控小车)
 		* [**demo**](#demo)
+		* [**学习流程**](#学习流程-1)
 		* [**活动目标**](#活动目标-1)
-		* [**时间分配**](#时间分配-1)
 		* [**背景知识**](#背景知识-1)
-		* [**课题引入**](#课题引入-1)
 		* [**硬件准备**](#硬件准备-1)
 		* [**程序及操作**](#程序及操作-1)
 	* [Part 1.3 WiFi机械臂](#part-13-wifi机械臂)
 		* [**demo**](#demo-1)
+		* [**学习流程**](#学习流程-2)
 		* [**活动目标**](#活动目标-2)
-		* [**时间分配**](#时间分配-2)
 		* [**背景知识**](#背景知识-2)
-		* [**课题引入**](#课题引入-2)
 		* [**硬件准备**](#硬件准备-2)
 		* [**程序及操作**](#程序及操作-2)
 	* [Part 1.4 esp32网络摄像头与人脸识别](#part-14-esp32网络摄像头与人脸识别)
+		* [**学习流程**](#学习流程-3)
 		* [**活动目标**](#活动目标-3)
-		* [**时间分配**](#时间分配-3)
 		* [**背景知识**](#背景知识-3)
-		* [**课题引入**](#课题引入-3)
 		* [**硬件准备**](#硬件准备-3)
 		* [**程序及操作**](#程序及操作-3)
 	* [Part 1.5 综合与进阶](#part-15-综合与进阶)
@@ -302,17 +298,37 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
     包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等，并使用Chart.js来绘制实时变化曲线  
     这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
 
+#### **学习流程**
+
+##### 课程引入 （15分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+[活动目标](#活动目标) | 了解物联网基本概念 | 5分钟
+[背景知识](#背景知识) | 熟悉实验中涉及到的软硬件 | 10分钟
+
+</center>
+
+##### 基本任务 （35分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+[硬件准备](#硬件准备) | 将硬件按文档进行连接 | 5分钟
+[程序及操作](#程序及操作) | 完成程序及操作文档部分 | 30分钟
+
+</center>
+
+##### 活动总结 （10分钟）
+
 #### **活动目标**
 
-* 目标1
-* 目标2
-* 目标3
-
-#### **时间分配**
-
-* 活动准备：15分钟
-* 活动过程：30分钟
-* 活动总结：15分钟
+* 了解物联网的基本概念
+* 了解使用开发板读取传感器的基本原理
+* 熟悉使用Arduino IDE烧录固件的操作流程
 
 #### **背景知识**
 
@@ -322,18 +338,9 @@ Windows用户执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn
 
 ##### 开发板背景知识
 
-文字描述
+esp8266是WiFi串口模块，功能简单来讲就是：从WiFi接收到数据，串口输出；从串口接收数据，WiFi输出数据。  
 
-#### **课题引入**
-
-<center>
-
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-第一个 | 做了啥 | 5分钟
-第二个 | 做了啥 | 5分钟
-
-</center>
+通过自带的GPIO口连接传感器，传感器将环境数据转化为电信号发送给esp8266读取、处理并输出。
 
 #### **硬件准备**
 
@@ -537,8 +544,8 @@ void loop() {
 #define ULTRASONIC_TRIG_PIN     5   // pin TRIG to D1
 #define ULTRASONIC_ECHO_PIN     4   // pin ECHO to D2
 
-const char* wifi_ssid = "AI";             // SSID
-const char* wifi_password = "raspberry";         // WIFI
+const char* WiFi_ssid = "AI";             // SSID
+const char* WiFi_password = "raspberry";         // WIFI
 esp8266WebServer server(80);
 esp8266WiFiMulti WiFiMulti;
 
@@ -548,8 +555,8 @@ void setup() {
   Serial.println("********** Program Start : Connect Ultrasonic HC-SR04 + esp8266 to AskSensors over http");
   Serial.println("Wait for WiFi... ");
   Serial.print("********** connecting to WIFI : ");
-  Serial.println(wifi_ssid);
-  WiFi.begin(wifi_ssid, wifi_password);
+  Serial.println(WiFi_ssid);
+  WiFi.begin(WiFi_ssid, WiFi_password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -720,17 +727,37 @@ void loop()
 
 <center><iframe src="http://hass.live:9000" width="800" height="300" scrolling="no" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
+#### **学习流程**
+
+##### 课程引入 （15分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+[活动目标](#活动目标-1) | 了解物联网基本概念 | 5分钟
+[背景知识](#背景知识-1) | 熟悉实验中涉及到的软硬件 | 10分钟
+
+</center>
+
+##### 基本任务 （35分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+[硬件准备](#硬件准备-1) | 将硬件按文档进行连接 | 5分钟
+[程序及操作](#程序及操作-1) | 完成程序及操作文档部分 | 30分钟
+
+</center>
+
+##### 活动总结 （10分钟）
+
 #### **活动目标**
 
 * 目标1:学会使用esp8266的服务器功能
 * 目标2:学会使用超声模块
 * 目标3:学会控制esp8266的gpio
-
-#### **时间分配**
-
-* 活动准备：15分钟
-* 活动过程：30分钟
-* 活动总结：15分钟
 
 #### **背景知识**
 
@@ -741,17 +768,6 @@ void loop()
 ##### 开发板背景知识
 
 文字描述
-
-#### **课题引入**
-
-<center>
-
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-第一个 | 做了啥 | 5分钟
-第二个 | 做了啥 | 5分钟
-
-</center>
 
 #### **硬件准备**
 
@@ -770,9 +786,9 @@ void loop()
 
 ##### 操作步骤
 
-1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_wificar_https`  
+1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_WiFicar_https`  
 2.将esp8266通过数据线连接到电脑  
-3.使用Arduino IDE打开文件`esp8266_wificar_https.ino`  
+3.使用Arduino IDE打开文件`esp8266_WiFicar_https.ino`  
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
 
 <center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
@@ -942,72 +958,108 @@ void loop(void){
 
 <center><iframe src="http://hass.live:9001" width="800" height="600" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
 
-#### **活动目标**
+#### **学习流程**
 
-* 目标1
-* 目标2
-* 目标3
-
-#### **时间分配**
-
-* 活动准备：15分钟
-* 活动过程：30分钟
-* 活动总结：15分钟
-
-#### **背景知识**
-
-##### 物联网背景知识
-
-<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
-
-##### 开发板背景知识
-
-文字描述
-
-#### **课题引入**
+##### 课程引入 （15分钟）
 
 <center>
 
 活动名称 | 活动内容 | 时间分配
 :-: | :-: | :-:
-第一个 | 做了啥 | 5分钟
-第二个 | 做了啥 | 5分钟
+[活动目标](#活动目标-2) | 通过WiFi操控机械臂 | 5分钟
+[背景知识](#背景知识-2) | 舵机的工作原理及脉冲宽度调制 | 10分钟
 
 </center>
+
+##### 基本任务 （35分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+[硬件准备](#硬件准备-2) | 将硬件按文档进行连接 | 5分钟
+[程序及操作](#程序及操作-2) | 完成程序及操作文档部分 | 30分钟
+
+</center>
+
+##### 活动总结 （10分钟）
+
+#### **活动目标**
+
+* 目标1：了解舵机的原理和使用方法
+* 目标2：了解脉冲宽度调制（PWM）
+* 目标3：通过WiFi遥控机械臂
+
+#### **背景知识**
+
+##### 舵机
+
+伺服电机通常被称为舵机，它是一种带有输出轴的小装置。当我们向伺服器发送一个控制信号时，输出轴就可以转到特定的位置。只要控制信号持续不变，伺服机构就会保持轴的角度位置不改变。如果控制信号发生变化，输出轴的位置也会相应发生变化。日常生活中，舵机常被用于遥控飞机、遥控汽车、机器人等。  
+
+##### 舵机的工作原理
+
+<center>
+
+![舵机结构](https://md.hass.live/niji/2019-05-27-%E8%88%B5%E6%9C%BA%E6%8B%86%E8%A7%A3.jpg)
+</center>
+
+舵机内部的控制电路、电位计（可变电阻器）和电机均被连接到电路板上。控制电路通过电位计可监控舵机的当前角度。  
+
+其工作流程为：控制信号 → 控制电路板 → 电机转动 → 齿轮组减速 → 舵盘转动 → 位置反馈电位计 → 控制电路板反馈。
+
+<center>
+
+![舵机转动图](https://md.hass.live/niji/2019-05-27-SERVO.gif)
+</center>
+
+##### 脉冲宽度调制（PWM）
+
+脉冲宽度调制，英文名Pulse Width Modulation，缩写为PWM，它是通过对一系列脉冲的宽度进行调制，等效出所需要的波形，对模拟信号电平进行数字编码。  
+
+##### 占空比
+
+占空比是指在一个周期内，信号处于高电平的时间占据整个信号周期的百分比。
+<center>
+
+![占空比](https://md.hass.live/niji/2019-05-27-Xnip2019-05-27_09-37-35.png)
+</center>
+
+上图信号一个周期的时间为4ms，其中高电平时间为1ms。占空比为：$$ \frac {高电平时间} {一个周期} = \frac {1ms} {4ms} = 25\% $$
 
 #### **硬件准备**
 
 ##### 硬件清单
 
 * esp8266主板
+* 电机扩展板 esp12E Motor Shield
 * 舵机
 * 杜邦线、数据线
-* 机械臂3D打印源文件和零件
+* 机械臂和零件
 
 ##### 硬件连接
 
 <center><img src=https://md.hass.live/Xnip2019-05-05_11-57-01.png?imageView2/0/interlace/1/q/46|imageslim></center>
 <center>此处表示舵机连接到了D0口，最多可以连9个舵机（D0-D9）<br>
-<font color=orange>黄色</font>-信号D<br>
-<font color=red>红色</font>-正极V<br>
-<font color=brown>棕色</font>-负极G<br>
+<font color=orange>黄色</font>-信号D（DATA）<br>
+<font color=red>红色</font>-正极V（VCC）<br>
+<font color=brown>棕色</font>-负极G（GND）<br>
 </center>
 
 #### **程序及操作**
 
 ##### 操作步骤
 
-1.打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_https`  
-2.将esp8266通过数据线连接到电脑  
-3.使用Arduino IDE打开文件`esp8266_servoarm_https.ino`  
-4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
+1. 打开`learn-ai`文件夹，打开路径`chapter1/part1/esp8266_projects/esp8266_servoarm_http`  
+2. 将esp8266通过数据线连接到电脑
+3. 使用Arduino IDE打开文件`esp8266_servoarm_http.ino`  
+4. 记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+   <center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'>
+   </center>
 
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
-
-5.点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上  
-6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
-7.将esp8266与电脑连接断开，连接到移动电源上  
-8.在浏览器中打开esp8266获取到的局域网地址，通过拖动滑块来控制机械臂  
+5. 点击`工具`菜单，选择`ESP8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上  
+6. 打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
+7. 将esp8266与电脑连接断开，连接到移动电源上
+8. 在浏览器中打开esp8266获取到的局域网地址，通过拖动滑块来控制机械臂
 
 ##### 代码详解
 
@@ -1019,6 +1071,7 @@ void loop(void){
 #include <Servo.h>
 #include "server.h"
 
+//被连接WiFi的名称和密码
 const char* WIFI_SSID = "AI";
 const char* WIFI_PASSWORD = "raspberry";
 
@@ -1111,6 +1164,32 @@ void loop() {
     esp32是esp8266的升级版本。拥有更强的处理能力，能够很好的处理实时视频和音频等数据。通过本部分来为小车增加实时视频的功能。  
     也许，你会希望在小车上装一个摄像头，这样就可以身临其境的遥控它了。
 
+#### **学习流程**
+
+##### 课程引入 （15分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+[活动目标](#活动目标-3) | 了解物联网基本概念 | 5分钟
+[背景知识](#背景知识-3) | 熟悉实验中涉及到的软硬件 | 10分钟
+
+</center>
+
+##### 基本任务 （35分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+[硬件准备](#硬件准备-3) | 将硬件按文档进行连接 | 5分钟
+[程序及操作](#程序及操作-3) | 完成程序及操作文档部分 | 30分钟
+
+</center>
+
+##### 活动总结 （10分钟）
+
 #### **活动目标**
 
 * 确定活动方向并提出需要解决的问题
@@ -1118,34 +1197,15 @@ void loop() {
 * 按照操作步骤实际操作并完成小车实时摄像等相关功能
 * 对实验进行总结，并分析遇到的问题
 
-#### **时间分配**
-
-* 活动准备：15分钟
-* 活动过程：30分钟
-* 活动总结：15分钟
-
 #### **背景知识**
 
-##### 物联网背景知识
+##### A
 
-<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+文字描述
 
-##### 开发板背景知识
+##### B
 
-ESP32是一系列低成本，低功耗的片上 微控制器系统，集成了Wi-Fi和双模蓝牙。ESP32包括双核和单核变体，包括内置天线开关，RF 巴伦，功率放大器，低噪声接收放大器，滤波器和电源管理模块.
-
- ><https://www.instructables.com/id/Introduction-to-ESP32/>
-
-#### **课题引入**
-
-<center>
-
-活动名称 | 活动内容   | 时间分配
-:-: | :-: | :-:
-观看实验相关视频 | 了解esp32及其相关功能 | 10分钟
-教师演示 | 对实验中可能会遇到困难的操作进行实际演示 | 10分钟
-
-</center>
+ESP32是一系列低成本，低功耗的片上 微控制器系统，集成了Wi-Fi和双模蓝牙。ESP32包括双核和单核变体，包括内置天线开关，功率放大器，低噪声接收放大器，滤波器和电源管理模块。  
 
 #### **硬件准备**
 
