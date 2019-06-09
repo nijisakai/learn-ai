@@ -94,8 +94,8 @@
 		* [**环境准备**](#环境准备-1)
 		* [**程序及操作**](#程序及操作-16)
 	* [Part 1.6 Neural Style 图像风格迁移](#part-16-neural-style-图像风格迁移)
-		* [准备](#准备)
-		* [程序及操作](#程序及操作-17)
+		* [**准备**](#准备)
+		* [**程序及操作**](#程序及操作-17)
 * [**Part 2 自动避障小车**](#part-2-自动避障小车)
 	* [Part 2.1 环境准备与硬件搭建](#part-21-环境准备与硬件搭建)
 		* [**硬件准备**](#硬件准备-17)
@@ -1676,22 +1676,18 @@ cv2.destroyAllWindows()
 在神经网络之前，图像风格迁移的程序有一个共同的思路：分析某一种风格的图像，给那一种风格建立一个数学或者统计模型，再改变要做迁移的图像让它能更好的符合建立的模型。这样做出来效果还是不错的，但一个很大的缺点：**一个程序基本只能做某一种风格或者某一个场景**。因此基于传统风格迁移研究的实际应用非常有限。
 而 Neural Style 程序通过输入一张代表内容的图片和一张代表风格的图片，使用深度学习网络输出一张融合了这个风格和内容的新作品。
 
-#### 准备
+#### **准备**
 
-##### 项目文件
+##### VGG 网络
 
-点击[这里](https://github.com/anishathalye/neural-style/archive/master.zip)下载项目程序文件。
-
-##### 数据文件
-
-[训练好的 VGG 19 网络](http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat)，下载到项目文件夹的中，或在之后运行是使用参数 `--network` 指定其位置。
+[训练好的 VGG 19 网络](http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat)，下载到项目文件夹“Neural Style 图像风格迁移”的中，或在运行时使用参数 `--network` 指定其位置。
 
 ##### 环境准备
 
-除了在本课程最开始已经在 Anaconda 的 `learn-ai` 环境中安装好的 `TensorFlow` 外，还需安装 `Pillow` 软件包。
+除了在本课程最开始已经在 Anaconda 的 learn-ai 环境中安装好的 `TensorFlow` 外，还需安装 `Pillow` 软件包。
 
 1. macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
-2. 输入下面的命令来进入 `learn-ai` 环境；
+2. 输入下面的命令来进入 learn-ai 环境；
 
    ```bash
    conda activate learn-ai
@@ -1709,17 +1705,17 @@ cv2.destroyAllWindows()
    cd 项目文件夹的路径
    ```
 
-#### 程序及操作
+#### **程序及操作**
 
 ```bash
 python neural_style.py --content <输入图片> --styles <风格图片> --output <输出文件名> -- --iterations <迭代次数>
 ```
 
-我们使用 examples 文件夹中的 `1-content.jpg` 和 `2-style1.jpg` 来举例，把上面命令中：
-<输入图片> 替换为 examples/1-content.jpg
-<风格图片> 替换为 examples/2-style1.jpg
-<输出文件名> 替换为 examples/output.jpg，当然也可以不叫output，使用你自己喜欢的名字
-<迭代次数> 替换为 100
+我们使用 examples 文件夹中的 1-content.jpg 和 2-style1.jpg 来举例，把上面命令中：
+<输入图片> 替换为 `examples/1-content.jpg`
+<风格图片> 替换为 `examples/2-style1.jpg`
+<输出文件名> 替换为 `examples/output.jpg`，当然也可以不叫output，使用你自己喜欢的名字；
+<迭代次数> 替换为 `100`
 替换后的命令为：
 
 ```bash
