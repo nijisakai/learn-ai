@@ -2,7 +2,7 @@
 
  <font size=5>目录</font>
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=5 orderedList=false }-->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false }-->
 <!-- code_chunk_output -->
 
 * [**课程概述**](#课程概述)
@@ -115,6 +115,7 @@
 		* [**硬件准备**](#硬件准备-3)
 			* [硬件清单](#硬件清单-3)
 			* [硬件连接](#硬件连接-3)
+				* [注意：`IO0`口需要和它边上的`GND`口用一根杜邦线连接到一起，这样才可以正常上传代码](#注意io0口需要和它边上的gnd口用一根杜邦线连接到一起这样才可以正常上传代码)
 		* [**程序及操作**](#程序及操作-3)
 			* [操作步骤](#操作步骤-2)
 			* [代码详解](#代码详解-3)
@@ -169,16 +170,51 @@
 		* [**程序及操作**](#程序及操作-15)
 	* [Part 1.5 基于opencv在raspberry 上的人脸识别操作](#part-15-基于opencv在raspberry-上的人脸识别操作)
 		* [**硬件准备**](#硬件准备-16)
-
+		* [**环境准备**](#环境准备)
+		* [**程序及操作**](#程序及操作-16)
+	* [Part 1.6 Neural Style 图像风格迁移](#part-16-neural-style-图像风格迁移)
+		* [**准备**](#准备)
+			* [VGG 网络](#vgg-网络)
+			* [环境准备](#环境准备-1)
+		* [**程序及操作**](#程序及操作-17)
+* [**Part 2 自动避障小车**](#part-2-自动避障小车)
+	* [Part 2.1 环境准备与硬件搭建](#part-21-环境准备与硬件搭建)
+		* [**硬件准备**](#硬件准备-17)
+		* [**程序及操作**](#程序及操作-18)
+	* [Part 2.2 通过超声波传感器进行避障](#part-22-通过超声波传感器进行避障)
+		* [**硬件准备**](#硬件准备-18)
+		* [**程序及操作**](#程序及操作-19)
+* [**Part 3 自动追踪小车**](#part-3-自动追踪小车)
+	* [Part 3.1 环境准备与硬件搭建](#part-31-环境准备与硬件搭建)
+		* [**硬件准备**](#硬件准备-19)
+		* [**程序及操作**](#程序及操作-20)
+	* [Part 3.2 OpenCV机械臂自动抓取特定形状物体](#part-32-opencv机械臂自动抓取特定形状物体)
+		* [**硬件准备**](#硬件准备-20)
+		* [**程序及操作**](#程序及操作-21)
+	* [Part 3.3 OpenCV分类器训练，让小车追踪特定物体](#part-33-opencv分类器训练让小车追踪特定物体)
+		* [**硬件准备**](#硬件准备-21)
+		* [**程序及操作**](#程序及操作-22)
 * [**Part 4 无人驾驶小车**](#part-4-无人驾驶小车)
 	* [Part 4.1 环境准备与硬件搭建](#part-41-环境准备与硬件搭建)
 		* [**硬件准备**](#硬件准备-22)
 			* [硬件清单](#硬件清单-5)
 			* [硬件连接](#硬件连接-5)
-		* [**程序及操作**](#程序及操作-22)
+		* [**程序及操作**](#程序及操作-23)
 			* [操作步骤](#操作步骤-3)
 	* [Part 4.2 电机和摄像头驱动测试](#part-42-电机和摄像头驱动测试)
-		* [**程序及操作**](#程序及操作-23)
+		* [**程序及操作**](#程序及操作-24)
+			* [操作步骤-电机测试](#操作步骤-电机测试)
+			* [操作步骤-摄像头测试](#操作步骤-摄像头测试)
+	* [Part 4.3 无人驾驶数据采集及训练](#part-43-无人驾驶数据采集及训练)
+		* [**硬件准备**](#硬件准备-23)
+			* [硬件清单](#硬件清单-6)
+			* [硬件搭建-跑道](#硬件搭建-跑道)
+		* [**程序及操作**](#程序及操作-25)
+			* [操作步骤-驾驶数据采集](#操作步骤-驾驶数据采集)
+			* [操作步骤-驾驶数据训练](#操作步骤-驾驶数据训练)
+	* [Part 4.4 开始无人驾驶](#part-44-开始无人驾驶)
+		* [**程序及操作**](#程序及操作-26)
+			* [操作步骤](#操作步骤-4)
 
 <!-- /code_chunk_output -->
 
@@ -277,7 +313,7 @@ conda create -n py27 python=2.7
 
 ##### 进入环境
 
-```bash
+```bash {.line-numbers}
 conda activate 环境名字
 //例如：  
 conda activate py27
@@ -1698,26 +1734,30 @@ sudo apt-get install python-opencv
      python3  
 ![12](图片/1.png)
 
->2、接着输入 
-     
-     import cv2
+>2、接着输入
+
+```bash {.line-numbers}
+import cv2
+```
+
 ![12](图片/2.png)
 >3、之后我们可以通过以下代码来检测我们所使用的opencv版本
 ![12](图片/3.png)
 
 3.接着我们需要安装两个库 (numpy 和 matlitlib) 一个用于计算一个用于图像绘制
+使用以下代码在命令行中进行安装
 
->使用以下代码在命令行中进行安装
- 
-     pip install numpy
-     sudo apt-get install python3-matplotlib
+```bash {.line-numbers}
+pip install numpy
+sudo apt-get install python3-matplotlib
+```
 
 这样我们就完成了实验所需所有的环境配置
 
 #### **程序及操作**
 
 1.首先需要在下面的网址里下载一个 cascade file
-><https://raw.githubusercontent.com/shantnu/Webcam-Face-Detect/master/haarcascade_frontalface_default.xml>
+<https://raw.githubusercontent.com/shantnu/Webcam-Face-Detect/master/haarcascade_frontalface_default.xml>
 
 并将其另存为
 
@@ -1725,8 +1765,7 @@ sudo apt-get install python-opencv
 
 2.创建一个 .py 的文件 ( 可用我们之前安装的 Python3 打开 ) 并在文件中输入以下代码
 
-```arduino {.line-numbers}
-
+```python {.line-numbers}
 # Import OpenCV library
 import cv2
 
@@ -1778,8 +1817,10 @@ cv2.destroyAllWindows()
 需要我们在该目录下打开命令行（可使用快捷键鼠标点击路径按F4实现）
 在命令行中输入
 
-     python3 filename.py 
-    （filename.py是你保存的代码文件的名称）
+```python {.line-numbers}
+#filename.py是你保存的代码文件的名称
+python3 filename.py
+```
 
 之后我们就可以看到我们所选择的的图片加载出来，并且其中的人物的脸部会用方框圈起来啦
 
@@ -1806,25 +1847,25 @@ cv2.destroyAllWindows()
 1. macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
 2. 输入下面的命令来进入 learn-ai 环境；
 
-   ```bash
-   conda activate learn-ai
-   ```
+```bash {.line-numbers}
+conda activate learn-ai
+```
 
 3. 安装 `Pillow` 软件包；
 
-   ```bash
-   conda install pillow
-   ```
+```bash {.line-numbers}
+conda install pillow
+```
 
 4. 切换工作路径到项目文件夹；
 
-   ```bash
-   cd 项目文件夹的路径
-   ```
+```bash {.line-numbers}
+cd 项目文件夹的路径
+```
 
 #### **程序及操作**
 
-```bash
+```bash {.line-numbers}
 python neural_style.py --content <输入图片> --styles <风格图片> --output <输出文件名> -- --iterations <迭代次数>
 ```
 
@@ -1835,7 +1876,7 @@ python neural_style.py --content <输入图片> --styles <风格图片> --output
 <迭代次数> 替换为 `100`
 替换后的命令为：
 
-```bash
+```bash {.line-numbers}
 python neural_style.py --content examples/1-content.jpg --styles examples/2-style1.jpg --output examples/output.jpg -- --iterations 100
 ```
 
