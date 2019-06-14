@@ -6,8 +6,8 @@ F4363923181B71448DDD6E28AC72D30B3ECFC019	!	007 - NightFire (USA, Europe) (En,Fr,
 04E81E2488E988810332EB215651EF7E57C95BF3	 	2 Disney Games - Disney Sports - Football + Disney Sports - Skateboarding (Europe) (En,Fr,De,Es,It)	GBA		
 4B0455173B592407DB9460B7E38FB209FD549772	 	2 Disney Games - Lilo & Stitch 2 + Peter Pan - Return to Neverland (Europe) (En,Fr,De,Es+En,Fr,De,Es,It,Nl)	GBA		
 717B2A739C8932374AB48A9C2BBD76A44B4CF2F3	!	2 Game Pack! - Hot Wheels - Stunt Track Challenge + Hot Wheels - World Race (USA, Europe)	GBA		
-7F42797DF47182A3E6E7AED89A6FD98577D759E0	 	2 Game Pack! - Matchbox Missions - Emergency Response & Air, Land and Sea Rescue (Europe) (En,Fr,De,Es,It)	GBA		
-AC9919F32220E128D3DF9A6201374F16AB15E301	 	2 Game Pack! - Matchbox Missions - Emergency Response + Air, Land and Sea Rescue (USA)	GBA		
+7F42797DF47182A3E6E7AED89A6FD98577D759E0	 	2 Game Pack! - Matchbox Missions - Emergency RESPonse & Air, Land and Sea Rescue (Europe) (En,Fr,De,Es,It)	GBA		
+AC9919F32220E128D3DF9A6201374F16AB15E301	 	2 Game Pack! - Matchbox Missions - Emergency RESPonse + Air, Land and Sea Rescue (USA)	GBA		
 1CFAC0FF2D526030050F4A6F5157398D58199B3D	 	2 Game Pack! - Uno & Skip-Bo (Europe) (En,Fr,De,Es,It)	GBA		
 76F85AC10C7BA7F00503FBA4D41FB709B5B9CD22	 	2 Game Pack! - Uno + Skip-Bo (USA)	GBA		
 DDEAF412F9F252C1A071955C517D1E36FD39AEB0	 	2 Games in 1 - Alla Ricerca di Nemo + Gli Incredibili - Una 'Normale' Famiglia di Supereroi (Italy) (Es,It+It)	GBA		

@@ -809,7 +809,7 @@ Blockly.Block.prototype.setConnectionsHidden = function(hidden) {
 };
 
 /**
- * Find the connection on this block that corresponds to the given connection
+ * Find the connection on this block that corrESPonds to the given connection
  * on the other block.
  * Used to match connections between a block and its insertion marker.
  * @param {!Blockly.Block} otherBlock The other block to match against.

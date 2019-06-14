@@ -22,7 +22,7 @@
  * @fileoverview JavaScript for Blockly's Block Factory application through
  * which users can build blocks using a visual interface and dynamically
  * generate a preview block and starter code for the block (block definition and
- * generator stub. Uses the Block Factory namespace. Depends on the FactoryUtils
+ * generator stub. Uses the Block Factory namESPace. Depends on the FactoryUtils
  * for its code generation functions.
  *
  * @author fraser@google.com (Neil Fraser), quachtina96 (Tina Quach)
@@ -30,7 +30,7 @@
 'use strict';
 
 /**
- * Namespace for Block Factory.
+ * NamESPace for Block Factory.
  */
 var BlockFactory = BlockFactory || Object.create(null);
 

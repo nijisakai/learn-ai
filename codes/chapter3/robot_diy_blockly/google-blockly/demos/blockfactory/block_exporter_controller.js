@@ -42,7 +42,7 @@ function BlockExporterController(blockLibStorage) {
   // The ID of the block selector, a div element that will be populated with the
   // block options.
   this.selectorID = 'blockSelector';
-  // Map of block types stored in block library to their corresponding Block
+  // Map of block types stored in block library to their corrESPonding Block
   // Option objects.
   this.blockOptions = this.tools.createBlockSelectorFromLib(
       this.blockLibStorage, this.selectorID);
@@ -289,9 +289,9 @@ BlockExporterController.prototype.updatePreview = function() {
 };
 
 /**
- * Returns a map of each selected block's type to its corresponding XML.
+ * Returns a map of each selected block's type to its corrESPonding XML.
  * @return {!Object} A map of each selected block's type (a string) to its
- * corresponding XML element.
+ * corrESPonding XML element.
  */
 BlockExporterController.prototype.getSelectedBlockXmlMap = function() {
   var blockTypes = this.view.getSelectedBlockTypes();

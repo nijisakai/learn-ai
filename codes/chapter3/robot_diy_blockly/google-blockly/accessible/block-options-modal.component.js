@@ -125,7 +125,7 @@ blocklyApp.BlockOptionsModalComponent = ng.core.Component({
   numInteractiveElements: function() {
     return this.actionButtonsInfo.length + 1;
   },
-  // Returns the ID for the corresponding option button.
+  // Returns the ID for the corrESPonding option button.
   getOptionId: function(index) {
     return 'block-options-modal-option-' + index;
   },

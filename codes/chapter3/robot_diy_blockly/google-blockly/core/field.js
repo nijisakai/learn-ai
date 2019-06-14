@@ -438,7 +438,7 @@ Blockly.Field.startCache = function() {
 
 /**
  * Stop caching field widths.  Unless caching was already on when the
- * corresponding call to startCache was made.
+ * corrESPonding call to startCache was made.
  */
 Blockly.Field.stopCache = function() {
   Blockly.Field.cacheReference_--;
@@ -494,7 +494,7 @@ Blockly.Field.prototype.getDisplayText_ = function() {
     // Truncate displayed string and add an ellipsis ('...').
     text = text.substring(0, this.maxDisplayLength - 2) + '\u2026';
   }
-  // Replace whitespace with non-breaking spaces so the text doesn't collapse.
+  // Replace whitESPace with non-breaking spaces so the text doesn't collapse.
   text = text.replace(/\s/g, Blockly.Field.NBSP);
   if (this.sourceBlock_.RTL) {
     // The SVG is LTR, force text to be RTL.

@@ -24,7 +24,7 @@
 'use strict';
 
 /**
- * Create a namespace for the application.
+ * Create a namESPace for the application.
  */
 var Plane = {};
 

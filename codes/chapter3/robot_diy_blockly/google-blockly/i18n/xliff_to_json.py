@@ -90,7 +90,7 @@ def _process_file(filename):
     - a description for the translator
 
     The Soy and Blockly ids are joined with a hyphen and serve as the
-    keys in both output files.  The value is the corresponding text (in the
+    keys in both output files.  The value is the corrESPonding text (in the
     <lang>.json file) or the description (in the qqq.json file).
 
     Args:

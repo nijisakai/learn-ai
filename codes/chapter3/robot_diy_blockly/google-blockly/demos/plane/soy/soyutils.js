@@ -39,7 +39,7 @@
 
 // COPIED FROM nogoog_shim.js
 
-// Create closure namespaces.
+// Create closure namESPaces.
 var goog = goog || {};
 
 
@@ -694,7 +694,7 @@ if (!goog.soy) goog.soy = {
    * Helper function to render a Soy template into a single node or
    * a document fragment. If the rendered HTML string represents a
    * single node, then that node is returned (note that this is
-   * *not* a fragment, despite them name of the method). Otherwise a
+   * *not* a fragment, dESPite them name of the method). Otherwise a
    * document fragment is returned containing the rendered nodes.
    *
    * @param {Function} template The Soy template defining element's content.
@@ -1550,7 +1550,7 @@ soy.renderElement = goog.soy.renderElement;
 /**
  * Helper function to render a Soy template into a single node or a document
  * fragment. If the rendered HTML string represents a single node, then that
- * node is returned (note that this is *not* a fragment, despite them name of
+ * node is returned (note that this is *not* a fragment, dESPite them name of
  * the method). Otherwise a document fragment is returned containing the
  * rendered nodes.
  *
@@ -2113,7 +2113,7 @@ soy.$$stripHtmlTags = function(value, opt_tagWhitelist) {
 
 
 /**
- * Throw out any close tags that don't correspond to start tags.
+ * Throw out any close tags that don't corrESPond to start tags.
  * If {@code <table>} is used for formatting, embedded HTML shouldn't be able
  * to use a mismatched {@code </table>} to break page layout.
  *
@@ -2277,7 +2277,7 @@ soy.$$escapeJsValue = function(value) {
   // identifiers by accident.
   // We could use parentheses but those might be interpreted as a function call.
   if (value == null) {  // Intentionally matches undefined.
-    // Java returns null from maps where there is no corresponding key while
+    // Java returns null from maps where there is no corrESPonding key while
     // JS returns undefined.
     // We always output null for compatibility with Java which does not have a
     // distinct undefined value.

@@ -35,7 +35,7 @@ goog.require('goog.math.Coordinate');
 
 /**
  * Class that controls updates to connections during drags.  It is primarily
- * responsible for finding the closest eligible connection and highlighting or
+ * rESPonsible for finding the closest eligible connection and highlighting or
  * unhiglighting it as needed during a drag.
  * @param {!Blockly.BlockSvg} block The top block in the stack being dragged.
  * @constructor
@@ -69,7 +69,7 @@ Blockly.InsertionMarkerManager = function(block) {
   this.lastOnStack_ = null;
 
   /**
-   * The insertion marker corresponding to the last block in the stack, if
+   * The insertion marker corrESPonding to the last block in the stack, if
    * that's not the same as the first block in the stack.
    * Set in initAvailableConnections, if at all
    * @type {Blockly.BlockSvg}
@@ -114,7 +114,7 @@ Blockly.InsertionMarkerManager = function(block) {
   this.wouldDeleteBlock_ = false;
 
   /**
-   * Connection on the insertion marker block that corresponds to
+   * Connection on the insertion marker block that corrESPonds to
    * this.localConnection_ on the currently dragged block.
    * @type {Blockly.RenderedConnection}
    * @private
@@ -293,7 +293,7 @@ Blockly.InsertionMarkerManager.prototype.createMarkerBlock_ = function(sourceBlo
  * Populate the list of available connections on this block stack.  This should
  * only be called once, at the beginning of a drag.
  * If the stack has more than one block, this function will populate
- * lastOnStack_ and create the corresponding insertion marker.
+ * lastOnStack_ and create the corrESPonding insertion marker.
  * @return {!Array.<!Blockly.RenderedConnection>} a list of available
  *     connections.
  * @private

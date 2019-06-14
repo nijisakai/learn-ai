@@ -785,7 +785,7 @@ function init() {
     BlocklyStorage.LINK_ALERT =
         'Share your blocks with this link:\n\n%1';
     BlocklyStorage.HASH_ERROR =
-        'Sorry, "%1" doesn\'t correspond with any saved Blockly file.';
+        'Sorry, "%1" doesn\'t corrESPond with any saved Blockly file.';
     BlocklyStorage.XML_ERROR = 'Could not load your saved file.\n'+
         'Perhaps it was created with a different version of Blockly?';
     var linkButton = document.getElementById('linkButton');

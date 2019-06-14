@@ -26,7 +26,7 @@
 
 /**
  * @name Blockly.Xml
- * @namespace
+ * @namESPace
  */
 goog.provide('Blockly.Xml');
 
@@ -281,7 +281,7 @@ Blockly.Xml.blockToDom = function(block, opt_noId) {
  */
 Blockly.Xml.cloneShadow_ = function(shadow) {
   shadow = shadow.cloneNode(true);
-  // Walk the tree looking for whitespace.  Don't prune whitespace in a tag.
+  // Walk the tree looking for whitESPace.  Don't prune whitESPace in a tag.
   var node = shadow;
   var textNode;
   while (node) {
@@ -293,7 +293,7 @@ Blockly.Xml.cloneShadow_ = function(shadow) {
         node = node.parentNode;
         if (textNode.nodeType == 3 && textNode.data.trim() == '' &&
             node.firstChild != textNode) {
-          // Prune whitespace after a tag.
+          // Prune whitESPace after a tag.
           Blockly.utils.removeNode(textNode);
         }
       }
@@ -301,7 +301,7 @@ Blockly.Xml.cloneShadow_ = function(shadow) {
         textNode = node;
         node = node.nextSibling;
         if (textNode.nodeType == 3 && textNode.data.trim() == '') {
-          // Prune whitespace before a tag.
+          // Prune whitESPace before a tag.
           Blockly.utils.removeNode(textNode);
         }
       }
@@ -312,7 +312,7 @@ Blockly.Xml.cloneShadow_ = function(shadow) {
 
 /**
  * Converts a DOM structure into plain text.
- * Currently the text format is fairly ugly: all one line with no whitespace.
+ * Currently the text format is fairly ugly: all one line with no whitESPace.
  * @param {!Element} dom A tree of XML elements.
  * @return {string} Text representation.
  */
@@ -636,7 +636,7 @@ Blockly.Xml.domToBlockHeadless_ = function(xmlBlock, workspace) {
   var blockChild = null;
   for (var i = 0, xmlChild; xmlChild = xmlBlock.childNodes[i]; i++) {
     if (xmlChild.nodeType == 3) {
-      // Ignore any text at the <block> level.  It's all whitespace anyway.
+      // Ignore any text at the <block> level.  It's all whitESPace anyway.
       continue;
     }
     var input;

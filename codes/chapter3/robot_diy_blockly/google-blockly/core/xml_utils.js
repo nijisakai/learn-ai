@@ -26,7 +26,7 @@
 
 /**
  * @name Blockly.Xml.utils
- * @namespace
+ * @namESPace
  */
 goog.provide('Blockly.Xml.utils');
 
@@ -38,7 +38,7 @@ goog.provide('Blockly.Xml.utils');
  * @package
  */
 Blockly.Xml.utils.createElement = function(tagName) {
-  // TODO (#1978): Namespace this element.
+  // TODO (#1978): NamESPace this element.
   // TODO (#2082): Support node.js.
   return document.createElement(tagName);
 };
@@ -69,7 +69,7 @@ Blockly.Xml.utils.textToDomDocument = function(text) {
 
 /**
  * Converts a DOM structure into plain text.
- * Currently the text format is fairly ugly: all one line with no whitespace.
+ * Currently the text format is fairly ugly: all one line with no whitESPace.
  * @param {!Element} dom A tree of XML elements.
  * @return {string} Text representation.
  * @package

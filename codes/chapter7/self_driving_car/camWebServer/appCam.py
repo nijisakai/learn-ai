@@ -6,7 +6,7 @@
 # 	PiCam Local Web Server with Flask
 # MJRoBot.org 19Jan18
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, RESPonse
 
 # Raspberry Pi camera module (requires picamera package)
 from camera_pi import Camera
@@ -87,7 +87,7 @@ def gen(camera):
 @app.route('/video_feed')
 def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(Camera()),
+    return RESPonse(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 motor = Motor()
 @app.route('/left_side')

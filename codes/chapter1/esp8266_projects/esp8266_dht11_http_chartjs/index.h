@@ -4,7 +4,7 @@ const char MAIN_page[] PROGMEM = R"=====(
 
 <head>
   <meta charset="UTF-8">
-  <title>esp8266 DHT</title>
+  <title>ESP8266 DHT</title>
   <script src="https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.js"></script> 
   <style>
   canvas{
@@ -107,7 +107,7 @@ window.onload = function() {
 };
 
 //Ajax script to get ADC voltage at every 5 Seconds 
-//Read This tutorial https://circuits4you.com/2018/02/04/esp8266-ajax-update-part-of-web-page-without-refreshing/
+//Read This tutorial https://circuits4you.com/2018/02/04/ESP8266-ajax-update-part-of-web-page-without-refreshing/
 
 setInterval(function() {
   // Call a function repetatively with 5 Second interval
@@ -120,7 +120,7 @@ function getData() {
     if (this.readyState == 4 && this.status == 200) {
      //Push the data in array
   var time = new Date().toLocaleTimeString();
-  var txt = this.responseText;
+  var txt = this.rESPonseText;
   var obj = JSON.parse(txt); //Ref: https://www.w3schools.com/js/js_json_parse.asp
       Tvalues.push(obj.Temperature);
       Hvalues.push(obj.Humidity);

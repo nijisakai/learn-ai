@@ -69,7 +69,7 @@ while cv2.waitKey(1) < 0:
     points = []
 
     for i in range(nPoints):
-        # confidence map of corresponding body's part.
+        # confidence map of corrESPonding body's part.
         probMap = output[0, i, :, :]
 
         # Find global maxima of the probMap.

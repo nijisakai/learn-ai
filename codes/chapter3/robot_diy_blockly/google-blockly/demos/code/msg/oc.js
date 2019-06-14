@@ -2,7 +2,7 @@ var MSG = {
   title: "Còde",
   blocks: "Blòts",
   linkTooltip: "Salva e liga als blòts.",
-  runTooltip: "Aviar lo programa definit pels blòts dins l’espaci de trabalh.",
+  runTooltip: "Aviar lo programa definit pels blòts dins l’ESPaci de trabalh.",
   badCode: "Error del programa :\n%1",
   timeout: "Nombre maximum d’iteracions d’execucion depassat.",
   trashTooltip: "Getar totes los blòts.",
@@ -18,7 +18,7 @@ var MSG = {
   textVariable: "tèxte",
   httpRequestError: "I a agut un problèma amb la demanda.",
   linkAlert: "Partejatz vòstres blòts gràcia a aqueste ligam :\n\n%1",
-  hashError: "O planhèm, '%1' correspond pas a un fichièr Blockly salvament.",
+  hashError: "O planhèm, '%1' corrESPond pas a un fichièr Blockly salvament.",
   xmlError: "Impossible de cargar lo fichièr de salvament.  Benlèu qu'es estat creat amb una autra version de Blockly ?",
   badXml: "Error d’analisi del XML :\n%1\n\nSeleccionar 'D'acòrdi' per abandonar vòstras modificacions o 'Anullar' per modificar encara lo XML."
 };

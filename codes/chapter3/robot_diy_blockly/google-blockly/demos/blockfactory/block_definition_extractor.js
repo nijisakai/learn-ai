@@ -23,9 +23,9 @@
 'use strict';
 
 /**
- * Namespace to contain all functions needed to extract block definition from
+ * NamESPace to contain all functions needed to extract block definition from
  * the block preview data structure.
- * @namespace
+ * @namESPace
  */
 var BlockDefinitionExtractor = BlockDefinitionExtractor || Object.create(null);
 

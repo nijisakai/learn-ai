@@ -577,7 +577,7 @@ Blockly.Toolbox.prototype.getClientRect = function() {
 };
 
 /**
- * Update the flyout's contents without closing it.  Should be used in response
+ * Update the flyout's contents without closing it.  Should be used in rESPonse
  * to a change in one of the dynamic categories, such as variables or
  * procedures.
  */

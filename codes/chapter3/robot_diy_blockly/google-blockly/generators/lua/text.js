@@ -220,7 +220,7 @@ Blockly.Lua['text_changeCase'] = function(block) {
         'text_titlecase',
         // There are shorter versions at
         // http://lua-users.org/wiki/SciteTitleCase
-        // that do not preserve whitespace.
+        // that do not preserve whitESPace.
         ['function ' + Blockly.Lua.FUNCTION_NAME_PLACEHOLDER_ + '(str)',
          '  local buf = {}',
          '  local inWord = false',

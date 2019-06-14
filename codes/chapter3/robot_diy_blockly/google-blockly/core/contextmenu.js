@@ -26,7 +26,7 @@
 
 /**
  * @name Blockly.ContextMenu
- * @namespace
+ * @namESPace
  */
 goog.provide('Blockly.ContextMenu');
 

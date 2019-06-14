@@ -28,7 +28,7 @@
 
 /**
  * @name Blockly.utils
- * @namespace
+ * @namESPace
  */
 goog.provide('Blockly.utils');
 
@@ -532,7 +532,7 @@ Blockly.utils.tokenizeInterpolation_ = function(message,
           // Found a valid string key. Attempt case insensitive match.
           var keyUpper = rawKey.toUpperCase();
 
-          // BKY_ is the prefix used to namespace the strings used in Blockly
+          // BKY_ is the prefix used to namESPace the strings used in Blockly
           // core files and the predefined blocks in ../blocks/.
           // These strings are defined in ../msgs/ files.
           var bklyKey = Blockly.utils.startsWith(keyUpper, 'BKY_') ?

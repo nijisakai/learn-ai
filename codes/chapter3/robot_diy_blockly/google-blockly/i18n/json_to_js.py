@@ -77,7 +77,7 @@ def _close_xlf(xlf_file):
 
 
 def _process_file(path_to_json, target_lang, key_dict):
-    """Creates an .xlf file corresponding to the specified .json input file.
+    """Creates an .xlf file corrESPonding to the specified .json input file.
 
     The name of the input file must be target_lang followed by '.json'.
     The name of the output file will be target_lang followed by '.js'.

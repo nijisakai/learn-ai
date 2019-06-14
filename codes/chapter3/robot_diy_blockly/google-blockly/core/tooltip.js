@@ -31,7 +31,7 @@
 
 /**
  * @name Blockly.Tooltip
- * @namespace
+ * @namESPace
  */
 goog.provide('Blockly.Tooltip');
 
@@ -89,7 +89,7 @@ Blockly.Tooltip.element_ = null;
 
 /**
  * Once a tooltip has opened for an element, that element is 'poisoned' and
- * cannot respawn a tooltip until the pointer moves over a different element.
+ * cannot rESPawn a tooltip until the pointer moves over a different element.
  * @private
  */
 Blockly.Tooltip.poisonedElement_ = null;
@@ -149,7 +149,7 @@ Blockly.Tooltip.bindMouseEvents = function(element) {
       Blockly.Tooltip.onMouseOut_);
 
   // Don't use bindEvent_ for mousemove since that would create a
-  // corresponding touch handler, even though this only makes sense in the
+  // corrESPonding touch handler, even though this only makes sense in the
   // context of a mouseover/mouseout.
   element.addEventListener('mousemove', Blockly.Tooltip.onMouseMove_, false);
 };

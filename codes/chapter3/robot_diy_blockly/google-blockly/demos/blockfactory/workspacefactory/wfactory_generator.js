@@ -54,7 +54,7 @@ WorkspaceFactoryGenerator = function(model) {
  * changes might have been made to the selected category.
  * @param {!Blockly.workspace} toolboxWorkspace Toolbox editing workspace where
  * blocks are added by user to be part of the toolbox.
- * @return {!Element} XML element representing toolbox or flyout corresponding
+ * @return {!Element} XML element representing toolbox or flyout corrESPonding
  * to toolbox workspace.
  */
 WorkspaceFactoryGenerator.prototype.generateToolboxXml = function() {
@@ -114,7 +114,7 @@ WorkspaceFactoryGenerator.prototype.generateToolboxXml = function() {
   * Generates XML for the workspace (different from generateConfigXml in that
   * it includes XY and ID attributes). Uses a workspace and converts user
   * generated shadow blocks to actual shadow blocks.
-  * @return {!Element} XML element representing toolbox or flyout corresponding
+  * @return {!Element} XML element representing toolbox or flyout corrESPonding
   * to toolbox workspace.
   */
 WorkspaceFactoryGenerator.prototype.generateWorkspaceXml = function() {
@@ -227,7 +227,7 @@ WorkspaceFactoryGenerator.prototype.setShadowBlocksInHiddenWorkspace_ =
  * Given a set of block types, gets the Blockly.Block objects for each block
  * type.
  * @param {!Array.<!Element>} blockTypes Array of blocks that have been defined.
- * @return {!Array.<!Blockly.Block>} Array of Blockly.Block objects corresponding
+ * @return {!Array.<!Blockly.Block>} Array of Blockly.Block objects corrESPonding
  *    to the array of blockTypes.
  */
 WorkspaceFactoryGenerator.prototype.getDefinedBlocks = function(blockTypes) {

@@ -1,7 +1,7 @@
-#include <esp8266WiFi.h>
+#include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <esp8266WebServer.h>
-#include <esp8266mDNS.h>
+#include <ESP8266WebServer.h>
+#include <ESP8266mDNS.h>
 #include <FS.h>
 #define Motor_AE D1      //Motor A/B,E enable,D Direction
 #define Motor_AD D3
@@ -14,7 +14,7 @@
 
 String command;
 
-esp8266WebServer server(80);
+ESP8266WebServer server(80);
 
 const int led = 13;
 
@@ -107,8 +107,8 @@ const char* password = "raspberry";
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-  if (MDNS.begin("esp8266")) {
-    Serial.println("MDNS responder started");
+  if (MDNS.begin("ESP8266")) {
+    Serial.println("MDNS rESPonder started");
   }
 
 

@@ -83,7 +83,7 @@ String SendHTML(float Temperaturestat,float Humiditystat){
   ptr +="var xhttp = new XMLHttpRequest();\n";
   ptr +="xhttp.onreadystatechange = function() {\n";
   ptr +="if (this.readyState == 4 && this.status == 200) {\n";
-  ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
+  ptr +="document.getElementById(\"webpage\").innerHTML =this.rESPonseText}\n";
   ptr +="};\n";
   ptr +="xhttp.open(\"GET\", \"/\", true);\n";
   ptr +="xhttp.send();\n";

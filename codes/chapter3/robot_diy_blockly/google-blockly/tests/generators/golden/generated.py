@@ -717,7 +717,7 @@ def test_substring_simple():
   assertEquals(text[-3 : ], '789', 'substring #-end last simple')
   assertEquals(text[ : ], '123456789', 'substring all with # #-end simple')
   assertEquals(text[-9 : 9], '123456789', 'substring all with #-end # simple')
-  # Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
+  # Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
   assertEquals(text[int((0 + 1) - 1) : -int((0 + 1) - 1) or sys.maxsize], '123456789', 'substring all with # #-end math simple')
 
 """Tests the "get substring" block with a function call.
@@ -765,7 +765,7 @@ def test_substring_complex():
   assertEquals(get_numbers()[-9 : 9], '123456789', 'substring all with #-end # complex')
   check_number_of_calls('substring all with #-end # complex')
   number_of_calls = 0
-  # Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
+  # Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
   assertEquals(get_numbers()[int((0 + 1) - 1) : -int((0 + 1) - 1) or sys.maxsize], '123456789', 'substring all with # #-end math complex')
   check_number_of_calls('substring all with # #-end math complex')
 
@@ -1152,7 +1152,7 @@ def test_sublist_simple():
   assertEquals(list2[-4 : ], ['Challenger', 'Discovery', 'Atlantis', 'Endeavour'], 'sublist #-end last simple')
   assertEquals(list2[ : ], list2, 'sublist all with # #-end simple')
   assertEquals(list2[-5 : 5], list2, 'sublist all with #-end # simple')
-  # Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
+  # Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
   assertEquals(list2[int((0 + 1) - 1) : -int((0 + 1) - 1) or sys.maxsize], list2, 'sublist all with # #-end math simple')
 
 """Creates a list for use with the sublist test.
@@ -1207,7 +1207,7 @@ def test_sublist_complex():
   assertEquals(get_space_shuttles()[-5 : 5], list2, 'sublist all with #-end # complex')
   check_number_of_calls('sublist all with #-end # complex')
   number_of_calls = 0
-  # Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
+  # Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
   assertEquals(get_space_shuttles()[int((0 + 1) - 1) : -int((0 + 1) - 1) or sys.maxsize], list2, 'sublist all with # #-end math complex')
   check_number_of_calls('sublist all with # #-end math complex')
 

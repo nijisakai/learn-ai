@@ -145,7 +145,7 @@ WorkspaceFactoryView.prototype.setCategoryTabSelection =
 /**
  * Used to bind a click to a certain DOM element (used for category tabs).
  * Taken directly from code.js
- * @param {string|!Element} e1 Tab element or corresponding ID string.
+ * @param {string|!Element} e1 Tab element or corrESPonding ID string.
  * @param {!Function} func Function to be executed on click.
  */
 WorkspaceFactoryView.prototype.bindClick = function(el, func) {
@@ -177,7 +177,7 @@ WorkspaceFactoryView.prototype.createAndDownloadFile =
 };
 
 /**
- * Given the ID of a certain category, updates the corresponding tab in
+ * Given the ID of a certain category, updates the corrESPonding tab in
  * the DOM to show a new name.
  * @param {string} newName Name of string to be displayed on tab
  * @param {string} id ID of category to be updated
@@ -232,7 +232,7 @@ WorkspaceFactoryView.prototype.setBorderColor = function(id, color) {
 };
 
 /**
- * Given a separator ID, creates a corresponding tab in the view, updates
+ * Given a separator ID, creates a corrESPonding tab in the view, updates
  * tab map, and returns the tab.
  * @param {string} id The ID of the separator.
  * @param {!Element} The td DOM element representing the separator.

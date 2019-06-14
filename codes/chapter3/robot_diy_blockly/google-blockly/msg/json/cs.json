@@ -100,7 +100,7 @@
 	"LOGIC_COMPARE_TOOLTIP_GTE": "Navrátí hodnotu pravda, pokud je první vstup větší a nebo rovný druhému vstupu.",
 	"LOGIC_OPERATION_TOOLTIP_AND": "Vrátí hodnotu pravda, pokud oba dva vstupy jsou pravdivé.",
 	"LOGIC_OPERATION_AND": "a",
-	"LOGIC_OPERATION_TOOLTIP_OR": "Vrátí hodnotu pravda, pokud alespoň jeden ze vstupů má hodnotu pravda.",
+	"LOGIC_OPERATION_TOOLTIP_OR": "Vrátí hodnotu pravda, pokud alESPoň jeden ze vstupů má hodnotu pravda.",
 	"LOGIC_OPERATION_OR": "nebo",
 	"LOGIC_NEGATE_TITLE": "ne %1",
 	"LOGIC_NEGATE_TOOLTIP": "Navrátí hodnotu pravda, pokud je vstup nepravda. Navrátí hodnotu nepravda, pokud je vstup pravda.",

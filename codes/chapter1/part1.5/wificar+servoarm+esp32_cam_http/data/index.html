@@ -50,7 +50,7 @@
                 xmlhttp.send();
                 xmlhttp.onreadystatechange = function() {                    
                       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {                        
-                            requstData = xmlhttp.responseText;                         
+                            requstData = xmlhttp.rESPonseText;                         
                             console.log(requstData);                    
                       };                
                 };
@@ -95,7 +95,7 @@
         <div id='out'></div>
         </div>
         <div id="div1" style="width: 400px;">
-            <input id="name1" type="text" placeholder="在这里输入esp32的IP地址，以192开头"></input>
+            <input id="name1" type="text" placeholder="在这里输入ESP32的IP地址，以192开头"></input>
             <input id="buttton1" type="button" onclick="clickButton()" value="确定">
         </div>
     </div>
@@ -148,7 +148,7 @@
                         xmlHttp.send();                 
                         xmlHttp.onreadystatechange = function() {                    
                         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
-                            requstData = xmlHttp.responseText;                         
+                            requstData = xmlHttp.rESPonseText;                         
                             console.log(requstData);                    
                         }                
                         };            

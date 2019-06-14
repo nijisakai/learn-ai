@@ -100,7 +100,7 @@ blocklyApp.ToolboxModalComponent = ng.core.Component({
           that.onSelectBlockCallback = onSelectBlockCallback;
           that.onDismissCallback = onDismissCallback;
 
-          // The indexes of the buttons corresponding to the first block in
+          // The indexes of the buttons corrESPonding to the first block in
           // each category, as well as the 'cancel' button at the end.
           that.firstBlockIndexes = [];
           that.activeButtonIndex = -1;
@@ -168,7 +168,7 @@ blocklyApp.ToolboxModalComponent = ng.core.Component({
   getBlockDescription: function(block) {
     return this.utilsService.getBlockDescription(block);
   },
-  // Returns the ID for the corresponding option button.
+  // Returns the ID for the corrESPonding option button.
   getOptionId: function(index) {
     return 'toolbox-modal-option-' + index;
   },

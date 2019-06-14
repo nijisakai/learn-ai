@@ -344,19 +344,19 @@ Blockly.RenderedConnection.prototype.disconnectInternal_ = function(parentBlock,
 };
 
 /**
- * Respawn the shadow block if there was one connected to the this connection.
+ * RESPawn the shadow block if there was one connected to the this connection.
  * Render/rerender blocks as needed.
  * @private
  */
-Blockly.RenderedConnection.prototype.respawnShadow_ = function() {
+Blockly.RenderedConnection.prototype.rESPawnShadow_ = function() {
   var parentBlock = this.getSourceBlock();
-  // Respawn the shadow block if there is one.
+  // RESPawn the shadow block if there is one.
   var shadow = this.getShadowDom();
   if (parentBlock.workspace && shadow && Blockly.Events.recordUndo) {
-    Blockly.RenderedConnection.superClass_.respawnShadow_.call(this);
+    Blockly.RenderedConnection.superClass_.rESPawnShadow_.call(this);
     var blockShadow = this.targetBlock();
     if (!blockShadow) {
-      throw Error('Couldn\'t respawn the shadow block that should exist here.');
+      throw Error('Couldn\'t rESPawn the shadow block that should exist here.');
     }
     blockShadow.initSvg();
     blockShadow.render(false);

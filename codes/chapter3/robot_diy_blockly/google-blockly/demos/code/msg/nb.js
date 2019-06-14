@@ -16,7 +16,7 @@ var MSG = {
   catFunctions: "Funksjoner",
   listVariable: "Liste",
   textVariable: "Tekst",
-  httpRequestError: "Det oppsto et problem med forespørselen din",
+  httpRequestError: "Det oppsto et problem med forESPørselen din",
   linkAlert: "Del dine blokker med denne lenken:\n\n%1",
   hashError: "Beklager, '%1' samsvarer ikke med noe lagret program.",
   xmlError: "Kunne ikke laste inn filen. Kanskje den ble laget med en annen versjon av Blockly?",

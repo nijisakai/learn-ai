@@ -26,7 +26,7 @@
 
 /**
  * @name Blockly.Procedures
- * @namespace
+ * @namESPace
  */
 goog.provide('Blockly.Procedures');
 
@@ -157,7 +157,7 @@ Blockly.Procedures.isNameUsed = function(name, workspace, opt_exclude) {
  * @this {Blockly.Field}
  */
 Blockly.Procedures.rename = function(name) {
-  // Strip leading and trailing whitespace.  Beyond this, all names are legal.
+  // Strip leading and trailing whitESPace.  Beyond this, all names are legal.
   name = name.replace(/^[\s\xa0]+|[\s\xa0]+$/g, '');
 
   // Ensure two identically-named procedures don't exist.

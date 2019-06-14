@@ -1218,7 +1218,7 @@ Blockly.WorkspaceSvg.prototype.onMouseWheel_ = function(e) {
   if (this.currentGesture_) {
     this.currentGesture_.cancel();
   }
-  // The vertical scroll distance that corresponds to a click of a zoom button.
+  // The vertical scroll distance that corrESPonds to a click of a zoom button.
   var PIXELS_PER_ZOOM_STEP = 50;
   var delta = -e.deltaY / PIXELS_PER_ZOOM_STEP;
   var position = Blockly.utils.mouseToSvg(e, this.getParentSvg(),
@@ -1990,7 +1990,7 @@ Blockly.WorkspaceSvg.prototype.registerButtonCallback = function(key, func) {
  * Get the callback function associated with a given key, for clicks on buttons
  * and labels in the flyout.
  * @param {string} key The name to use to look up the function.
- * @return {?function(!Blockly.FlyoutButton)} The function corresponding to the
+ * @return {?function(!Blockly.FlyoutButton)} The function corrESPonding to the
  *     given key for this workspace; null if no callback is registered.
  */
 Blockly.WorkspaceSvg.prototype.getButtonCallback = function(key) {
@@ -2027,7 +2027,7 @@ Blockly.WorkspaceSvg.prototype.registerToolboxCategoryCallback = function(key,
  * custom toolbox categories in this workspace.
  * @param {string} key The name to use to look up the function.
  * @return {?function(!Blockly.Workspace):!Array.<!Element>} The function
- *     corresponding to the given key for this workspace, or null if no function
+ *     corrESPonding to the given key for this workspace, or null if no function
  *     is registered.
  */
 Blockly.WorkspaceSvg.prototype.getToolboxCategoryCallback = function(key) {

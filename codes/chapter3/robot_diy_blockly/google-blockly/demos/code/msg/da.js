@@ -16,7 +16,7 @@ var MSG = {
   catFunctions: "Funktioner",
   listVariable: "liste",
   textVariable: "tekst",
-  httpRequestError: "Der var et problem med forespørgslen.",
+  httpRequestError: "Der var et problem med forESPørgslen.",
   linkAlert: "Del dine blokke med dette link:\n\n%1",
   hashError: "Beklager, '%1' passer ikke med nogen gemt Blockly fil.",
   xmlError: "Kunne ikke hente din gemte fil.  Måske er den lavet med en anden udgave af Blockly?",

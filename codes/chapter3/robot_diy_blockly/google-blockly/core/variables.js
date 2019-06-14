@@ -26,7 +26,7 @@
 
 /**
  * @name Blockly.Variables
- * @namespace
+ * @namESPace
  */
 goog.provide('Blockly.Variables');
 
@@ -398,7 +398,7 @@ Blockly.Variables.renameVariable = function(workspace, variable,
  */
 Blockly.Variables.promptName = function(promptText, defaultText, callback) {
   Blockly.prompt(promptText, defaultText, function(newVar) {
-    // Merge runs of whitespace.  Strip leading and trailing whitespace.
+    // Merge runs of whitESPace.  Strip leading and trailing whitESPace.
     // Beyond this, all names are legal.
     if (newVar) {
       newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
@@ -501,7 +501,7 @@ Blockly.Variables.generateVariableFieldDom = function(variableModel) {
  * @param {string=} opt_name The string to use to look up or create the
  *     variable.
  * @param {string=} opt_type The type to use to look up or create the variable.
- * @return {!Blockly.VariableModel} The variable corresponding to the given ID
+ * @return {!Blockly.VariableModel} The variable corrESPonding to the given ID
  *     or name + type combination.
  */
 Blockly.Variables.getOrCreateVariablePackage = function(workspace, id, opt_name,
@@ -526,7 +526,7 @@ Blockly.Variables.getOrCreateVariablePackage = function(workspace, id, opt_name,
  *     Only used if lookup by ID fails.
  * @param {string=} opt_type The type to use to look up the variable.
  *     Only used if lookup by ID fails.
- * @return {?Blockly.VariableModel} The variable corresponding to the given ID
+ * @return {?Blockly.VariableModel} The variable corrESPonding to the given ID
  *     or name + type combination, or null if not found.
  * @package
  */
@@ -565,7 +565,7 @@ Blockly.Variables.getVariable = function(workspace, id, opt_name, opt_type) {
  * @param {string} id The ID to use to create the variable, or null.
  * @param {string=} opt_name The string to use to create the variable.
  * @param {string=} opt_type The type to use to create the variable.
- * @return {!Blockly.VariableModel} The variable corresponding to the given ID
+ * @return {!Blockly.VariableModel} The variable corrESPonding to the given ID
  *     or name + type combination.
  * @private
  */

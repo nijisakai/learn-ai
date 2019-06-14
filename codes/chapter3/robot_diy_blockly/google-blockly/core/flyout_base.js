@@ -673,7 +673,7 @@ Blockly.Flyout.prototype.initFlyoutButton_ = function(button, x, y) {
 };
 
 /**
- * Create and place a rectangle corresponding to the given block.
+ * Create and place a rectangle corrESPonding to the given block.
  * @param {!Blockly.Block} block The block to associate the rect to.
  * @param {number} x The x position of the cursor during this layout pass.
  * @param {number} y The y position of the cursor during this layout pass.

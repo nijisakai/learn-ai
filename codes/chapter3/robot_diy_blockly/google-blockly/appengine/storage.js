@@ -24,7 +24,7 @@
  */
 'use strict';
 
-// Create a namespace.
+// Create a namESPace.
 var BlocklyStorage = {};
 
 /**
@@ -135,7 +135,7 @@ BlocklyStorage.handleRequest_ = function() {
       BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +
           'httpRequest_.status: ' + BlocklyStorage.httpRequest_.status);
     } else {
-      var data = BlocklyStorage.httpRequest_.responseText.trim();
+      var data = BlocklyStorage.httpRequest_.rESPonseText.trim();
       if (BlocklyStorage.httpRequest_.name == 'xml') {
         window.location.hash = data;
         BlocklyStorage.alert(BlocklyStorage.LINK_ALERT.replace('%1',

@@ -18,7 +18,7 @@ var MSG = {
   textVariable: "text",
   httpRequestError: "Hi ha hagut un problema amb la sol·licitud.",
   linkAlert: "Comparteix els teus blocs amb aquest enllaç: %1",
-  hashError: "Ho sentim, '%1' no es correspon amb cap fitxer desat de Blockly.",
+  hashError: "Ho sentim, '%1' no es corrESPon amb cap fitxer desat de Blockly.",
   xmlError: "No s'ha pogut carregar el teu fitxer desat.  Potser va ser creat amb una versió diferent de Blockly?",
   badXml: "Error d'anàlisi XML:\n%1\n\nSeleccioneu 'Acceptar' per abandonar els vostres canvis, o 'Cancel·lar' per continuar editant l'XML."
 };

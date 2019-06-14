@@ -609,18 +609,18 @@ var i,
 
 	// Regular expressions
 
-	// http://www.w3.org/TR/css3-selectors/#whitespace
-	whitespace = "[\\x20\\t\\r\\n\\f]",
+	// http://www.w3.org/TR/css3-selectors/#whitESPace
+	whitESPace = "[\\x20\\t\\r\\n\\f]",
 
 	// http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = "(?:\\\\.|[\\w-]|[^\0-\\xa0])+",
 
 	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
-	attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
+	attributes = "\\[" + whitESPace + "*(" + identifier + ")(?:" + whitESPace +
 		// Operator (capture 2)
-		"*([*^$|!~]?=)" + whitespace +
+		"*([*^$|!~]?=)" + whitESPace +
 		// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
-		"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
+		"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitESPace +
 		"*\\]",
 
 	pseudos = ":(" + identifier + ")(?:\\((" +
@@ -633,14 +633,14 @@ var i,
 		".*" +
 		")\\)|)",
 
-	// Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
-	rwhitespace = new RegExp( whitespace + "+", "g" ),
-	rtrim = new RegExp( "^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$", "g" ),
+	// Leading and non-escaped trailing whitESPace, capturing some non-whitESPace characters preceding the latter
+	rwhitESPace = new RegExp( whitESPace + "+", "g" ),
+	rtrim = new RegExp( "^" + whitESPace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitESPace + "+$", "g" ),
 
-	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
-	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
+	rcomma = new RegExp( "^" + whitESPace + "*," + whitESPace + "*" ),
+	rcombinators = new RegExp( "^" + whitESPace + "*([>+~]|" + whitESPace + ")" + whitESPace + "*" ),
 
-	rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
+	rattributeQuotes = new RegExp( "=" + whitESPace + "*([^\\]'\"]*?)" + whitESPace + "*\\]", "g" ),
 
 	rpseudo = new RegExp( pseudos ),
 	ridentifier = new RegExp( "^" + identifier + "$" ),
@@ -651,14 +651,14 @@ var i,
 		"TAG": new RegExp( "^(" + identifier + "|[*])" ),
 		"ATTR": new RegExp( "^" + attributes ),
 		"PSEUDO": new RegExp( "^" + pseudos ),
-		"CHILD": new RegExp( "^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" + whitespace +
-			"*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" + whitespace +
-			"*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
+		"CHILD": new RegExp( "^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" + whitESPace +
+			"*(even|odd|(([+-]|)(\\d*)n|)" + whitESPace + "*(?:([+-]|)" + whitESPace +
+			"*(\\d+)|))" + whitESPace + "*\\)|)", "i" ),
 		"bool": new RegExp( "^(?:" + booleans + ")$", "i" ),
 		// For use in libraries implementing .is()
 		// We use this for POS matching in `select`
-		"needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
-			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
+		"needsContext": new RegExp( "^" + whitESPace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
+			whitESPace + "*((?:-\\d)?\\d*)" + whitESPace + "*\\)|)(?=[^-]|$)", "i" )
 	},
 
 	rinputs = /^(?:input|select|textarea|button)$/i,
@@ -673,13 +673,13 @@ var i,
 
 	// CSS escapes
 	// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
-	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
-	funescape = function( _, escaped, escapedWhitespace ) {
+	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitESPace + "?|(" + whitESPace + ")|.)", "ig" ),
+	funescape = function( _, escaped, escapedWhitESPace ) {
 		var high = "0x" + escaped - 0x10000;
 		// NaN means non-codepoint
 		// Support: Firefox<24
 		// Workaround erroneous numeric interpretation of +"0x"
-		return high !== high || escapedWhitespace ?
+		return high !== high || escapedWhitESPace ?
 			escaped :
 			high < 0 ?
 				// BMP codepoint
@@ -1293,13 +1293,13 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// The test attribute must be unknown in Opera but "safe" for WinRT
 			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
 			if ( el.querySelectorAll("[msallowcapture^='']").length ) {
-				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
+				rbuggyQSA.push( "[*^$]=" + whitESPace + "*(?:''|\"\")" );
 			}
 
 			// Support: IE8
 			// Boolean attributes and "value" are not treated correctly
 			if ( !el.querySelectorAll("[selected]").length ) {
-				rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
+				rbuggyQSA.push( "\\[" + whitESPace + "*(?:value|" + booleans + ")" );
 			}
 
 			// Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
@@ -1335,7 +1335,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Support: IE8
 			// Enforce case-sensitivity of name attribute
 			if ( el.querySelectorAll("[name=d]").length ) {
-				rbuggyQSA.push( "name" + whitespace + "*[*^$|!~]?=" );
+				rbuggyQSA.push( "name" + whitESPace + "*[*^$|!~]?=" );
 			}
 
 			// FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
@@ -1702,7 +1702,7 @@ Expr = Sizzle.selectors = {
 				}
 
 				// numeric x and y parameters for Expr.filter.CHILD
-				// remember that false/true cast respectively to 0/1
+				// remember that false/true cast rESPectively to 0/1
 				match[4] = +( match[4] ? match[5] + (match[6] || 1) : 2 * ( match[3] === "even" || match[3] === "odd" ) );
 				match[5] = +( ( match[7] + match[8] ) || match[3] === "odd" );
 
@@ -1758,7 +1758,7 @@ Expr = Sizzle.selectors = {
 			var pattern = classCache[ className + " " ];
 
 			return pattern ||
-				(pattern = new RegExp( "(^|" + whitespace + ")" + className + "(" + whitespace + "|$)" )) &&
+				(pattern = new RegExp( "(^|" + whitESPace + ")" + className + "(" + whitESPace + "|$)" )) &&
 				classCache( className, function( elem ) {
 					return pattern.test( typeof elem.className === "string" && elem.className || typeof elem.getAttribute !== "undefined" && elem.getAttribute("class") || "" );
 				});
@@ -1782,7 +1782,7 @@ Expr = Sizzle.selectors = {
 					operator === "^=" ? check && result.indexOf( check ) === 0 :
 					operator === "*=" ? check && result.indexOf( check ) > -1 :
 					operator === "$=" ? check && result.slice( -check.length ) === check :
-					operator === "~=" ? ( " " + result.replace( rwhitespace, " " ) + " " ).indexOf( check ) > -1 :
+					operator === "~=" ? ( " " + result.replace( rwhitESPace, " " ) + " " ).indexOf( check ) > -1 :
 					operator === "|=" ? result === check || result.slice( 0, check.length + 1 ) === check + "-" :
 					false;
 			};
@@ -3307,7 +3307,7 @@ jQuery.Callbacks = function( options ) {
 			locked = locked || options.once;
 
 			// Execute callbacks for all pending executions,
-			// respecting firingIndex overrides and runtime changes
+			// rESPecting firingIndex overrides and runtime changes
 			fired = firing = true;
 			for ( ; queue.length; firingIndex = -1 ) {
 				memory = queue.shift();
@@ -4101,7 +4101,7 @@ Data.prototype = {
 		//   2. A string key was specified, but no value provided
 		//
 		// Take the "read" path and allow the get method to determine
-		// which value to return, respectively either:
+		// which value to return, rESPectively either:
 		//
 		//   1. The entire cache object
 		//   2. The data stored at the key
@@ -4144,7 +4144,7 @@ Data.prototype = {
 				key = jQuery.camelCase( key );
 
 				// If a key with the spaces exists, use it.
-				// Otherwise, create an array by matching non-whitespace
+				// Otherwise, create an array by matching non-whitESPace
 				key = key in cache ?
 					[ key ] :
 					( key.match( rnothtmlwhite ) || [] );
@@ -4884,7 +4884,7 @@ var documentElement = document.documentElement;
 var
 	rkeyEvent = /^key/,
 	rmouseEvent = /^(?:mouse|pointer|contextmenu|drag|drop)|click/,
-	rtypenamespace = /^([^.]*)(?:\.(.+)|)/;
+	rtypenamESPace = /^([^.]*)(?:\.(.+)|)/;
 
 function returnTrue() {
 	return true;
@@ -4975,7 +4975,7 @@ jQuery.event = {
 
 		var handleObjIn, eventHandle, tmp,
 			events, t, handleObj,
-			special, handlers, type, namespaces, origType,
+			special, handlers, type, namESPaces, origType,
 			elemData = dataPriv.get( elem );
 
 		// Don't attach events to noData or text/comment nodes (but allow plain objects)
@@ -5019,11 +5019,11 @@ jQuery.event = {
 		types = ( types || "" ).match( rnothtmlwhite ) || [ "" ];
 		t = types.length;
 		while ( t-- ) {
-			tmp = rtypenamespace.exec( types[ t ] ) || [];
+			tmp = rtypenamESPace.exec( types[ t ] ) || [];
 			type = origType = tmp[ 1 ];
-			namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
+			namESPaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
 
-			// There *must* be a type, no attaching namespace-only handlers
+			// There *must* be a type, no attaching namESPace-only handlers
 			if ( !type ) {
 				continue;
 			}
@@ -5046,7 +5046,7 @@ jQuery.event = {
 				guid: handler.guid,
 				selector: selector,
 				needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
-				namespace: namespaces.join( "." )
+				namESPace: namESPaces.join( "." )
 			}, handleObjIn );
 
 			// Init the event handler queue if we're the first
@@ -5056,7 +5056,7 @@ jQuery.event = {
 
 				// Only use addEventListener if the special events handler returns false
 				if ( !special.setup ||
-					special.setup.call( elem, data, namespaces, eventHandle ) === false ) {
+					special.setup.call( elem, data, namESPaces, eventHandle ) === false ) {
 
 					if ( elem.addEventListener ) {
 						elem.addEventListener( type, eventHandle );
@@ -5090,22 +5090,22 @@ jQuery.event = {
 
 		var j, origCount, tmp,
 			events, t, handleObj,
-			special, handlers, type, namespaces, origType,
+			special, handlers, type, namESPaces, origType,
 			elemData = dataPriv.hasData( elem ) && dataPriv.get( elem );
 
 		if ( !elemData || !( events = elemData.events ) ) {
 			return;
 		}
 
-		// Once for each type.namespace in types; type may be omitted
+		// Once for each type.namESPace in types; type may be omitted
 		types = ( types || "" ).match( rnothtmlwhite ) || [ "" ];
 		t = types.length;
 		while ( t-- ) {
-			tmp = rtypenamespace.exec( types[ t ] ) || [];
+			tmp = rtypenamESPace.exec( types[ t ] ) || [];
 			type = origType = tmp[ 1 ];
-			namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
+			namESPaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
 
-			// Unbind all events (on this namespace, if provided) for the element
+			// Unbind all events (on this namESPace, if provided) for the element
 			if ( !type ) {
 				for ( type in events ) {
 					jQuery.event.remove( elem, type + types[ t ], handler, selector, true );
@@ -5117,7 +5117,7 @@ jQuery.event = {
 			type = ( selector ? special.delegateType : special.bindType ) || type;
 			handlers = events[ type ] || [];
 			tmp = tmp[ 2 ] &&
-				new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" );
+				new RegExp( "(^|\\.)" + namESPaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" );
 
 			// Remove matching events
 			origCount = j = handlers.length;
@@ -5126,7 +5126,7 @@ jQuery.event = {
 
 				if ( ( mappedTypes || origType === handleObj.origType ) &&
 					( !handler || handler.guid === handleObj.guid ) &&
-					( !tmp || tmp.test( handleObj.namespace ) ) &&
+					( !tmp || tmp.test( handleObj.namESPace ) ) &&
 					( !selector || selector === handleObj.selector ||
 						selector === "**" && handleObj.selector ) ) {
 					handlers.splice( j, 1 );
@@ -5144,7 +5144,7 @@ jQuery.event = {
 			// (avoids potential for endless recursion during removal of special event handlers)
 			if ( origCount && !handlers.length ) {
 				if ( !special.teardown ||
-					special.teardown.call( elem, namespaces, elemData.handle ) === false ) {
+					special.teardown.call( elem, namESPaces, elemData.handle ) === false ) {
 
 					jQuery.removeEvent( elem, type, elemData.handle );
 				}
@@ -5195,9 +5195,9 @@ jQuery.event = {
 			while ( ( handleObj = matched.handlers[ j++ ] ) &&
 				!event.isImmediatePropagationStopped() ) {
 
-				// Triggered event must either 1) have no namespace, or 2) have namespace(s)
-				// a subset or equal to those in the bound event (both can have no namespace).
-				if ( !event.rnamespace || event.rnamespace.test( handleObj.namespace ) ) {
+				// Triggered event must either 1) have no namESPace, or 2) have namESPace(s)
+				// a subset or equal to those in the bound event (both can have no namESPace).
+				if ( !event.rnamESPace || event.rnamESPace.test( handleObj.namESPace ) ) {
 
 					event.handleObj = handleObj;
 					event.data = handleObj.data;
@@ -5579,8 +5579,8 @@ jQuery.fn.extend( {
 			// ( event )  dispatched jQuery.Event
 			handleObj = types.handleObj;
 			jQuery( types.delegateTarget ).off(
-				handleObj.namespace ?
-					handleObj.origType + "." + handleObj.namespace :
+				handleObj.namESPace ?
+					handleObj.origType + "." + handleObj.namESPace :
 					handleObj.origType,
 				handleObj.selector,
 				handleObj.handler
@@ -7562,7 +7562,7 @@ jQuery.extend( {
 		var name,
 			i = 0,
 
-			// Attribute names can contain non-HTML whitespace characters
+			// Attribute names can contain non-HTML whitESPace characters
 			// https://html.spec.whatwg.org/multipage/syntax.html#attributes-2
 			attrNames = value && value.match( rnothtmlwhite );
 
@@ -7696,7 +7696,7 @@ jQuery.extend( {
 
 // Support: IE <=11 only
 // Accessing the selectedIndex property
-// forces the browser to respect setting selected
+// forces the browser to rESPect setting selected
 // on the option
 // The getter ensures a default option is selected
 // when in an optgroup
@@ -7748,8 +7748,8 @@ jQuery.each( [
 
 
 
-	// Strip and collapse whitespace according to HTML spec
-	// https://html.spec.whatwg.org/multipage/infrastructure.html#strip-and-collapse-whitespace
+	// Strip and collapse whitESPace according to HTML spec
+	// https://html.spec.whatwg.org/multipage/infrastructure.html#strip-and-collapse-whitESPace
 	function stripAndCollapse( value ) {
 		var tokens = value.match( rnothtmlwhite ) || [];
 		return tokens.join( " " );
@@ -8004,8 +8004,8 @@ jQuery.extend( {
 
 					// Support: IE <=10 - 11 only
 					// option.text throws exceptions (#14686, #14858)
-					// Strip and collapse whitespace
-					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
+					// Strip and collapse whitESPace
+					// https://html.spec.whatwg.org/#strip-and-collapse-whitESPace
 					stripAndCollapse( jQuery.text( elem ) );
 			}
 		},
@@ -8115,7 +8115,7 @@ jQuery.extend( jQuery.event, {
 		var i, cur, tmp, bubbleType, ontype, handle, special,
 			eventPath = [ elem || document ],
 			type = hasOwn.call( event, "type" ) ? event.type : event,
-			namespaces = hasOwn.call( event, "namespace" ) ? event.namespace.split( "." ) : [];
+			namESPaces = hasOwn.call( event, "namESPace" ) ? event.namESPace.split( "." ) : [];
 
 		cur = tmp = elem = elem || document;
 
@@ -8131,10 +8131,10 @@ jQuery.extend( jQuery.event, {
 
 		if ( type.indexOf( "." ) > -1 ) {
 
-			// Namespaced trigger; create a regexp to match event type in handle()
-			namespaces = type.split( "." );
-			type = namespaces.shift();
-			namespaces.sort();
+			// NamESPaced trigger; create a regexp to match event type in handle()
+			namESPaces = type.split( "." );
+			type = namESPaces.shift();
+			namESPaces.sort();
 		}
 		ontype = type.indexOf( ":" ) < 0 && "on" + type;
 
@@ -8145,9 +8145,9 @@ jQuery.extend( jQuery.event, {
 
 		// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
 		event.isTrigger = onlyHandlers ? 2 : 3;
-		event.namespace = namespaces.join( "." );
-		event.rnamespace = event.namespace ?
-			new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" ) :
+		event.namESPace = namESPaces.join( "." );
+		event.rnamESPace = event.namESPace ?
+			new RegExp( "(^|\\.)" + namESPaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" ) :
 			null;
 
 		// Clean up the event in case it is being reused
@@ -8609,11 +8609,11 @@ function ajaxExtend( target, src ) {
 	return target;
 }
 
-/* Handles responses to an ajax request:
+/* Handles rESPonses to an ajax request:
  * - finds the right dataType (mediates between content-type and expected dataType)
- * - returns the corresponding response
+ * - returns the corrESPonding rESPonse
  */
-function ajaxHandleResponses( s, jqXHR, responses ) {
+function ajaxHandleRESPonses( s, jqXHR, rESPonses ) {
 
 	var ct, type, finalDataType, firstDataType,
 		contents = s.contents,
@@ -8623,7 +8623,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 	while ( dataTypes[ 0 ] === "*" ) {
 		dataTypes.shift();
 		if ( ct === undefined ) {
-			ct = s.mimeType || jqXHR.getResponseHeader( "Content-Type" );
+			ct = s.mimeType || jqXHR.getRESPonseHeader( "Content-Type" );
 		}
 	}
 
@@ -8637,13 +8637,13 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		}
 	}
 
-	// Check to see if we have a response for the expected dataType
-	if ( dataTypes[ 0 ] in responses ) {
+	// Check to see if we have a rESPonse for the expected dataType
+	if ( dataTypes[ 0 ] in rESPonses ) {
 		finalDataType = dataTypes[ 0 ];
 	} else {
 
 		// Try convertible dataTypes
-		for ( type in responses ) {
+		for ( type in rESPonses ) {
 			if ( !dataTypes[ 0 ] || s.converters[ type + " " + dataTypes[ 0 ] ] ) {
 				finalDataType = type;
 				break;
@@ -8659,19 +8659,19 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 
 	// If we found a dataType
 	// We add the dataType to the list if needed
-	// and return the corresponding response
+	// and return the corrESPonding rESPonse
 	if ( finalDataType ) {
 		if ( finalDataType !== dataTypes[ 0 ] ) {
 			dataTypes.unshift( finalDataType );
 		}
-		return responses[ finalDataType ];
+		return rESPonses[ finalDataType ];
 	}
 }
 
-/* Chain conversions given the request and the original response
- * Also sets the responseXXX fields on the jqXHR instance
+/* Chain conversions given the request and the original rESPonse
+ * Also sets the rESPonseXXX fields on the jqXHR instance
  */
-function ajaxConvert( s, response, jqXHR, isSuccess ) {
+function ajaxConvert( s, rESPonse, jqXHR, isSuccess ) {
 	var conv2, current, conv, tmp, prev,
 		converters = {},
 
@@ -8690,13 +8690,13 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 	// Convert to each sequential dataType
 	while ( current ) {
 
-		if ( s.responseFields[ current ] ) {
-			jqXHR[ s.responseFields[ current ] ] = response;
+		if ( s.rESPonseFields[ current ] ) {
+			jqXHR[ s.rESPonseFields[ current ] ] = rESPonse;
 		}
 
 		// Apply the dataFilter if provided
 		if ( !prev && isSuccess && s.dataFilter ) {
-			response = s.dataFilter( response, s.dataType );
+			rESPonse = s.dataFilter( rESPonse, s.dataType );
 		}
 
 		prev = current;
@@ -8709,7 +8709,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 
 				current = prev;
 
-			// Convert response if prev dataType is non-auto and differs from current
+			// Convert rESPonse if prev dataType is non-auto and differs from current
 			} else if ( prev !== "*" && prev !== current ) {
 
 				// Seek a direct converter
@@ -8748,10 +8748,10 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 
 					// Unless errors are allowed to bubble, catch and return them
 					if ( conv && s.throws ) {
-						response = conv( response );
+						rESPonse = conv( rESPonse );
 					} else {
 						try {
-							response = conv( response );
+							rESPonse = conv( rESPonse );
 						} catch ( e ) {
 							return {
 								state: "parsererror",
@@ -8764,7 +8764,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 		}
 	}
 
-	return { state: "success", data: response };
+	return { state: "success", data: rESPonse };
 }
 
 jQuery.extend( {
@@ -8811,10 +8811,10 @@ jQuery.extend( {
 			json: /\bjson\b/
 		},
 
-		responseFields: {
-			xml: "responseXML",
-			text: "responseText",
-			json: "responseJSON"
+		rESPonseFields: {
+			xml: "rESPonseXML",
+			text: "rESPonseText",
+			json: "rESPonseJSON"
 		},
 
 		// Data converters
@@ -8877,9 +8877,9 @@ jQuery.extend( {
 			// URL without anti-cache param
 			cacheURL,
 
-			// Response headers
-			responseHeadersString,
-			responseHeaders,
+			// RESPonse headers
+			rESPonseHeadersString,
+			rESPonseHeaders,
 
 			// timeout handle
 			timeoutTimer,
@@ -8930,23 +8930,23 @@ jQuery.extend( {
 				readyState: 0,
 
 				// Builds headers hashtable if needed
-				getResponseHeader: function( key ) {
+				getRESPonseHeader: function( key ) {
 					var match;
 					if ( completed ) {
-						if ( !responseHeaders ) {
-							responseHeaders = {};
-							while ( ( match = rheaders.exec( responseHeadersString ) ) ) {
-								responseHeaders[ match[ 1 ].toLowerCase() ] = match[ 2 ];
+						if ( !rESPonseHeaders ) {
+							rESPonseHeaders = {};
+							while ( ( match = rheaders.exec( rESPonseHeadersString ) ) ) {
+								rESPonseHeaders[ match[ 1 ].toLowerCase() ] = match[ 2 ];
 							}
 						}
-						match = responseHeaders[ key.toLowerCase() ];
+						match = rESPonseHeaders[ key.toLowerCase() ];
 					}
 					return match == null ? null : match;
 				},
 
 				// Raw string
-				getAllResponseHeaders: function() {
-					return completed ? responseHeadersString : null;
+				getAllRESPonseHeaders: function() {
+					return completed ? rESPonseHeadersString : null;
 				},
 
 				// Caches the header
@@ -8959,7 +8959,7 @@ jQuery.extend( {
 					return this;
 				},
 
-				// Overrides response content-type header
+				// Overrides rESPonse content-type header
 				overrideMimeType: function( type ) {
 					if ( completed == null ) {
 						s.mimeType = type;
@@ -9184,8 +9184,8 @@ jQuery.extend( {
 		}
 
 		// Callback for when everything is done
-		function done( status, nativeStatusText, responses, headers ) {
-			var isSuccess, success, error, response, modified,
+		function done( status, nativeStatusText, rESPonses, headers ) {
+			var isSuccess, success, error, rESPonse, modified,
 				statusText = nativeStatusText;
 
 			// Ignore repeat invocations
@@ -9204,8 +9204,8 @@ jQuery.extend( {
 			// (no matter how long the jqXHR object will be used)
 			transport = undefined;
 
-			// Cache response headers
-			responseHeadersString = headers || "";
+			// Cache rESPonse headers
+			rESPonseHeadersString = headers || "";
 
 			// Set readyState
 			jqXHR.readyState = status > 0 ? 4 : 0;
@@ -9213,24 +9213,24 @@ jQuery.extend( {
 			// Determine if successful
 			isSuccess = status >= 200 && status < 300 || status === 304;
 
-			// Get response data
-			if ( responses ) {
-				response = ajaxHandleResponses( s, jqXHR, responses );
+			// Get rESPonse data
+			if ( rESPonses ) {
+				rESPonse = ajaxHandleRESPonses( s, jqXHR, rESPonses );
 			}
 
-			// Convert no matter what (that way responseXXX fields are always set)
-			response = ajaxConvert( s, response, jqXHR, isSuccess );
+			// Convert no matter what (that way rESPonseXXX fields are always set)
+			rESPonse = ajaxConvert( s, rESPonse, jqXHR, isSuccess );
 
 			// If successful, handle type chaining
 			if ( isSuccess ) {
 
 				// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
 				if ( s.ifModified ) {
-					modified = jqXHR.getResponseHeader( "Last-Modified" );
+					modified = jqXHR.getRESPonseHeader( "Last-Modified" );
 					if ( modified ) {
 						jQuery.lastModified[ cacheURL ] = modified;
 					}
-					modified = jqXHR.getResponseHeader( "etag" );
+					modified = jqXHR.getRESPonseHeader( "etag" );
 					if ( modified ) {
 						jQuery.etag[ cacheURL ] = modified;
 					}
@@ -9246,9 +9246,9 @@ jQuery.extend( {
 
 				// If we have data, let's convert it
 				} else {
-					statusText = response.state;
-					success = response.data;
-					error = response.error;
+					statusText = rESPonse.state;
+					success = rESPonse.data;
+					error = rESPonse.error;
 					isSuccess = !error;
 				}
 			} else {
@@ -9518,11 +9518,11 @@ jQuery.ajaxTransport( function( options ) {
 									// Support: IE <=9 only
 									// IE9 has no XHR2 but throws on binary (trac-11426)
 									// For XHR2 non-text, let the caller handle it (gh-2498)
-									( xhr.responseType || "text" ) !== "text"  ||
-									typeof xhr.responseText !== "string" ?
-										{ binary: xhr.response } :
-										{ text: xhr.responseText },
-									xhr.getAllResponseHeaders()
+									( xhr.rESPonseType || "text" ) !== "text"  ||
+									typeof xhr.rESPonseText !== "string" ?
+										{ binary: xhr.rESPonse } :
+										{ text: xhr.rESPonseText },
+									xhr.getAllRESPonseHeaders()
 								);
 							}
 						}
@@ -9672,7 +9672,7 @@ jQuery.ajaxSetup( {
 // Detect, normalize options and install callbacks for jsonp requests
 jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
-	var callbackName, overwritten, responseContainer,
+	var callbackName, overwritten, rESPonseContainer,
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
 			"url" :
 			typeof s.data === "string" &&
@@ -9698,10 +9698,10 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 		// Use data converter to retrieve json after script execution
 		s.converters[ "script json" ] = function() {
-			if ( !responseContainer ) {
+			if ( !rESPonseContainer ) {
 				jQuery.error( callbackName + " was not called" );
 			}
-			return responseContainer[ 0 ];
+			return rESPonseContainer[ 0 ];
 		};
 
 		// Force json dataType
@@ -9710,7 +9710,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		// Install callback
 		overwritten = window[ callbackName ];
 		window[ callbackName ] = function() {
-			responseContainer = arguments;
+			rESPonseContainer = arguments;
 		};
 
 		// Clean-up function (fires after converters)
@@ -9735,12 +9735,12 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 				oldCallbacks.push( callbackName );
 			}
 
-			// Call if it was a function and we have a response
-			if ( responseContainer && jQuery.isFunction( overwritten ) ) {
-				overwritten( responseContainer[ 0 ] );
+			// Call if it was a function and we have a rESPonse
+			if ( rESPonseContainer && jQuery.isFunction( overwritten ) ) {
+				overwritten( rESPonseContainer[ 0 ] );
 			}
 
-			responseContainer = overwritten = undefined;
+			rESPonseContainer = overwritten = undefined;
 		} );
 
 		// Delegate to script
@@ -9818,7 +9818,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
  * Load a url into a page
  */
 jQuery.fn.load = function( url, params, callback ) {
-	var selector, type, response,
+	var selector, type, rESPonse,
 		self = this,
 		off = url.indexOf( " " );
 
@@ -9850,26 +9850,26 @@ jQuery.fn.load = function( url, params, callback ) {
 			type: type || "GET",
 			dataType: "html",
 			data: params
-		} ).done( function( responseText ) {
+		} ).done( function( rESPonseText ) {
 
-			// Save response for use in complete callback
-			response = arguments;
+			// Save rESPonse for use in complete callback
+			rESPonse = arguments;
 
 			self.html( selector ?
 
 				// If a selector was specified, locate the right elements in a dummy div
 				// Exclude scripts to avoid IE 'Permission Denied' errors
-				jQuery( "<div>" ).append( jQuery.parseHTML( responseText ) ).find( selector ) :
+				jQuery( "<div>" ).append( jQuery.parseHTML( rESPonseText ) ).find( selector ) :
 
 				// Otherwise use the full result
-				responseText );
+				rESPonseText );
 
 		// If the request succeeds, this function gets "data", "status", "jqXHR"
-		// but they are ignored because response was set above.
+		// but they are ignored because rESPonse was set above.
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
-				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
+				callback.apply( this, rESPonse || [ jqXHR.rESPonseText, status, jqXHR ] );
 			} );
 		} );
 	}
@@ -10176,7 +10176,7 @@ jQuery.fn.extend( {
 	},
 	undelegate: function( selector, types, fn ) {
 
-		// ( namespace ) or ( selector, types [, fn] )
+		// ( namESPace ) or ( selector, types [, fn] )
 		return arguments.length === 1 ?
 			this.off( selector, "**" ) :
 			this.off( types, selector || "**", fn );

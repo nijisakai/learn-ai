@@ -34,7 +34,7 @@
 var BlockLibraryView = function() {
   // Div element to contain the block types to choose from.
   this.dropdown = document.getElementById('dropdownDiv_blockLib');
-  // Map of block type to corresponding 'a' element that is the option in the
+  // Map of block type to corrESPonding 'a' element that is the option in the
   // dropdown. Used to quickly and easily get a specific option.
   this.optionMap = Object.create(null);
   // Save and delete buttons.

@@ -812,7 +812,7 @@ function test_substring_simple() {
   assertEquals(text_get_substring($text, 'FROM_END', 2, 'LAST', 0), '789', 'substring #-end last simple');
   assertEquals(text_get_substring($text, 'FROM_START', 0, 'FROM_END', 0), '123456789', 'substring all with # #-end simple');
   assertEquals(text_get_substring($text, 'FROM_END', 8, 'FROM_START', 8), '123456789', 'substring all with #-end # simple');
-  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
+  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
   assertEquals(text_get_substring($text, 'FROM_START', ((0 + 1) - 1), 'FROM_END', ((0 + 1) - 1)), '123456789', 'substring all with # #-end math simple');
 }
 
@@ -860,7 +860,7 @@ function test_substring_complex() {
   assertEquals(text_get_substring((get_numbers()), 'FROM_END', 8, 'FROM_START', 8), '123456789', 'substring all with #-end # complex');
   check_number_of_calls('substring all with #-end # complex');
   $number_of_calls = 0;
-  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
+  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
   assertEquals(text_get_substring((get_numbers()), 'FROM_START', ((0 + 1) - 1), 'FROM_END', ((0 + 1) - 1)), '123456789', 'substring all with # #-end math complex');
   check_number_of_calls('substring all with # #-end math complex');
 }
@@ -1280,7 +1280,7 @@ function test_sublist_simple() {
   assertEquals(array_slice($list2, count($list2) - 4, count($list2) - (count($list2) - 4)), array('Challenger', 'Discovery', 'Atlantis', 'Endeavour'), 'sublist #-end last simple');
   assertEquals(array_slice($list2, 0, count($list2) - 0 - 0), $list2, 'sublist all with # #-end simple');
   assertEquals(array_slice($list2, count($list2) - 5, 4 - (count($list2) - 5) + 1), $list2, 'sublist all with #-end # simple');
-  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
+  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
   assertEquals(array_slice($list2, ((0 + 1) - 1), count($list2) - ((0 + 1) - 1) - ((0 + 1) - 1)), $list2, 'sublist all with # #-end math simple');
 }
 
@@ -1356,7 +1356,7 @@ function test_sublist_complex() {
   assertEquals(lists_get_sublist(get_space_shuttles(), 'FROM_END', 4, 'FROM_START', 4), $list2, 'sublist all with #-end # complex');
   check_number_of_calls('sublist all with #-end # complex');
   $number_of_calls = 0;
-  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
+  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
   assertEquals(lists_get_sublist(get_space_shuttles(), 'FROM_START', ((0 + 1) - 1), 'FROM_END', ((0 + 1) - 1)), $list2, 'sublist all with # #-end math complex');
   check_number_of_calls('sublist all with # #-end math complex');
 }

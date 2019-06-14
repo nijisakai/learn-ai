@@ -1891,58 +1891,58 @@ pre code {
 }
 
 @media (max-width: 575.98px) {
-  .table-responsive-sm {
+  .table-rESPonsive-sm {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-  .table-responsive-sm > .table-bordered {
+  .table-rESPonsive-sm > .table-bordered {
     border: 0;
   }
 }
 
 @media (max-width: 767.98px) {
-  .table-responsive-md {
+  .table-rESPonsive-md {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-  .table-responsive-md > .table-bordered {
+  .table-rESPonsive-md > .table-bordered {
     border: 0;
   }
 }
 
 @media (max-width: 991.98px) {
-  .table-responsive-lg {
+  .table-rESPonsive-lg {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-  .table-responsive-lg > .table-bordered {
+  .table-rESPonsive-lg > .table-bordered {
     border: 0;
   }
 }
 
 @media (max-width: 1199.98px) {
-  .table-responsive-xl {
+  .table-rESPonsive-xl {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-  .table-responsive-xl > .table-bordered {
+  .table-rESPonsive-xl > .table-bordered {
     border: 0;
   }
 }
 
-.table-responsive {
+.table-rESPonsive {
   display: block;
   width: 100%;
   overflow-x: auto;
@@ -1950,7 +1950,7 @@ pre code {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-.table-responsive > .table-bordered {
+.table-rESPonsive > .table-bordered {
   border: 0;
 }
 
@@ -6486,7 +6486,7 @@ button.bg-dark:focus {
   }
 }
 
-.embed-responsive {
+.embed-rESPonsive {
   position: relative;
   display: block;
   width: 100%;
@@ -6494,16 +6494,16 @@ button.bg-dark:focus {
   overflow: hidden;
 }
 
-.embed-responsive::before {
+.embed-rESPonsive::before {
   display: block;
   content: "";
 }
 
-.embed-responsive .embed-responsive-item,
-.embed-responsive iframe,
-.embed-responsive embed,
-.embed-responsive object,
-.embed-responsive video {
+.embed-rESPonsive .embed-rESPonsive-item,
+.embed-rESPonsive iframe,
+.embed-rESPonsive embed,
+.embed-rESPonsive object,
+.embed-rESPonsive video {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -6513,19 +6513,19 @@ button.bg-dark:focus {
   border: 0;
 }
 
-.embed-responsive-21by9::before {
+.embed-rESPonsive-21by9::before {
   padding-top: 42.857143%;
 }
 
-.embed-responsive-16by9::before {
+.embed-rESPonsive-16by9::before {
   padding-top: 56.25%;
 }
 
-.embed-responsive-4by3::before {
+.embed-rESPonsive-4by3::before {
   padding-top: 75%;
 }
 
-.embed-responsive-1by1::before {
+.embed-rESPonsive-1by1::before {
   padding-top: 100%;
 }
 

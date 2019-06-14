@@ -117,7 +117,7 @@ Blockly.FieldImage.prototype.init = function() {
   if (this.tooltip_) {
     this.imageElement_.tooltip = this.tooltip_;
   } else {
-    // Configure the field to be transparent with respect to tooltips.
+    // Configure the field to be transparent with rESPect to tooltips.
     this.setTooltip(this.sourceBlock_);
   }
   Blockly.Tooltip.bindMouseEvents(this.imageElement_);

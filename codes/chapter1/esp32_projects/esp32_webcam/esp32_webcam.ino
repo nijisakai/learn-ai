@@ -1,4 +1,4 @@
-#include "esp_camera.h"
+#include "ESP_camera.h"
 #include <WiFi.h>
 
 
@@ -60,13 +60,13 @@ void setup() {
 #endif
 
   // camera init
-  esp_err_t err = esp_camera_init(&config);
+  ESP_err_t err = ESP_camera_init(&config);
   if (err != ESP_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;
   }
 
-  sensor_t * s = esp_camera_sensor_get();
+  sensor_t * s = ESP_camera_sensor_get();
   //initial sensors are flipped vertically and colors are a bit saturated
   if (s->id.PID == OV3660_PID) {
     s->set_vflip(s, 1);//flip it back

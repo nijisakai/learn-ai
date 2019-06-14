@@ -167,7 +167,7 @@ Blockly.Bubble.prototype.rendered_ = false;
 Blockly.Bubble.prototype.anchorXY_ = null;
 
 /**
- * Relative X coordinate of bubble with respect to the anchor's centre,
+ * Relative X coordinate of bubble with rESPect to the anchor's centre,
  * in workspace units.
  * In RTL mode the initial value is negated.
  * @private
@@ -175,7 +175,7 @@ Blockly.Bubble.prototype.anchorXY_ = null;
 Blockly.Bubble.prototype.relativeLeft_ = 0;
 
 /**
- * Relative Y coordinate of bubble with respect to the anchor's centre.
+ * Relative Y coordinate of bubble with rESPect to the anchor's centre.
  * @private
  */
 Blockly.Bubble.prototype.relativeTop_ = 0;

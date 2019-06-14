@@ -197,7 +197,7 @@ blocklyApp.FieldSegmentComponent = ng.core.Component({
 
     if (!optionText) {
       throw Error(
-          'There is no option text corresponding to the value: ' +
+          'There is no option text corrESPonding to the value: ' +
           this.optionValue);
     }
 

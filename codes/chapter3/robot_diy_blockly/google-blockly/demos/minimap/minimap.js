@@ -24,7 +24,7 @@
 'use strict';
 
 /**
- * Creating a separate namespace for minimap.
+ * Creating a separate namESPace for minimap.
  */
 var Minimap = {};
 

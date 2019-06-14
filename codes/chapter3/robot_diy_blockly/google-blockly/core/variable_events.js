@@ -35,7 +35,7 @@ goog.require('Blockly.Events.Abstract');
 
 /**
  * Abstract class for a variable event.
- * @param {Blockly.VariableModel} variable The variable this event corresponds
+ * @param {Blockly.VariableModel} variable The variable this event corrESPonds
  *     to.
  * @extends {Blockly.Events.Abstract}
  * @constructor
