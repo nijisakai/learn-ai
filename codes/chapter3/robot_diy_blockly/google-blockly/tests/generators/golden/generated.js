@@ -836,7 +836,7 @@ function test_substring_simple() {
   assertEquals(text.slice(text.length - 3, text.length), '789', 'substring #-end last simple');
   assertEquals(text.slice(0, text.length - 0), '123456789', 'substring all with # #-end simple');
   assertEquals(text.slice(text.length - 9, 9), '123456789', 'substring all with #-end # simple');
-  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
+  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
   assertEquals(text.slice(((0 + 1) - 1), text.length - ((0 + 1) - 1)), '123456789', 'substring all with # #-end math simple');
 }
 
@@ -921,7 +921,7 @@ function test_substring_complex() {
   assertEquals(subsequenceFromEndFromStart(get_numbers(), 8, 8), '123456789', 'substring all with #-end # complex');
   check_number_of_calls('substring all with #-end # complex');
   number_of_calls = 0;
-  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
+  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
   assertEquals(subsequenceFromStartFromEnd(get_numbers(), ((0 + 1) - 1), ((0 + 1) - 1)), '123456789', 'substring all with # #-end math complex');
   check_number_of_calls('substring all with # #-end math complex');
 }
@@ -1357,7 +1357,7 @@ function test_sublist_simple() {
   assertEquals(list.slice(list.length - 4, list.length), ['Challenger', 'Discovery', 'Atlantis', 'Endeavour'], 'sublist #-end last simple');
   assertEquals(list.slice(0, list.length - 0), list, 'sublist all with # #-end simple');
   assertEquals(list.slice(list.length - 5, 5), list, 'sublist all with #-end # simple');
-  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
+  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
   assertEquals(list.slice(((0 + 1) - 1), list.length - ((0 + 1) - 1)), list, 'sublist all with # #-end math simple');
 }
 
@@ -1414,7 +1414,7 @@ function test_sublist_complex() {
   assertEquals(subsequenceFromEndFromStart(get_space_shuttles(), 4, 4), list, 'sublist all with #-end # complex');
   check_number_of_calls('sublist all with #-end # complex');
   number_of_calls = 0;
-  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
+  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
   assertEquals(subsequenceFromStartFromEnd(get_space_shuttles(), ((0 + 1) - 1), ((0 + 1) - 1)), list, 'sublist all with # #-end math complex');
   check_number_of_calls('sublist all with # #-end math complex');
 }

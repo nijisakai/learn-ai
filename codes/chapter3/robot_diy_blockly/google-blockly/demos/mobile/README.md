@@ -34,7 +34,7 @@ or connected device.
 If you edit the `mobile/html/` demo to include new files, you will need to
 update the native app project files to also copy those files.
 
-In the Android project, two Gradle tasks are rESPonsible for the copies.
+In the Android project, two Gradle tasks are responsible for the copies.
 In `mobile/android/app/build.gradle`, the tasks `copyBlocklyHtmlFile` and
 `copyBlocklyMoreFiles` configure the copy actions.
 

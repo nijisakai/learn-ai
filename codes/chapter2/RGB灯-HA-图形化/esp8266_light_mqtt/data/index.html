@@ -16,7 +16,7 @@
         </style>
     </head>
     <body>
-        <H1>ESP8266 light mqtt</H1>
+        <H1>esp8266 light mqtt</H1>
         <form id=myForm action=/set-color>
             <div>
                 <label for=red>Red </label>
@@ -48,7 +48,7 @@
                         xmlHttp.send();                 
                         xmlHttp.onreadystatechange = function() {                    
                               if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
-                                    requstData = xmlHttp.rESPonseText;                         
+                                    requstData = xmlHttp.responseText;                         
                                     console.log(requstData);                    
                               }                
                         };            

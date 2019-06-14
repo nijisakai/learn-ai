@@ -22,7 +22,7 @@
  * dialogs. This is just an example, and applications are not encouraged to use
  * it verbatim.
  *
- * @namESPace
+ * @namespace
  */
 CustomDialog = {};
 

@@ -47,7 +47,7 @@ Blockly.Lua.addReservedWords(
     // Special character
     '_,' +
     // From theoriginalbit's script:
-    // https://github.com/ESPertus/blockly-lua/issues/6
+    // https://github.com/espertus/blockly-lua/issues/6
     '__inext,assert,bit,colors,colours,coroutine,disk,dofile,error,fs,' +
     'fetfenv,getmetatable,gps,help,io,ipairs,keys,loadfile,loadstring,math,' +
     'native,next,os,paintutils,pairs,parallel,pcall,peripheral,print,' +

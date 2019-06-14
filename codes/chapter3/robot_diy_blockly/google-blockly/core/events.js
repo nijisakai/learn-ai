@@ -26,7 +26,7 @@
 
 /**
  * Events fired as a result of actions in Blockly's editor.
- * @namESPace Blockly.Events
+ * @namespace Blockly.Events
  */
 goog.provide('Blockly.Events');
 
@@ -280,7 +280,7 @@ Blockly.Events.disable = function() {
 
 /**
  * Start sending events.  Unless events were already disabled when the
- * corrESPonding call to disable was made.
+ * corresponding call to disable was made.
  */
 Blockly.Events.enable = function() {
   Blockly.Events.disabled_--;

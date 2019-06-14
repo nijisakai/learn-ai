@@ -207,7 +207,7 @@ AppController.prototype.formatBlockLibraryForImport_ = function(xmlText) {
  * Extracts out block type from XML text, the kind that is saved in block
  * library storage.
  * @param {string} xmlText A block's XML text.
- * @return {string} The block type that corrESPonds to the provided XML text.
+ * @return {string} The block type that corresponds to the provided XML text.
  * @private
  */
 AppController.prototype.getBlockTypeFromXml_ = function(xmlText) {
@@ -587,7 +587,7 @@ AppController.prototype.initializeBlocklyStorage = function() {
   BlocklyStorage.LINK_ALERT =
       'Share your blocks with this link:\n\n%1';
   BlocklyStorage.HASH_ERROR =
-      'Sorry, "%1" doesn\'t corrESPond with any saved Blockly file.';
+      'Sorry, "%1" doesn\'t correspond with any saved Blockly file.';
   BlocklyStorage.XML_ERROR = 'Could not load your saved file.\n' +
       'Perhaps it was created with a different version of Blockly?';
   var linkButton = document.getElementById('linkButton');

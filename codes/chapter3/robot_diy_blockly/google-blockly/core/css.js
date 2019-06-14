@@ -26,7 +26,7 @@
 
 /**
  * @name Blockly.Css
- * @namESPace
+ * @namespace
  */
 goog.provide('Blockly.Css');
 
@@ -69,7 +69,7 @@ Blockly.Css.mediaPath_ = '';
  * b) It speeds up loading by not blocking on a separate HTTP transfer.
  * c) The CSS content may be made dynamic depending on init options.
  * @param {boolean} hasCss If false, don't inject CSS
- *     (providing CSS becomes the document's rESPonsibility).
+ *     (providing CSS becomes the document's responsibility).
  * @param {string} pathToMedia Path from page to the Blockly media directory.
  */
 Blockly.Css.inject = function(hasCss, pathToMedia) {

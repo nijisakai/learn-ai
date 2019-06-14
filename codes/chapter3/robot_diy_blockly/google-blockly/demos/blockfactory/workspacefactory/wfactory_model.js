@@ -224,7 +224,7 @@ WorkspaceFactoryModel.prototype.getIndexByElementId = function(id) {
 /**
  * Given the ID of a list element, returns that ListElement object.
  * @param {string} id The ID of element to search for.
- * @return {ListElement} CorrESPonding ListElement object in toolboxList, or
+ * @return {ListElement} Corresponding ListElement object in toolboxList, or
  *     null if that element does not exist.
  */
 WorkspaceFactoryModel.prototype.getElementById = function(id) {
@@ -240,7 +240,7 @@ WorkspaceFactoryModel.prototype.getElementById = function(id) {
  * Given the index of a list element in toolboxList, returns that ListElement
  * object.
  * @param {number} index The index of the element to return.
- * @return {ListElement} The corrESPonding ListElement object in toolboxList.
+ * @return {ListElement} The corresponding ListElement object in toolboxList.
  */
 WorkspaceFactoryModel.prototype.getElementByIndex = function(index) {
   if (index < 0 || index >= this.toolboxList.length) {

@@ -781,7 +781,7 @@ void test_substring_simple() {
   unittest_assertequals(text.substring(text.length - 3), '789', 'substring #-end last simple');
   unittest_assertequals(text.substring(0, text.length - 0), '123456789', 'substring all with # #-end simple');
   unittest_assertequals(text.substring(text.length - 9, 9), '123456789', 'substring all with #-end # simple');
-  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
+  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
   unittest_assertequals(text.substring(((0 + 1) - 1), text.length - ((0 + 1) - 1)), '123456789', 'substring all with # #-end math simple');
 }
 
@@ -846,7 +846,7 @@ void test_substring_complex() {
   unittest_assertequals(text_get_substring((get_numbers()), 'FROM_END', 8, 'FROM_START', 8), '123456789', 'substring all with #-end # complex');
   check_number_of_calls('substring all with #-end # complex');
   number_of_calls = 0;
-  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.
+  // Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.
   unittest_assertequals(text_get_substring((get_numbers()), 'FROM_START', ((0 + 1) - 1), 'FROM_END', ((0 + 1) - 1)), '123456789', 'substring all with # #-end math complex');
   check_number_of_calls('substring all with # #-end math complex');
 }
@@ -1262,7 +1262,7 @@ void test_sublist_simple() {
   unittest_assertequals(list.sublist(list.length - 4), ['Challenger', 'Discovery', 'Atlantis', 'Endeavour'], 'sublist #-end last simple');
   unittest_assertequals(list.sublist(0, list.length - 0), list, 'sublist all with # #-end simple');
   unittest_assertequals(list.sublist(list.length - 5, 5), list, 'sublist all with #-end # simple');
-  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
+  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
   unittest_assertequals(list.sublist(((0 + 1) - 1), list.length - ((0 + 1) - 1)), list, 'sublist all with # #-end math simple');
 }
 
@@ -1333,7 +1333,7 @@ void test_sublist_complex() {
   unittest_assertequals(lists_get_sublist((get_space_shuttles()), 'FROM_END', 4, 'FROM_START', 4), list, 'sublist all with #-end # complex');
   check_number_of_calls('sublist all with #-end # complex');
   number_of_calls = 0;
-  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.
+  // Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.
   unittest_assertequals(lists_get_sublist((get_space_shuttles()), 'FROM_START', ((0 + 1) - 1), 'FROM_END', ((0 + 1) - 1)), list, 'sublist all with # #-end math complex');
   check_number_of_calls('sublist all with # #-end math complex');
 }

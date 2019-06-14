@@ -43,7 +43,7 @@ goog.require('goog.math.Coordinate');
 
 /**
  * Abstract class for a block event.
- * @param {Blockly.Block} block The block this event corrESPonds to.
+ * @param {Blockly.Block} block The block this event corresponds to.
  * @extends {Blockly.Events.Abstract}
  * @constructor
  */

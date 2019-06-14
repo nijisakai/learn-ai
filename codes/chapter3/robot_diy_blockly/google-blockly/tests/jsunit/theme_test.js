@@ -133,7 +133,7 @@ function test_setTheme() {
 
   Blockly.setTheme(blockStyles);
 
-  //Checks that the theme was set correctly on Blockly namESPace
+  //Checks that the theme was set correctly on Blockly namespace
   stringifyAndCompare(Blockly.getTheme(), blockStyles);
 
   //Checks that the setTheme function was called on the block

@@ -1,5 +1,5 @@
-#include <ESP8266WebServer.h>
-ESP8266WebServer server(80);
+#include <esp8266WebServer.h>
+esp8266WebServer server(80);
 
 void handleNotFound(){
   String message = "File Not Found\n\n";

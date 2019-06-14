@@ -31,7 +31,7 @@ goog.provide('Blockly.Names');
  * Class for a database of entity names (variables, functions, etc).
  * @param {string} reservedWords A comma-separated string of words that are
  *     illegal for use as names in a language (e.g. 'new,if,this,...').
- * @param {string=} opt_variablePrefix Some languages need a '$' or a namESPace
+ * @param {string=} opt_variablePrefix Some languages need a '$' or a namespace
  *     before all variable names.
  * @constructor
  */

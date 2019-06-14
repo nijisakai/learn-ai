@@ -31,8 +31,8 @@ goog.require('goog.ui.PopupColorPicker');
 goog.require('goog.ui.ColorPicker');
 
 /**
- * NamESPace for workspace factory initialization methods.
- * @namESPace
+ * Namespace for workspace factory initialization methods.
+ * @namespace
  */
 WorkspaceFactoryInit = {};
 
@@ -514,7 +514,7 @@ WorkspaceFactoryInit.addWorkspaceFactoryEventListeners_ = function(controller) {
       }
 
       // If any of the newly created blocks are variable or procedure blocks,
-      // prompt the user to create the corrESPonding standard category.
+      // prompt the user to create the corresponding standard category.
       if (variableCreated && !controller.hasVariablesCategory()) {
         if (confirm('Your new block has a variables field. To use this block '
             + 'fully, you will need a Variables category. Do you want to add '

@@ -30,7 +30,7 @@
  'use strict';
 
 /**
- * NamESPace for StandardCategories
+ * Namespace for StandardCategories
  */
 var StandardCategories = StandardCategories || Object.create(null);
 

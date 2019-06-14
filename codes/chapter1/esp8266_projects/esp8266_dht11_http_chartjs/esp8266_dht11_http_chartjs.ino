@@ -1,19 +1,19 @@
-#include <ESP8266WiFi.h>
+#include <esp8266WiFi.h>
 #include <WiFiClient.h>
-#include <ESP8266WebServer.h>
+#include <esp8266WebServer.h>
  
 #include "index.h" //Our HTML webpage contents with javascripts
-#include "DHTESP.h"  //DHT11 Library for ESP
+#include "DHTesp.h"  //DHT11 Library for esp
   
 #define LED 2        //On board LED
 #define DHTpin 15    //D8 of NodeMCU is GPIO15
 
-DHTESP dht;
+DHTesp dht;
 
 const char* ssid = "AI";
 const char* password = "raspberry";
  
-ESP8266WebServer server(80); //Server on port 80
+esp8266WebServer server(80); //Server on port 80
 
 void handleRoot() {
  String s = MAIN_page; //Read HTML contents
@@ -50,8 +50,8 @@ void setup()
   Serial.begin(115200);
   Serial.println();
 
-  dht.setup(DHTpin, DHTESP::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
-  //dht.setup(DHTpin, DHTESP::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
+  dht.setup(DHTpin, DHTesp::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
+  //dht.setup(DHTpin, DHTesp::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
 
   WiFi.begin(ssid, password);     //Connect to your WiFi router
   Serial.println("");
@@ -70,7 +70,7 @@ void setup()
   Serial.print("Connected to ");
   Serial.println(ssid);
   Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());  //IP address assigned to your ESP
+  Serial.println(WiFi.localIP());  //IP address assigned to your esp
  
   server.on("/", handleRoot);      //Which routine to handle at root location. This is display page
   server.on("/readADC", handleADC); //This page is called by java Script AJAX

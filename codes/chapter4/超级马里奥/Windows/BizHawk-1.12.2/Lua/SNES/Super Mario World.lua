@@ -591,13 +591,13 @@ WRAM = {
     minorspr_timer = 0x1850,
     
     -- Bounce sprites
-    bouncESPr_number = 0x1699,
-    bouncESPr_x_high = 0x16ad,
-    bouncESPr_x_low = 0x16a5,
-    bouncESPr_y_high = 0x16a9,
-    bouncESPr_y_low = 0x16a1,
-    bouncESPr_timer = 0x16c5,
-    bouncESPr_last_id = 0x18cd,
+    bouncespr_number = 0x1699,
+    bouncespr_x_high = 0x16ad,
+    bouncespr_x_low = 0x16a5,
+    bouncespr_y_high = 0x16a9,
+    bouncespr_y_low = 0x16a1,
+    bouncespr_timer = 0x16c5,
+    bouncespr_last_id = 0x18cd,
     turn_block_timer = 0x18ce,
     
     -- Player
@@ -2210,13 +2210,13 @@ local function bounce_sprite_info()
     Text_opacity = 1.0
     local height = BIZHAWK_FONT_HEIGHT
     
-    local stop_id = (u8(WRAM.bouncESPr_last_id) - 1)%SMW.bounce_sprite_max
+    local stop_id = (u8(WRAM.bouncespr_last_id) - 1)%SMW.bounce_sprite_max
     for id = 0, SMW.bounce_sprite_max - 1 do
-        local bounce_sprite_number = u8(WRAM.bouncESPr_number + id)
+        local bounce_sprite_number = u8(WRAM.bouncespr_number + id)
         if bounce_sprite_number ~= 0 then
-            local x = 256*u8(WRAM.bouncESPr_x_high + id) + u8(WRAM.bouncESPr_x_low + id)
-            local y = 256*u8(WRAM.bouncESPr_y_high + id) + u8(WRAM.bouncESPr_y_low + id)
-            local bounce_timer = u8(WRAM.bouncESPr_timer + id)
+            local x = 256*u8(WRAM.bouncespr_x_high + id) + u8(WRAM.bouncespr_x_low + id)
+            local y = 256*u8(WRAM.bouncespr_y_high + id) + u8(WRAM.bouncespr_y_low + id)
+            local bounce_timer = u8(WRAM.bouncespr_timer + id)
             
             if OPTIONS.display_debug_info and OPTIONS.display_debug_bounce_sprite then
                 draw_text(x_txt, y_txt + height*(id + 1), fmt("#%d:%d (%d, %d)", id, bounce_sprite_number, x, y))

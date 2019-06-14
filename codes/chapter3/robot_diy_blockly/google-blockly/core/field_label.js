@@ -88,7 +88,7 @@ Blockly.FieldLabel.prototype.init = function() {
   if (this.tooltip_) {
     this.textElement_.tooltip = this.tooltip_;
   } else {
-    // Configure the field to be transparent with rESPect to tooltips.
+    // Configure the field to be transparent with respect to tooltips.
     this.textElement_.tooltip = this.sourceBlock_;
   }
   Blockly.Tooltip.bindMouseEvents(this.textElement_);

@@ -6327,7 +6327,7 @@
                                                                                     <mutation at1="true" at2="true"></mutation>
                                                                                     <field name="WHERE1">FROM_START</field>
                                                                                     <field name="WHERE2">FROM_END</field>
-                                                                                    <comment pinned="false" h="93" w="347">Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.</comment>
+                                                                                    <comment pinned="false" h="93" w="347">Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.</comment>
                                                                                     <value name="LIST">
                                                                                       <block type="variables_get">
                                                                                         <field name="VAR">list</field>
@@ -7411,7 +7411,7 @@
                                                                                                                                                                             <mutation at1="true" at2="true"></mutation>
                                                                                                                                                                             <field name="WHERE1">FROM_START</field>
                                                                                                                                                                             <field name="WHERE2">FROM_END</field>
-                                                                                                                                                                            <comment pinned="false" h="96" w="315">Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where sublist uses [x:length - y] for # #-end.</comment>
+                                                                                                                                                                            <comment pinned="false" h="96" w="315">Checks that the whole list is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where sublist uses [x:length - y] for # #-end.</comment>
                                                                                                                                                                             <value name="LIST">
                                                                                                                                                                               <block type="procedures_callreturn">
                                                                                                                                                                                 <mutation name="get space shuttles"></mutation>

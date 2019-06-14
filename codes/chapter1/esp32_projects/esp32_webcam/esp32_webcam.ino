@@ -1,11 +1,11 @@
-#include "ESP_camera.h"
+#include "esp_camera.h"
 #include <WiFi.h>
 
 
 
 // Select camera model
 // #define CAMERA_MODEL_WROVER_KIT
-//#define CAMERA_MODEL_ESP_EYE
+//#define CAMERA_MODEL_esp_EYE
 //#define CAMERA_MODEL_M5STACK_PSRAM
 //#define CAMERA_MODEL_M5STACK_WIDE
 #define CAMERA_MODEL_AI_THINKER
@@ -54,19 +54,19 @@ void setup() {
     config.fb_count = 1;
   }
 
-#if defined(CAMERA_MODEL_ESP_EYE)
+#if defined(CAMERA_MODEL_esp_EYE)
   pinMode(13, INPUT_PULLUP);
   pinMode(14, INPUT_PULLUP);
 #endif
 
   // camera init
-  ESP_err_t err = ESP_camera_init(&config);
-  if (err != ESP_OK) {
+  esp_err_t err = esp_camera_init(&config);
+  if (err != esp_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;
   }
 
-  sensor_t * s = ESP_camera_sensor_get();
+  sensor_t * s = esp_camera_sensor_get();
   //initial sensors are flipped vertically and colors are a bit saturated
   if (s->id.PID == OV3660_PID) {
     s->set_vflip(s, 1);//flip it back

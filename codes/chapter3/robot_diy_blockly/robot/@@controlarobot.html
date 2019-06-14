@@ -125,7 +125,7 @@
             xmlHttp.send();                 
             xmlHttp.onreadystatechange = function() {                    
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
-                requstData = xmlHttp.rESPonseText;                         
+                requstData = xmlHttp.responseText;                         
                 console.log(requstData);                    
             }                
             };            
@@ -194,7 +194,7 @@
             xmlHttp.send();                 
             xmlHttp.onreadystatechange = function() {                    
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
-                requstData = xmlHttp.rESPonseText;                         
+                requstData = xmlHttp.responseText;                         
                 console.log(requstData);                    
             }                
             };            

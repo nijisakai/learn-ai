@@ -307,7 +307,7 @@ WorkspaceFactoryController.prototype.clearAndLoadElement = function(id) {
 
 /**
  * Tied to "Export" button. Gets a file name from the user and downloads
- * the corrESPonding configuration XML to that file.
+ * the corresponding configuration XML to that file.
  * @param {string} exportMode The type of file to export
  *    (WorkspaceFactoryController.MODE_TOOLBOX for the toolbox configuration,
  *    and WorkspaceFactoryController.MODE_PRELOAD for the pre-loaded workspace
@@ -717,7 +717,7 @@ WorkspaceFactoryController.prototype.addSeparator = function() {
  * file reading and prints an error message alerting the user.
  * @param {string} file The path for the file to be imported into the workspace.
  *   Should contain valid toolbox XML.
- * @param {string} importMode The mode corrESPonding to the type of file the
+ * @param {string} importMode The mode corresponding to the type of file the
  *   user is importing (WorkspaceFactoryController.MODE_TOOLBOX or
  *   WorkspaceFactoryController.MODE_PRELOAD).
  */
@@ -1027,7 +1027,7 @@ WorkspaceFactoryController.prototype.convertShadowBlocks = function() {
     if (block.isShadow()) {
       block.setShadow(false);
       // Delete the shadow DOM attached to the block so that the shadow block
-      // does not rESPawn. Dependent on implementation details.
+      // does not respawn. Dependent on implementation details.
       var parentConnection = block.outputConnection ?
           block.outputConnection.targetConnection :
           block.previousConnection.targetConnection;

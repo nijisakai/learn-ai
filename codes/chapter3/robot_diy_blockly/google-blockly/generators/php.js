@@ -48,7 +48,7 @@ Blockly.PHP.addReservedWords(
     'clone,const,continue,declare,default,die,do,echo,else,elseif,empty,' +
     'enddeclare,endfor,endforeach,endif,endswitch,endwhile,eval,exit,extends,' +
     'final,for,foreach,function,global,goto,if,implements,include,' +
-    'include_once,instanceof,insteadof,interface,isset,list,namESPace,new,or,' +
+    'include_once,instanceof,insteadof,interface,isset,list,namespace,new,or,' +
     'print,private,protected,public,require,require_once,return,static,' +
     'switch,throw,trait,try,unset,use,var,while,xor,' +
         // http://php.net/manual/en/reserved.constants.php
@@ -62,7 +62,7 @@ Blockly.PHP.addReservedWords(
     'E_CORE_WARNING,E_COMPILE_ERROR,E_COMPILE_WARNING,E_USER_ERROR,' +
     'E_USER_WARNING,E_USER_NOTICE,E_DEPRECATED,E_USER_DEPRECATED,E_ALL,' +
     'E_STRICT,__COMPILER_HALT_OFFSET__,TRUE,FALSE,NULL,__CLASS__,__DIR__,' +
-    '__FILE__,__FUNCTION__,__LINE__,__METHOD__,__NAMESPACE__,__TRAIT__'
+    '__FILE__,__FUNCTION__,__LINE__,__METHOD__,__NAMespACE__,__TRAIT__'
 );
 
 /**

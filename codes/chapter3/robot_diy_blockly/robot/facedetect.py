@@ -14,8 +14,8 @@ class BaiduPicIndentify:
  
     def get_accessToken(self):
         host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=' + self.AK + '&client_secret=' + self.SK
-        rESPonse = requests.get(host, headers=self.headers)
-        json_result = json.loads(rESPonse.text)
+        response = requests.get(host, headers=self.headers)
+        json_result = json.loads(response.text)
         return json_result['access_token']
  
     def img_to_BASE64(slef,path):
@@ -36,8 +36,8 @@ class BaiduPicIndentify:
         #http://ai.baidu.com/docs#/Face-Detect-V3/top <---所有表情数据
         access_token = self.get_accessToken()
         request_url = request_url + "?access_token=" + access_token
-        rESPonse = requests.post(url=request_url, data=post_data, headers=self.headers)
-        json_result = json.loads(rESPonse.text)
+        response = requests.post(url=request_url, data=post_data, headers=self.headers)
+        json_result = json.loads(response.text)
         if json_result['error_msg']!='pic not has face':
             print("图片中包含人脸数：", json_result['result']['face_num'])
             print("图片中包含人物年龄：", json_result['result']['face_list'][0]['age'])

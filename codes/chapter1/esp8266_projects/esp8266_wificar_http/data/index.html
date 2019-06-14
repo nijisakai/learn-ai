@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>ESP8266_wificar_http</title>
+        <title>esp8266_wificar_http</title>
         <style type=text/css>
             .row{
                 display: flex;
@@ -42,7 +42,7 @@
                 xmlhttp.send();
                 xmlhttp.onreadystatechange = function() {
                       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                            requstData = xmlhttp.rESPonseText;
+                            requstData = xmlhttp.responseText;
                             console.log(requstData);
                       };
                 };

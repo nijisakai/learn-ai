@@ -1410,7 +1410,7 @@ esp32是一系列低成本，低功耗的片上 微控制器系统，集成了Wi
 
 ##### 硬件连接
 
-<center><img src=https://md.hass.live/niji/2019-06-14-ESP32-CAM-wiring-FTDI1.webp></center>
+<center><img src=https://md.hass.live/niji/2019-06-14-esp32-CAM-wiring-FTDI1.webp></center>
 
 **注意：`IO0`口需要和它边上的`GND`口用一根杜邦线连接到一起，这样才可以正常上传代码**
 

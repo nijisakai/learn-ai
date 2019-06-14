@@ -1954,7 +1954,7 @@ dd1300bc79a3fe636d4630c0d4917a5b6df82bac	B	Batman 2 (Unl) [o1]	NES
 0532082cad7f64f26f62a178bab227cb179ed816	U	Batman 2004 (Ch)	NES
 4bd09587de3a2c96a0194786e4c8487b6f51f551	G	Batman 4 (Unl) [!]	NES
 98767b83e04dea86963d0bd6346806244417c9df	T	Batman Black (Hack) [T+Rus_Shedevr]	NES
-70327ac07fb3641c4016aea1955397ea04c50461	H	Batman Easy Mode by deESPence2929 (Batman Hack)	NES
+70327ac07fb3641c4016aea1955397ea04c50461	H	Batman Easy Mode by deespence2929 (Batman Hack)	NES
 358dc24ff638853621dd1cad664f9f4c05572282	B	Batman Flash [p1]	NES
 a86a12f13bac665b19a82370979fbf6956c8a9b0	B	Batman Flash [p1][o1]	NES
 67953f70fb822cec1afdc10ce786c9e745f56634	B	Batman Happy (Batman Hack) [b1]	NES
@@ -3543,9 +3543,9 @@ efcebeb8b8e79294a0c0585b6b196c15c7604b7e	H	Castlevania - Opposing Bloodlines (Ha
 4b5e9185bb8dd0b1fe8332a9e4150ab7c70770fd	B	Castlevania - Opposing Bloodlines by Redrum (Hack) [o1]	NES
 6fb13643d7f9a0c1c78a5114429492a100a1c4bd	B	Castlevania - Opposing Bloodlines by Redrum (Hack) [o2]	NES
 ccc12d8c57091fec9f98196f36150c4d31047c4a	H	Castlevania - Opposing Bloodlines by Redrum (Hack)	NES
-3e092e43f0c63619260767b0a5ca11be3b9d1328	H	Castlevania - Orchestra of DESPair by Dr. Mario (V1.0) (Hack)	NES
-b814e98f64076010864309ab05ba3babeb8d3699	H	Castlevania - Orchestra of DESPair by Dr. Mario (V2.0) (Hack)	NES
-5c0da5bdd67caf779f3dcae9bb48b06d035cdadf	H	Castlevania - Orchestra of DESPair by Dr. Mario (Vx.x) (Hack)	NES
+3e092e43f0c63619260767b0a5ca11be3b9d1328	H	Castlevania - Orchestra of Despair by Dr. Mario (V1.0) (Hack)	NES
+b814e98f64076010864309ab05ba3babeb8d3699	H	Castlevania - Orchestra of Despair by Dr. Mario (V2.0) (Hack)	NES
+5c0da5bdd67caf779f3dcae9bb48b06d035cdadf	H	Castlevania - Orchestra of Despair by Dr. Mario (Vx.x) (Hack)	NES
 f178ddba4a67c33f90698cdbb80dcd4fdae96b8e	B	Castlevania - Poisonous Offering (CV PRG0 Hack) [b1]	NES
 e8f73ed9e34a180cb798796c87b5b04bcb7ed51f	H	Castlevania - Poisonous Offering (CV PRG0 Hack)	NES
 1d4d83347fb810cc8f626bd0edebfc0d44c26792	H	Castlevania - Poisonous Offering (CV PRG1 Hack)	NES
@@ -6246,7 +6246,7 @@ fb91665249dea417ea1c1784522a5ac25a193ff8	H	Emily Hearts - Earthbound for Girls (
 5376720a9fbdb61d16f5142ed8aa63a9f894102e	B	Emoyan no 10 Bai Pro Yakyuu (J) [o1]	NES
 ecec0b04e831638bc99ae1fb738d535bae4b01c4	B	Empire Invaders (Space Invaders Hack) [o1]	NES
 d8804c45471ff2731f717d734385d9cdc29a6445	H	Empire Invaders (Space Invaders Hack)	NES
-23d5498adb272f1f24c31f49b398283585bd7c15	U	EmunESPl Famicon1 Intro (PD)	NES
+23d5498adb272f1f24c31f49b398283585bd7c15	U	Emunespl Famicon1 Intro (PD)	NES
 88534f05642285a9f6f509bfa700387e3984f7fd	U	Enchanter (Unl) (VT03)	NES
 5176b901314566b5719e810b987e08f0eaacc7db	H	Ende's Super Mario Bros 1 (SMB1 Hack)	NES
 11054f85344282ea367a22e21b3899f00c67df5e	H	Ende's Super Mario Bros 2 (SMB1 Hack)	NES
@@ -19076,7 +19076,7 @@ cda500269bb162b0724f974b104cdc1573cd69dd	C	TaleSpin (U) [t4]	NES
 ba0f38461b625da1b4d2d87ffe2d425e4300c7bc	U	Tall Pixel Demo by Damian Yerrick (PD)	NES
 dab071f1829851c34483f02b1da737ee3ccd13b6	G	Tamura Koushou Mahjong Seminar (J) [!]	NES
 21047b05fe5387b1c08834439f8fb153735da6ff	B	Tamura Koushou Mahjong Seminar (J) [b1]	NES
-4a6a524759ca64e2983cb188ff439178075e304c	U	TanESPot by Jonathan &amp; Hans Knektar (PD)	NES
+4a6a524759ca64e2983cb188ff439178075e304c	U	Tanespot by Jonathan &amp; Hans Knektar (PD)	NES
 74bb1012db87e69d6deb37de19446c668886049b	U	Tang Bo Hu Dian Qiu Xiang (NJ069) (Ch)	NES
 61c396d07aae17b391121f07cf9ba92bec0ca736	U	Tang Mu Li Xian Ji (Ch)	NES
 eac84b8189e3ec871f6974376e158737c2a376c7	G	Tanigawa Kouji no Shougi Shinan II (J) [!]	NES

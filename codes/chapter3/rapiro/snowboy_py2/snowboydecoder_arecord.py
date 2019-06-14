@@ -116,7 +116,7 @@ class HotwordDetector(object):
         """
         Start the voice detector. For every `sleep_time` second it checks the
         audio buffer for triggering keywords. If detected, then call
-        corrESPonding function in `detected_callback`, which can be a single
+        corresponding function in `detected_callback`, which can be a single
         function (single model) or a list of callback functions (multiple
         models). Every loop it also calls `interrupt_check` -- if it returns
         True, then breaks from the loop and return.

@@ -36,7 +36,7 @@
                         <outlet property="webView" destination="HmE-ZW-QKv" id="OGc-PV-TAB"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstRESPonder" id="dkx-z0-nzr" sceneMemberID="firstRESPonder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-10" y="51"/>
         </scene>

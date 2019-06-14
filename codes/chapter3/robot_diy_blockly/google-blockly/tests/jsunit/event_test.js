@@ -642,7 +642,7 @@ function test_events_mergeUi() {
     new Blockly.Events.Ui(block3, 'click', 'false', 'true')
   ];
   var filteredEvents = Blockly.Events.filter(events, true);
-  assertEquals(3, filteredEvents.length);  // click event merged into corrESPonding *Open event
+  assertEquals(3, filteredEvents.length);  // click event merged into corresponding *Open event
   assertEquals('commentOpen', filteredEvents[0].element);
   assertEquals('mutatorOpen', filteredEvents[1].element);
   assertEquals('warningOpen', filteredEvents[2].element);
@@ -674,7 +674,7 @@ function test_events_stackclick() {
  * leads to events in the undo/redo queue that do nothing, requiring
  * an extra undo/redo to proceed to the next event. This test ensures
  * that two move events that do get merged (disconnecting and
- * reconnecting a block in rESPonse to a mutator change) are filtered
+ * reconnecting a block in response to a mutator change) are filtered
  * from the queue.
  */
 function test_events_filteraftermerge() {

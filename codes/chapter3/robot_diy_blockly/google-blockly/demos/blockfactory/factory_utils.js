@@ -19,7 +19,7 @@
  */
 
 /**
- * @fileoverview FactoryUtils is a namESPace that holds block starter code
+ * @fileoverview FactoryUtils is a namespace that holds block starter code
  * generation functions shared by the Block Factory, Workspace Factory, and
  * Exporter applications within Blockly Factory. Holds functions to generate
  * block definitions and generator stubs and to create and download files.
@@ -30,7 +30,7 @@
 'use strict';
 
 /**
- * NamESPace for FactoryUtils.
+ * Namespace for FactoryUtils.
  */
 var FactoryUtils = FactoryUtils || Object.create(null);
 
@@ -57,7 +57,7 @@ FactoryUtils.getBlockDefinition = function(blockType, rootBlock, format, workspa
 };
 
 /**
- * Convert invalid block name to a valid one. Replaces whitESPace
+ * Convert invalid block name to a valid one. Replaces whitespace
  * and prepend names that start with a digit with an '_'.
  * @param {string} blockType Type of block.
  * @return {string} Cleaned up block type.
@@ -675,7 +675,7 @@ FactoryUtils.getRootBlock = function(workspace) {
 };
 
 // TODO(quachtina96): Move hide, show, makeInvisible, and makeVisible to a new
-// AppView namESPace.
+// AppView namespace.
 
 /**
  * Hides element so that it's invisible and doesn't take up space.

@@ -197,7 +197,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _handlebarsNoConflict2 = _interopRequireDefault(_handlebarsNoConflict);
 
-	// For compatibility and usage outside of module systems, make the Handlebars object a namESPace
+	// For compatibility and usage outside of module systems, make the Handlebars object a namespace
 	function create() {
 	  var hb = new base.HandlebarsEnvironment();
 
@@ -1418,7 +1418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if(own && key in exports)continue;
 	    // export native or passed
 	    out = own ? target[key] : source[key];
-	    // prevent global pollution for namESPaces
+	    // prevent global pollution for namespaces
 	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
 	    // bind timers to global for call from export context
 	    : IS_BIND && own ? ctx(out, global)
@@ -1582,9 +1582,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _parser2 = _interopRequireDefault(_parser);
 
-	var _whitESPaceControl = __webpack_require__(38);
+	var _whitespaceControl = __webpack_require__(38);
 
-	var _whitESPaceControl2 = _interopRequireDefault(_whitESPaceControl);
+	var _whitespaceControl2 = _interopRequireDefault(_whitespaceControl);
 
 	var _helpers = __webpack_require__(40);
 
@@ -1610,7 +1610,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return new yy.SourceLocation(options && options.srcName, locInfo);
 	  };
 
-	  var strip = new _whitESPaceControl2['default'](options);
+	  var strip = new _whitespaceControl2['default'](options);
 	  return strip.accept(_parser2['default'].parse(input));
 	}
 
@@ -2291,7 +2291,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    return 87;
 	                    break;
 	                case 28:
-	                    // ignore whitESPace
+	                    // ignore whitespace
 	                    break;
 	                case 29:
 	                    this.popState();return 54;
@@ -2369,14 +2369,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _visitor2 = _interopRequireDefault(_visitor);
 
-	function WhitESPaceControl() {
+	function WhitespaceControl() {
 	  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	  this.options = options;
 	}
-	WhitESPaceControl.prototype = new _visitor2['default']();
+	WhitespaceControl.prototype = new _visitor2['default']();
 
-	WhitESPaceControl.prototype.Program = function (program) {
+	WhitespaceControl.prototype.Program = function (program) {
 	  var doStandalone = !this.options.ignoreStandalone;
 
 	  var isRoot = !this.isRootSeen;
@@ -2391,11 +2391,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      continue;
 	    }
 
-	    var _isPrevWhitESPace = isPrevWhitESPace(body, i, isRoot),
-	        _isNextWhitESPace = isNextWhitESPace(body, i, isRoot),
-	        openStandalone = strip.openStandalone && _isPrevWhitESPace,
-	        closeStandalone = strip.closeStandalone && _isNextWhitESPace,
-	        inlineStandalone = strip.inlineStandalone && _isPrevWhitESPace && _isNextWhitESPace;
+	    var _isPrevWhitespace = isPrevWhitespace(body, i, isRoot),
+	        _isNextWhitespace = isNextWhitespace(body, i, isRoot),
+	        openStandalone = strip.openStandalone && _isPrevWhitespace,
+	        closeStandalone = strip.closeStandalone && _isNextWhitespace,
+	        inlineStandalone = strip.inlineStandalone && _isPrevWhitespace && _isNextWhitespace;
 
 	    if (strip.close) {
 	      omitRight(body, i, true);
@@ -2410,7 +2410,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (omitLeft(body, i)) {
 	        // If we are on a standalone node, save the indent info for partials
 	        if (current.type === 'PartialStatement') {
-	          // Pull out the whitESPace from the final line
+	          // Pull out the whitespace from the final line
 	          current.indent = /([ \t]+$)/.exec(body[i - 1].original)[1];
 	        }
 	      }
@@ -2418,7 +2418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (doStandalone && openStandalone) {
 	      omitRight((current.program || current.inverse).body);
 
-	      // Strip out the previous content node if it's whitESPace only
+	      // Strip out the previous content node if it's whitespace only
 	      omitLeft(body, i);
 	    }
 	    if (doStandalone && closeStandalone) {
@@ -2432,11 +2432,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return program;
 	};
 
-	WhitESPaceControl.prototype.BlockStatement = WhitESPaceControl.prototype.DecoratorBlock = WhitESPaceControl.prototype.PartialBlockStatement = function (block) {
+	WhitespaceControl.prototype.BlockStatement = WhitespaceControl.prototype.DecoratorBlock = WhitespaceControl.prototype.PartialBlockStatement = function (block) {
 	  this.accept(block.program);
 	  this.accept(block.inverse);
 
-	  // Find the inverse program that is involed with whitESPace stripping.
+	  // Find the inverse program that is involed with whitespace stripping.
 	  var program = block.program || block.inverse,
 	      inverse = block.program && block.inverse,
 	      firstInverse = inverse,
@@ -2457,8 +2457,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // Determine the standalone candiacy. Basically flag our content as being possibly standalone
 	    // so our parent can determine if we actually are standalone
-	    openStandalone: isNextWhitESPace(program.body),
-	    closeStandalone: isPrevWhitESPace((firstInverse || program).body)
+	    openStandalone: isNextWhitespace(program.body),
+	    closeStandalone: isPrevWhitespace((firstInverse || program).body)
 	  };
 
 	  if (block.openStrip.close) {
@@ -2480,7 +2480,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    // Find standalone else statments
-	    if (!this.options.ignoreStandalone && isPrevWhitESPace(program.body) && isNextWhitESPace(firstInverse.body)) {
+	    if (!this.options.ignoreStandalone && isPrevWhitespace(program.body) && isNextWhitespace(firstInverse.body)) {
 	      omitLeft(program.body);
 	      omitRight(firstInverse.body);
 	    }
@@ -2491,11 +2491,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return strip;
 	};
 
-	WhitESPaceControl.prototype.Decorator = WhitESPaceControl.prototype.MustacheStatement = function (mustache) {
+	WhitespaceControl.prototype.Decorator = WhitespaceControl.prototype.MustacheStatement = function (mustache) {
 	  return mustache.strip;
 	};
 
-	WhitESPaceControl.prototype.PartialStatement = WhitESPaceControl.prototype.CommentStatement = function (node) {
+	WhitespaceControl.prototype.PartialStatement = WhitespaceControl.prototype.CommentStatement = function (node) {
 	  /* istanbul ignore next */
 	  var strip = node.strip || {};
 	  return {
@@ -2505,12 +2505,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	};
 
-	function isPrevWhitESPace(body, i, isRoot) {
+	function isPrevWhitespace(body, i, isRoot) {
 	  if (i === undefined) {
 	    i = body.length;
 	  }
 
-	  // Nodes that end with newlines are considered whitESPace (but are special
+	  // Nodes that end with newlines are considered whitespace (but are special
 	  // cased for strip operations)
 	  var prev = body[i - 1],
 	      sibling = body[i - 2];
@@ -2522,7 +2522,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return (sibling || !isRoot ? /\r?\n\s*?$/ : /(^|\r?\n)\s*?$/).test(prev.original);
 	  }
 	}
-	function isNextWhitESPace(body, i, isRoot) {
+	function isNextWhitespace(body, i, isRoot) {
 	  if (i === undefined) {
 	    i = -1;
 	  }
@@ -2543,7 +2543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	// If i is undefined, then the first child will be marked as such.
 	//
-	// If mulitple is truthy then all whitESPace will be stripped out until non-whitESPace
+	// If mulitple is truthy then all whitespace will be stripped out until non-whitespace
 	// content is met.
 	function omitRight(body, i, multiple) {
 	  var current = body[i == null ? 0 : i + 1];
@@ -2561,7 +2561,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	// If i is undefined then the last child will be marked as such.
 	//
-	// If mulitple is truthy then all whitESPace will be stripped out until non-whitESPace
+	// If mulitple is truthy then all whitespace will be stripped out until non-whitespace
 	// content is met.
 	function omitLeft(body, i, multiple) {
 	  var current = body[i == null ? body.length - 1 : i - 1];
@@ -2569,14 +2569,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return;
 	  }
 
-	  // We omit the last node if it's whitESPace only and not preceeded by a non-content node.
+	  // We omit the last node if it's whitespace only and not preceeded by a non-content node.
 	  var original = current.value;
 	  current.value = current.value.replace(multiple ? /\s+$/ : /[ \t]+$/, '');
 	  current.leftStripped = current.value !== original;
 	  return current.leftStripped;
 	}
 
-	exports['default'] = WhitESPaceControl;
+	exports['default'] = WhitespaceControl;
 	module.exports = exports['default'];
 
 /***/ }),
@@ -2624,7 +2624,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 
-	  // Traverses a given array. If mutating, empty rESPnses will be removed
+	  // Traverses a given array. If mutating, empty respnses will be removed
 	  // for child elements.
 	  acceptArray: function acceptArray(array) {
 	    for (var i = 0, l = array.length; i < l; i++) {

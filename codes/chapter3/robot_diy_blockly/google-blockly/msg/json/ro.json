@@ -330,7 +330,7 @@
 	"LISTS_SPLIT_LIST_FROM_TEXT": "convertește textul în listă",
 	"LISTS_SPLIT_TEXT_FROM_LIST": "convertește lista în text",
 	"LISTS_SPLIT_WITH_DELIMITER": "cu separatorul",
-	"LISTS_SPLIT_TOOLTIP_SPLIT": "Împarte textul într-o listă de texte, dESPărțite prin fiecare separator",
+	"LISTS_SPLIT_TOOLTIP_SPLIT": "Împarte textul într-o listă de texte, despărțite prin fiecare separator",
 	"LISTS_SPLIT_TOOLTIP_JOIN": "Concatenează o listă de texte (alternate cu separatorul) într-un text unic",
 	"LISTS_REVERSE_MESSAGE0": "inversă %1",
 	"LISTS_REVERSE_TOOLTIP": "Inversați copia unei liste.",

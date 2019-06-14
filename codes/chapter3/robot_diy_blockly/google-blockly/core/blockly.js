@@ -25,8 +25,8 @@
 'use strict';
 
 /**
- * The top level namESPace used to access the Blockly library.
- * @namESPace Blockly
+ * The top level namespace used to access the Blockly library.
+ * @namespace Blockly
  */
 goog.provide('Blockly');
 
@@ -391,7 +391,7 @@ Blockly.alert = function(message, opt_callback) {
  * Wrapper to window.confirm() that app developers may override to
  * provide alternatives to the modal browser window.
  * @param {string} message The message to display to the user.
- * @param {!function(boolean)} callback The callback for handling user rESPonse.
+ * @param {!function(boolean)} callback The callback for handling user response.
  */
 Blockly.confirm = function(message, callback) {
   callback(window.confirm(message));
@@ -404,7 +404,7 @@ Blockly.confirm = function(message, callback) {
  * recommend testing mobile when overriding this.
  * @param {string} message The message to display to the user.
  * @param {string} defaultValue The value to initialize the prompt with.
- * @param {!function(string)} callback The callback for handling user rESPonse.
+ * @param {!function(string)} callback The callback for handling user response.
  */
 Blockly.prompt = function(message, defaultValue, callback) {
   callback(window.prompt(message, defaultValue));
@@ -652,7 +652,7 @@ Blockly.checkBlockColourConstants = function() {
 };
 
 /**
- * Checks for a constant in the Blockly namESPace, verifying it is undefined or
+ * Checks for a constant in the Blockly namespace, verifying it is undefined or
  * has the old/original value. Prints a warning if this is not true.
  * @param {string} msgName The Msg constant identifier.
  * @param {Array<string>} blocklyNamePath The name parts of the tested

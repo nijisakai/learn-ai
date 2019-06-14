@@ -28,7 +28,7 @@
 
 /**
  * @name Blockly.WidgetDiv
- * @namESPace
+ * @namespace
  */
 goog.provide('Blockly.WidgetDiv');
 

@@ -335,13 +335,13 @@ class Gen_compressed(threading.Thread):
     headers = {"Content-type": "application/x-www-form-urlencoded"}
     conn = httplib.HTTPSConnection("closure-compiler.appspot.com")
     conn.request("POST", "/compile", urlencode(params), headers)
-    rESPonse = conn.getrESPonse()
+    response = conn.getresponse()
 
     # Decode is necessary for Python 3.4 compatibility
-    json_str = rESPonse.read().decode("utf-8")
+    json_str = response.read().decode("utf-8")
     conn.close()
 
-    # Parse the JSON rESPonse.
+    # Parse the JSON response.
     try:
       json_data = json.loads(json_str)
     except ValueError:

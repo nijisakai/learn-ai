@@ -29,7 +29,7 @@
 
 /**
  * @name Blockly.Extensions
- * @namESPace
+ * @namespace
  */
 goog.provide('Blockly.Extensions');
 

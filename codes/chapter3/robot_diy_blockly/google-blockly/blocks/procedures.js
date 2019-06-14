@@ -564,7 +564,7 @@ Blockly.Blocks['procedures_mutatorarg'] = {
   /**
    * Obtain a valid name for the procedure argument. Create a variable if
    * necessary.
-   * Merge runs of whitESPace.  Strip leading and trailing whitESPace.
+   * Merge runs of whitespace.  Strip leading and trailing whitespace.
    * Beyond this, all names are legal.
    * @param {string} varName User-supplied name.
    * @return {?string} Valid name, or null if a name was not specified.
@@ -851,7 +851,7 @@ Blockly.Blocks['procedures_callnoreturn'] = {
     return this.argumentVarModels_;
   },
   /**
-   * Procedure calls cannot exist without the corrESPonding procedure
+   * Procedure calls cannot exist without the corresponding procedure
    * definition.  Enforce this link whenever an event is fired.
    * @param {!Blockly.Events.Abstract} event Change event.
    * @this Blockly.Block
@@ -929,7 +929,7 @@ Blockly.Blocks['procedures_callnoreturn'] = {
           // This should only be possible programatically and may indicate a problem
           // with event grouping. If you see this message please investigate. If the
           // use ends up being valid we may need to reorder events in the undo stack.
-          console.log('Saw an existing group while rESPonding to a definition change');
+          console.log('Saw an existing group while responding to a definition change');
         }
         Blockly.Events.setGroup(event.group);
         if (event.newValue) {

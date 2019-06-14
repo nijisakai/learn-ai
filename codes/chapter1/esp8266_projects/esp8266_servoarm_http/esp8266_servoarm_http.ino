@@ -1,4 +1,4 @@
-#include <ESP8266WiFi.h>
+#include <esp8266WiFi.h>
 #include <FS.h>
 #include <Servo.h>
 #include "server.h"

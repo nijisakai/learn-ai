@@ -932,7 +932,7 @@ Blockly.Gesture.prototype.isDragging = function() {
 
 /**
  * Whether this gesture has already been started.  In theory every mouse down
- * has a corrESPonding mouse up, but in reality it is possible to lose a
+ * has a corresponding mouse up, but in reality it is possible to lose a
  * mouse up, leaving an in-process gesture hanging.
  * @return {boolean} whether this gesture was a click on a workspace.
  * @package

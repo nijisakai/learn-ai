@@ -393,8 +393,8 @@ class BaiduFaceIdentifyEntity(ImageProcessingFaceEntity):
         params = {'client_id': client_id, 'client_secret': client_secret, 'grant_type': grant_type}
 
         try:
-            rESPonse = requests.get(url=request_url, params=params,timeout=5)
-            access_token = json.loads(rESPonse.text)['access_token']
+            response = requests.get(url=request_url, params=params,timeout=5)
+            access_token = json.loads(response.text)['access_token']
         except ReadTimeout:
             _LOGGER.error("百度人脸识别获取access_token连接超时")
         except ConnectionError:
@@ -446,9 +446,9 @@ class BaiduFaceIdentifyEntity(ImageProcessingFaceEntity):
         url = '{}/api/camera_proxy/{}?time={}'.format(host, self._camera , int(round(t * 1000)))
         headers = {'x-ha-access': self.ha_password,
                    'content-type': 'application/json'}
-        rESPonse = get(url, headers=headers)
+        response = get(url, headers=headers)
         with open(self.unknowns_face_path, 'wb') as fo:
-            fo.write(rESPonse.content)
+            fo.write(response.content)
 
     def strat_time(self):
         return time.time()

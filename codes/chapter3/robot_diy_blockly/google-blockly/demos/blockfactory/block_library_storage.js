@@ -20,7 +20,7 @@
 
 /**
  * @fileoverview Javascript for Block Library's Storage Class.
- * Depends on Block Library for its namESPace.
+ * Depends on Block Library for its namespace.
  *
  * @author quachtina96 (Tina Quach)
  */
@@ -112,10 +112,10 @@ BlockLibraryStorage.prototype.getBlockXml = function(blockType) {
 
 
 /**
- * Returns map of each block type to its corrESPonding XML stored in current
+ * Returns map of each block type to its corresponding XML stored in current
  * block library (this.blocks).
  * @param {!Array.<string>} blockTypes Types of blocks.
- * @return {!Object} Map of block type to corrESPonding XML.
+ * @return {!Object} Map of block type to corresponding XML.
  */
 BlockLibraryStorage.prototype.getBlockXmlMap = function(blockTypes) {
   var blockXmlMap = {};
@@ -148,7 +148,7 @@ BlockLibraryStorage.prototype.isEmpty = function() {
 
 /**
  * Returns array of all block types stored in current block library.
- * @return {!Array.<string>} Map of block type to corrESPonding XML text.
+ * @return {!Array.<string>} Map of block type to corresponding XML text.
  */
 BlockLibraryStorage.prototype.getBlockXmlTextMap = function() {
   return this.blocks;

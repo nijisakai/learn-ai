@@ -5,7 +5,7 @@ ser = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)
 ser.write(b"#M2")
 try:
     while 1:
-        rESPonse = ser.readline()
-        print(rESPonse)
+        response = ser.readline()
+        print(response)
 except KeyboardInterrupt:
     ser.close()

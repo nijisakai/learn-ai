@@ -1188,7 +1188,7 @@ Blockly.Msg.PROCEDURES_MUTATORARG_TITLE = 'input name:';
 Blockly.Msg.PROCEDURES_MUTATORARG_TOOLTIP = 'Add an input to the function.';
 
 /// context menu - This appears on the context menu for function calls.  Selecting
-/// it causes the corrESPonding function definition to be highlighted (as shown at
+/// it causes the corresponding function definition to be highlighted (as shown at
 /// [[Translating:Blockly#context_menus]].
 Blockly.Msg.PROCEDURES_HIGHLIGHT_DEF = 'Highlight function definition';
 /// context menu - This appears on the context menu for function definitions.

@@ -110,7 +110,7 @@ def _create_lang_file(author, lang, output_dir):
 
     The file consists of metadata, followed by key-value pairs, where the keys
     are message ids and the values are the messages in the language specified
-    by the corrESPonding command-line argument.  The file should be closed by
+    by the corresponding command-line argument.  The file should be closed by
     _close_lang_file().
 
     Args:

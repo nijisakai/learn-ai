@@ -2,7 +2,7 @@
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namESPace planepage.
+ * @fileoverview Templates in namespace planepage.
  */
 
 if (typeof planepage == 'undefined') { var planepage = {}; }

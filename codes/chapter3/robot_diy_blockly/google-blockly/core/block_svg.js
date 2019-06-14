@@ -1036,7 +1036,7 @@ Blockly.BlockSvg.prototype.updateDisabled = function() {
 Blockly.BlockSvg.prototype.getCommentText = function() {
   if (this.comment) {
     var comment = this.comment.getText();
-    // Trim off trailing whitESPace.
+    // Trim off trailing whitespace.
     return comment.replace(/\s+$/, '').replace(/ +\n/g, '\n');
   }
   return '';
@@ -1246,7 +1246,7 @@ Blockly.BlockSvg.prototype.setColour = function(colour) {
 
 /**
  * Move this block to the front of the visible workspace.
- * <g> tags do not rESPect z-index so SVG renders them in the
+ * <g> tags do not respect z-index so SVG renders them in the
  * order that they are in the DOM.  By placing this block first within the
  * block group's <g>, it will render on top of any other blocks.
  * @package

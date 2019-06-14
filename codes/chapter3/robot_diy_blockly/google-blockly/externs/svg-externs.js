@@ -130,13 +130,13 @@ function SVGElementInstance(){}
 /**
  * @type {!SVGElement}
  */
-SVGElementInstance.prototype.corrESPondingElement;
+SVGElementInstance.prototype.correspondingElement;
 
 
 /**
  * @type {!SVGUseElement}
  */
-SVGElementInstance.prototype.corrESPondingUseElement;
+SVGElementInstance.prototype.correspondingUseElement;
 
 
 /**

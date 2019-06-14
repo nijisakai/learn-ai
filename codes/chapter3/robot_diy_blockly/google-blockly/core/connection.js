@@ -146,7 +146,7 @@ Blockly.Connection.prototype.connect_ = function(childConnection) {
     // Disconnect it and reattach it or bump it as needed.
     var orphanBlock = parentConnection.targetBlock();
     var shadowDom = parentConnection.getShadowDom();
-    // Temporarily set the shadow DOM to null so it does not rESPawn.
+    // Temporarily set the shadow DOM to null so it does not respawn.
     parentConnection.setShadowDom(null);
     // Displaced shadow blocks dissolve rather than reattaching or bumping.
     if (orphanBlock.isShadow()) {
@@ -543,7 +543,7 @@ Blockly.Connection.prototype.disconnect = function() {
     parentConnection = otherConnection;
   }
   this.disconnectInternal_(parentBlock, childBlock);
-  parentConnection.rESPawnShadow_();
+  parentConnection.respawnShadow_();
 };
 
 /**
@@ -569,10 +569,10 @@ Blockly.Connection.prototype.disconnectInternal_ = function(parentBlock,
 };
 
 /**
- * RESPawn the shadow block if there was one connected to the this connection.
+ * Respawn the shadow block if there was one connected to the this connection.
  * @protected
  */
-Blockly.Connection.prototype.rESPawnShadow_ = function() {
+Blockly.Connection.prototype.respawnShadow_ = function() {
   var parentBlock = this.getSourceBlock();
   var shadow = this.getShadowDom();
   if (parentBlock.workspace && shadow && Blockly.Events.recordUndo) {
@@ -600,7 +600,7 @@ Blockly.Connection.prototype.targetBlock = function() {
 };
 
 /**
- * Is this connection compatible with another connection with rESPect to the
+ * Is this connection compatible with another connection with respect to the
  * value type system.  E.g. square_root("Hello") is not compatible.
  * @param {!Blockly.Connection} otherConnection Connection to compare against.
  * @return {boolean} True if the connections share a type.

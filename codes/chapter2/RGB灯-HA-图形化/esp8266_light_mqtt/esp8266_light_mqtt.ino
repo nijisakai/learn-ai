@@ -1,13 +1,13 @@
 /*
-   MQTT RGB Light for Home-Assistant - NodeMCU (ESP8266)
+   MQTT RGB Light for Home-Assistant - NodeMCU (esp8266)
    https://home-assistant.io/components/light.mqtt/
    Libraries :
-    - ESP8266 core for Arduino : https://github.com/ESP8266/Arduino
+    - esp8266 core for Arduino : https://github.com/esp8266/Arduino
     - PubSubClient : https://github.com/knolleary/pubsubclient
    Sources :
     - File > Examples > ES8266WiFi > WiFiClient
     - File > Examples > PubSubClient > mqtt_auth
-    - File > Examples > PubSubClient > mqtt_ESP8266
+    - File > Examples > PubSubClient > mqtt_esp8266
     - http://forum.arduino.cc/index.php?topic=272862.0
    Schematic :
     - https://github.com/mertenats/open-home-automation/blob/master/ha_mqtt_rgb_light/Schematic.png
@@ -32,7 +32,7 @@
    https://github.com/mertenats/open-home-automation
 */
 
-#include <ESP8266WiFi.h>
+#include <esp8266WiFi.h>
 #include <PubSubClient.h>
 #include <FS.h>
 #define FASTLED_INTERNAL
@@ -65,7 +65,7 @@ const PROGMEM char* MQTT_CLIENT_ID = "office_rgb_light";
 const PROGMEM char* MQTT_SERVER_IP = "192.168.0.143";
 const PROGMEM uint16_t MQTT_SERVER_PORT = 1883;
 const PROGMEM char* MQTT_USER = "homeassistant";
-const PROGMEM char* MQTT_PASSWORD = "sliESP";
+const PROGMEM char* MQTT_PASSWORD = "sliesp";
 
 // MQTT: topics
 // state

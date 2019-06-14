@@ -40,7 +40,7 @@ goog.require('goog.math.Coordinate');
 
 /**
  * Abstract class for a comment event.
- * @param {Blockly.WorkspaceComment} comment The comment this event corrESPonds
+ * @param {Blockly.WorkspaceComment} comment The comment this event corresponds
  *     to.
  * @extends {Blockly.Events.Abstract}
  * @constructor

@@ -3,9 +3,9 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 
-using namESPace std;
-using namESPace cv;
-using namESPace cv::dnn;
+using namespace std;
+using namespace cv;
+using namespace cv::dnn;
 
 #define MPI
 
@@ -92,7 +92,7 @@ int main(int argc, char **argv)
         vector<Point> points(nPoints);
         for (int n=0; n < nPoints; n++)
         {
-            // Probability map of corrESPonding body's part.
+            // Probability map of corresponding body's part.
             Mat probMap(H, W, CV_32F, output.ptr(0,n));
 
             Point2f p(-1,-1);

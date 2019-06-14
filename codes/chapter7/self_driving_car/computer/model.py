@@ -67,8 +67,8 @@ class NeuralNetwork(object):
         print("Training duration: %.2fs" % (end - start))
 
     def evaluate(self, X, y):
-        ret, rESP = self.model.predict(X)
-        prediction = rESP.argmax(-1)
+        ret, resp = self.model.predict(X)
+        prediction = resp.argmax(-1)
         true_labels = y.argmax(-1)
         accuracy = np.mean(prediction == true_labels)
         return accuracy
@@ -87,9 +87,9 @@ class NeuralNetwork(object):
         self.model = cv2.ml.ANN_MLP_load(path)
 
     def predict(self, X):
-        rESP = None
+        resp = None
         try:
-            ret, rESP = self.model.predict(X)
+            ret, resp = self.model.predict(X)
         except Exception as e:
             print(e)
-        return rESP.argmax(-1)
+        return resp.argmax(-1)

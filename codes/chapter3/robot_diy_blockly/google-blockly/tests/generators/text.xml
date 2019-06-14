@@ -2653,7 +2653,7 @@
                                                                     <mutation at1="true" at2="true"></mutation>
                                                                     <field name="WHERE1">FROM_START</field>
                                                                     <field name="WHERE2">FROM_END</field>
-                                                                    <comment pinned="false" h="94" w="320">Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.</comment>
+                                                                    <comment pinned="false" h="94" w="320">Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.</comment>
                                                                     <value name="STRING">
                                                                       <block type="variables_get">
                                                                         <field name="VAR">text</field>
@@ -3553,7 +3553,7 @@
                                                                                                                                                                             <mutation at1="true" at2="true"></mutation>
                                                                                                                                                                             <field name="WHERE1">FROM_START</field>
                                                                                                                                                                             <field name="WHERE2">FROM_END</field>
-                                                                                                                                                                            <comment pinned="false" h="92" w="323">Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is ESPecially important in generators where substring uses [x:length - y] for # #-end.</comment>
+                                                                                                                                                                            <comment pinned="false" h="92" w="323">Checks that the whole string is properly retrieved even if the value for start and end is not a simple number. This is especially important in generators where substring uses [x:length - y] for # #-end.</comment>
                                                                                                                                                                             <value name="STRING">
                                                                                                                                                                               <block type="procedures_callreturn">
                                                                                                                                                                                 <mutation name="get numbers"></mutation>
