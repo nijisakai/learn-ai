@@ -69,7 +69,7 @@
 		* [Windows](#windows)
 		* [macOS、Debian和Ubuntu](#macos-debian和ubuntu)
 * [其他](#其他)
-* [**第一章 人工智能体验** 每一节对应相关的算法或技术](#第一章-人工智能体验-每一节对应相关的算法或技术)
+* [**第一章 人工智能体验**](#第一章-人工智能体验)
 	* [第一节 Tensorflow训练自定义图片分类器](#第一节-tensorflow训练自定义图片分类器)
 		* [**硬件准备**](#硬件准备)
 		* [**程序及操作**](#程序及操作)
@@ -410,17 +410,21 @@ conda-env remove -n 环境名字
 
 ```bash {.line-numbers}
 //创建一个名字为myenv的虚拟环境
-conda create -n learn-ai
+conda create -n myenv
+
 //激活myenv虚拟环境
-conda activate learn-ai
+conda activate myenv
+
 //无独立显卡的电脑使用这条命令
 conda install tensorflow
 //有独立显卡的电脑使用这条命令
 conda install tensorflow-gpu
+
 //安装opencv
 conda install opencv
+
 //安装git命令
-conda install gi
+conda install git
 ```
 
 ### VSCode
@@ -507,7 +511,9 @@ Arduino IDE （Integrated Development Environment,集成开发环境）是针对
 
 ---
 
-## **第一章 人工智能体验** 每一节对应相关的算法或技术
+## **第一章 人工智能体验**
+
+（*每一节对应相关的算法或技术*）
 
     介绍
 
