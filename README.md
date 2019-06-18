@@ -1177,7 +1177,7 @@ void loop()
 
 ### 第二节 WiFi遥控小车
 
-    使用esp8266，通过网页端发送命令，遥控一辆小车，结合超声波传感器，实现自动避障
+    使用esp8266，通过网页端发送命令，遥控一辆小车。
 
 #### **demo**
 
@@ -1193,8 +1193,8 @@ void loop()
 
 活动名称 | 活动内容 | 时间分配
 :-: | :-: | :-:
-活动目标| 了解 | 5分钟
-背景知识 | 熟悉 | 5分钟
+活动目标| 通过网页远程遥控一辆小车 | 5分钟
+背景知识 | esp8266的GPIO控制以及SP12的使用 | 5分钟
 
 </center>
 
@@ -1215,12 +1215,22 @@ void loop()
 
 #### **活动目标**
 
-* 目标1:学会使用esp8266的服务器功能
-* 目标2:学会使用超声模块
-* 目标3:学会控制esp8266的gpio
+* 目标1:学会控制esp8266的GPIO
+* 目标2:学会使用电机驱动扩展模块（SP12E）
+* 目标3:学会使用esp8266的服务器
 
 #### **背景知识**
 
+##### **电机**  
+电机一般用作小车的动力系统。当电机接上正向电压时，电机会正转，当电机接上反向电压时，电机会反转。  
+当电机接上的电压不同时，电机转动的速度也会有所不同。由于开发板能提供给小车的电压有限，所以我们  
+通常不会直接将电机接在开发板上，而是会找一块电机驱动扩展板。
+##### **SP12E Motor Shield**   
+ESP12E Motor Shield是深圳四博智联科技有限公司研发的一款兼容ESP12E Dev Kit和NodeMCU的一款大电流电机驱动模块。  
+模块采用意法半导体公司生产的优秀大功率电机专用驱动全桥芯片L293DD，可直接驱动2路直流电机或者1路步进电机。  
+模块使用ESP12E Dev Kit的IO口作为控制端口，内部配置逻辑芯片完成电机IC驱动，因此仅仅占用控制板D1、D2、D3、D4四个端口，  
+分别作为PWMA（电机A转速）、PWMB（电机B转速）、DA（电机A方向）、DB（电机B方向）功能。  
+模块同时引出VIN、3.3V、DIO、AIO、SDIO、UART、SPI、RST、EN等多个引脚，可以方便地接入各种传感器（温湿度、蜂鸣器、照明、继电器等）。
 #### **硬件准备**
 
 ##### 硬件清单
@@ -1229,6 +1239,7 @@ void loop()
 * 电机扩展板 esp12E Motor Shield
 * 小车套件(3D打印的底盘和夹层，电机，车轮，铜柱等)
 * 杜邦线，数据线
+*电源（电池或者充电宝）
 
 ##### 硬件连接
 
@@ -1238,7 +1249,7 @@ void loop()
 
 ##### 操作步骤
 
-1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp8266_projects/esp8266_WiFicar_https`  
+1.打开`learn-ai`文件夹，打开路径`codes/chapter1/esp8266_projects/esp8266_WiFicar_https`  
 2.将esp8266通过数据线连接到电脑  
 3.使用Arduino IDE打开文件`esp8266_WiFicar_https.ino`  
 4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
@@ -1260,9 +1271,11 @@ void loop()
 #include <esp8266WebServer.h>
 #include <esp8266mDNS.h>
 #include <FS.h>
+
+//定义电机A的使能端口与输出端口
 #define Motor_AE D1      //Motor A/B,E enable,D Direction
 #define Motor_AD D3
-
+//定义电机B的使能端口与输出端口
 #define Motor_BE D2
 #define Motor_BD D4
 
@@ -1275,46 +1288,47 @@ esp8266WebServer server(80);
 
 const int led = 13;
 
+/*定义小车初始化函数，小车初始化时要将需要用到的几个端口都设置成输出（output）模式*/
 void carInit(){  
   pinMode(Motor_AE, OUTPUT);
   pinMode(Motor_AD, OUTPUT);
   pinMode(Motor_BE, OUTPUT);
   pinMode(Motor_BD, OUTPUT);
-
   Serial.begin(115200);
   Serial.println("Car begin");
   }
+//定义小车前进的功能函数
 void goAhead(){
       digitalWrite(Motor_AE, HIGH);
       digitalWrite(Motor_AD, L_AHEAD);
       digitalWrite(Motor_BE, HIGH);
       digitalWrite(Motor_BD, R_AHEAD);
   }
-
+//定义小车后退的功能函数
 void goBack(){
       digitalWrite(Motor_AE, HIGH);
       digitalWrite(Motor_AD, !L_AHEAD);
       digitalWrite(Motor_BE, HIGH);
       digitalWrite(Motor_BD, !R_AHEAD);
   }
-
+//定义小车右转的功能函数
 void goRight(){
       digitalWrite(Motor_BE, LOW);
       digitalWrite(Motor_AE, HIGH);
       digitalWrite(Motor_AD, L_AHEAD);
   }
-
+//定义小车的左转的功能函数
 void goLeft(){
       digitalWrite(Motor_BE, HIGH);
       digitalWrite(Motor_AE, LOW);
       digitalWrite(Motor_BD, R_AHEAD);
   }
-
+//定义小车停止的功能函数
 void stopRobot(){  
       digitalWrite(Motor_AE, LOW);
       digitalWrite(Motor_BE, LOW);
   }
-
+//处理URL不存在的特殊情况
 void handleNotFound(){
   digitalWrite(led, 1);
   String message = "File Not Found\n\n";
@@ -1332,23 +1346,21 @@ void handleNotFound(){
   digitalWrite(led, 0);
 }
 
+//esp8266初始化函数
 void setup(void){
   carInit();
   SPIFFS.begin();
-
+//设置esp8266的Mac地址
   uint8_t mac[WL_MAC_ADDR_LENGTH];
   WiFi.softAPmacAddress(mac);
   String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) + String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
   macID.toUpperCase();
-
   String AP_NameString = "Wifi Car - " + macID;
-
   char AP_NameChar[AP_NameString.length() + 1];
   memset(AP_NameChar, 0, AP_NameString.length() + 1);
-
   for (int i = 0; i < AP_NameString.length(); i++)
     AP_NameChar[i] = AP_NameString.charAt(i);
-
+//设置esp8266的要连接到的ap的ssid和passwd
 const char* ssid = "AI";
 const char* password = "raspberry";
   WiFi.mode(WIFI_STA);
@@ -1368,7 +1380,7 @@ const char* password = "raspberry";
     Serial.println("MDNS responder started");
   }
 
-
+//设置服务器前端交互与后端响应的关系
   //server.on("/", handleRoot);
   server.serveStatic("/", SPIFFS, "/index.html");
 
@@ -1392,11 +1404,12 @@ const char* password = "raspberry";
   });
 
   server.onNotFound(handleNotFound);
-
+  
   server.begin();
   Serial.println("http server started");
 }
 
+//esp8266的主体函数
 void loop(void){
   server.handleClient();
 }
@@ -1405,42 +1418,6 @@ void loop(void){
 #### **活动小结**
 
 总结课程主要内容，强调重难点
-
-### 第三节 WiFi机械臂
-
-    使用esp8266，通过网页端发送命令，控制多个舵机
-
-#### **demo**
-
-<center><iframe src="http://hass.live:9001" width="800" height="600" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
-
----
-
-#### **学习流程**
-
-##### [课程引入](#活动目标-2) （10分钟）
-
-<center>
-
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-活动目标| 通过WiFi操控机械臂 | 5分钟
-背景知识 | 舵机的工作原理及脉冲宽度调制 | 5分钟
-
-</center>
-
-##### [基本任务](#硬件准备-2) （30分钟）
-
-<center>
-
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-硬件准备 | 将硬件按文档进行连接 | 5分钟
-程序及操作 | 完成程序及操作文档部分 | 25分钟
-
-</center>
-
-##### [活动小结](#活动小结-2) （5分钟）
 
 ---
 
