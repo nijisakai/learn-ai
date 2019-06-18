@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>TTS and Camera Test</title>
+    <script src="../../google-blockly/blockly_compressed.js"></script>
+    <script src="../../google-blockly/blocks_compressed.js"></script>
+    <script src="../../google-blockly/msg/js/zh-hans.js"></script>
+    <script src="../../google-blockly/javascript_compressed.js"></script>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./analyze.css">
+    <script src="./handlebars-v4.1.1.js"></script>
+    <script src="./jquery-3.2.1.js"></script>
+</head>
+<body>
+    
+    <p>
+        <!-- <button onclick="showCode()">显示代码</button> -->
+        <button onclick="runCode();disp_alert()">执行</button>
+    </p>
+    <form enctype="multipart/form-data">
+        <input type="file" id="testImg" onchange="detectImg()">
+    </form>
+    <div id="blocklyDiv" style="height: 480px; width: 1200px;"></div>
+    <xml id="toolbox" style="display: none">
+        <category name="人工智能" colour="20">
+            <block type="tts"></block>
+            <block type="goodlooking"></block>
+            <block type="facedetect"></block>
+        </category>
+        <category name="文本" colour="%{BKY_TEXTS_HUE}">
+            <block type="text"></block>
+            <block type="text_length"></block>
+            <block type="text_print"></block>
+        </category>
+    </xml>
+    
+    <div id="result">
+        <p>年龄:</p>
+        <p>性别:</p>
+        <p>种族:</p>
+        <p>佩戴眼镜:</p>
+        <p>皮肤状况</p>
+        <p>黑眼圈:</p>
+    </div>
+ 
+    <button class="btn btn-danger btn-lg btn-block" onclick="disp_alert()" id = "buttonred">测测人脸</button>
+ 
+    <script id="tpl" type="text/template">
+        <p>年龄:{{age}}</p>
+        <p>性别:{{gender}}</p>
+        <p>种族:{{ethnicity}}</p>
+        <p>佩戴眼镜:{{glass}}</p>
+        <p>皮肤状况:{{skinstatus.health}}</p>
+        <p>黑眼圈:{{skinstatus.dark_circle}}</p>        
+    </script>
+    <script>
+        document.getElementById('result').style.display='none';
+        document.getElementById('buttonred').style.display='none';
+        function disp_alert()
+            {
+                // alert(document.getElementById('result').innerHTML);
+                var content = document.getElementById("result");  
+                // alert(content.innerHTML);
+                alert(content.innerHTML.replace(/<.+?>/gim,'')); 
+            };
+    </script>
+    <script src="./analyze.js"></script>
+
+    <script>
+        
+        var demoWorkspace = Blockly.inject('blocklyDiv',
+        {media: '../../google-blockly/media/',
+         toolbox: document.getElementById('toolbox')});
+    
+        // Custom Blocks of tts
+        // https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#7jffrp
+        Blockly.Blocks['tts'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField(" 语音合成：");
+                this.appendValueInput("text")
+                    .setCheck(["Number", "String"]);
+                this.appendDummyInput()
+                    .appendField("发声：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["女声","0"], ["男声","1"], ["情感男声","3"], ["情感女声","4"]]), "per");
+                this.appendDummyInput()
+                    .appendField("音量：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","3"], ["3","3"], ["4","4"], ["5","5"]]), "vol");
+                this.appendDummyInput()
+                    .appendField("语速：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "spd");
+                this.appendDummyInput()
+                    .appendField("音调：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "pit");
+                this.setInputsInline(true);
+                this.setPreviousStatement(true, null);
+                this.setNextStatement(true, null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+
+        //Custom block of camera 
+        Blockly.Blocks['goodlooking'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("人脸");
+                this.appendValueInput("NAME")
+                    .setCheck(null)
+                    .appendField("");
+                this.appendDummyInput()
+                    .appendField("的颜值");
+                this.setOutput(true, null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+
+        Blockly.Blocks['facedetect'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("人脸检测");
+                this.setOutput(true, null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+
+
+
+
+        
+
+        // stub for tts
+        var urltts = '';
+        Blockly.JavaScript['tts'] = function(block) {
+            var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+            var dropdown_per = block.getFieldValue('per');
+            var dropdown_vol = block.getFieldValue('vol');
+            var dropdown_spd = block.getFieldValue('spd');
+            var dropdown_pit = block.getFieldValue('pit');
+            console.log("per", dropdown_per);
+            console.log("vol", dropdown_vol);
+            console.log("spd", dropdown_spd);
+            console.log("pit", dropdown_pit);
+            urltts = 'http://tts.baidu.com/text2audio?idx=1&tex={' + value_text + '}&cuid=baidu_speech_demo&cod=2&lan=zh&ctp=1&pdt=1&spd=' + dropdown_spd + '&per=' + dropdown_per + '&vol=' + dropdown_vol + '&pit=' + dropdown_pit;
+            console.log(urltts)
+            // return urltts;
+            var audio = new Audio();
+            audio.src = urltts;
+	        audio.play();
+        };
+
+
+        //stub for goodlooking
+        Blockly.JavaScript['goodlooking'] = function(block) {
+            var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+            
+        };
+        Blockly.JavaScript['facedetect'] = function(block) {
+            
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     //###############################################################//   
+        // function showCode() {
+        // // Generate JavaScript code and display it.
+        //     Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+        //     var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+        //     alert(code);
+        // }
+
+        function runCode() {
+        // Generate JavaScript code and run it.
+            window.LoopTrap = 1000;
+            Blockly.JavaScript.INFINITE_LOOP_TRAP =
+                'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+            var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            try {
+                eval(code);
+                } catch (e) {
+            alert(e);
+            }
+        }
+    </script>
+</body>
+</html>
