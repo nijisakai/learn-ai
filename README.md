@@ -1757,6 +1757,7 @@ void loop() {
 
 ##### 操作步骤
 
+//todo： fix 1&3 路径
 1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp8266_projects/esp8266_Auto_avoid_car`  
 2.将esp8266通过数据线连接到电脑  
 3.使用Arduino IDE打开文件`esp8266_WiFicar_https.ino`  
