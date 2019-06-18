@@ -490,13 +490,13 @@ Arduino IDE （Integrated Development Environment,集成开发环境）是针对
 
 #### Windows
 
-* 打开`Anaconda Prompt` 
+* 打开`Anaconda Prompt`
 * 执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn-ai`  
 * 文件将被下载到C盘根目录下面的learn-ai文件夹
 
 #### macOS、Debian和Ubuntu
 
-* 打开`终端` 
+* 打开`终端`
 * 执行`git clone https://github.com/nijisakai/learn-ai.git ~/Desktop/learn-ai/`  
 * 文件将被下载到桌面下面的learn-ai文件夹
 
@@ -628,7 +628,7 @@ cv2.namedWindow('picturex', cv2.WINDOW_NORMAL)
 # Display the image
 cv2.imshow('picturex', image)
 
-# Wait until we get a key 
+# Wait until we get a key
 k=cv2.waitKey(0)
 
 # If pressed key is 's'
@@ -682,20 +682,20 @@ python3 filename.py
 
 除了在本课程最开始已经在 Anaconda 的 learn-ai 环境中安装好的 `TensorFlow` 外，还需安装 `Pillow` 软件包。
 
-1. macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
-2. 输入下面的命令来进入 learn-ai 环境；
+1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
+2.输入下面的命令来进入 learn-ai 环境；
 
 ```bash {.line-numbers}
 conda activate learn-ai
 ```
 
-3. 安装 `Pillow` 软件包；
+3.安装 `Pillow` 软件包；
 
 ```bash {.line-numbers}
 conda install pillow
 ```
 
-4. 切换工作路径到项目文件夹；
+4.切换工作路径到项目文件夹；
 
 ```bash {.line-numbers}
 cd 项目文件夹的路径
