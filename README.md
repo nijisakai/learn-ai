@@ -2,258 +2,261 @@
 
  <font size=5>目录</font>
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false }-->
-<!-- code_chunk_output -->
+<!-- TOC depthFrom:2 -->
 
-* [**课程概述**](#课程概述)
-	* [课程简介](#课程简介)
-	* [课程目标](#课程目标)
-	* [课程大纲](#课程大纲)
-	* [预备要求](#预备要求)
-	* [学分授予](#学分授予)
-	* [参考资源](#参考资源)
-* [**前导**](#前导)
-	* [计算机概述](#计算机概述)
-			* [计算机的发展](#计算机的发展)
-			* [计算机的操作系统](#计算机的操作系统)
-			* [计算机语言与程序设计](#计算机语言与程序设计)
-	* [人工智能概述](#人工智能概述)
-			* [人工智能的发展](#人工智能的发展)
-			* [人工智能的关键技术](#人工智能的关键技术)
-				* [云计算与大数据](#云计算与大数据)
-				* [知识图谱](#知识图谱)
-				* [机器学习](#机器学习)
-				* [自然语言处理](#自然语言处理)
-				* [计算机视觉](#计算机视觉)
-				* [智能机器人](#智能机器人)
-				* [类脑智能](#类脑智能)
-			* [人工智能的应用](#人工智能的应用)
-				* [人工智能在金融领域的应用](#人工智能在金融领域的应用)
-				* [人工智能在医疗领域的应用](#人工智能在医疗领域的应用)
-				* [人工智能在家居领域的应用](#人工智能在家居领域的应用)
-				* [人工智能在汽车领域的应用](#人工智能在汽车领域的应用)
-				* [人工智能在零售领域的应用](#人工智能在零售领域的应用)
-				* [人工智能在教育领域的应用](#人工智能在教育领域的应用)
-	* [物联网概述](#物联网概述)
-			* [物联网的发展](#物联网的发展)
-			* [物联网的关键技术](#物联网的关键技术)
-				* [边缘计算](#边缘计算)
-			* [物联网的应用](#物联网的应用)
-				* [物联网在家居领域的应用](#物联网在家居领域的应用)
-				* [物联网在教育领域的应用](#物联网在教育领域的应用)
-	* [开源硬件概述](#开源硬件概述)
-			* [开源硬件的发展](#开源硬件的发展)
-			* [流行的开源硬件](#流行的开源硬件)
-				* [NVIDIA Jetson Nano](#nvidia-jetson-nano)
-				* [树莓派](#树莓派)
-				* [Arduino](#arduino)
-				* [ESPRESSIF](#espressif)
-				* [传感器](#传感器)
-* [**环境准备**](#环境准备)
-* [在笔记本电脑上的操作](#在笔记本电脑上的操作)
-	* [Anaconda](#anaconda)
-		* [基本命令概览](#基本命令概览)
-			* [创建环境](#创建环境)
-			* [进入环境](#进入环境)
-			* [安装指定包](#安装指定包)
-			* [其他命令](#其他命令)
-		* [setup](#setup)
-	* [VSCode](#vscode)
-		* [setup](#setup-1)
-	* [CP2102驱动](#cp2102驱动)
-	* [Arduino IDE](#arduino-ide)
-		* [setup](#setup-2)
-* [在Jetson Nano上的操作](#在jetson-nano上的操作)
-* [在树莓派上的操作](#在树莓派上的操作)
-* [下载课程文件](#下载课程文件)
-		* [Windows](#windows)
-		* [macOS、Debian和Ubuntu](#macos-debian和ubuntu)
-* [其他](#其他)
-* [**第1章 人工智能体验**](#第1章-人工智能体验)
-	* [第1节 人工智能的数学基础](#第1节-人工智能的数学基础)
-	* [第2节 趣味概率论与信息论](#第2节-趣味概率论与信息论)
-	* [第3节 Python计算机视觉编程](#第3节-python计算机视觉编程)
-		* [3.1 基于opencv的人脸识别操作](#31-基于opencv的人脸识别操作)
-			* [**硬件准备**](#硬件准备)
-			* [**环境准备**](#环境准备-1)
-			* [**程序及操作**](#程序及操作)
-	* [第4节 前馈神经网络（BPN）应用](#第4节-前馈神经网络bpn应用)
-		* [4.1 MNIST手写数字识别](#41-mnist手写数字识别)
-	* [第5节 卷积神经网络（CNN）应用](#第5节-卷积神经网络cnn应用)
-		* [5.1 Tensorflow训练自定义图片分类器](#51-tensorflow训练自定义图片分类器)
-			* [**硬件准备**](#硬件准备-1)
-			* [**程序及操作**](#程序及操作-1)
-		* [5.2 图像风格迁移](#52-图像风格迁移)
-			* [**环境准备**](#环境准备-2)
-				* [VGG 网络](#vgg-网络)
-				* [软件准备](#软件准备)
-			* [**程序及操作**](#程序及操作-2)
-	* [第6节 深度神经网络（RNN）应用](#第6节-深度神经网络rnn应用)
-		* [6.1 使用循环神经网络（RNN）来生成古诗词](#61-使用循环神经网络rnn来生成古诗词)
-			* [**硬件准备**](#硬件准备-2)
-			* [**程序及操作**](#程序及操作-3)
-	* [第7节 人工智能与游戏](#第7节-人工智能与游戏)
-		* [7.1 使用强化学习算法（DQN）训练游戏AI](#71-使用强化学习算法dqn训练游戏ai)
-			* [**硬件准备**](#硬件准备-3)
-			* [**程序及操作**](#程序及操作-4)
-		* [7.2 使用进化算法来训练马里奥](#72-使用进化算法来训练马里奥)
-			* [**硬件准备**](#硬件准备-4)
-			* [**程序及操作**](#程序及操作-5)
-* [**第2章 物联网与传感器**](#第2章-物联网与传感器)
-	* [第1节 传感器的读取与曲线绘制](#第1节-传感器的读取与曲线绘制)
-		* [**学习流程**](#学习流程)
-			* [课程引入 （10分钟）](#课程引入活动目标-10分钟)
-			* [基本任务 （30分钟）](#基本任务硬件准备-5-30分钟)
-			* [活动小结 （5分钟）](#活动小结活动小结-5分钟)
-		* [**活动目标**](#活动目标)
-		* [**背景知识**](#背景知识)
-			* [物联网背景知识](#物联网背景知识)
-			* [使用开发板读取传感器数据](#使用开发板读取传感器数据)
-		* [**硬件准备**](#硬件准备-5)
-			* [硬件清单](#硬件清单)
-			* [硬件连接](#硬件连接)
-		* [**程序及操作**](#程序及操作-6)
-			* [简单读取](#简单读取)
-			* [绘制实时曲线](#绘制实时曲线)
-			* [相关代码](#相关代码)
-		* [**活动小结**](#活动小结)
-	* [第2节 WiFi遥控小车](#第2节-wifi遥控小车)
-		* [**demo**](#demo)
-		* [**学习流程**](#学习流程-1)
-			* [课程引入 （10分钟）](#课程引入活动目标-1-10分钟)
-			* [基本任务 （30分钟）](#基本任务硬件准备-6-30分钟)
-			* [活动小结 （5分钟）](#活动小结活动小结-1-5分钟)
-		* [**活动目标**](#活动目标-1)
-		* [**背景知识**](#背景知识-1)
-			* [**电机**](#电机)
-			* [**ESP12E Motor Shield**](#esp12e-motor-shield)
-		* [**硬件准备**](#硬件准备-6)
-			* [硬件清单](#硬件清单-1)
-			* [硬件连接](#硬件连接-1)
-		* [**程序及操作**](#程序及操作-7)
-			* [操作步骤](#操作步骤)
-			* [相关代码](#相关代码-1)
-		* [**活动小结**](#活动小结-1)
-	* [第3节 机械臂](#第3节-机械臂)
-		* [**demo**](#demo-1)
-		* [**学习流程**](#学习流程-2)
-			* [课程引入 （15分钟）](#课程引入活动目标-2-15分钟)
-			* [基本任务 （35分钟）](#基本任务硬件准备-7-35分钟)
-			* [活动小结 （10分钟）](#活动小结活动小结-2-10分钟)
-		* [**活动目标**](#活动目标-2)
-		* [**背景知识**](#背景知识-2)
-			* [舵机](#舵机)
-			* [舵机的工作原理](#舵机的工作原理)
-			* [脉冲宽度调制（PWM）](#脉冲宽度调制pwm)
-			* [占空比](#占空比)
-		* [**硬件准备**](#硬件准备-7)
-			* [硬件清单](#硬件清单-2)
-			* [硬件连接](#硬件连接-2)
-		* [**程序及操作**](#程序及操作-8)
-			* [操作步骤](#操作步骤-1)
-			* [相关代码](#相关代码-2)
-		* [**活动小结**](#活动小结-2)
-	* [第4节 自动避障小车](#第4节-自动避障小车)
-		* [**demo**](#demo-2)
-		* [**学习流程**](#学习流程-3)
-			* [课程引入 （10分钟）](#课程引入活动目标-3-10分钟)
-			* [基本任务 （30分钟）](#基本任务硬件准备-8-30分钟)
-			* [活动小结 （5分钟）](#活动小结活动小结-3-5分钟)
-		* [**活动目标**](#活动目标-3)
-		* [**背景知识**](#背景知识-3)
-			* [**超声传感器**](#超声传感器)
-			* [**超声波测距原理**](#超声波测距原理)
-		* [**硬件准备**](#硬件准备-8)
-			* [硬件清单](#硬件清单-3)
-			* [硬件连接](#硬件连接-3)
-		* [**程序及操作**](#程序及操作-9)
-			* [操作步骤](#操作步骤-2)
-			* [相关代码](#相关代码-3)
-		* [**活动小结**](#活动小结-3)
-	* [第5节 网络摄像头与人脸识别](#第5节-网络摄像头与人脸识别)
-		* [**学习流程**](#学习流程-4)
-			* [课程引入 （10分钟）](#课程引入活动目标-4-10分钟)
-			* [基本任务 （30分钟）](#基本任务硬件准备-9-30分钟)
-			* [活动小结 （5分钟）](#活动小结活动小结-4-5分钟)
-		* [**活动目标**](#活动目标-4)
-		* [**背景知识**](#背景知识-4)
-		* [**硬件准备**](#硬件准备-9)
-			* [硬件清单](#硬件清单-4)
-			* [硬件连接](#硬件连接-4)
-		* [**程序及操作**](#程序及操作-10)
-			* [操作步骤](#操作步骤-3)
-			* [代码详解](#代码详解)
-		* [**活动小结**](#活动小结-4)
-	* [第6节 综合与进阶](#第6节-综合与进阶)
-		* [**demo**](#demo-3)
-		* [**抓取大赛**](#抓取大赛)
-			* [比赛规则](#比赛规则)
-		* [**功能参考**](#功能参考)
-	* [尾声](#尾声)
-* [**第3章 物联网创意应用**](#第3章-物联网创意应用)
-	* [第1节 Home Assistant安装和配置](#第1节-home-assistant安装和配置)
-		* [**硬件准备**](#硬件准备-10)
-			* [硬件清单](#硬件清单-5)
-			* [硬件连接](#硬件连接-5)
-		* [**程序及操作**](#程序及操作-11)
-			* [安装过程](#安装过程)
-	* [第2节 Home Assistant控制esp8266彩色灯](#第2节-home-assistant控制esp8266彩色灯)
-		* [**硬件准备**](#硬件准备-11)
-		* [**程序及操作**](#程序及操作-12)
-	* [第3节 Home Assistant人脸解锁](#第3节-home-assistant人脸解锁)
-		* [**硬件准备**](#硬件准备-12)
-		* [**程序及操作**](#程序及操作-13)
-* [**第4章 机器人“小绿”**](#第4章-机器人小绿)
-	* [第1节 组装小绿机器人](#第1节-组装小绿机器人)
-		* [**硬件准备**](#硬件准备-13)
-		* [**程序及操作**](#程序及操作-14)
-	* [第2节 训练语音识别，开始和小绿聊天](#第2节-训练语音识别开始和小绿聊天)
-		* [**硬件准备**](#硬件准备-14)
-		* [**程序及操作**](#程序及操作-15)
-	* [第3节 让小绿听你指挥](#第3节-让小绿听你指挥)
-		* [**硬件准备**](#硬件准备-15)
-		* [**程序及操作**](#程序及操作-16)
-	* [第4节 使用Google Blockly积木来控制小绿](#第4节-使用google-blockly积木来控制小绿)
-		* [**硬件准备**](#硬件准备-16)
-		* [**程序及操作**](#程序及操作-17)
-	* [第5节 使用OpenPose让小绿实时模仿你的动作](#第5节-使用openpose让小绿实时模仿你的动作)
-		* [**硬件准备**](#硬件准备-17)
-		* [**程序及操作**](#程序及操作-18)
-* [**第5章 自动追踪小车**](#第5章-自动追踪小车)
-	* [第1节 环境准备与硬件搭建](#第1节-环境准备与硬件搭建)
-		* [**硬件准备**](#硬件准备-18)
-		* [**程序及操作**](#程序及操作-19)
-	* [第2节 OpenCV机械臂自动抓取特定形状物体](#第2节-opencv机械臂自动抓取特定形状物体)
-		* [**硬件准备**](#硬件准备-19)
-		* [**程序及操作**](#程序及操作-20)
-	* [第3节 OpenCV分类器训练，让小车追踪特定物体](#第3节-opencv分类器训练让小车追踪特定物体)
-		* [**硬件准备**](#硬件准备-20)
-		* [**程序及操作**](#程序及操作-21)
-* [**第6章 无人驾驶小车**](#第6章-无人驾驶小车)
-	* [第1节 环境准备与硬件搭建](#第1节-环境准备与硬件搭建-1)
-		* [**硬件准备**](#硬件准备-21)
-			* [硬件清单](#硬件清单-6)
-			* [硬件连接](#硬件连接-6)
-		* [**程序及操作**](#程序及操作-22)
-			* [操作步骤](#操作步骤-4)
-	* [第2节 电机和摄像头驱动测试](#第2节-电机和摄像头驱动测试)
-		* [**程序及操作**](#程序及操作-23)
-			* [操作步骤-电机测试](#操作步骤-电机测试)
-			* [操作步骤-摄像头测试](#操作步骤-摄像头测试)
-	* [第3节 无人驾驶数据采集及训练](#第3节-无人驾驶数据采集及训练)
-		* [**硬件准备**](#硬件准备-22)
-			* [硬件清单](#硬件清单-7)
-			* [硬件搭建-跑道](#硬件搭建-跑道)
-		* [**程序及操作**](#程序及操作-24)
-			* [操作步骤-驾驶数据采集](#操作步骤-驾驶数据采集)
-			* [操作步骤-驾驶数据训练](#操作步骤-驾驶数据训练)
-	* [第4节 开始无人驾驶](#第4节-开始无人驾驶)
-		* [**程序及操作**](#程序及操作-25)
-			* [操作步骤](#操作步骤-5)
+- [**课程概述**](#课程概述)
+    - [课程简介](#课程简介)
+    - [课程目标](#课程目标)
+    - [课程大纲](#课程大纲)
+    - [预备要求](#预备要求)
+    - [学分授予](#学分授予)
+    - [参考资源](#参考资源)
+- [**前导**](#前导)
+    - [计算机概述](#计算机概述)
+            - [计算机的发展](#计算机的发展)
+            - [计算机的操作系统](#计算机的操作系统)
+            - [计算机语言与程序设计](#计算机语言与程序设计)
+    - [人工智能概述](#人工智能概述)
+            - [人工智能的发展](#人工智能的发展)
+            - [人工智能的关键技术](#人工智能的关键技术)
+                - [云计算与大数据](#云计算与大数据)
+                - [知识图谱](#知识图谱)
+                - [机器学习](#机器学习)
+                - [自然语言处理](#自然语言处理)
+                - [计算机视觉](#计算机视觉)
+                - [智能机器人](#智能机器人)
+                - [类脑智能](#类脑智能)
+            - [人工智能的应用](#人工智能的应用)
+                - [人工智能在金融领域的应用](#人工智能在金融领域的应用)
+                - [人工智能在医疗领域的应用](#人工智能在医疗领域的应用)
+                - [人工智能在家居领域的应用](#人工智能在家居领域的应用)
+                - [人工智能在汽车领域的应用](#人工智能在汽车领域的应用)
+                - [人工智能在零售领域的应用](#人工智能在零售领域的应用)
+                - [人工智能在教育领域的应用](#人工智能在教育领域的应用)
+    - [物联网概述](#物联网概述)
+            - [物联网的发展](#物联网的发展)
+            - [物联网的关键技术](#物联网的关键技术)
+                - [边缘计算](#边缘计算)
+            - [物联网的应用](#物联网的应用)
+                - [物联网在家居领域的应用](#物联网在家居领域的应用)
+                - [物联网在教育领域的应用](#物联网在教育领域的应用)
+    - [开源硬件概述](#开源硬件概述)
+            - [开源硬件的发展](#开源硬件的发展)
+            - [流行的开源硬件](#流行的开源硬件)
+                - [NVIDIA Jetson Nano](#nvidia-jetson-nano)
+                - [树莓派](#树莓派)
+                - [Arduino](#arduino)
+                - [ESPRESSIF](#espressif)
+                - [传感器](#传感器)
+- [**环境准备**](#环境准备)
+- [在笔记本电脑上的操作](#在笔记本电脑上的操作)
+    - [Anaconda](#anaconda)
+        - [基本命令概览](#基本命令概览)
+            - [创建环境](#创建环境)
+            - [进入环境](#进入环境)
+            - [安装指定包](#安装指定包)
+            - [其他命令](#其他命令)
+        - [setup](#setup)
+    - [VSCode](#vscode)
+        - [setup](#setup-1)
+    - [CP2102驱动](#cp2102驱动)
+    - [Arduino IDE](#arduino-ide)
+        - [setup](#setup-2)
+- [在Jetson Nano上的操作](#在jetson-nano上的操作)
+- [在树莓派上的操作](#在树莓派上的操作)
+- [下载课程文件](#下载课程文件)
+        - [Windows](#windows)
+        - [macOS、Debian和Ubuntu](#macosdebian和ubuntu)
+- [其他](#其他)
+- [**第1章 人工智能体验**](#第1章-人工智能体验)
+    - [第1节 人工智能的数学基础](#第1节-人工智能的数学基础)
+    - [第2节 趣味概率论与信息论](#第2节-趣味概率论与信息论)
+    - [第3节 Python计算机视觉编程](#第3节-python计算机视觉编程)
+        - [3.1 基于opencv的人脸识别操作](#31-基于opencv的人脸识别操作)
+            - [**硬件准备**](#硬件准备)
+            - [**环境准备**](#环境准备-1)
+            - [**程序及操作**](#程序及操作)
+    - [第4节 前馈神经网络（BPN）应用](#第4节-前馈神经网络bpn应用)
+        - [4.1 MNIST手写数字识别](#41-mnist手写数字识别)
+    - [第5节 卷积神经网络（CNN）应用](#第5节-卷积神经网络cnn应用)
+        - [5.1 Tensorflow训练自定义图片分类器](#51-tensorflow训练自定义图片分类器)
+            - [**硬件准备**](#硬件准备-1)
+            - [**程序及操作**](#程序及操作-1)
+        - [5.2 图像风格迁移](#52-图像风格迁移)
+            - [**环境准备**](#环境准备-2)
+                - [VGG 网络](#vgg-网络)
+                - [软件准备](#软件准备)
+            - [**程序及操作**](#程序及操作-2)
+    - [第6节 深度神经网络（RNN）应用](#第6节-深度神经网络rnn应用)
+        - [6.1 使用循环神经网络（RNN）来生成古诗词](#61-使用循环神经网络rnn来生成古诗词)
+            - [**硬件准备**](#硬件准备-2)
+            - [**程序及操作**](#程序及操作-3)
+    - [第7节 人工智能与游戏](#第7节-人工智能与游戏)
+        - [7.1 使用强化学习算法（DQN）训练游戏AI](#71-使用强化学习算法dqn训练游戏ai)
+            - [**硬件准备**](#硬件准备-3)
+            - [**程序及操作**](#程序及操作-4)
+        - [7.2 使用进化算法来训练马里奥](#72-使用进化算法来训练马里奥)
+            - [**硬件准备**](#硬件准备-4)
+            - [**程序及操作**](#程序及操作-5)
+- [**第2章 物联网与智能家居（基于blockly原型）**](#第2章-物联网与智能家居基于blockly原型)
+    - [第1节](#第1节)
+    - [第2节](#第2节)
+    - [第3节](#第3节)
+- [**第3章 物联网小车**](#第3章-物联网小车)
+    - [第1节 让小车动起来](#第1节-让小车动起来)
+        - [**学习流程**](#学习流程)
+            - [课程引入（10分钟）](#课程引入10分钟)
+            - [基本任务（30分钟）](#基本任务30分钟)
+            - [活动小结（5分钟）](#活动小结5分钟)
+        - [**活动目标**](#活动目标)
+        - [**背景知识**](#背景知识)
+            - [**电机**](#电机)
+            - [**ESP12E Motor Shield**](#esp12e-motor-shield)
+        - [**硬件准备**](#硬件准备-5)
+            - [硬件清单](#硬件清单)
+            - [硬件连接](#硬件连接)
+        - [**程序及操作**](#程序及操作-6)
+            - [操作步骤](#操作步骤)
+            - [相关代码](#相关代码)
+        - [**活动小结**](#活动小结)
+    - [第2节 实现摄像机云台](#第2节-实现摄像机云台)
+    - [第3节 实现自动避障](#第3节-实现自动避障)
+    - [第4节 走迷宫比赛](#第4节-走迷宫比赛)
+    - [第1节 传感器的读取与曲线绘制](#第1节-传感器的读取与曲线绘制)
+        - [**学习流程**](#学习流程-1)
+            - [课程引入（10分钟）](#课程引入10分钟-1)
+            - [基本任务（30分钟）](#基本任务30分钟-1)
+            - [活动小结（5分钟）](#活动小结5分钟-1)
+        - [**活动目标**](#活动目标-1)
+        - [**背景知识**](#背景知识-1)
+            - [物联网背景知识](#物联网背景知识)
+            - [使用开发板读取传感器数据](#使用开发板读取传感器数据)
+        - [**硬件准备**](#硬件准备-6)
+            - [硬件清单](#硬件清单-1)
+            - [硬件连接](#硬件连接-1)
+        - [**程序及操作**](#程序及操作-7)
+            - [简单读取](#简单读取)
+            - [绘制实时曲线](#绘制实时曲线)
+            - [相关代码](#相关代码-1)
+        - [**活动小结**](#活动小结-1)
+    - [第3节 机械臂](#第3节-机械臂)
+        - [**demo**](#demo)
+        - [**学习流程**](#学习流程-2)
+            - [课程引入（15分钟）](#课程引入15分钟)
+            - [基本任务（35分钟）](#基本任务35分钟)
+            - [活动小结（10分钟）](#活动小结10分钟)
+        - [**活动目标**](#活动目标-2)
+        - [**背景知识**](#背景知识-2)
+            - [舵机](#舵机)
+            - [舵机的工作原理](#舵机的工作原理)
+            - [脉冲宽度调制（PWM）](#脉冲宽度调制pwm)
+            - [占空比](#占空比)
+        - [**硬件准备**](#硬件准备-7)
+            - [硬件清单](#硬件清单-2)
+            - [硬件连接](#硬件连接-2)
+        - [**程序及操作**](#程序及操作-8)
+            - [操作步骤](#操作步骤-1)
+            - [相关代码](#相关代码-2)
+        - [**活动小结**](#活动小结-2)
+    - [第4节 自动避障小车](#第4节-自动避障小车)
+        - [**demo**](#demo-1)
+        - [**学习流程**](#学习流程-3)
+            - [课程引入（10分钟）](#课程引入10分钟-2)
+            - [基本任务（30分钟）](#基本任务30分钟-2)
+            - [活动小结（5分钟）](#活动小结5分钟-2)
+        - [**活动目标**](#活动目标-3)
+        - [**背景知识**](#背景知识-3)
+            - [**超声传感器**](#超声传感器)
+            - [**超声波测距原理**](#超声波测距原理)
+        - [**硬件准备**](#硬件准备-8)
+            - [硬件清单](#硬件清单-3)
+            - [硬件连接](#硬件连接-3)
+        - [**程序及操作**](#程序及操作-9)
+            - [操作步骤](#操作步骤-2)
+            - [相关代码](#相关代码-3)
+        - [**活动小结**](#活动小结-3)
+    - [第5节 网络摄像头与人脸识别](#第5节-网络摄像头与人脸识别)
+        - [**学习流程**](#学习流程-4)
+            - [课程引入（10分钟）](#课程引入10分钟-3)
+            - [基本任务（30分钟）](#基本任务30分钟-3)
+            - [活动小结（5分钟）](#活动小结5分钟-3)
+        - [**活动目标**](#活动目标-4)
+        - [**背景知识**](#背景知识-4)
+        - [**硬件准备**](#硬件准备-9)
+            - [硬件清单](#硬件清单-4)
+            - [硬件连接](#硬件连接-4)
+        - [**程序及操作**](#程序及操作-10)
+            - [操作步骤](#操作步骤-3)
+            - [代码详解](#代码详解)
+        - [**活动小结**](#活动小结-4)
+    - [第6节 综合与进阶](#第6节-综合与进阶)
+        - [**demo**](#demo-2)
+        - [**抓取大赛**](#抓取大赛)
+            - [比赛规则](#比赛规则)
+        - [**功能参考**](#功能参考)
+    - [尾声](#尾声)
+- [**第3章 物联网创意应用**](#第3章-物联网创意应用)
+    - [第1节 Home Assistant安装和配置](#第1节-home-assistant安装和配置)
+        - [**硬件准备**](#硬件准备-10)
+            - [硬件清单](#硬件清单-5)
+            - [硬件连接](#硬件连接-5)
+        - [**程序及操作**](#程序及操作-11)
+            - [安装过程](#安装过程)
+    - [第2节 Home Assistant控制esp8266彩色灯](#第2节-home-assistant控制esp8266彩色灯)
+        - [**硬件准备**](#硬件准备-11)
+        - [**程序及操作**](#程序及操作-12)
+    - [第3节 Home Assistant人脸解锁](#第3节-home-assistant人脸解锁)
+        - [**硬件准备**](#硬件准备-12)
+        - [**程序及操作**](#程序及操作-13)
+- [**第4章 机器人“小绿”**](#第4章-机器人小绿)
+    - [第1节 组装小绿机器人](#第1节-组装小绿机器人)
+        - [**硬件准备**](#硬件准备-13)
+        - [**程序及操作**](#程序及操作-14)
+    - [第2节 训练语音识别，开始和小绿聊天](#第2节-训练语音识别开始和小绿聊天)
+        - [**硬件准备**](#硬件准备-14)
+        - [**程序及操作**](#程序及操作-15)
+    - [第3节 让小绿听你指挥](#第3节-让小绿听你指挥)
+        - [**硬件准备**](#硬件准备-15)
+        - [**程序及操作**](#程序及操作-16)
+    - [第4节 使用Google Blockly积木来控制小绿](#第4节-使用google-blockly积木来控制小绿)
+        - [**硬件准备**](#硬件准备-16)
+        - [**程序及操作**](#程序及操作-17)
+    - [第5节 使用OpenPose让小绿实时模仿你的动作](#第5节-使用openpose让小绿实时模仿你的动作)
+        - [**硬件准备**](#硬件准备-17)
+        - [**程序及操作**](#程序及操作-18)
+- [**第5章 自动追踪小车**](#第5章-自动追踪小车)
+    - [第1节 环境准备与硬件搭建](#第1节-环境准备与硬件搭建)
+        - [**硬件准备**](#硬件准备-18)
+        - [**程序及操作**](#程序及操作-19)
+    - [第2节 OpenCV机械臂自动抓取特定形状物体](#第2节-opencv机械臂自动抓取特定形状物体)
+        - [**硬件准备**](#硬件准备-19)
+        - [**程序及操作**](#程序及操作-20)
+    - [第3节 OpenCV分类器训练，让小车追踪特定物体](#第3节-opencv分类器训练让小车追踪特定物体)
+        - [**硬件准备**](#硬件准备-20)
+        - [**程序及操作**](#程序及操作-21)
+- [**第6章 无人驾驶小车**](#第6章-无人驾驶小车)
+    - [第1节 环境准备与硬件搭建](#第1节-环境准备与硬件搭建-1)
+        - [**硬件准备**](#硬件准备-21)
+            - [硬件清单](#硬件清单-6)
+            - [硬件连接](#硬件连接-6)
+        - [**程序及操作**](#程序及操作-22)
+            - [操作步骤](#操作步骤-4)
+    - [第2节 电机和摄像头驱动测试](#第2节-电机和摄像头驱动测试)
+        - [**程序及操作**](#程序及操作-23)
+            - [操作步骤-电机测试](#操作步骤-电机测试)
+            - [操作步骤-摄像头测试](#操作步骤-摄像头测试)
+    - [第3节 无人驾驶数据采集及训练](#第3节-无人驾驶数据采集及训练)
+        - [**硬件准备**](#硬件准备-22)
+            - [硬件清单](#硬件清单-7)
+            - [硬件搭建-跑道](#硬件搭建-跑道)
+        - [**程序及操作**](#程序及操作-24)
+            - [操作步骤-驾驶数据采集](#操作步骤-驾驶数据采集)
+            - [操作步骤-驾驶数据训练](#操作步骤-驾驶数据训练)
+    - [第4节 开始无人驾驶](#第4节-开始无人驾驶)
+        - [**程序及操作**](#程序及操作-25)
+            - [操作步骤](#操作步骤-5)
 
-<!-- /code_chunk_output -->
-
----
+<!-- /TOC -->
 
 ## **课程概述**
 
@@ -265,9 +268,9 @@
 
 ### 课程目标
 
-* 了解计算机基本知识
-* 了解人工智能基本概念
-* ……
+- 了解计算机基本知识
+- 了解人工智能基本概念
+- ……
 
 ### 课程大纲
 
@@ -521,15 +524,15 @@ Arduino IDE （Integrated Development Environment,集成开发环境）是针对
 
 #### Windows
 
-* 打开`Anaconda Prompt`
-* 执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn-ai`  
-* 文件将被下载到C盘根目录下面的learn-ai文件夹
+- 打开`Anaconda Prompt`
+- 执行`git clone https://github.com/nijisakai/learn-ai.git C:/learn-ai`  
+- 文件将被下载到C盘根目录下面的learn-ai文件夹
 
 #### macOS、Debian和Ubuntu
 
-* 打开`终端`
-* 执行`git clone https://github.com/nijisakai/learn-ai.git ~/Desktop/learn-ai/`  
-* 文件将被下载到桌面下面的learn-ai文件夹
+- 打开`终端`
+- 执行`git clone https://github.com/nijisakai/learn-ai.git ~/Desktop/learn-ai/`  
+- 文件将被下载到桌面下面的learn-ai文件夹
 
 ## 其他
 
@@ -554,7 +557,7 @@ Arduino IDE （Integrated Development Environment,集成开发环境）是针对
 
 ##### **硬件准备**
 
-* 树莓派、电源连接线、鼠标、键盘、以及显示屏
+- 树莓派、电源连接线、鼠标、键盘、以及显示屏
 
 ##### **环境准备**
 
@@ -774,461 +777,27 @@ python neural_style.py --content examples/1-content.jpg --styles examples/2-styl
 
 ##### **程序及操作**
 
-## **第2章 物联网与传感器**
+## **第2章 物联网与智能家居（基于blockly原型）**
 
-    学会使用传感器……
+### 第1节
 
-### 第1节 传感器的读取与曲线绘制
+### 第2节
 
-    熟悉操作esp8266的步骤。是第一章的基础  
-    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等，并使用Chart.js来绘制实时变化曲线  
-    这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
----
+### 第3节
 
-#### **学习流程**
+## **第3章 物联网小车**
 
-##### [课程引入](#活动目标) （10分钟）
+  通过迭代的方式不断赋予小车更多的功能
 
-<center>
+### 第1节 让小车动起来
 
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-活动目标| 了解物联网基本概念 | 5分钟
-背景知识 | 熟悉实验中涉及到的软硬件 | 5分钟
-
-</center>
-
-##### [基本任务](#硬件准备-5) （30分钟）
-
-<center>
-
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-硬件准备 | 将硬件按文档进行连接 | 5分钟
-程序及操作 | 完成程序及操作文档部分 | 25分钟
-
-</center>
-
-##### [活动小结](#活动小结) （5分钟）
-
----
-
-#### **活动目标**
-
-* 了解物联网的基本概念
-* 了解使用开发板读取传感器的基本原理
-* 熟悉使用Arduino IDE烧录固件的操作流程
-
-#### **背景知识**
-
-##### 物联网背景知识
-
-<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
-
-##### 使用开发板读取传感器数据
-
-esp8266是WiFi串口模块，功能简单来讲就是：从WiFi接收到数据，串口输出；从串口接收数据，WiFi输出数据。  
-
-通过自带的GPIO口连接传感器，传感器将环境数据转化为电信号发送给esp8266读取、处理并输出。
-
-#### **硬件准备**
-
-##### 硬件清单
-
-* esp8266主板
-插图
-* 温湿度传感器（型号为DHT11或DHT22）
-插图
-* 超声波传感器（型号为HC-SR04）
-插图
-* 杜邦线、数据线
-插图
-
-##### 硬件连接
-
-<center><img src=https://md.hass.live/Xnip2019-05-05_11-52-46.png?imageView2/0/interlace/1/q/46|imageslim></center>
-
-<center><img src=https://md.hass.live/Xnip2019-05-05_12-02-00.png?imageView2/0/interlace/1/q/46|imageslim></center>
-图解
-#### **程序及操作**
-
-##### 简单读取
-
-1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp8266_projects/esp8266_dht11_http`  
-2.将esp8266通过数据线连接到电脑  
-3.使用Arduino IDE打开文件`esp8266_dht11_https.ino`  
-4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
-
-<center><img src=https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim></center>
-
-5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
-6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数  
-7.连接另一个esp8266开发板，打开路径`codes/chapter2/esp8266_projects/esp8266_ultrasonic_http`,再次执行2-6步骤来使用超声波传感器  
-
-##### 绘制实时曲线
-
-1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp8266_projects/esp8266_dht11_http_chartjs`  
-2.将esp8266通过数据线连接到电脑  
-3.使用Arduino IDE打开文件 `esp8266_dht11_http_chartjs.ino`  
-4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
-
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
-
-5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
-6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数  
-
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-13-13.png?imageView2/0/interlace/1/q/46|imageslim'></center>
-
-##### 相关代码
-
-* 温湿度传感器
-
-```arduino {.line-numbers} {cmd}
-//两个反斜杠代表单行注释，这后面的文字不会被执行
-
-/*
-  被星号和反斜杠包围的部分可以进行多行注释
-*/
-
-/*使用多行注释符
-
-  Arduino程序包含了两个主要的方法，分别是
-  void setup()和void loop()
-  方法后面写一对{},在这里面写方法的具体内容。看起来像是这样：
-  void setup(){
-    自己规定的语句
-    自己规定的语句
-    自己规定的语句
-  }
-  void loop(){
-    自己规定的语句
-    自己规定的语句
-    自己规定的语句
-  }
-*/
-
-
-//使用 #include来引用一些附加的功能。
-#include <esp8266WiFi.h>
-#include <esp8266WebServer.h>
-#include "DHT.h"
-
-
-
-
-/////////////////////////////////////////////
-////////////////下面的部分请你配置//////////////
-/////////////////////////////////////////////
-
-// 1️⃣选择使用哪一种DHT传感器。通过去掉前面的注释符来使语句生效
-#define DHTTYPE DHT11   // DHT 11
-//#define DHTTYPE DHT21   // DHT 21 (AM2301)
-//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
-
-// 2️⃣把引号里的内容替换为自己路由器的用户名和密码
-const char* ssid = "AI";  // 输入路由器用户名
-const char* password = "raspberry";  //输入路由器密码
-
-// 3️⃣把DHT传感器的Data接口连接到D8。此处与硬件连线对应即可
-uint8_t DHTPin = D8;
-
-// 4️⃣默认为80端口，如果改为其他端口，访问的时候在最后加上（:端口名）
-esp8266WebServer server(80);
-
-/////////////////////////////////////////////
-////////////////上面的部分请你配置//////////////
-/////////////////////////////////////////////
-
-// 初始化你连接的DHT传感器
-DHT dht(DHTPin, DHTTYPE);
-//定义两个float变量来读取温湿度
-float Temperature; //温度
-float Humidity; //湿度
-
-
-//开始最后的准备工作
-void setup() {
-  Serial.begin(115200);
-  delay(100);
-  
-  pinMode(DHTPin, INPUT);
-  dht.begin();
-
-  Serial.println("Connecting to ");
-  Serial.println(ssid);
-
-  WiFi.begin(ssid, password);
-
-  //检查连接是否正常
-  while (WiFi.status() != WL_CONNECTED) {
-  delay(1000);
-  Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected..!");
-  Serial.print("Got IP: ");  Serial.println(WiFi.localIP());
-
-  server.on("/", handle_OnConnect);
-  server.onNotFound(handle_NotFound);
-
-  server.begin();
-  Serial.println("http server started");
-}
-
-void handle_OnConnect() {
-  Temperature = dht.readTemperature();
-  Humidity = dht.readHumidity();
-  server.send(200, "text/html", SendHTML(Temperature,Humidity));
-}
-
-void handle_NotFound(){
-  server.send(404, "text/plain", "Not found");
-}
-
-String SendHTML(float Temperaturestat,float Humiditystat){
-  String ptr = "<!DOCTYPE html> <html>\n";
-  ptr +="<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
-  ptr +="<title>esp8266 DHT11</title>\n";
-
-  ptr +="<script>\n";
-  ptr +="setInterval(loadDoc,200);\n";
-  ptr +="function loadDoc() {\n";
-  ptr +="var xhttps = new XMLhttpsRequest();\n";
-  ptr +="xhttps.onreadystatechange = function() {\n";
-  ptr +="if (this.readyState == 4 && this.status == 200) {\n";
-  ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
-  ptr +="};\n";
-  ptr +="xhttps.open(\"GET\", \"/\", true);\n";
-  ptr +="xhttps.send();\n";
-  ptr +="}\n";
-  ptr +="</script>\n";
-  ptr +="</head>\n";
-  ptr +="<body>\n";
-  ptr +="<div id=\"webpage\">\n";
-
-  ptr +="<p>温度: ";
-  ptr +=(int)Temperaturestat;
-  ptr +="°C</p>";
-  ptr +="<p>湿度: ";
-  ptr +=(int)Humiditystat;
-  ptr +="%</p>";
-  
-  ptr +="</div>\n";
-  ptr +="</body>\n";
-  ptr +="</html>\n";
-  return ptr;
-}
-
-//所有准备工作就绪，开始工作
-void loop() {
-  server.handleClient();
-}
-```
-
-* 超声波传感器
-
-```arduino {.line-numbers}
-#include <Arduino.h>
-#include <esp8266WiFi.h>
-#include <esp8266WiFiMulti.h>
-#include <esp8266httpsClient.h>
-#include <esp8266WebServer.h>
-// utlrasonic pinout
-#define ULTRASONIC_TRIG_PIN     5   // pin TRIG to D1
-#define ULTRASONIC_ECHO_PIN     4   // pin ECHO to D2
-
-const char* WiFi_ssid = "AI";             // SSID
-const char* WiFi_password = "raspberry";         // WIFI
-esp8266WebServer server(80);
-esp8266WiFiMulti WiFiMulti;
-
-void setup() {
-  Serial.begin(115200);
-  Serial.println("*****************************************************");
-  Serial.println("********** Program Start : Connect Ultrasonic HC-SR04 + esp8266 to AskSensors over http");
-  Serial.println("Wait for WiFi... ");
-  Serial.print("********** connecting to WIFI : ");
-  Serial.println(WiFi_ssid);
-  WiFi.begin(WiFi_ssid, WiFi_password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("-> WiFi connected");
-  Serial.println("-> IP address: ");
-  Serial.println(WiFi.localIP());
-  // ultraonic setup
-  pinMode(ULTRASONIC_TRIG_PIN, OUTPUT);
-  pinMode(ULTRASONIC_ECHO_PIN, INPUT);
-  server.on("/", handle_OnConnect);
-  server.onNotFound(handle_NotFound);
-  server.begin();
-}
-
-void handle_OnConnect() {
-  long duration, distance;
-  digitalWrite(ULTRASONIC_TRIG_PIN, LOW);
-  delayMicroseconds(2);
-  digitalWrite(ULTRASONIC_TRIG_PIN, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(ULTRASONIC_TRIG_PIN, LOW);
-  duration = pulseIn(ULTRASONIC_ECHO_PIN, HIGH);
-  distance = (duration/2) / 29.1;
-  server.send(200, "text/html", SendHTML(distance));
-}
-
-void handle_NotFound(){
-  server.send(404, "text/plain", "Not found");
-}
-
-String SendHTML(long distance){
-  String ptr = "<!DOCTYPE html> <html>\n";
-  ptr +="<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
-  ptr +="<title>esp8266 DHT11</title>\n";
-
-  ptr +="<script>\n";
-  ptr +="setInterval(loadDoc,200);\n";
-  ptr +="function loadDoc() {\n";
-  ptr +="var xhttps = new XMLhttpsRequest();\n";
-  ptr +="xhttps.onreadystatechange = function() {\n";
-  ptr +="if (this.readyState == 4 && this.status == 200) {\n";
-  ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
-  ptr +="};\n";
-  ptr +="xhttps.open(\"GET\", \"/\", true);\n";
-  ptr +="xhttps.send();\n";
-  ptr +="}\n";
-  ptr +="</script>\n";
-  ptr +="</head>\n";
-  ptr +="<body>\n";
-  ptr +="<div id=\"webpage\">\n";
-  
-  ptr +="<p>距离: ";
-  ptr +=(float)distance;
-  ptr +="厘米</p>";
-
-  ptr +="</div>\n";
-  ptr +="</body>\n";
-  ptr +="</html>\n";
-  return ptr;
-}
-
-
-void loop() {
-  server.handleClient();
-}
-```
-
-* 温湿度传感器变化曲线
-
-```arduino {.line-numbers}
-#include <esp8266WiFi.h>
-#include <WiFiClient.h>
-#include <esp8266WebServer.h>
-
-#include "index.h" //Our HTML webpage contents with javascripts
-#include "DHTesp.h"  //DHT11 Library for esp
-  
-#define LED 2        //On board LED
-#define DHTpin 15    //D8 of NodeMCU is GPIO15
-
-DHTesp dht;
-
-const char* ssid = "AI";
-const char* password = "raspberry";
-
-esp8266WebServer server(80); //Server on port 80
-
-void handleRoot() {
- String s = MAIN_page; //Read HTML contents
- server.send(200, "text/html", s); //Send web page
-}
-
-float humidity, temperature;
-
-void handleADC() {
- int a = analogRead(A0);
-
- String data = "{\"ADC\":\""+String(a)+"\", \"Temperature\":\""+ String(temperature) +"\", \"Humidity\":\""+ String(humidity) +"\"}";
-
- digitalWrite(LED,!digitalRead(LED)); //Toggle LED on data request ajax
- server.send(200, "text/plane", data); //Send ADC value, temperature and humidity JSON to client ajax request
-
- //Get Humidity temperatue data after request is complete
- //Give enough time to handle client to avoid problems
-  delay(dht.getMinimumSamplingPeriod());
-
-  humidity = dht.getHumidity();
-  temperature = dht.getTemperature();
-
-  Serial.print(humidity, 1);
-  Serial.print(temperature, 1);
-  Serial.print(dht.toFahrenheit(temperature), 1);
-}
-
-//==============================================================
-//                  SETUP
-//==============================================================
-void setup()
-{
-  Serial.begin(115200);
-  Serial.println();
-
-  dht.setup(DHTpin, DHTesp::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
-  //dht.setup(DHTpin, DHTesp::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
-
-  WiFi.begin(ssid, password);     //Connect to your WiFi router
-  Serial.println("");
-
-  //Onboard LED port Direction output
-  pinMode(LED,OUTPUT);
-  
-  // Wait for connection
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  //If connection successful show IP address in serial monitor
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());  //IP address assigned to your esp
-
-  server.on("/", handleRoot);      //Which routine to handle at root location. This is display page
-  server.on("/readADC", handleADC); //This page is called by java Script AJAX
-
-  server.begin();                  //Start server
-  Serial.println("HTTP server started");
-}
-
-//==============================================================
-//                     LOOP
-//==============================================================
-void loop()
-{
-  server.handleClient();          //Handle client requests
-}
-```
-
-#### **活动小结**
-
-总结课程主要内容，强调重难点
-
-### 第2节 WiFi遥控小车
-
-    使用esp8266，通过网页端发送命令，遥控一辆小车。
-
-#### **demo**
-
-<center><iframe src="http://hass.live:9000" width="800" height="300" scrolling="no" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
+使用esp8266开发板，组装并遥控一辆小车，通过网页端发送命令来遥控它。
 
 ---
 
 #### **学习流程**
 
-##### [课程引入](#活动目标-1) （10分钟）
+##### 课程引入（10分钟）
 
 <center>
 
@@ -1239,7 +808,7 @@ void loop()
 
 </center>
 
-##### [基本任务](#硬件准备-6) （30分钟）
+##### 基本任务（30分钟）
 
 <center>
 
@@ -1250,15 +819,15 @@ void loop()
 
 </center>
 
-##### [活动小结](#活动小结-1) （5分钟）
+##### 活动小结（5分钟）
 
 ---
 
 #### **活动目标**
 
-* 学会控制esp8266的GPIO
-* 学会使用电机驱动扩展模块（ESP12E）
-* 学会使用esp8266的服务器
+- 学会控制esp8266的GPIO
+- 学会使用电机驱动扩展模块（ESP12E）
+- 学会使用esp8266的服务器
 
 #### **背景知识**
 
@@ -1270,7 +839,7 @@ void loop()
 
 ##### **ESP12E Motor Shield**
 
-ESP12E Motor Shield是深圳四博智联科技有限公司研发的一款兼容ESP12E Dev Kit和NodeMCU的一款大电流电机驱动模块。  
+ESP12E Motor Shield是深圳四博智联科技有限公司研发的一款兼容ESP12E和NodeMCU的一款大电流电机驱动模块。  
 模块采用意法半导体公司生产的优秀大功率电机专用驱动全桥芯片L293DD，可直接驱动2路直流电机或者1路步进电机。  
 模块使用ESP12E Dev Kit的IO口作为控制端口，内部配置逻辑芯片完成电机IC驱动，因此仅仅占用控制板D1、D2、D3、D4四个端口，  
 分别作为PWMA（电机A转速）、PWMB（电机B转速）、DA（电机A方向）、DB（电机B方向）功能。  
@@ -1280,11 +849,11 @@ ESP12E Motor Shield是深圳四博智联科技有限公司研发的一款兼容E
 
 ##### 硬件清单
 
-* esp8266主板
-* 电机扩展板 esp12E Motor Shield
-* 小车套件(3D打印的底盘和夹层，电机，车轮，铜柱等)
-* 杜邦线，数据线  
-* 电源（电池或者充电宝）
+- esp8266主板
+- 电机扩展板 ESP12E Motor Shield
+- 小车套件(3D打印的底盘和夹层，电机，车轮，铜柱等)
+- 杜邦线，数据线  
+- 电源（电池或者充电宝）
 
 ##### 硬件连接
 
@@ -1308,7 +877,7 @@ ESP12E Motor Shield是深圳四博智联科技有限公司研发的一款兼容E
 
 ##### 相关代码
 
-* WiFi小车程序
+- WiFi小车程序
 
 ```arduino {.line-numbers}
 #include <esp8266WiFi.h>
@@ -1466,6 +1035,450 @@ void loop(void){
 
 ---
 
+### 第2节 实现摄像机云台
+
+### 第3节 实现自动避障
+
+### 第4节 走迷宫比赛
+
+### 第1节 传感器的读取与曲线绘制
+
+    熟悉操作esp8266的步骤。是第一章的基础  
+    包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等，并使用Chart.js来绘制实时变化曲线  
+    这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
+---
+
+#### **学习流程**
+
+##### 课程引入（10分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+活动目标| 了解物联网基本概念 | 5分钟
+背景知识 | 熟悉实验中涉及到的软硬件 | 5分钟
+
+</center>
+
+##### 基本任务（30分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+硬件准备 | 将硬件按文档进行连接 | 5分钟
+程序及操作 | 完成程序及操作文档部分 | 25分钟
+
+</center>
+
+##### 活动小结（5分钟）
+
+---
+
+#### **活动目标**
+
+- 了解物联网的基本概念
+- 了解使用开发板读取传感器的基本原理
+- 熟悉使用Arduino IDE烧录固件的操作流程
+
+#### **背景知识**
+
+##### 物联网背景知识
+
+<center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+##### 使用开发板读取传感器数据
+
+esp8266是WiFi串口模块，功能简单来讲就是：从WiFi接收到数据，串口输出；从串口接收数据，WiFi输出数据。  
+
+通过自带的GPIO口连接传感器，传感器将环境数据转化为电信号发送给esp8266读取、处理并输出。
+
+#### **硬件准备**
+
+##### 硬件清单
+
+- esp8266主板
+插图
+- 温湿度传感器（型号为DHT11或DHT22）
+插图
+- 超声波传感器（型号为HC-SR04）
+插图
+- 杜邦线、数据线
+插图
+
+##### 硬件连接
+
+<center><img src=https://md.hass.live/Xnip2019-05-05_11-52-46.png?imageView2/0/interlace/1/q/46|imageslim></center>
+
+<center><img src=https://md.hass.live/Xnip2019-05-05_12-02-00.png?imageView2/0/interlace/1/q/46|imageslim></center>
+图解
+#### **程序及操作**
+
+##### 简单读取
+
+1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp8266_projects/esp8266_dht11_http`  
+2.将esp8266通过数据线连接到电脑  
+3.使用Arduino IDE打开文件`esp8266_dht11_https.ino`  
+4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
+
+<center><img src=https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim></center>
+
+5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
+6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数  
+7.连接另一个esp8266开发板，打开路径`codes/chapter2/esp8266_projects/esp8266_ultrasonic_http`,再次执行2-6步骤来使用超声波传感器  
+
+##### 绘制实时曲线
+
+1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp8266_projects/esp8266_dht11_http_chartjs`  
+2.将esp8266通过数据线连接到电脑  
+3.使用Arduino IDE打开文件 `esp8266_dht11_http_chartjs.ino`  
+4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
+
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
+
+5.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
+6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数  
+
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-13-13.png?imageView2/0/interlace/1/q/46|imageslim'></center>
+
+##### 相关代码
+
+- 温湿度传感器
+
+```arduino {.line-numbers} {cmd}
+//两个反斜杠代表单行注释，这后面的文字不会被执行
+
+/*
+  被星号和反斜杠包围的部分可以进行多行注释
+*/
+
+/*使用多行注释符
+
+  Arduino程序包含了两个主要的方法，分别是
+  void setup()和void loop()
+  方法后面写一对{},在这里面写方法的具体内容。看起来像是这样：
+  void setup(){
+    自己规定的语句
+    自己规定的语句
+    自己规定的语句
+  }
+  void loop(){
+    自己规定的语句
+    自己规定的语句
+    自己规定的语句
+  }
+*/
+
+
+//使用 #include来引用一些附加的功能。
+#include <esp8266WiFi.h>
+#include <esp8266WebServer.h>
+#include "DHT.h"
+
+
+
+
+/////////////////////////////////////////////
+////////////////下面的部分请你配置//////////////
+/////////////////////////////////////////////
+
+// 1️⃣选择使用哪一种DHT传感器。通过去掉前面的注释符来使语句生效
+#define DHTTYPE DHT11   // DHT 11
+//#define DHTTYPE DHT21   // DHT 21 (AM2301)
+//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+
+// 2️⃣把引号里的内容替换为自己路由器的用户名和密码
+const char* ssid = "AI";  // 输入路由器用户名
+const char* password = "raspberry";  //输入路由器密码
+
+// 3️⃣把DHT传感器的Data接口连接到D8。此处与硬件连线对应即可
+uint8_t DHTPin = D8;
+
+// 4️⃣默认为80端口，如果改为其他端口，访问的时候在最后加上（:端口名）
+esp8266WebServer server(80);
+
+/////////////////////////////////////////////
+////////////////上面的部分请你配置//////////////
+/////////////////////////////////////////////
+
+// 初始化你连接的DHT传感器
+DHT dht(DHTPin, DHTTYPE);
+//定义两个float变量来读取温湿度
+float Temperature; //温度
+float Humidity; //湿度
+
+
+//开始最后的准备工作
+void setup() {
+  Serial.begin(115200);
+  delay(100);
+  
+  pinMode(DHTPin, INPUT);
+  dht.begin();
+
+  Serial.println("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  //检查连接是否正常
+  while (WiFi.status() != WL_CONNECTED) {
+  delay(1000);
+  Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected..!");
+  Serial.print("Got IP: ");  Serial.println(WiFi.localIP());
+
+  server.on("/", handle_OnConnect);
+  server.onNotFound(handle_NotFound);
+
+  server.begin();
+  Serial.println("http server started");
+}
+
+void handle_OnConnect() {
+  Temperature = dht.readTemperature();
+  Humidity = dht.readHumidity();
+  server.send(200, "text/html", SendHTML(Temperature,Humidity));
+}
+
+void handle_NotFound(){
+  server.send(404, "text/plain", "Not found");
+}
+
+String SendHTML(float Temperaturestat,float Humiditystat){
+  String ptr = "<!DOCTYPE html> <html>\n";
+  ptr +="<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
+  ptr +="<title>esp8266 DHT11</title>\n";
+
+  ptr +="<script>\n";
+  ptr +="setInterval(loadDoc,200);\n";
+  ptr +="function loadDoc() {\n";
+  ptr +="var xhttps = new XMLhttpsRequest();\n";
+  ptr +="xhttps.onreadystatechange = function() {\n";
+  ptr +="if (this.readyState == 4 && this.status == 200) {\n";
+  ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
+  ptr +="};\n";
+  ptr +="xhttps.open(\"GET\", \"/\", true);\n";
+  ptr +="xhttps.send();\n";
+  ptr +="}\n";
+  ptr +="</script>\n";
+  ptr +="</head>\n";
+  ptr +="<body>\n";
+  ptr +="<div id=\"webpage\">\n";
+
+  ptr +="<p>温度: ";
+  ptr +=(int)Temperaturestat;
+  ptr +="°C</p>";
+  ptr +="<p>湿度: ";
+  ptr +=(int)Humiditystat;
+  ptr +="%</p>";
+  
+  ptr +="</div>\n";
+  ptr +="</body>\n";
+  ptr +="</html>\n";
+  return ptr;
+}
+
+//所有准备工作就绪，开始工作
+void loop() {
+  server.handleClient();
+}
+```
+
+- 超声波传感器
+
+```arduino {.line-numbers}
+#include <Arduino.h>
+#include <esp8266WiFi.h>
+#include <esp8266WiFiMulti.h>
+#include <esp8266httpsClient.h>
+#include <esp8266WebServer.h>
+// utlrasonic pinout
+#define ULTRASONIC_TRIG_PIN     5   // pin TRIG to D1
+#define ULTRASONIC_ECHO_PIN     4   // pin ECHO to D2
+
+const char* WiFi_ssid = "AI";             // SSID
+const char* WiFi_password = "raspberry";         // WIFI
+esp8266WebServer server(80);
+esp8266WiFiMulti WiFiMulti;
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("*****************************************************");
+  Serial.println("********** Program Start : Connect Ultrasonic HC-SR04 + esp8266 to AskSensors over http");
+  Serial.println("Wait for WiFi... ");
+  Serial.print("********** connecting to WIFI : ");
+  Serial.println(WiFi_ssid);
+  WiFi.begin(WiFi_ssid, WiFi_password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("-> WiFi connected");
+  Serial.println("-> IP address: ");
+  Serial.println(WiFi.localIP());
+  // ultraonic setup
+  pinMode(ULTRASONIC_TRIG_PIN, OUTPUT);
+  pinMode(ULTRASONIC_ECHO_PIN, INPUT);
+  server.on("/", handle_OnConnect);
+  server.onNotFound(handle_NotFound);
+  server.begin();
+}
+
+void handle_OnConnect() {
+  long duration, distance;
+  digitalWrite(ULTRASONIC_TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(ULTRASONIC_TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(ULTRASONIC_TRIG_PIN, LOW);
+  duration = pulseIn(ULTRASONIC_ECHO_PIN, HIGH);
+  distance = (duration/2) / 29.1;
+  server.send(200, "text/html", SendHTML(distance));
+}
+
+void handle_NotFound(){
+  server.send(404, "text/plain", "Not found");
+}
+
+String SendHTML(long distance){
+  String ptr = "<!DOCTYPE html> <html>\n";
+  ptr +="<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
+  ptr +="<title>esp8266 DHT11</title>\n";
+
+  ptr +="<script>\n";
+  ptr +="setInterval(loadDoc,200);\n";
+  ptr +="function loadDoc() {\n";
+  ptr +="var xhttps = new XMLhttpsRequest();\n";
+  ptr +="xhttps.onreadystatechange = function() {\n";
+  ptr +="if (this.readyState == 4 && this.status == 200) {\n";
+  ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
+  ptr +="};\n";
+  ptr +="xhttps.open(\"GET\", \"/\", true);\n";
+  ptr +="xhttps.send();\n";
+  ptr +="}\n";
+  ptr +="</script>\n";
+  ptr +="</head>\n";
+  ptr +="<body>\n";
+  ptr +="<div id=\"webpage\">\n";
+  
+  ptr +="<p>距离: ";
+  ptr +=(float)distance;
+  ptr +="厘米</p>";
+
+  ptr +="</div>\n";
+  ptr +="</body>\n";
+  ptr +="</html>\n";
+  return ptr;
+}
+
+
+void loop() {
+  server.handleClient();
+}
+```
+
+- 温湿度传感器变化曲线
+
+```arduino {.line-numbers}
+#include <esp8266WiFi.h>
+#include <WiFiClient.h>
+#include <esp8266WebServer.h>
+
+#include "index.h" //Our HTML webpage contents with javascripts
+#include "DHTesp.h"  //DHT11 Library for esp
+  
+#define LED 2        //On board LED
+#define DHTpin 15    //D8 of NodeMCU is GPIO15
+
+DHTesp dht;
+
+const char* ssid = "AI";
+const char* password = "raspberry";
+
+esp8266WebServer server(80); //Server on port 80
+
+void handleRoot() {
+ String s = MAIN_page; //Read HTML contents
+ server.send(200, "text/html", s); //Send web page
+}
+
+float humidity, temperature;
+
+void handleADC() {
+ int a = analogRead(A0);
+
+ String data = "{\"ADC\":\""+String(a)+"\", \"Temperature\":\""+ String(temperature) +"\", \"Humidity\":\""+ String(humidity) +"\"}";
+
+ digitalWrite(LED,!digitalRead(LED)); //Toggle LED on data request ajax
+ server.send(200, "text/plane", data); //Send ADC value, temperature and humidity JSON to client ajax request
+
+ //Get Humidity temperatue data after request is complete
+ //Give enough time to handle client to avoid problems
+  delay(dht.getMinimumSamplingPeriod());
+
+  humidity = dht.getHumidity();
+  temperature = dht.getTemperature();
+
+  Serial.print(humidity, 1);
+  Serial.print(temperature, 1);
+  Serial.print(dht.toFahrenheit(temperature), 1);
+}
+
+//==============================================================
+//                  SETUP
+//==============================================================
+void setup()
+{
+  Serial.begin(115200);
+  Serial.println();
+
+  dht.setup(DHTpin, DHTesp::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
+  //dht.setup(DHTpin, DHTesp::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
+
+  WiFi.begin(ssid, password);     //Connect to your WiFi router
+  Serial.println("");
+
+  //Onboard LED port Direction output
+  pinMode(LED,OUTPUT);
+  
+  // Wait for connection
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  //If connection successful show IP address in serial monitor
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());  //IP address assigned to your esp
+
+  server.on("/", handleRoot);      //Which routine to handle at root location. This is display page
+  server.on("/readADC", handleADC); //This page is called by java Script AJAX
+
+  server.begin();                  //Start server
+  Serial.println("HTTP server started");
+}
+
+//==============================================================
+//                     LOOP
+//==============================================================
+void loop()
+{
+  server.handleClient();          //Handle client requests
+}
+```
+
+#### **活动小结**
+
+总结课程主要内容，强调重难点
+
 ### 第3节 机械臂
 
     使用esp8266，通过网页端发送命令，控制多个舵机
@@ -1478,7 +1491,7 @@ void loop(void){
 
 #### **学习流程**
 
-##### [课程引入](#活动目标-2) （15分钟）
+##### 课程引入（15分钟）
 
 <center>
 
@@ -1489,7 +1502,7 @@ void loop(void){
 
 </center>
 
-##### [基本任务](#硬件准备-7) （35分钟）
+##### 基本任务（35分钟）
 
 <center>
 
@@ -1500,13 +1513,13 @@ void loop(void){
 
 </center>
 
-##### [活动小结](#活动小结-2) （10分钟）
+##### 活动小结（10分钟）
 
 #### **活动目标**
 
-* 了解舵机的原理和使用方法
-* 了解脉冲宽度调制（PWM）
-* 通过WiFi遥控机械臂
+- 了解舵机的原理和使用方法
+- 了解脉冲宽度调制（PWM）
+- 通过WiFi遥控机械臂
 
 #### **背景知识**
 
@@ -1548,11 +1561,11 @@ void loop(void){
 
 ##### 硬件清单
 
-* esp8266主板
-* 电机扩展板 esp12E Motor Shield
-* 舵机
-* 杜邦线、数据线
-* 机械臂和零件
+- esp8266主板
+- 电机扩展板 esp12E Motor Shield
+- 舵机
+- 杜邦线、数据线
+- 机械臂和零件
 
 ##### 硬件连接
 
@@ -1581,7 +1594,7 @@ void loop(void){
 
 ##### 相关代码
 
-* WiFi机械臂
+- WiFi机械臂
 
 ```arduino {.line-numbers}
 #include <esp8266WiFi.h>
@@ -1695,7 +1708,7 @@ void loop() {
 
 #### **学习流程**
 
-##### [课程引入](#活动目标-3) （10分钟）
+##### 课程引入（10分钟）
 
 <center>
 
@@ -1706,7 +1719,7 @@ void loop() {
 
 </center>
 
-##### [基本任务](#硬件准备-8) （30分钟）
+##### 基本任务（30分钟）
 
 <center>
 
@@ -1717,15 +1730,15 @@ void loop() {
 
 </center>
 
-##### [活动小结](#活动小结-3) （5分钟）
+##### 活动小结（5分钟）
 
 ---
 
 #### **活动目标**
 
-* 学会控制esp8266的GPIO
-* 学会使用电机驱动扩展模块（ESP12E）
-* 学会使用esp8266的服务器
+- 学会控制esp8266的GPIO
+- 学会使用电机驱动扩展模块（ESP12E）
+- 学会使用esp8266的服务器
 
 #### **背景知识**
 
@@ -1748,14 +1761,14 @@ void loop() {
 
 ##### 硬件清单
 
-* esp8266主板
-* 电机扩展板 esp12E Motor Shield  
-* 两个超声传感器  
-* 两个舵机  
-* 一个蜂鸣器
-* 小车套件(3D打印的底盘和夹层，电机，车轮，铜柱等)
-* 杜邦线，数据线  
-* 电源（电池或者充电宝）
+- esp8266主板
+- 电机扩展板 esp12E Motor Shield  
+- 两个超声传感器  
+- 两个舵机  
+- 一个蜂鸣器
+- 小车套件(3D打印的底盘和夹层，电机，车轮，铜柱等)
+- 杜邦线，数据线  
+- 电源（电池或者充电宝）
 
 ##### 硬件连接
 
@@ -1780,7 +1793,7 @@ void loop() {
 
 ##### 相关代码
 
-* WiFi小车程序
+- WiFi小车程序
 
 ```arduino {.line-numbers}
 
@@ -1802,7 +1815,7 @@ void loop() {
 
 #### **学习流程**
 
-##### [课程引入](#活动目标-4) （10分钟）
+##### 课程引入（10分钟）
 
 <center>
 
@@ -1813,7 +1826,7 @@ void loop() {
 
 </center>
 
-##### [基本任务](#硬件准备-9) （30分钟）
+##### 基本任务（30分钟）
 
 <center>
 
@@ -1824,16 +1837,16 @@ void loop() {
 
 </center>
 
-##### [活动小结](#活动小结-4) （5分钟）
+##### 活动小结（5分钟）
 
 ---
 
 #### **活动目标**
 
-* 确定活动方向并提出需要解决的问题
-* 了解esp32的功能及引脚并熟练了解实验步骤
-* 按照操作步骤实际操作并完成小车实时摄像等相关功能
-* 对实验进行总结，并分析遇到的问题
+- 确定活动方向并提出需要解决的问题
+- 了解esp32的功能及引脚并熟练了解实验步骤
+- 按照操作步骤实际操作并完成小车实时摄像等相关功能
+- 对实验进行总结，并分析遇到的问题
 
 #### **背景知识**
 
@@ -1843,10 +1856,10 @@ esp32是一系列低成本，低功耗的片上 微控制器系统，集成了Wi
 
 ##### 硬件清单
 
-* esp32主板
-* ov2640摄像头
-* USB转TTL编程器
-* 杜邦线
+- esp32主板
+- ov2640摄像头
+- USB转TTL编程器
+- 杜邦线
 
 ##### 硬件连接
 
@@ -1873,7 +1886,7 @@ esp32是一系列低成本，低功耗的片上 微控制器系统，集成了Wi
 
 ##### 代码详解
 
-* esp32网络摄像头
+- esp32网络摄像头
 
 ```arduino {.line-numbers}
 #include "esp_camera.h"
@@ -1997,16 +2010,16 @@ void loop() {
 
 ##### 比赛规则
 
-* sector 1
-* sector 2
-* sector 3
+- sector 1
+- sector 2
+- sector 3
 
 #### **功能参考**
 
-* 代码在`learn-ai/chapter2/part1.5`  
-* 代码将第二、三、四节的功能结合到了一段程序中  
-* 硬件部分将第二、三、四节连接到同一扩展板上  
-* 第四节部分只需将esp32上的`3.3V`和`GND`用杜邦线连接到esp8266扩展板舵机连接处的对应接口,使用扩展板为esp32进行供电。如下图：
+- 代码在`learn-ai/chapter2/part1.5`  
+- 代码将第二、三、四节的功能结合到了一段程序中  
+- 硬件部分将第二、三、四节连接到同一扩展板上  
+- 第四节部分只需将esp32上的`3.3V`和`GND`用杜邦线连接到esp8266扩展板舵机连接处的对应接口,使用扩展板为esp32进行供电。如下图：
 
 <center><img src=https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_19-30-22.png></center>
 <center><font color=red>红色</font>-正极V<br>
@@ -2020,9 +2033,9 @@ void loop() {
   通过前面的例子，你已经可以使用无线网络的方式来让esp8266读取传感器数据，控制简单的电机，查看网络摄像头等。其实这些已经是物联网的雏形。
   在后面的章节里，结合强大的人工智能，你的小车会愈发强大。  
 
-* 通过语音技术，让小车听懂你的指令
-* 通过计算机视觉，让机械臂自动识别和抓取特定物体
-* 通过深度学习，让小车自动追踪特定物体，以及无人驾驶
+- 通过语音技术，让小车听懂你的指令
+- 通过计算机视觉，让机械臂自动识别和抓取特定物体
+- 通过深度学习，让小车自动追踪特定物体，以及无人驾驶
 
 ---
 
@@ -2042,7 +2055,7 @@ void loop() {
 
 ##### 硬件清单
 
-* 树莓派套装
+- 树莓派套装
 
 ##### 硬件连接
 
@@ -2090,9 +2103,9 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 #### **硬件准备**
 
-* 运行`Home Assistant`和`百度识别自定义组件`的树莓派
-* 安卓手机（`网络摄像头安卓APP`，提供快速稳定的视频服务。`kodi媒体中心安卓APP`，提供语音服务功能）
-* 手机也可替换为Part1.4所用的esp32摄像头
+- 运行`Home Assistant`和`百度识别自定义组件`的树莓派
+- 安卓手机（`网络摄像头安卓APP`，提供快速稳定的视频服务。`kodi媒体中心安卓APP`，提供语音服务功能）
+- 手机也可替换为Part1.4所用的esp32摄像头
 
 #### **程序及操作**
 
@@ -2185,10 +2198,10 @@ sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
 
 ##### 硬件清单
 
-* 树莓派
-* 树莓派电机扩展板
-* 摄像头
-* 小车套件
+- 树莓派
+- 树莓派电机扩展板
+- 摄像头
+- 小车套件
 
 ##### 硬件连接
 
@@ -2264,14 +2277,14 @@ sudo python3 stream_client.py
 
 ##### 硬件清单
 
-* 纸
-* 胶带
+- 纸
+- 胶带
 
 ##### 硬件搭建-跑道
 
-* 地面颜色为纯色，与所用纸张的颜色对比度应较大
-* 跑道的宽度稍大于车的宽度  
-* 可以把拐弯处的弯度设计得稍大一些
+- 地面颜色为纯色，与所用纸张的颜色对比度应较大
+- 跑道的宽度稍大于车的宽度  
+- 可以把拐弯处的弯度设计得稍大一些
 
 <center><img src=https://md.hass.live/track.jpg></center>
 
