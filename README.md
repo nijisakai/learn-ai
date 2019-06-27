@@ -1902,12 +1902,12 @@ esp32是一系列低成本，低功耗的片上 微控制器系统，集成了Wi
 
 1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp32_projects/esp32_webcam`  
 2.将上图连接好后，将USB转TTL编程器插入电脑  
-3.使用Arduino IDE打开文件`esp32——webcam.ino`  
+3.使用Arduino IDE打开文件`esp32_webcam.ino`  
 4.配置esp32的上传环境如下图所示：  
 
 <center><img src="https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-34-06.png"></center>
 
-5.上传完毕后，将`IO0`口需要和它边上的`GND`口杜邦线拔掉，按一下esp32主板上面的`reset`键  
+5.上传完毕后，保持USB连接在电脑上。将`IO0`口需要和它边上的`GND`口杜邦线拔掉，按一下esp32主板上面的`reset`键  
 6.打开[路由器管理地址](http://192.168.0.1)，esp32此时应该已经加入到了局域网中，查看esp32获取到的路由器地址  
 7.在浏览器中打开esp32获取到的局域网地址，在左侧最下方选择`Start Stream`  
 

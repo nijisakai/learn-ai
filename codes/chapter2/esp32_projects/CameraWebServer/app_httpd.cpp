@@ -171,7 +171,7 @@ static int run_face_recognition(dl_matrix3du_t *image_matrix, box_array_t *net_b
         Serial.println("Could not allocate face recognition buffer");
         return matched_id;
     }
-    if (align_face(net_boxes, image_matrix, aligned_face) == esp_OK){
+    if (align_face(net_boxes, image_matrix, aligned_face) == ESP_OK){
         if (is_enrolling == 1){
             int8_t left_sample_face = enroll_face(&id_list, aligned_face);
 
@@ -209,7 +209,7 @@ static size_t jpg_encode_stream(void * arg, size_t index, const void* data, size
     if(!index){
         j->len = 0;
     }
-    if(httpd_resp_send_chunk(j->req, (const char *)data, len) != esp_OK){
+    if(httpd_resp_send_chunk(j->req, (const char *)data, len) != ESP_OK){
         return 0;
     }
     j->len += len;
@@ -218,14 +218,14 @@ static size_t jpg_encode_stream(void * arg, size_t index, const void* data, size
 
 static esp_err_t capture_handler(httpd_req_t *req){
     camera_fb_t * fb = NULL;
-    esp_err_t res = esp_OK;
+    esp_err_t res = ESP_OK;
     int64_t fr_start = esp_timer_get_time();
 
     fb = esp_camera_fb_get();
     if (!fb) {
         Serial.println("Camera capture failed");
         httpd_resp_send_500(req);
-        return esp_FAIL;
+        return ESP_FAIL;
     }
 
     httpd_resp_set_type(req, "image/jpeg");
@@ -243,7 +243,7 @@ static esp_err_t capture_handler(httpd_req_t *req){
             res = httpd_resp_send(req, (const char *)fb->buf, fb->len);
         } else {
             jpg_chunking_t jchunk = {req, 0};
-            res = frame2jpg_cb(fb, 80, jpg_encode_stream, &jchunk)?esp_OK:esp_FAIL;
+            res = frame2jpg_cb(fb, 80, jpg_encode_stream, &jchunk)?ESP_OK:ESP_FAIL;
             httpd_resp_send_chunk(req, NULL, 0);
             fb_len = jchunk.len;
         }
@@ -258,7 +258,7 @@ static esp_err_t capture_handler(httpd_req_t *req){
         esp_camera_fb_return(fb);
         Serial.println("dl_matrix3du_alloc failed");
         httpd_resp_send_500(req);
-        return esp_FAIL;
+        return ESP_FAIL;
     }
 
     out_buf = image_matrix->item;
@@ -272,7 +272,7 @@ static esp_err_t capture_handler(httpd_req_t *req){
         dl_matrix3du_free(image_matrix);
         Serial.println("to rgb888 failed");
         httpd_resp_send_500(req);
-        return esp_FAIL;
+        return ESP_FAIL;
     }
 
     box_array_t *net_boxes = face_detect(image_matrix, &mtmn_config);
@@ -293,7 +293,7 @@ static esp_err_t capture_handler(httpd_req_t *req){
     dl_matrix3du_free(image_matrix);
     if(!s){
         Serial.println("JPEG compression failed");
-        return esp_FAIL;
+        return ESP_FAIL;
     }
 
     int64_t fr_end = esp_timer_get_time();
@@ -303,7 +303,7 @@ static esp_err_t capture_handler(httpd_req_t *req){
 
 static esp_err_t stream_handler(httpd_req_t *req){
     camera_fb_t * fb = NULL;
-    esp_err_t res = esp_OK;
+    esp_err_t res = ESP_OK;
     size_t _jpg_buf_len = 0;
     uint8_t * _jpg_buf = NULL;
     char * part_buf[64];
@@ -322,7 +322,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
     }
 
     res = httpd_resp_set_type(req, _STREAM_CONTENT_TYPE);
-    if(res != esp_OK){
+    if(res != ESP_OK){
         return res;
     }
 
@@ -332,7 +332,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
         fb = esp_camera_fb_get();
         if (!fb) {
             Serial.println("Camera capture failed");
-            res = esp_FAIL;
+            res = ESP_FAIL;
         } else {
             fr_start = esp_timer_get_time();
             fr_ready = fr_start;
@@ -346,7 +346,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
                     fb = NULL;
                     if(!jpeg_converted){
                         Serial.println("JPEG compression failed");
-                        res = esp_FAIL;
+                        res = ESP_FAIL;
                     }
                 } else {
                     _jpg_buf_len = fb->len;
@@ -358,11 +358,11 @@ static esp_err_t stream_handler(httpd_req_t *req){
 
                 if (!image_matrix) {
                     Serial.println("dl_matrix3du_alloc failed");
-                    res = esp_FAIL;
+                    res = ESP_FAIL;
                 } else {
                     if(!fmt2rgb888(fb->buf, fb->len, fb->format, image_matrix->item)){
                         Serial.println("fmt2rgb888 failed");
-                        res = esp_FAIL;
+                        res = ESP_FAIL;
                     } else {
                         fr_ready = esp_timer_get_time();
                         box_array_t *net_boxes = NULL;
@@ -385,7 +385,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
                             }
                             if(!fmt2jpg(image_matrix->item, fb->width*fb->height*3, fb->width, fb->height, PIXFORMAT_RGB888, 90, &_jpg_buf, &_jpg_buf_len)){
                                 Serial.println("fmt2jpg failed");
-                                res = esp_FAIL;
+                                res = ESP_FAIL;
                             }
                             esp_camera_fb_return(fb);
                             fb = NULL;
@@ -399,14 +399,14 @@ static esp_err_t stream_handler(httpd_req_t *req){
                 }
             }
         }
-        if(res == esp_OK){
+        if(res == ESP_OK){
             size_t hlen = snprintf((char *)part_buf, 64, _STREAM_PART, _jpg_buf_len);
             res = httpd_resp_send_chunk(req, (const char *)part_buf, hlen);
         }
-        if(res == esp_OK){
+        if(res == ESP_OK){
             res = httpd_resp_send_chunk(req, (const char *)_jpg_buf, _jpg_buf_len);
         }
-        if(res == esp_OK){
+        if(res == ESP_OK){
             res = httpd_resp_send_chunk(req, _STREAM_BOUNDARY, strlen(_STREAM_BOUNDARY));
         }
         if(fb){
@@ -417,7 +417,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
             free(_jpg_buf);
             _jpg_buf = NULL;
         }
-        if(res != esp_OK){
+        if(res != ESP_OK){
             break;
         }
         int64_t fr_end = esp_timer_get_time();
@@ -456,25 +456,25 @@ static esp_err_t cmd_handler(httpd_req_t *req){
         buf = (char*)malloc(buf_len);
         if(!buf){
             httpd_resp_send_500(req);
-            return esp_FAIL;
+            return ESP_FAIL;
         }
-        if (httpd_req_get_url_query_str(req, buf, buf_len) == esp_OK) {
-            if (httpd_query_key_value(buf, "var", variable, sizeof(variable)) == esp_OK &&
-                httpd_query_key_value(buf, "val", value, sizeof(value)) == esp_OK) {
+        if (httpd_req_get_url_query_str(req, buf, buf_len) == ESP_OK) {
+            if (httpd_query_key_value(buf, "var", variable, sizeof(variable)) == ESP_OK &&
+                httpd_query_key_value(buf, "val", value, sizeof(value)) == ESP_OK) {
             } else {
                 free(buf);
                 httpd_resp_send_404(req);
-                return esp_FAIL;
+                return ESP_FAIL;
             }
         } else {
             free(buf);
             httpd_resp_send_404(req);
-            return esp_FAIL;
+            return ESP_FAIL;
         }
         free(buf);
     } else {
         httpd_resp_send_404(req);
-        return esp_FAIL;
+        return ESP_FAIL;
     }
 
     int val = atoi(value);
@@ -639,7 +639,7 @@ void startCameraServer(){
     face_id_init(&id_list, FACE_ID_SAVE_NUMBER, ENROLL_CONFIRM_TIMES);
     
     Serial.printf("Starting web server on port: '%d'\n", config.server_port);
-    if (httpd_start(&camera_httpd, &config) == esp_OK) {
+    if (httpd_start(&camera_httpd, &config) == ESP_OK) {
         httpd_register_uri_handler(camera_httpd, &index_uri);
         httpd_register_uri_handler(camera_httpd, &cmd_uri);
         httpd_register_uri_handler(camera_httpd, &status_uri);
@@ -649,7 +649,7 @@ void startCameraServer(){
     config.server_port += 1;
     config.ctrl_port += 1;
     Serial.printf("Starting stream server on port: '%d'\n", config.server_port);
-    if (httpd_start(&stream_httpd, &config) == esp_OK) {
+    if (httpd_start(&stream_httpd, &config) == ESP_OK) {
         httpd_register_uri_handler(stream_httpd, &stream_uri);
     }
 }

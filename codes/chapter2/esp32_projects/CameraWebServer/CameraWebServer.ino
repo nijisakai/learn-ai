@@ -1,11 +1,14 @@
 #include "esp_camera.h"
 #include <WiFi.h>
 
-
+//
+// WARNING!!! Make sure that you have either selected ESP32 Wrover Module,
+//            or another board which has PSRAM enabled
+//
 
 // Select camera model
-// #define CAMERA_MODEL_WROVER_KIT
-//#define CAMERA_MODEL_esp_EYE
+//#define CAMERA_MODEL_WROVER_KIT
+//#define CAMERA_MODEL_ESP_EYE
 //#define CAMERA_MODEL_M5STACK_PSRAM
 //#define CAMERA_MODEL_M5STACK_WIDE
 #define CAMERA_MODEL_AI_THINKER
@@ -54,14 +57,14 @@ void setup() {
     config.fb_count = 1;
   }
 
-#if defined(CAMERA_MODEL_esp_EYE)
+#if defined(CAMERA_MODEL_ESP_EYE)
   pinMode(13, INPUT_PULLUP);
   pinMode(14, INPUT_PULLUP);
 #endif
 
   // camera init
   esp_err_t err = esp_camera_init(&config);
-  if (err != esp_OK) {
+  if (err != ESP_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;
   }
