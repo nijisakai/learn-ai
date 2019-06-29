@@ -99,47 +99,46 @@
             - [**硬件准备**](#硬件准备-4)
             - [**程序及操作**](#程序及操作-5)
 - [**第2章 物联网与智能家居（基于blockly原型）**](#第2章-物联网与智能家居基于blockly原型)
-    - [第1节](#第1节)
-    - [第2节](#第2节)
-    - [第3节](#第3节)
-- [**第3章 智能车“小白”**](#第3章-智能车小白)
-    - [第1节 让小车动起来](#第1节-让小车动起来)
+    - [第1节 传感器的读取与曲线绘制](#第1节-传感器的读取与曲线绘制)
         - [**学习流程**](#学习流程)
             - [课程引入（10分钟）](#课程引入10分钟)
             - [基本任务（30分钟）](#基本任务30分钟)
             - [活动小结（5分钟）](#活动小结5分钟)
         - [**活动目标**](#活动目标)
         - [**背景知识**](#背景知识)
-            - [HTTP通信](#http通信)
-            - [**电机**](#电机)
+            - [物联网背景知识](#物联网背景知识)
+            - [使用开发板读取传感器数据](#使用开发板读取传感器数据)
         - [**硬件准备**](#硬件准备-5)
-            - [整体结构](#整体结构)
             - [硬件清单](#硬件清单)
             - [硬件连接](#硬件连接)
         - [**程序及操作**](#程序及操作-6)
-            - [操作步骤](#操作步骤)
+            - [简单读取](#简单读取)
+            - [绘制实时曲线](#绘制实时曲线)
             - [相关代码](#相关代码)
         - [**活动小结**](#活动小结)
-    - [第2节 视觉：摄像机云台](#第2节-视觉摄像机云台)
-    - [第3节 听声辨位：自动避障](#第3节-听声辨位自动避障)
-    - [第4节 综合实践：迷宫比赛](#第4节-综合实践迷宫比赛)
-    - [第1节 传感器的读取与曲线绘制](#第1节-传感器的读取与曲线绘制)
+    - [第2节](#第2节)
+    - [第3节](#第3节)
+- [**第3章 智能车“小白”**](#第3章-智能车小白)
+    - [第1节 让小车动起来](#第1节-让小车动起来)
         - [**学习流程**](#学习流程-1)
             - [课程引入（10分钟）](#课程引入10分钟-1)
             - [基本任务（30分钟）](#基本任务30分钟-1)
             - [活动小结（5分钟）](#活动小结5分钟-1)
         - [**活动目标**](#活动目标-1)
         - [**背景知识**](#背景知识-1)
-            - [物联网背景知识](#物联网背景知识)
-            - [使用开发板读取传感器数据](#使用开发板读取传感器数据)
+            - [HTTP通信](#http通信)
+            - [**电机**](#电机)
         - [**硬件准备**](#硬件准备-6)
+            - [整体结构](#整体结构)
             - [硬件清单](#硬件清单-1)
             - [硬件连接](#硬件连接-1)
         - [**程序及操作**](#程序及操作-7)
-            - [简单读取](#简单读取)
-            - [绘制实时曲线](#绘制实时曲线)
+            - [操作步骤](#操作步骤)
             - [相关代码](#相关代码-1)
         - [**活动小结**](#活动小结-1)
+    - [第2节 视觉：摄像机云台](#第2节-视觉摄像机云台)
+    - [第3节 听声辨位：自动避障](#第3节-听声辨位自动避障)
+    - [第4节 综合实践：迷宫比赛](#第4节-综合实践迷宫比赛)
     - [第3节 机械臂](#第3节-机械臂)
         - [**demo**](#demo)
         - [**学习流程**](#学习流程-2)
@@ -780,296 +779,6 @@ python neural_style.py --content examples/1-content.jpg --styles examples/2-styl
 
 ## **第2章 物联网与智能家居（基于blockly原型）**
 
-### 第1节
-
-### 第2节
-
-### 第3节
-
-## **第3章 智能车“小白”**
-
-  通过迭代的方式不断赋予小车更多的功能
-
-```dot
-digraph 第三章大纲 {
-  小车 -> 动力
-  小车 -> 视觉
-  小车 -> 听觉
-}
-```
-
-### 第1节 让小车动起来
-
-使用esp8266开发板，组装并遥控一辆小车，通过网页端发送命令来遥控它
-
----
-
-#### **学习流程**
-
-##### 课程引入（10分钟）
-
-<center>
-
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-活动目标| 通过ip地址遥控一辆小车 | 5分钟
-背景知识 | HTTP服务 | 5分钟
-
-</center>
-
-##### 基本任务（30分钟）
-
-<center>
-
-活动名称 | 活动内容 | 时间分配
-:-: | :-: | :-:
-硬件准备 | 将硬件按文档进行连接 | 5分钟
-程序及操作 | 完成程序及操作文档部分 | 25分钟
-
-</center>
-
-##### 活动小结（5分钟）
-
----
-
-#### **活动目标**
-
-- 了解HTTP通信概念
-- 体验使用开发板控制电机
-- 学会使用ip地址访问服务器
-
-#### **背景知识**
-
-##### HTTP通信
-
-##### **电机**
-
-电机一般用作小车的动力系统。当电机接上正向电压时，电机会正转，当电机接上反向电压时，电机会反转。  
-当电机接上的电压不同时，电机转动的速度也会有所不同。由于开发板能提供给小车的电压有限，所以我们  
-通常不会直接将电机接在开发板上，而是会找一块电机驱动扩展板。
-
-#### **硬件准备**
-
-##### 整体结构
-
-```mermaid
-graph TD
-A[电机] -->|电信号| B(esp8266开发板)
-B --> C{网络服务器}
-C -->|HTTP| D[Laptop]
-C -->|HTTP| E[Phone]
-```
-
-##### 硬件清单
-
-- 小车套件(3D打印的底盘和夹层，电机，车轮，万向轮，铜柱等)
-- esp8266开发板
-- 电机扩展板
-- 杜邦线，数据线  
-- 移动电源
-
-##### 硬件连接
-
-- 将两个车轮分别与电机相连
-![motor](https://md.hass.live/motor.png)
-
-- 使用理线带，将电机和万向轮固定在底盘上
-![step1](https://md.hass.live/step1.jpg)
-
-- 使用铜柱，增加一层夹层
-![step2](https://md.hass.live/step2.jpg)
-![step3](https://md.hass.live/step3.jpg)
-
-- 将esp8266开发板和电机扩展板如图相连，将电机连接到图示位置。
-![step4](https://md.hass.live/step4.jpg)
-
-<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_17-10-07.png></center>
-
-- 使用数据线连接esp8266开发板和移动电源，将移动电源置于小车夹层并加以固定
-![step5](https://md.hass.live/step5.jpg)
-
-#### **程序及操作**
-
-##### 操作步骤
-
-1.打开`learn-ai`文件夹，打开路径`codes/chapter1/esp8266_projects/esp8266_WiFicar_https`  
-2.将esp8266通过数据线连接到电脑  
-3.使用Arduino IDE打开文件`esp8266_WiFicar_https.ino`  
-4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
-
-<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
-
-5.点击`工具`菜单，选择`esp8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上  
-6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
-7.将esp8266与电脑连接断开，连接到移动电源上  
-8.在浏览器中打开esp8266获取到的局域网地址，通过点击上下左右按钮或键盘的光标键来控制小车  
-
-##### 相关代码
-
-- WiFi小车程序
-
-```arduino {.line-numbers}
-#include <esp8266WiFi.h>
-#include <WiFiClient.h>
-#include <esp8266WebServer.h>
-#include <esp8266mDNS.h>
-#include <FS.h>
-
-//定义电机A的使能端口与输出端口
-#define Motor_AE D1      //Motor A/B,E enable,D Direction
-#define Motor_AD D3
-//定义电机B的使能端口与输出端口
-#define Motor_BE D2
-#define Motor_BD D4
-
-#define R_AHEAD HIGH
-#define L_AHEAD LOW
-
-String command;
-
-esp8266WebServer server(80);
-
-const int led = 13;
-
-/*定义小车初始化函数，小车初始化时要将需要用到的几个端口都设置成输出（output）模式*/
-void carInit(){  
-  pinMode(Motor_AE, OUTPUT);
-  pinMode(Motor_AD, OUTPUT);
-  pinMode(Motor_BE, OUTPUT);
-  pinMode(Motor_BD, OUTPUT);
-  Serial.begin(115200);
-  Serial.println("Car begin");
-  }
-//定义小车前进的功能函数
-void goAhead(){
-      digitalWrite(Motor_AE, HIGH);
-      digitalWrite(Motor_AD, L_AHEAD);
-      digitalWrite(Motor_BE, HIGH);
-      digitalWrite(Motor_BD, R_AHEAD);
-  }
-//定义小车后退的功能函数
-void goBack(){
-      digitalWrite(Motor_AE, HIGH);
-      digitalWrite(Motor_AD, !L_AHEAD);
-      digitalWrite(Motor_BE, HIGH);
-      digitalWrite(Motor_BD, !R_AHEAD);
-  }
-//定义小车右转的功能函数
-void goRight(){
-      digitalWrite(Motor_BE, LOW);
-      digitalWrite(Motor_AE, HIGH);
-      digitalWrite(Motor_AD, L_AHEAD);
-  }
-//定义小车的左转的功能函数
-void goLeft(){
-      digitalWrite(Motor_BE, HIGH);
-      digitalWrite(Motor_AE, LOW);
-      digitalWrite(Motor_BD, R_AHEAD);
-  }
-//定义小车停止的功能函数
-void stopRobot(){  
-      digitalWrite(Motor_AE, LOW);
-      digitalWrite(Motor_BE, LOW);
-  }
-//处理URL不存在的特殊情况
-void handleNotFound(){
-  digitalWrite(led, 1);
-  String message = "File Not Found\n\n";
-  message += "URI: ";
-  message += server.uri();
-  message += "\nMethod: ";
-  message += (server.method() == https_GET)?"GET":"POST";
-  message += "\nArguments: ";
-  message += server.args();
-  message += "\n";
-  for (uint8_t i=0; i<server.args(); i++){
-    message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
-  }
-  server.send(404, "text/plain", message);
-  digitalWrite(led, 0);
-}
-
-//esp8266初始化函数
-void setup(void){
-  carInit();
-  SPIFFS.begin();
-//设置esp8266的Mac地址
-  uint8_t mac[WL_MAC_ADDR_LENGTH];
-  WiFi.softAPmacAddress(mac);
-  String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) + String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
-  macID.toUpperCase();
-  String AP_NameString = "Wifi Car - " + macID;
-  char AP_NameChar[AP_NameString.length() + 1];
-  memset(AP_NameChar, 0, AP_NameString.length() + 1);
-  for (int i = 0; i < AP_NameString.length(); i++)
-    AP_NameChar[i] = AP_NameString.charAt(i);
-//设置esp8266的要连接到的ap的ssid和passwd
-const char* ssid = "AI";
-const char* password = "raspberry";
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-  Serial.println("");
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
-  if (MDNS.begin("esp8266")) {
-    Serial.println("MDNS responder started");
-  }
-
-//设置服务器前端交互与后端响应的关系
-  //server.on("/", handleRoot);
-  server.serveStatic("/", SPIFFS, "/index.html");
-
-  server.on("/get", [](){
-    String uri = server.uri();
-    Serial.println(uri);
-    command = server.arg("command");
-    if(command == "forward")
-      goAhead();
-    else if(command == "backward")
-      goBack( );
-    else if(command == "left")
-      goLeft();
-    else if(command == "right")
-       goRight();
-    else if(command == "stop")
-       stopRobot();
-    Serial.println(command);
-//    setCorlor(red.toInt(),green.toInt(),blue.toInt());
-    server.send(200, "text/plain", String("set to ")+command);
-  });
-
-  server.onNotFound(handleNotFound);
-  
-  server.begin();
-  Serial.println("http server started");
-}
-
-//esp8266的主体函数
-void loop(void){
-  server.handleClient();
-}
-```
-
-#### **活动小结**
-
-总结课程主要内容，强调重难点
-
----
-
-### 第2节 视觉：摄像机云台
-
-### 第3节 听声辨位：自动避障
-
-### 第4节 综合实践：迷宫比赛
-
 ### 第1节 传感器的读取与曲线绘制
 
     熟悉操作esp8266的步骤。是第一章的基础  
@@ -1508,6 +1217,294 @@ void loop()
 
 总结课程主要内容，强调重难点
 
+### 第2节
+
+### 第3节
+
+## **第3章 智能车“小白”**
+
+  通过迭代的方式不断赋予小车更多的功能
+
+```dot
+digraph 第三章大纲 {
+  小车 -> 动力
+  小车 -> 视觉
+  小车 -> 听觉
+}
+```
+
+### 第1节 让小车动起来
+
+使用esp8266开发板，组装并遥控一辆小车，通过网页端发送命令来遥控它
+
+---
+
+#### **学习流程**
+
+##### 课程引入（10分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+活动目标| 通过ip地址遥控一辆小车 | 5分钟
+背景知识 | HTTP服务 | 5分钟
+
+</center>
+
+##### 基本任务（30分钟）
+
+<center>
+
+活动名称 | 活动内容 | 时间分配
+:-: | :-: | :-:
+硬件准备 | 将硬件按文档进行连接 | 5分钟
+程序及操作 | 完成程序及操作文档部分 | 25分钟
+
+</center>
+
+##### 活动小结（5分钟）
+
+---
+
+#### **活动目标**
+
+- 了解HTTP通信概念
+- 体验使用开发板控制电机
+- 学会使用ip地址访问服务器
+
+#### **背景知识**
+
+##### HTTP通信
+
+##### **电机**
+
+电机一般用作小车的动力系统。当电机接上正向电压时，电机会正转，当电机接上反向电压时，电机会反转。  
+当电机接上的电压不同时，电机转动的速度也会有所不同。由于开发板能提供给小车的电压有限，所以我们  
+通常不会直接将电机接在开发板上，而是会找一块电机驱动扩展板。
+
+#### **硬件准备**
+
+##### 整体结构
+
+```mermaid
+graph TD
+A[电机] -->|电信号| B(esp8266开发板)
+B --> C{网络服务器}
+C -->|HTTP| D[Laptop]
+C -->|HTTP| E[Phone]
+```
+
+##### 硬件清单
+
+- 小车套件(3D打印的底盘和夹层，电机，车轮，万向轮，铜柱等)
+- esp8266开发板
+- 电机扩展板
+- 杜邦线，数据线  
+- 移动电源
+
+##### 硬件连接
+
+- 将两个车轮分别与电机相连
+![motor](https://md.hass.live/motor.png)
+
+- 使用理线带，将电机和万向轮固定在底盘上
+![step1](https://md.hass.live/step1.jpg)
+
+- 使用铜柱，增加一层夹层
+![step2](https://md.hass.live/step2.jpg)
+![step3](https://md.hass.live/step3.jpg)
+
+- 将esp8266开发板和电机扩展板如图相连，将电机连接到图示位置。
+![step4](https://md.hass.live/step4.jpg)
+
+<center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_17-10-07.png></center>
+
+- 使用数据线连接esp8266开发板和移动电源，将移动电源置于小车夹层并加以固定
+![step5](https://md.hass.live/step5.jpg)
+
+#### **程序及操作**
+
+##### 操作步骤
+
+1.打开`learn-ai`文件夹，打开路径`codes/chapter1/esp8266_projects/esp8266_WiFicar_https`  
+2.将esp8266通过数据线连接到电脑  
+3.使用Arduino IDE打开文件`esp8266_WiFicar_https.ino`  
+4.记得把前面的[环境准备](#setup-2)部分再次确认，将环境正确配置，然后点击上传按钮进行上传  
+
+<center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center>
+
+5.点击`工具`菜单，选择`esp8266 Sketch Data Upload`,会自动将项目目录下的data文件夹上传到esp8266开发板上  
+6.打开[路由器管理地址](http://192.168.0.1)，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  
+7.将esp8266与电脑连接断开，连接到移动电源上  
+8.在浏览器中打开esp8266获取到的局域网地址，通过点击上下左右按钮或键盘的光标键来控制小车  
+
+##### 相关代码
+
+- WiFi小车程序
+
+```arduino {.line-numbers}
+#include <esp8266WiFi.h>
+#include <WiFiClient.h>
+#include <esp8266WebServer.h>
+#include <esp8266mDNS.h>
+#include <FS.h>
+
+//定义电机A的使能端口与输出端口
+#define Motor_AE D1      //Motor A/B,E enable,D Direction
+#define Motor_AD D3
+//定义电机B的使能端口与输出端口
+#define Motor_BE D2
+#define Motor_BD D4
+
+#define R_AHEAD HIGH
+#define L_AHEAD LOW
+
+String command;
+
+esp8266WebServer server(80);
+
+const int led = 13;
+
+/*定义小车初始化函数，小车初始化时要将需要用到的几个端口都设置成输出（output）模式*/
+void carInit(){  
+  pinMode(Motor_AE, OUTPUT);
+  pinMode(Motor_AD, OUTPUT);
+  pinMode(Motor_BE, OUTPUT);
+  pinMode(Motor_BD, OUTPUT);
+  Serial.begin(115200);
+  Serial.println("Car begin");
+  }
+//定义小车前进的功能函数
+void goAhead(){
+      digitalWrite(Motor_AE, HIGH);
+      digitalWrite(Motor_AD, L_AHEAD);
+      digitalWrite(Motor_BE, HIGH);
+      digitalWrite(Motor_BD, R_AHEAD);
+  }
+//定义小车后退的功能函数
+void goBack(){
+      digitalWrite(Motor_AE, HIGH);
+      digitalWrite(Motor_AD, !L_AHEAD);
+      digitalWrite(Motor_BE, HIGH);
+      digitalWrite(Motor_BD, !R_AHEAD);
+  }
+//定义小车右转的功能函数
+void goRight(){
+      digitalWrite(Motor_BE, LOW);
+      digitalWrite(Motor_AE, HIGH);
+      digitalWrite(Motor_AD, L_AHEAD);
+  }
+//定义小车的左转的功能函数
+void goLeft(){
+      digitalWrite(Motor_BE, HIGH);
+      digitalWrite(Motor_AE, LOW);
+      digitalWrite(Motor_BD, R_AHEAD);
+  }
+//定义小车停止的功能函数
+void stopRobot(){  
+      digitalWrite(Motor_AE, LOW);
+      digitalWrite(Motor_BE, LOW);
+  }
+//处理URL不存在的特殊情况
+void handleNotFound(){
+  digitalWrite(led, 1);
+  String message = "File Not Found\n\n";
+  message += "URI: ";
+  message += server.uri();
+  message += "\nMethod: ";
+  message += (server.method() == https_GET)?"GET":"POST";
+  message += "\nArguments: ";
+  message += server.args();
+  message += "\n";
+  for (uint8_t i=0; i<server.args(); i++){
+    message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
+  }
+  server.send(404, "text/plain", message);
+  digitalWrite(led, 0);
+}
+
+//esp8266初始化函数
+void setup(void){
+  carInit();
+  SPIFFS.begin();
+//设置esp8266的Mac地址
+  uint8_t mac[WL_MAC_ADDR_LENGTH];
+  WiFi.softAPmacAddress(mac);
+  String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) + String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
+  macID.toUpperCase();
+  String AP_NameString = "Wifi Car - " + macID;
+  char AP_NameChar[AP_NameString.length() + 1];
+  memset(AP_NameChar, 0, AP_NameString.length() + 1);
+  for (int i = 0; i < AP_NameString.length(); i++)
+    AP_NameChar[i] = AP_NameString.charAt(i);
+//设置esp8266的要连接到的ap的ssid和passwd
+const char* ssid = "AI";
+const char* password = "raspberry";
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  Serial.println("");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  if (MDNS.begin("esp8266")) {
+    Serial.println("MDNS responder started");
+  }
+
+//设置服务器前端交互与后端响应的关系
+  //server.on("/", handleRoot);
+  server.serveStatic("/", SPIFFS, "/index.html");
+
+  server.on("/get", [](){
+    String uri = server.uri();
+    Serial.println(uri);
+    command = server.arg("command");
+    if(command == "forward")
+      goAhead();
+    else if(command == "backward")
+      goBack( );
+    else if(command == "left")
+      goLeft();
+    else if(command == "right")
+       goRight();
+    else if(command == "stop")
+       stopRobot();
+    Serial.println(command);
+//    setCorlor(red.toInt(),green.toInt(),blue.toInt());
+    server.send(200, "text/plain", String("set to ")+command);
+  });
+
+  server.onNotFound(handleNotFound);
+  
+  server.begin();
+  Serial.println("http server started");
+}
+
+//esp8266的主体函数
+void loop(void){
+  server.handleClient();
+}
+```
+
+#### **活动小结**
+
+总结课程主要内容，强调重难点
+
+---
+
+### 第2节 视觉：摄像机云台
+
+### 第3节 听声辨位：自动避障
+
+### 第4节 综合实践：迷宫比赛
+
 ### 第3节 机械臂
 
     使用esp8266，通过网页端发送命令，控制多个舵机
@@ -1807,7 +1804,6 @@ void loop() {
 
 ##### 操作步骤
 
-//todo： fix 1&3 路径
 1.打开`learn-ai`文件夹，打开路径`codes/chapter2/esp8266_projects/esp8266_Auto_avoid_car`  
 2.将esp8266通过数据线连接到电脑  
 3.使用Arduino IDE打开文件`esp8266_WiFicar_https.ino`  

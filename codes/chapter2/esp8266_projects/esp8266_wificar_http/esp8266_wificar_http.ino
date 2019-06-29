@@ -1,62 +1,16 @@
-#include <esp8266WiFi.h>
+#include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <esp8266WebServer.h>
-#include <esp8266mDNS.h>
+#include <ESP8266WebServer.h>
+#include <ESP8266mDNS.h>
 #include <FS.h>
-#define Motor_AE D1      //Motor A/B,E enable,D Direction
-#define Motor_AD D3
-
-#define Motor_BE D2
-#define Motor_BD D4
-
-#define R_AHEAD HIGH
-#define L_AHEAD LOW
+#include"car_function.h"
 
 String command;
 
-esp8266WebServer server(80);
+ESP8266WebServer server(80);
 
 const int led = 13;
 
-void carInit(){  
-  pinMode(Motor_AE, OUTPUT);
-  pinMode(Motor_AD, OUTPUT);
-  pinMode(Motor_BE, OUTPUT);
-  pinMode(Motor_BD, OUTPUT);
-
-  Serial.begin(115200);
-  Serial.println("Car begin");
-  }
-void goAhead(){
-      digitalWrite(Motor_AE, HIGH);
-      digitalWrite(Motor_AD, L_AHEAD);
-      digitalWrite(Motor_BE, HIGH);
-      digitalWrite(Motor_BD, R_AHEAD);
-  }
-
-void goBack(){
-      digitalWrite(Motor_AE, HIGH);
-      digitalWrite(Motor_AD, !L_AHEAD);
-      digitalWrite(Motor_BE, HIGH);
-      digitalWrite(Motor_BD, !R_AHEAD);
-  }
-
-void goRight(){
-      digitalWrite(Motor_BE, LOW);
-      digitalWrite(Motor_AE, HIGH);
-      digitalWrite(Motor_AD, L_AHEAD);
-  }
-
-void goLeft(){
-      digitalWrite(Motor_BE, HIGH);
-      digitalWrite(Motor_AE, LOW);
-      digitalWrite(Motor_BD, R_AHEAD);
-  }
-
-void stopRobot(){  
-      digitalWrite(Motor_AE, LOW);
-      digitalWrite(Motor_BE, LOW);
-  }
 
 void handleNotFound(){
   digitalWrite(led, 1);
@@ -64,7 +18,7 @@ void handleNotFound(){
   message += "URI: ";
   message += server.uri();
   message += "\nMethod: ";
-  message += (server.method() == https_GET)?"GET":"POST";
+  message += (server.method() == HTTP_GET)?"GET":"POST";
   message += "\nArguments: ";
   message += server.args();
   message += "\n";
