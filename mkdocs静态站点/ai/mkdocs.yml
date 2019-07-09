@@ -1,0 +1,21 @@
+site_name: 人工智能课程
+# site_description: ai projects 
+theme: rtd-dropdown
+nav:
+  - 课程开始前: index.md
+  - 第一章 人工智能体验: 第一章 人工智能体验.md
+  - 第二章 家庭智能改造大作战: 第二章 家庭智能改造大作战.md
+  - 第三章 智能车“小白”: 第三章 智能车小白.md
+  - 第四章 自动追踪小车“大白”: 第四章 自动追踪小车大白.md
+  - 第五章 无人驾驶小车“老白”: 第五章 无人驾驶小车老白.md
+  - 第六章 机器人“小绿”: 第六章 机器人小绿.md
+
+markdown_extensions:
+  - extra
+  - tables
+  - toc
+  - fenced_code
+  - smarty
+  - footnotes
+ 
+copyright: Copyright &copy; 2014-2019 <a href="http://sli.bnu.edu.cn/" target="_blank">北京师范大学智慧学习研究院</a>

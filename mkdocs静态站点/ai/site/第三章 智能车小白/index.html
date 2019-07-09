@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>第三章 智能车“小白” - 人工智能课程</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u7b2c\u4e09\u7ae0 \u667a\u80fd\u8f66\u201c\u5c0f\u767d\u201d";
+    var mkdocs_page_input_path = "\u7b2c\u4e09\u7ae0 \u667a\u80fd\u8f66\u5c0f\u767d.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 人工智能课程</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">课程开始前</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第一章 人工智能体验/">第一章 人工智能体验</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第二章 家庭智能改造大作战/">第二章 家庭智能改造大作战</a>
+  </li>
+    
+      
+
+
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        第三章 智能车“小白”
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l1 current with-children">
+    <a href="#1-esp8266">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第1节 小白的心脏：esp8266开发板
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1 current">
+    <ul class="subnav-l1 current">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_1">
+      学习流程
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#10">课程引入（10分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#30">基本任务（30分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#5">活动小结（5分钟）</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_2">活动目标</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_3">
+      背景知识
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_4">物联网背景知识</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_5">使用开发板读取传感器数据</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_6">
+      硬件准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_7">硬件清单</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_8">硬件连接</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_9">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_10">简单读取</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_11">绘制实时曲线</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_12">活动小结</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#2">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第2节 一个小白的诞生
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_13">
+      学习流程
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#10_1">课程引入（10分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#30_1">基本任务（30分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#5_1">活动小结（5分钟）</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_14">活动目标</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_15">
+      背景知识
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#http">HTTP通信</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_16">电机</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_17">
+      硬件准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_18">整体结构</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_19">硬件清单</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_20">硬件连接</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_21">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_22">操作步骤</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_23">活动小结</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#3">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第3节 是汽车也是汽车人：小白机械臂
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_24">
+      学习流程
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#15">课程引入（15分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#35">基本任务（35分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#10_2">活动小结（10分钟）</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_25">活动目标</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_26">
+      背景知识
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_27">舵机</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_28">舵机的工作原理</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#pwm">脉冲宽度调制（PWM）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_29">占空比</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_30">
+      硬件准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_31">硬件清单</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_32">硬件连接</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_33">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_34">操作步骤</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_35">活动小结</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#4">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第4节 视物而行：为小白增加视觉系统
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_36">
+      学习流程
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#10_3">课程引入（10分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#30_2">基本任务（30分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#5_2">活动小结（5分钟）</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_37">活动目标</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_38">背景知识</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_39">
+      硬件准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_40">硬件清单</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_41">硬件连接</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_42">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_43">操作步骤</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_44">活动小结</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#5_3">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第5节 听声辨位：小白会自动避障了
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_45">
+      学习流程
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#10_4">课程引入（10分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#30_3">基本任务（30分钟）</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#5_4">活动小结（5分钟）</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_46">活动目标</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_47">
+      背景知识
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_48">超声传感器</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_49">超声波测距原理</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_50">
+      硬件准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_51">硬件清单</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_52">硬件连接</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_53">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_54">操作步骤</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_55">活动小结</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#6">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第6节 综合与进阶
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_56">
+      趣味比赛
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_57">比赛规则</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_58">功能参考</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#7">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第7节 尾声
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+
+  
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第四章 自动追踪小车大白/">第四章 自动追踪小车“大白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第五章 无人驾驶小车老白/">第五章 无人驾驶小车“老白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第六章 机器人小绿/">第六章 机器人“小绿”</a>
+  </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">人工智能课程</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>第三章 智能车“小白”</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <pre><code>通过迭代的方式不断赋予小车更多的功能
+</code></pre>
+<h2 id="1-esp8266">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第1节 小白的心脏：esp8266开发板</h2>
+<pre><code>熟悉操作esp8266的步骤。是第一章的基础  
+包括功能提出和实现，硬件连接，上传的参数调节和html文件在本地服务器中的打开，传感器数据的实时呈现等，并使用Chart.js来绘制实时变化曲线  
+这部分主要包括两种传感器的读取，为温湿度传感器和超声波传感器
+</code></pre>
+<hr />
+<h3 id="_1"><strong>学习流程</strong></h3>
+<h4 id="10">课程引入（10分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">活动目标</td>
+<td align="center">了解物联网基本概念</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">背景知识</td>
+<td align="center">熟悉实验中涉及到的软硬件</td>
+<td align="center">5分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="30">基本任务（30分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">硬件准备</td>
+<td align="center">将硬件按文档进行连接</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">程序及操作</td>
+<td align="center">完成程序及操作文档部分</td>
+<td align="center">25分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="5">活动小结（5分钟）</h4>
+<hr />
+<h3 id="_2"><strong>活动目标</strong></h3>
+<ul>
+<li>了解物联网的基本概念</li>
+<li>了解使用开发板读取传感器的基本原理</li>
+<li>熟悉使用Arduino IDE烧录固件的操作流程</li>
+</ul>
+<h3 id="_3"><strong>背景知识</strong></h3>
+<h4 id="_4">物联网背景知识</h4>
+<p><center><iframe src="https://player.bilibili.com/player.html?aid=46814591&cid=82000363&page=1" width="800" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center></p>
+<h4 id="_5">使用开发板读取传感器数据</h4>
+<p>esp8266是WiFi串口模块，功能简单来讲就是：从WiFi接收到数据，串口输出；从串口接收数据，WiFi输出数据。  </p>
+<p>通过自带的GPIO口连接传感器，传感器将环境数据转化为电信号发送给esp8266读取、处理并输出。</p>
+<h3 id="_6"><strong>硬件准备</strong></h3>
+<h4 id="_7">硬件清单</h4>
+<ul>
+<li>esp8266主板
+插图</li>
+<li>温湿度传感器（型号为DHT11或DHT22）
+插图</li>
+<li>超声波传感器（型号为HC-SR04）
+插图</li>
+<li>杜邦线、数据线
+插图</li>
+</ul>
+<h4 id="_8">硬件连接</h4>
+<p><center><img src=https://md.hass.live/Xnip2019-05-05_11-52-46.png?imageView2/0/interlace/1/q/46|imageslim></center></p>
+<p><center><img src=https://md.hass.live/Xnip2019-05-05_12-02-00.png?imageView2/0/interlace/1/q/46|imageslim></center>
+图解</p>
+<h3 id="_9"><strong>程序及操作</strong></h3>
+<h4 id="_10">简单读取</h4>
+<p>1.打开<code>learn-ai</code>文件夹，打开路径<code>codes/chapter2/esp8266_projects/esp8266_dht11_http</code><br />
+2.将esp8266通过数据线连接到电脑<br />
+3.使用Arduino IDE打开文件<code>esp8266_dht11_https.ino</code><br />
+4.记得把前面的<a href="#setup-2">环境准备</a>部分再次确认，将环境正确配置，然后点击上传按钮进行上传  </p>
+<p><center><img src=https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim></center></p>
+<p>5.打开<a href="http://192.168.0.1">路由器管理地址</a>，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址<br />
+6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数<br />
+7.连接另一个esp8266开发板，打开路径<code>codes/chapter2/esp8266_projects/esp8266_ultrasonic_http</code>,再次执行2-6步骤来使用超声波传感器  </p>
+<h4 id="_11">绘制实时曲线</h4>
+<p>1.打开<code>learn-ai</code>文件夹，打开路径<code>codes/chapter2/esp8266_projects/esp8266_dht11_http_chartjs</code><br />
+2.将esp8266通过数据线连接到电脑<br />
+3.使用Arduino IDE打开文件 <code>esp8266_dht11_http_chartjs.ino</code><br />
+4.记得把前面的<a href="#setup-2">环境准备</a>部分再次确认，将环境正确配置，然后点击上传按钮进行上传  </p>
+<p><center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center></p>
+<p>5.打开<a href="http://192.168.0.1">路由器管理地址</a>，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址<br />
+6.在浏览器中打开esp8266获取到的局域网地址，查看温湿度传感器的读数  </p>
+<p><center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-13-13.png?imageView2/0/interlace/1/q/46|imageslim'></center></p>
+<h3 id="_12"><strong>活动小结</strong></h3>
+<p>总结课程主要内容，强调重难点</p>
+<h2 id="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第2节 一个小白的诞生</h2>
+<p>使用esp8266开发板，组装并遥控一辆小车，通过网页端发送命令来遥控它</p>
+<h3 id="_13"><strong>学习流程</strong></h3>
+<h4 id="10_1">课程引入（10分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">活动目标</td>
+<td align="center">通过ip地址遥控一辆小车</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">背景知识</td>
+<td align="center">HTTP服务</td>
+<td align="center">5分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="30_1">基本任务（30分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">硬件准备</td>
+<td align="center">将硬件按文档进行连接</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">程序及操作</td>
+<td align="center">完成程序及操作文档部分</td>
+<td align="center">25分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="5_1">活动小结（5分钟）</h4>
+<hr />
+<h3 id="_14"><strong>活动目标</strong></h3>
+<ul>
+<li>了解HTTP通信概念</li>
+<li>体验使用开发板控制电机</li>
+<li>学会使用ip地址访问服务器</li>
+</ul>
+<h3 id="_15"><strong>背景知识</strong></h3>
+<h4 id="http">HTTP通信</h4>
+<p>HTTP，即超文本传输协议，是 HyperText Transfer Protocol的缩写。
+通过WiFi，我们可以以无线的方式来传递需求。</p>
+<h4 id="_16"><strong>电机</strong></h4>
+<p>电机一般用作小车的动力系统。当电机接上正向电压时，电机会正转，当电机接上反向电压时，电机会反转。<br />
+当电机接上的电压不同时，电机转动的速度也会有所不同。由于开发板能提供给小车的电压有限，所以我们<br />
+通常不会直接将电机接在开发板上，而是会找一块电机驱动扩展板。</p>
+<h3 id="_17"><strong>硬件准备</strong></h3>
+<h4 id="_18">整体结构</h4>
+<pre><code class="mermaid">graph TD
+A[电机] --&gt;|电信号| B(esp8266开发板)
+B --&gt; C{网络服务器}
+C --&gt;|HTTP| D[Laptop]
+C --&gt;|HTTP| E[Phone]
+</code></pre>
+
+<h4 id="_19">硬件清单</h4>
+<ul>
+<li>小车套件(底盘和夹层，电机，车轮，万向轮，铜柱等)</li>
+<li>esp8266开发板</li>
+<li>电机扩展板</li>
+<li>杜邦线，数据线  </li>
+<li>移动电源</li>
+</ul>
+<h4 id="_20">硬件连接</h4>
+<ul>
+<li>
+<p>将两个车轮分别与电机相连
+<img alt="motor" src="https://md.hass.live/motor.png" /></p>
+</li>
+<li>
+<p>使用理线带，将电机和万向轮固定在底盘上
+<img alt="step1" src="https://md.hass.live/step1.jpg" /></p>
+</li>
+<li>
+<p>使用铜柱，增加一层夹层
+<img alt="step2" src="https://md.hass.live/step2.jpg" />
+<img alt="step3" src="https://md.hass.live/step3.jpg" /></p>
+</li>
+<li>
+<p>将esp8266开发板和电机扩展板如图相连，将电机连接到图示位置。
+<img alt="step4" src="https://md.hass.live/step4.jpg" /></p>
+</li>
+</ul>
+<p><center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_17-10-07.png></center></p>
+<ul>
+<li>使用数据线连接esp8266开发板和移动电源，将移动电源置于小车夹层并加以固定
+<img alt="step5" src="https://md.hass.live/step5.jpg" /></li>
+</ul>
+<h3 id="_21"><strong>程序及操作</strong></h3>
+<h4 id="_22">操作步骤</h4>
+<p>1.打开<code>learn-ai</code>文件夹，打开路径<code>codes/chapter3/esp8266_projects/esp8266_WiFicar_https</code><br />
+2.将esp8266通过数据线连接到电脑<br />
+3.使用Arduino IDE打开文件<code>esp8266_WiFicar_https.ino</code><br />
+4.记得把前面的<a href="#setup-2">环境准备</a>部分再次确认，将环境正确配置，然后点击上传按钮进行上传  </p>
+<p><center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center></p>
+<p>5.点击<code>工具</code>菜单，选择<code>esp8266 Sketch Data Upload</code>,会自动将项目目录下的data文件夹上传到esp8266开发板上<br />
+6.打开<a href="http://192.168.123.1">路由器管理地址</a>，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址<br />
+7.将esp8266与电脑连接断开，连接到移动电源上<br />
+8.在浏览器中打开esp8266获取到的局域网地址，通过点击上下左右按钮或键盘的光标键来控制小车  </p>
+<h3 id="_23"><strong>活动小结</strong></h3>
+<p>总结课程主要内容，强调重难点</p>
+<hr />
+<h2 id="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第3节 是汽车也是汽车人：小白机械臂</h2>
+<pre><code>使用esp8266，通过网页端发送命令，控制多个舵机
+</code></pre>
+<h3 id="_24"><strong>学习流程</strong></h3>
+<h4 id="15">课程引入（15分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">活动目标</td>
+<td align="center">通过WiFi超控机械臂</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">背景知识</td>
+<td align="center">舵机的工作原理及脉冲宽度调制</td>
+<td align="center">10分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="35">基本任务（35分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">硬件准备</td>
+<td align="center">将硬件按文档进行连接</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">程序及操作</td>
+<td align="center">完成程序及操作文档部分</td>
+<td align="center">25分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="10_2">活动小结（10分钟）</h4>
+<h3 id="_25"><strong>活动目标</strong></h3>
+<ul>
+<li>了解舵机的原理和使用方法</li>
+<li>了解脉冲宽度调制（PWM）</li>
+<li>通过WiFi遥控机械臂</li>
+</ul>
+<h3 id="_26"><strong>背景知识</strong></h3>
+<h4 id="_27">舵机</h4>
+<p>伺服电机通常被称为舵机，它是一种带有输出轴的小装置。当我们向伺服器发送一个控制信号时，输出轴就可以转到特定的位置。只要控制信号持续不变，伺服机构就会保持轴的角度位置不改变。如果控制信号发生变化，输出轴的位置也会相应发生变化。日常生活中，舵机常被用于遥控飞机、遥控汽车、机器人等。  </p>
+<h4 id="_28">舵机的工作原理</h4>
+<p><center></p>
+<p><img alt="舵机结构" src="https://md.hass.live/niji/2019-05-27-%E8%88%B5%E6%9C%BA%E6%8B%86%E8%A7%A3.jpg" />
+</center></p>
+<p>舵机内部的控制电路、电位计（可变电阻器）和电机均被连接到电路板上。控制电路通过电位计可监控舵机的当前角度。  </p>
+<p>其工作流程为：控制信号 → 控制电路板 → 电机转动 → 齿轮组减速 → 舵盘转动 → 位置反馈电位计 → 控制电路板反馈。</p>
+<p><center></p>
+<p><img alt="舵机转动图" src="https://md.hass.live/niji/2019-05-27-SERVO.gif" />
+</center></p>
+<h4 id="pwm">脉冲宽度调制（PWM）</h4>
+<p>脉冲宽度调制，英文名Pulse Width Modulation，缩写为PWM，它是通过对一系列脉冲的宽度进行调制，等效出所需要的波形，对模拟信号电平进行数字编码。  </p>
+<h4 id="_29">占空比</h4>
+<p>占空比是指在一个周期内，信号处于高电平的时间占据整个信号周期的百分比。
+<center></p>
+<p><img alt="占空比" src="https://md.hass.live/niji/2019-05-27-Xnip2019-05-27_09-37-35.png" />
+</center></p>
+<p>上图信号一个周期的时间为4ms，其中高电平时间为1ms。占空比为：$$ \frac {高电平时间} {一个周期} = \frac {1ms} {4ms} = 25\% $$</p>
+<h3 id="_30"><strong>硬件准备</strong></h3>
+<h4 id="_31">硬件清单</h4>
+<ul>
+<li>esp8266主板</li>
+<li>电机扩展板 esp12E Motor Shield</li>
+<li>舵机</li>
+<li>杜邦线、数据线</li>
+<li>机械臂和零件</li>
+</ul>
+<h4 id="_32">硬件连接</h4>
+<p><center><img src=https://md.hass.live/Xnip2019-05-05_11-57-01.png?imageView2/0/interlace/1/q/46|imageslim></center>
+<center>此处表示舵机连接到了D0口，最多可以连9个舵机（D0-D9）<br>
+<font color=orange>黄色</font>-信号D（DATA）<br>
+<font color=red>红色</font>-正极V（VCC）<br>
+<font color=brown>棕色</font>-负极G（GND）<br>
+</center></p>
+<h3 id="_33"><strong>程序及操作</strong></h3>
+<h4 id="_34">操作步骤</h4>
+<ol>
+<li>打开<code>learn-ai</code>文件夹，打开路径<code>codes/chapter2/esp8266_projects/esp8266_servoarm_http</code>  </li>
+<li>将esp8266通过数据线连接到电脑</li>
+<li>使用Arduino IDE打开文件<code>esp8266_servoarm_http.ino</code>  </li>
+<li>
+<p>记得把前面的<a href="#setup-2">环境准备</a>部分再次确认，将环境正确配置，然后点击上传按钮进行上传
+   <center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'>
+   </center></p>
+</li>
+<li>
+<p>点击<code>工具</code>菜单，选择<code>esp8266 Sketch Data Upload</code>,会自动将项目目录下的data文件夹上传到esp8266开发板上  </p>
+</li>
+<li>打开<a href="http://192.168.0.1">路由器管理地址</a>，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址  </li>
+<li>将esp8266与电脑连接断开，连接到移动电源上</li>
+<li>在浏览器中打开esp8266获取到的局域网地址，通过拖动滑块来控制机械臂</li>
+</ol>
+<h3 id="_35"><strong>活动小结</strong></h3>
+<p>总结课程主要内容，强调重难点</p>
+<hr />
+<h2 id="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第4节 视物而行：为小白增加视觉系统</h2>
+<pre><code>esp32是esp8266的升级版本。拥有更强的处理能力，能够很好的处理实时视频和音频等数据。通过本部分来为小车增加实时视频的功能。  
+也许，你会希望在小车上装一个摄像头，这样就可以身临其境的遥控它了。
+</code></pre>
+<hr />
+<h3 id="_36"><strong>学习流程</strong></h3>
+<h4 id="10_3">课程引入（10分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">活动目标</td>
+<td align="center">实时网络摄像头搭建及人脸识别</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">背景知识</td>
+<td align="center">esp32的相关知识与操作</td>
+<td align="center">5分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="30_2">基本任务（30分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">硬件准备</td>
+<td align="center">将硬件按文档进行连接</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">程序及操作</td>
+<td align="center">完成程序及操作文档部分</td>
+<td align="center">25分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="5_2">活动小结（5分钟）</h4>
+<hr />
+<h3 id="_37"><strong>活动目标</strong></h3>
+<ul>
+<li>确定活动方向并提出需要解决的问题</li>
+<li>了解esp32的功能及引脚并熟练了解实验步骤</li>
+<li>按照操作步骤实际操作并完成小车实时摄像等相关功能</li>
+<li>对实验进行总结，并分析遇到的问题</li>
+</ul>
+<h3 id="_38"><strong>背景知识</strong></h3>
+<p>esp32是一系列低成本，低功耗的片上 微控制器系统，集成了Wi-Fi和双模蓝牙。esp32包括双核和单核变体，包括内置天线开关，功率放大器，低噪声接收放大器，滤波器和电源管理模块。  </p>
+<h3 id="_39"><strong>硬件准备</strong></h3>
+<h4 id="_40">硬件清单</h4>
+<ul>
+<li>esp32主板</li>
+<li>ov2640摄像头</li>
+<li>USB转TTL编程器</li>
+<li>杜邦线</li>
+</ul>
+<h4 id="_41">硬件连接</h4>
+<p><center><img src=https://md.hass.live/niji/2019-06-14-ESP32-CAM-wiring-FTDI1.webp></center></p>
+<p><strong>注意：<code>IO0</code>口需要和它边上的<code>GND</code>口用一根杜邦线连接到一起，这样才可以正常上传代码</strong></p>
+<h3 id="_42"><strong>程序及操作</strong></h3>
+<h4 id="_43">操作步骤</h4>
+<p>1.打开<code>learn-ai</code>文件夹，打开路径<code>codes/chapter2/esp32_projects/esp32_webcam</code><br />
+2.将上图连接好后，将USB转TTL编程器插入电脑<br />
+3.使用Arduino IDE打开文件<code>esp32_webcam.ino</code><br />
+4.配置esp32的上传环境如下图所示：  </p>
+<p><center><img src="https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-34-06.png"></center></p>
+<p>5.上传完毕后，保持USB连接在电脑上。将<code>IO0</code>口需要和它边上的<code>GND</code>口杜邦线拔掉，按一下esp32主板上面的<code>reset</code>键<br />
+6.打开<a href="http://192.168.123.1">路由器管理地址</a>，esp32此时应该已经加入到了局域网中，查看esp32获取到的路由器地址<br />
+7.在浏览器中打开esp32获取到的局域网地址，在左侧最下方选择<code>Start Stream</code>  </p>
+<p><center><img src=https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_18-31-57.png></center></p>
+<h3 id="_44"><strong>活动小结</strong></h3>
+<p>总结课程主要内容，强调重难点</p>
+<h2 id="5_3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第5节 听声辨位：小白会自动避障了</h2>
+<pre><code>使用esp8266，加上超声传感器，设计一辆自动避障小车
+</code></pre>
+<h3 id="_45"><strong>学习流程</strong></h3>
+<h4 id="10_4">课程引入（10分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">活动目标</td>
+<td align="center">设计一辆能够自动躲避障碍物的小车</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">背景知识</td>
+<td align="center">超声测距的原理</td>
+<td align="center">5分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="30_3">基本任务（30分钟）</h4>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center">活动名称</th>
+<th align="center">活动内容</th>
+<th align="center">时间分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">硬件准备</td>
+<td align="center">将硬件按文档进行连接</td>
+<td align="center">5分钟</td>
+</tr>
+<tr>
+<td align="center">程序及操作</td>
+<td align="center">完成程序及操作文档部分</td>
+<td align="center">25分钟</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h4 id="5_4">活动小结（5分钟）</h4>
+<hr />
+<h3 id="_46"><strong>活动目标</strong></h3>
+<ul>
+<li>学会控制esp8266的GPIO</li>
+<li>学会使用电机驱动扩展模块（ESP12E）</li>
+<li>学会使用esp8266的服务器</li>
+</ul>
+<h3 id="_47"><strong>背景知识</strong></h3>
+<h4 id="_48"><strong>超声传感器</strong></h4>
+<p>超声波传感器是一个输入模块，提供了非常好的非接触范围检测，性能稳定，易于使用，盲区小，准确度高，测距距离从2厘米到400厘米不等，关键是还很便宜，在创客圈应用最为广泛，包括：机器人测距避障，液位检测等。<br />
+一般来说，超声传感器有四个引脚:<br />
+1.GND引脚，接地<br />
+2.VCC引脚，接电源<br />
+3.TRIG引脚，控制端，接开发板的输出端口<br />
+4.ECHO引脚，接收端，接开发板的输入端口  </p>
+<h4 id="_49"><strong>超声波测距原理</strong></h4>
+<p>超声波传感器的发射器向某一方向发射超声波，在发射的同时开始计时，超声波在空气中传播，途中碰到障碍物就立即返回来，<br />
+ 超声波接收器收到反射波就立即停止计时。根据计时器记录的时间t，声波在空气中的传播速度为340m/s，就可以计算出发射点<br />
+ 距障碍物的距离s，即：s=340m/s× t / 2 。这就是所谓的时间差测距法。  </p>
+<h3 id="_50"><strong>硬件准备</strong></h3>
+<h4 id="_51">硬件清单</h4>
+<ul>
+<li>esp8266主板</li>
+<li>电机扩展板 esp12E Motor Shield  </li>
+<li>两个超声传感器  </li>
+<li>两个舵机  </li>
+<li>一个蜂鸣器</li>
+<li>小车套件(3D打印的底盘和夹层，电机，车轮，铜柱等)</li>
+<li>杜邦线，数据线  </li>
+<li>电源（电池或者充电宝）</li>
+</ul>
+<h4 id="_52">硬件连接</h4>
+<p><center><img src=https://md.hass.live/niji/2019-06-18-Xnip2019-06-18_16-40-35.png></center></p>
+<h3 id="_53"><strong>程序及操作</strong></h3>
+<h4 id="_54">操作步骤</h4>
+<p>1.打开<code>learn-ai</code>文件夹，打开路径<code>codes/chapter2/esp8266_projects/esp8266_Auto_avoid_car</code><br />
+2.将esp8266通过数据线连接到电脑<br />
+3.使用Arduino IDE打开文件<code>esp8266_WiFicar_https.ino</code><br />
+4.记得把前面的<a href="#setup-2">环境准备</a>部分再次确认，将环境正确配置，然后点击上传按钮进行上传  </p>
+<p><center><img src='https://md.hass.live/niji/2019-05-08-Xnip2019-05-08_10-15-02.png?imageView2/0/interlace/1/q/46|imageslim'></center></p>
+<p>5.点击<code>工具</code>菜单，选择<code>esp8266 Sketch Data Upload</code>,会自动将项目目录下的data文件夹上传到esp8266开发板上<br />
+6.打开<a href="http://192.168.0.1">路由器管理地址</a>，esp8266此时应该已经加入到了局域网中，查看esp8266获取到的路由器地址<br />
+7.将esp8266与电脑连接断开，连接到移动电源上<br />
+8.在浏览器中打开esp8266获取到的局域网地址，通过点击上下左右按钮或键盘的光标键来控制小车  </p>
+<h3 id="_55"><strong>活动小结</strong></h3>
+<p>总结课程主要内容，强调重难点</p>
+<hr />
+<h2 id="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第6节 综合与进阶</h2>
+<pre><code>试着把前面的功能整合到一个小车上，并在一个界面上对它们进行读取和控制。
+</code></pre>
+<h3 id="_56"><strong>趣味比赛</strong></h3>
+<pre><code>每小组为一个队伍，按照规则比赛抓取物品
+</code></pre>
+<h4 id="_57">比赛规则</h4>
+<ul>
+<li>sector 1</li>
+<li>sector 2</li>
+<li>sector 3</li>
+</ul>
+<h3 id="_58"><strong>功能参考</strong></h3>
+<ul>
+<li>代码在<code>learn-ai/chapter3/part1.5</code>  </li>
+<li>代码将第二、三、四节的功能结合到了一段程序中  </li>
+<li>硬件部分将第二、三、四节连接到同一扩展板上  </li>
+<li>第四节部分只需将esp32上的<code>3.3V</code>和<code>GND</code>用杜邦线连接到esp8266扩展板舵机连接处的对应接口,使用扩展板为esp32进行供电。如下图：</li>
+</ul>
+<p><center><img src=https://md.hass.live/niji/2019-05-09-Xnip2019-05-09_19-30-22.png></center>
+<center><font color=red>红色</font>-正极V<br>
+<font color=brown>棕色</font>-负极G<br>
+</center></p>
+<hr />
+<h2 id="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第7节 尾声</h2>
+<p>通过前面的例子，你已经可以使用无线网络的方式来让esp8266读取传感器数据，控制简单的电机，查看网络摄像头等。其实这些已经是物联网的雏形。
+  在后面的章节里，结合强大的人工智能，你的小车会愈发强大。  </p>
+<ul>
+<li>通过语音技术，让小车听懂你的指令</li>
+<li>通过计算机视觉，让机械臂自动识别和抓取特定物体</li>
+<li>通过深度学习，让小车自动追踪特定物体，以及无人驾驶</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../第四章 自动追踪小车大白/" class="btn btn-neutral float-right" title="第四章 自动追踪小车“大白”">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../第二章 家庭智能改造大作战/" class="btn btn-neutral" title="第二章 家庭智能改造大作战"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2014-2019 <a href="http://sli.bnu.edu.cn/" target="_blank">北京师范大学智慧学习研究院</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../第二章 家庭智能改造大作战/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../第四章 自动追踪小车大白/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>第五章 无人驾驶小车“老白” - 人工智能课程</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u7b2c\u4e94\u7ae0 \u65e0\u4eba\u9a7e\u9a76\u5c0f\u8f66\u201c\u8001\u767d\u201d";
+    var mkdocs_page_input_path = "\u7b2c\u4e94\u7ae0 \u65e0\u4eba\u9a7e\u9a76\u5c0f\u8f66\u8001\u767d.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 人工智能课程</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">课程开始前</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第一章 人工智能体验/">第一章 人工智能体验</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第二章 家庭智能改造大作战/">第二章 家庭智能改造大作战</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第三章 智能车小白/">第三章 智能车“小白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第四章 自动追踪小车大白/">第四章 自动追踪小车“大白”</a>
+  </li>
+    
+      
+
+
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        第五章 无人驾驶小车“老白”
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l1 current with-children">
+    <a href="#1">
+      第1节 环境准备：更加更加专业的视觉系统，甚至有一点人工智能
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1 current">
+    <ul class="subnav-l1 current">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_1">
+      硬件准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_2">硬件清单</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_3">硬件连接</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_4">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_5">操作步骤</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_6">
+      电机和摄像头驱动测试
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#-">操作步骤-电机测试</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#3">
+      第3节 开始无人驾驶
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_7">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_8">操作步骤</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+
+  
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第六章 机器人小绿/">第六章 机器人“小绿”</a>
+  </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">人工智能课程</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>第五章 无人驾驶小车“老白”</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <pre><code>这部分基于树莓派以及一些开源软件构建  
+树莓派从摄像头模块获取输入，然后通过无线方式发送获得的图像数据到电脑，电脑通过之前训练好的神经网络对输入的图像数据预测小车接下来的动作，然后发送这些预测动作的控制指令到树莓派控制小车的程序中。小车根据这些获得的指令实现自动驾驶
+</code></pre>
+<h2 id="1">第1节 环境准备：更加更加专业的视觉系统，甚至有一点人工智能</h2>
+<pre><code>需要安装一些Python库并正确连接小车
+</code></pre>
+<h3 id="_1"><strong>硬件准备</strong></h3>
+<h4 id="_2">硬件清单</h4>
+<ul>
+<li>树莓派</li>
+<li>树莓派电机扩展板</li>
+<li>摄像头</li>
+<li>小车套件</li>
+</ul>
+<h4 id="_3">硬件连接</h4>
+<p><center><img src=https://md.hass.live/niji/2019-05-07-Xnip2019-05-07_15-41-17.png?imageView2/0/interlace/1/q/46|imageslim></center></p>
+<h3 id="_4"><strong>程序及操作</strong></h3>
+<h4 id="_5">操作步骤</h4>
+<p>1.通过HDMI显示器连接树莓派，并使用USB键盘鼠标进行控制<br />
+2.在桌面上面找到名字为<code>learn-ai</code>的文件夹,打开路径<code>chapter2/part3/self_driving_car/</code><br />
+3.在桌面按<code>ctrl</code>+<code>alt</code>+<code>T</code>来打开终端<br />
+4.打开终端后，执行以下命令  </p>
+<pre><code class="bash">sudo apt update
+install python3 ???
+sudo apt install sklearn ???
+</code></pre>
+
+<h3 id="_6">电机和摄像头驱动测试</h3>
+<h4 id="-">操作步骤-电机测试</h4>
+<p>1.打开桌面上的<code>learn-ai</code>文件夹，打开路径<code>chapter2/part3/self_driving_car/</code><br />
+2.打开终端，执行以下命令  </p>
+<p>```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+sudo python3 drive_api2.py -s 150  //-s 150作为可选的参数，来指定行驶速度。可选范围是0-256</p>
+<pre><code>
+3.打开树莓派上的网络浏览器，在地址栏输入路由器管理地址，查看树莓派IP地址  
+4.在浏览器地址栏输入树莓派IP:81/drive,例如（192.168.0.100:81/drive）  
+5.在打开的界面上按键盘上的上下左右方向键来测试小车  
+6.测试完毕后，在终端输入`Ctrl`+`C`来结束当前任务
+
+#### 操作步骤-摄像头测试
+
+1.打开桌面上的`learn-ai`文件夹，打开路径`chapter2/part3/self_driving_car/`  
+2.打开终端，执行以下命令  
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd test
+sudo python3 stream_server_test.py
+</code></pre>
+
+<p>3.新建一个终端窗口  </p>
+<p><center><img src="https://md.hass.live/terminal.png"></center></p>
+<p>4.在新的终端窗口中输入以下命令，如果有正常的视频画面输出，则测试通过  </p>
+<p>```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd raspberryPi
+sudo python3 stream_client.py</p>
+<pre><code>
+5.在终端输入`Ctrl`+`C`来结束当前任务  
+
+## 第2节 无人驾驶数据采集及训练
+
+    搭建起车道，然后运行相应的收集数据的程序，按下笔记本的方向控制小车行驶，每按一次方向键，程序就会记录下一帧相应的图像。让小车平均遍历自动驾驶中可能出现的各种情况，按‘q‘退出数据采集，然后再运行相应的模型训练程序训练自动驾驶神经网络
+
+### **硬件准备**
+
+#### 硬件清单
+
+- 纸
+- 胶带
+
+#### 硬件搭建-跑道
+
+- 地面颜色为纯色，与所用纸张的颜色对比度应较大
+- 跑道的宽度稍大于车的宽度  
+- 可以把拐弯处的弯度设计得稍大一些
+
+&lt;center&gt;&lt;img src=https://md.hass.live/track.jpg&gt;&lt;/center&gt;
+
+### **程序及操作**
+
+#### 操作步骤-驾驶数据采集
+
+1.打开`learn-ai`文件夹，打开路径`chapter2/part3/`  
+2.打开终端，执行以下命令  
+
+```bash
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+sudo python3 collect_training_data2.py
+</code></pre>
+
+<p>3.新建一个终端窗口，输入  </p>
+<p>```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd raspberryPi
+sudo python3 stream_client.py</p>
+<pre><code>
+4.描述训练过程，按`q`结束训练  
+
+#### 操作步骤-驾驶数据训练
+
+1.新建一个终端窗口，输入  
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+sudo python3 model_training.py
+</code></pre>
+
+<p>2.训练完成后，训练文件在<code>文件路径</code></p>
+<h2 id="3">第3节 开始无人驾驶</h2>
+<pre><code>根据训练好的神经网络模型，现在我们可以实现自动驾驶
+</code></pre>
+<h3 id="_7"><strong>程序及操作</strong></h3>
+<h4 id="_8">操作步骤</h4>
+<p>1.打开终端，输入  </p>
+<p>```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd computer
+python3 rc_drive_nn_only.py</p>
+<pre><code>
+2.新建一个终端窗口，输入  
+
+```bash {.line-numbers}
+cd ~/Desktop/learn-ai/chapter2/part3/self_driving_car
+cd raspberryPi
+python stream_client.py
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../第六章 机器人小绿/" class="btn btn-neutral float-right" title="第六章 机器人“小绿”">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../第四章 自动追踪小车大白/" class="btn btn-neutral" title="第四章 自动追踪小车“大白”"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2014-2019 <a href="http://sli.bnu.edu.cn/" target="_blank">北京师范大学智慧学习研究院</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../第四章 自动追踪小车大白/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../第六章 机器人小绿/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

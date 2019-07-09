@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>第一章 人工智能体验 - 人工智能课程</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u7b2c\u4e00\u7ae0 \u4eba\u5de5\u667a\u80fd\u4f53\u9a8c";
+    var mkdocs_page_input_path = "\u7b2c\u4e00\u7ae0 \u4eba\u5de5\u667a\u80fd\u4f53\u9a8c.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 人工智能课程</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">课程开始前</a>
+  </li>
+    
+      
+
+
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        第一章 人工智能体验
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l1 current with-children">
+    <a href="#1">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第1节 人工智能的数学基础
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l1">
+    <a href="#2">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第2节 趣味概率论与信息论
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l1">
+    <a href="#3-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第3节 Python计算机视觉编程
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l1">
+    <a href="#4-bpn">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第4节 前馈神经网络（BPN）应用
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#41-mnist">4.1 MNIST手写数字识别</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#5-cnn">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第5节 卷积神经网络（CNN）应用
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#51-tensorflow">
+      5.1 Tensorflow训练自定义图片分类器
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_1">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_2">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#52">
+      5.2 图像风格迁移
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l3 current with-children">
+    <a href="#_3">
+      环境准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3 current">
+    <ul class="subnav-l3 current">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#vgg">VGG 网络</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#_4">软件准备</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#6-rnn">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第6节 深度神经网络（RNN）应用
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#61-rnn">
+      6.1 使用循环神经网络（RNN）来生成古诗词
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_5">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_6">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#7">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第7节 人工智能与游戏
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#71-dqnai">
+      7.1 使用强化学习算法（DQN）训练游戏AI
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_7">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_8">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#72">
+      7.2 使用进化算法来训练马里奥
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_9">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_10">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+
+  
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第二章 家庭智能改造大作战/">第二章 家庭智能改造大作战</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第三章 智能车小白/">第三章 智能车“小白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第四章 自动追踪小车大白/">第四章 自动追踪小车“大白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第五章 无人驾驶小车老白/">第五章 无人驾驶小车“老白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第六章 机器人小绿/">第六章 机器人“小绿”</a>
+  </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">人工智能课程</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>第一章 人工智能体验</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <pre><code>本章介绍
+</code></pre>
+<h2 id="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第1节 人工智能的数学基础</h2>
+<h2 id="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第2节 趣味概率论与信息论</h2>
+<h2 id="3-python">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第3节 Python计算机视觉编程</h2>
+<h2 id="4-bpn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第4节 前馈神经网络（BPN）应用</h2>
+<h3 id="41-mnist">4.1 MNIST手写数字识别</h3>
+<h2 id="5-cnn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第5节 卷积神经网络（CNN）应用</h2>
+<h3 id="51-tensorflow">5.1 Tensorflow训练自定义图片分类器</h3>
+<pre><code>简单的项目描述
+</code></pre>
+<h4 id="_1"><strong>硬件准备</strong></h4>
+<h4 id="_2"><strong>程序及操作</strong></h4>
+<h3 id="52">5.2 图像风格迁移</h3>
+<p><center></p>
+<p><img alt="Neural Style 图像风格迁移" src="http://psqevyxc3.bkt.clouddn.com/neuralstyle.jpg" />
+</center></p>
+<p>在神经网络之前，图像风格迁移的程序有一个共同的思路：分析某一种风格的图像，给那一种风格建立一个数学或者统计模型，再改变要做迁移的图像让它能更好的符合建立的模型。这样做出来效果还是不错的，但一个很大的缺点：<strong>一个程序基本只能做某一种风格或者某一个场景</strong>。因此基于传统风格迁移研究的实际应用非常有限。
+而 Neural Style 程序通过输入一张代表内容的图片和一张代表风格的图片，使用深度学习网络输出一张融合了这个风格和内容的新作品。</p>
+<h4 id="_3"><strong>环境准备</strong></h4>
+<h5 id="vgg">VGG 网络</h5>
+<p><a href="http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat">训练好的 VGG 19 网络</a>，下载到项目文件夹“Neural Style 图像风格迁移”的中，或在运行时使用参数 <code>--network</code> 指定其位置。</p>
+<h5 id="_4">软件准备</h5>
+<p>除了在本课程最开始已经在 Anaconda 的 learn-ai 环境中安装好的 <code>TensorFlow</code> 外，还需安装 <code>Pillow</code> 软件包。</p>
+<p>1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
+2.输入下面的命令来进入 learn-ai 环境；</p>
+<p>```bash {.line-numbers}
+conda activate learn-ai</p>
+<pre><code>
+3.安装 `Pillow` 软件包；
+
+```bash {.line-numbers}
+conda install pillow
+</code></pre>
+
+<p>4.切换工作路径到项目文件夹；</p>
+<p>```bash {.line-numbers}
+cd 项目文件夹的路径</p>
+<pre><code>
+#### **程序及操作**
+
+```bash {.line-numbers}
+python neural_style.py --content &lt;输入图片&gt; --styles &lt;风格图片&gt; --output &lt;输出文件名&gt; -- --iterations &lt;迭代次数&gt;
+</code></pre>
+
+<p>我们使用 examples 文件夹中的 1-content.jpg 和 2-style1.jpg 来举例，把上面命令中：
+&lt;输入图片&gt; 替换为 <code>examples/1-content.jpg</code>
+&lt;风格图片&gt; 替换为 <code>examples/2-style1.jpg</code>
+&lt;输出文件名&gt; 替换为 <code>examples/output.jpg</code>，当然也可以不叫output，使用你自己喜欢的名字；
+&lt;迭代次数&gt; 替换为 <code>100</code>
+替换后的命令为：</p>
+<p><code>bash {.line-numbers}
+python neural_style.py --content examples/1-content.jpg --styles examples/2-style1.jpg --output examples/output.jpg -- --iterations 100</code></p>
+<p><strong>注意：</strong><em>&lt;输入图片&gt;</em> 不建议使用过大的图片，这会明显的增加机器的负担，特别是对于性能差或者没有独立显卡的机器，可能需要数个小时来生成新的图片。<em>&lt;迭代次数&gt;</em> 在课程中使用的是 100 次迭代，可以初步看出机器风格迁移的效果。一般来说 1000 次迭代可以获得不错的图像质量，但会花费更多的时间。</p>
+<p><center></p>
+<p><img alt="完成" src="http://psqevyxc3.bkt.clouddn.com/finishProcess.jpg" />
+</center></p>
+<p>当窗口中的迭代次数变为 “100/100” 时就完成了整个图片的处理过程，打开 examples 文件夹中的图片就可以开到结果。</p>
+<h2 id="6-rnn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第6节 深度神经网络（RNN）应用</h2>
+<h3 id="61-rnn">6.1 使用循环神经网络（RNN）来生成古诗词</h3>
+<pre><code>简单的项目描述
+</code></pre>
+<h4 id="_5"><strong>硬件准备</strong></h4>
+<h4 id="_6"><strong>程序及操作</strong></h4>
+<p>@import &ldquo;./chapter2/part1/古诗词/poet_rnn_output.py&rdquo; {cmd=&rsquo;/anaconda3/envs/learn-ai/bin/python&rsquo;}</p>
+<h2 id="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第7节 人工智能与游戏</h2>
+<h3 id="71-dqnai">7.1 使用强化学习算法（DQN）训练游戏AI</h3>
+<pre><code>简单的项目描述
+</code></pre>
+<h4 id="_7"><strong>硬件准备</strong></h4>
+<h4 id="_8"><strong>程序及操作</strong></h4>
+<h3 id="72">7.2 使用进化算法来训练马里奥</h3>
+<pre><code>简单的项目描述
+</code></pre>
+<h4 id="_9"><strong>硬件准备</strong></h4>
+<h4 id="_10"><strong>程序及操作</strong></h4>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../第二章 家庭智能改造大作战/" class="btn btn-neutral float-right" title="第二章 家庭智能改造大作战">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="课程开始前"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2014-2019 <a href="http://sli.bnu.edu.cn/" target="_blank">北京师范大学智慧学习研究院</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../第二章 家庭智能改造大作战/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

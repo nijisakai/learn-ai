@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>第六章 机器人“小绿” - 人工智能课程</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u7b2c\u516d\u7ae0 \u673a\u5668\u4eba\u201c\u5c0f\u7eff\u201d";
+    var mkdocs_page_input_path = "\u7b2c\u516d\u7ae0 \u673a\u5668\u4eba\u5c0f\u7eff.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 人工智能课程</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="..">课程开始前</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第一章 人工智能体验/">第一章 人工智能体验</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第二章 家庭智能改造大作战/">第二章 家庭智能改造大作战</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第三章 智能车小白/">第三章 智能车“小白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第四章 自动追踪小车大白/">第四章 自动追踪小车“大白”</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../第五章 无人驾驶小车老白/">第五章 无人驾驶小车“老白”</a>
+  </li>
+    
+      
+
+
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        第六章 机器人“小绿”
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l1 current with-children">
+    <a href="#1">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第1节 环境准备：物联网平台安装配置
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1 current">
+    <ul class="subnav-l1 current">
+    
+      
+          
+
+  <li class="toctree-l2 current with-children">
+    <a href="#_1">
+      硬件准备
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_2">硬件清单</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_3">硬件连接</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l2">
+    <a href="#_4">
+      程序及操作
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_5">安装过程</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#2">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第2节 小绿出生了：组装小绿
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_6">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_7">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#3">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第3节 小绿的一小步，我们的一大步
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l1">
+    <a href="#4">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第4节 小绿会说话了：训练语音识别
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_8">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_9">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#5">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第5节 小绿的魔法：控制小白
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_10">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_11">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#6">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第6节 小绿学会了人脸解锁
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_12">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_13">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#7-blockly">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第7节 使用Blockly积木来控制小绿
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_14">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_15">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+  <li class="toctree-l1">
+    <a href="#8-rapopenpose">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第8节 唱跳rap：OpenPose姿态模仿
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l1">
+    <ul class="subnav-l1 toc-hidden">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_16">硬件准备</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#_17">程序及操作</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">人工智能课程</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>第六章 机器人“小绿”</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <pre><code>“小绿”是一个使用3D打印制作外壳，使用舵机作为动力部分，使用树莓派作为控制中枢的智能机器人。
+</code></pre>
+<h2 id="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第1节 环境准备：物联网平台安装配置</h2>
+<pre><code>Home Assistant是一个开源的物联网平台，兼容各种物联网协议。可以方便的接入和控制各种设备  
+这一部分主要在树莓派（Raspberry Pi）上面进行  
+树莓派上的Python环境使用 miniconda 进行管理  
+树莓派是运行Linux操作系统的微型卡片电脑，拥有GPIO端口与其他硬件通信，也具有HDMI，USB端口连接显示设备等  
+树莓派的操作系统在SD卡上，分发给同学的SD卡默认安装了所有的环境和依赖，相关的文档在桌面上
+</code></pre>
+<p>本课程采用<a href="https://baike.baidu.com/item/Docker/13344470?fr=aladdin">Docker</a>方式进行安装</p>
+<h3 id="_1"><strong>硬件准备</strong></h3>
+<h4 id="_2">硬件清单</h4>
+<ul>
+<li>树莓派套装</li>
+</ul>
+<h4 id="_3">硬件连接</h4>
+<p><center><img src=https://md.hass.live/404.gif></center></p>
+<h3 id="_4"><strong>程序及操作</strong></h3>
+<h4 id="_5">安装过程</h4>
+<p>在树莓派上打开终端，执行</p>
+<p>```bash {.line-numbers}
+//安装Docker
+curl -ssl https://get.docker.com | sh</p>
+<p>//安装指定版本的Home Assistant，本部分指定版本为0.82.0
+sudo docker run &ndash;init -d &ndash;name=&rdquo;home-assistant&rdquo; -v /home/pi/homeassistant:/config -v /etc/localtime:/etc/localtime:ro &ndash;net=host homeassistant/raspberrypi3-homeassistant:0.82.0</p>
+<p>//启动Docker镜像
+sudo docker start home-assistant</p>
+<p>//进入镜像
+sudo docker exec -it home-assistant env LANG=C.UTF-8 /bin/bash
+```</p>
+<p>正常情况下显示应和下图类似：  </p>
+<p><center><img src="https://md.hass.live/Xnip2019-05-07_18-35-34.png"></center></p>
+<p>本处即为Home Assistant的配置文件<br />
+主要配置在<code>configuration.yaml</code>中<br />
+文件夹<code>custom_components</code>存放自定义组件  </p>
+<h2 id="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第2节 小绿出生了：组装小绿</h2>
+<h3 id="_6"><strong>硬件准备</strong></h3>
+<h3 id="_7"><strong>程序及操作</strong></h3>
+<h2 id="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第3节 小绿的一小步，我们的一大步</h2>
+<h2 id="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第4节 小绿会说话了：训练语音识别</h2>
+<pre><code>简单的项目描述
+</code></pre>
+<h3 id="_8"><strong>硬件准备</strong></h3>
+<h3 id="_9"><strong>程序及操作</strong></h3>
+<h2 id="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第5节 小绿的魔法：控制小白</h2>
+<pre><code>一个简单的物联网应用
+</code></pre>
+<h3 id="_10"><strong>硬件准备</strong></h3>
+<h3 id="_11"><strong>程序及操作</strong></h3>
+<h2 id="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第6节 小绿学会了人脸解锁</h2>
+<pre><code>调用百度在线人工智能服务，进行人脸识别和语音播报，识别到注册人脸后自动把小灯打开。
+</code></pre>
+<h3 id="_12"><strong>硬件准备</strong></h3>
+<ul>
+<li>运行<code>Home Assistant</code>和<code>百度识别自定义组件</code>的树莓派</li>
+<li>安卓手机（<code>网络摄像头安卓APP</code>，提供快速稳定的视频服务。<code>kodi媒体中心安卓APP</code>，提供语音服务功能）</li>
+<li>手机也可替换为Part1.4所用的esp32摄像头</li>
+</ul>
+<h3 id="_13"><strong>程序及操作</strong></h3>
+<hr />
+<h2 id="7-blockly">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第7节 使用Blockly积木来控制小绿</h2>
+<pre><code>简单的项目描述
+</code></pre>
+<h3 id="_14"><strong>硬件准备</strong></h3>
+<h3 id="_15"><strong>程序及操作</strong></h3>
+<h2 id="8-rapopenpose">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第8节 唱跳rap：OpenPose姿态模仿</h2>
+<pre><code>简单的项目描述
+</code></pre>
+<h3 id="_16"><strong>硬件准备</strong></h3>
+<h3 id="_17"><strong>程序及操作</strong></h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../第五章 无人驾驶小车老白/" class="btn btn-neutral" title="第五章 无人驾驶小车“老白”"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2014-2019 <a href="http://sli.bnu.edu.cn/" target="_blank">北京师范大学智慧学习研究院</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../第五章 无人驾驶小车老白/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
