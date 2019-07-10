@@ -14,7 +14,6 @@
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
   <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
@@ -24,9 +23,7 @@
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
-  <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="js/modernizr-2.8.3.min.js" defer></script> 
   
 </head>
 
@@ -505,7 +502,17 @@
     
       
         <li class="toctree-l5">
-          <a class="toctree-l6" href="#_46">安装指定包</a>
+          <a class="toctree-l6" href="#_46">进入环境</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#_47">安装指定包</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#_48">其他命令</a>
         </li>
     
     </ul>
@@ -590,14 +597,14 @@
     
       
         <li class="toctree-l2">
-          <a class="toctree-l3" href="#_47">在树莓派上的操作</a>
+          <a class="toctree-l3" href="#_49">在树莓派上的操作</a>
         </li>
     
       
           
 
   <li class="toctree-l2">
-    <a href="#_48">
+    <a href="#_50">
       下载课程文件
       <span class="toctree-expand"></span>
     </a>
@@ -625,7 +632,7 @@
     
       
         <li class="toctree-l2">
-          <a class="toctree-l3" href="#_49">其他</a>
+          <a class="toctree-l3" href="#_51">其他</a>
         </li>
     
     </ul>
@@ -783,32 +790,30 @@
 <p>选择适合自己的操作系统，并选择Python 3.7版本</p>
 <h5 id="_44">基本命令概览</h5>
 <h6 id="_45">创建环境</h6>
-<p>```bash {.line-numbers}
+<pre><code class="bash">
 conda create -n 环境名字
-//例如：<br />
+//例如：
 conda create -n py27 python=2.7
 //表示创建一个名字为py27，运行python2.7的虚拟环境
 //后面的python=2.7是可选输入
-//不输入时默认环境是python3</p>
-<pre><code>
-###### 进入环境
+//不输入时默认环境是python3
 
-```bash {.line-numbers}
-conda activate 环境名字
+</code></pre>
+
+<h6 id="_46">进入环境</h6>
+<pre><code class="bash">conda activate 环境名字
 //例如：  
 conda activate py27
 </code></pre>
 
-<h6 id="_46">安装指定包</h6>
-<p>```bash {.line-numbers}
-conda install 包名<br />
+<h6 id="_47">安装指定包</h6>
+<pre><code class="bash">conda install 包名  
 //例如：安装OpenCV
-conda install opencv</p>
-<pre><code>
-###### 其他命令
+conda install opencv
+</code></pre>
 
-```bash {.line-numbers}
-//退出环境
+<h6 id="_48">其他命令</h6>
+<pre><code class="bash">//退出环境
 conda deactivate  
 //列出环境
 conda-env list
@@ -821,20 +826,24 @@ conda-env remove -n 环境名字
 2.macOS用户打开<code>终端</code>, Windows用户在开始菜单打开<code>Anaconda Prompt</code><br />
 3.创建并进入环境 (python版本为默认的3.x)<br />
 4.在新环境中安装TensorFlow和OpenCV（若电脑有独立显卡应安装GPU版本的TensorFlow）</p>
-<p>```bash {.line-numbers}
-//创建一个名字为myenv的虚拟环境
-conda create -n myenv</p>
-<p>//激活myenv虚拟环境
-conda activate myenv</p>
-<p>//无独立显卡的电脑使用这条命令
+<pre><code class="bash">//创建一个名字为myenv的虚拟环境
+conda create -n myenv
+
+//激活myenv虚拟环境
+conda activate myenv
+
+//无独立显卡的电脑使用这条命令
 conda install tensorflow
 //有独立显卡的电脑使用这条命令
-conda install tensorflow-gpu</p>
-<p>//安装opencv
-conda install opencv</p>
-<p>//安装git命令
+conda install tensorflow-gpu
+
+//安装opencv
+conda install opencv
+
+//安装git命令
 conda install git
-```</p>
+</code></pre>
+
 <h4 id="vscode">VSCode</h4>
 <p>VSCode是微软出品的免费代码编辑软件。在Windows、Mac、Linux上均可以方便安装<br />
 下载链接：<a href="https://code.visualstudio.com">https://code.visualstudio.com</a></p>
@@ -870,8 +879,8 @@ conda install git
 <p>7.设置开发板和端口
 <center><img src=https://md.hass.live/Xnip2019-05-05_16-49-07.png?imageView2/0/interlace/1/q/46|imageslim></center></p>
 <h3 id="jetson-nano">在Jetson Nano上的操作</h3>
-<h3 id="_47">在树莓派上的操作</h3>
-<h3 id="_48">下载课程文件</h3>
+<h3 id="_49">在树莓派上的操作</h3>
+<h3 id="_50">下载课程文件</h3>
 <h5 id="windows">Windows</h5>
 <ul>
 <li>打开<code>Anaconda Prompt</code></li>
@@ -884,7 +893,7 @@ conda install git
 <li>执行<code>git clone https://github.com/nijisakai/learn-ai.git ~/Desktop/learn-ai/</code>  </li>
 <li>文件将被下载到桌面下面的learn-ai文件夹</li>
 </ul>
-<h3 id="_49">其他</h3>
+<h3 id="_51">其他</h3>
 <p>路由器设置SSID名字为<strong>AI</strong>，密码为<strong>raspberry</strong><br />
 路由器管理地址设置为<a href="http://192.168.123.1">http://192.168.123.1</a>，登录账号：admin，登录密码：admin</p>
               
@@ -937,5 +946,5 @@ conda install git
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-07-09 10:41:45
+Build Date UTC : 2019-07-10 11:28:47
 -->

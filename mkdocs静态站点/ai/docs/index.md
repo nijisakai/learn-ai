@@ -133,15 +133,13 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 
 ###### 创建环境
 
-```bash
-
+```
 conda create -n 环境名字
 //例如：
 conda create -n py27 python=2.7
 //表示创建一个名字为py27，运行python2.7的虚拟环境
 //后面的python=2.7是可选输入
 //不输入时默认环境是python3
-
 ```
 
 ###### 进入环境
