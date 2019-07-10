@@ -1,6 +1,11 @@
 site_name: 人工智能课程
 # site_description: ai projects 
-theme: rtd-dropdown
+theme:
+    name: null
+    custom_dir: 'rtd_dropdown/'
+    hljs_languages:
+        - bash
+
 nav:
   - 课程开始前: index.md
   - 第一章 人工智能体验: 第一章 人工智能体验.md

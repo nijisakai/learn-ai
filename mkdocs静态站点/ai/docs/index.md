@@ -133,18 +133,20 @@ Anaconda是一个Python环境管理软件。在Windows，Mac、Linux上均可以
 
 ###### 创建环境
 
-```bash {.line-numbers}
+```bash
+
 conda create -n 环境名字
-//例如：  
+//例如：
 conda create -n py27 python=2.7
 //表示创建一个名字为py27，运行python2.7的虚拟环境
 //后面的python=2.7是可选输入
 //不输入时默认环境是python3
+
 ```
 
 ###### 进入环境
 
-```bash {.line-numbers}
+```bash
 conda activate 环境名字
 //例如：  
 conda activate py27
@@ -152,7 +154,7 @@ conda activate py27
 
 ###### 安装指定包  
 
-```bash {.line-numbers}
+```bash
 conda install 包名  
 //例如：安装OpenCV
 conda install opencv
@@ -160,7 +162,7 @@ conda install opencv
 
 ###### 其他命令
 
-```bash {.line-numbers}
+```bash
 //退出环境
 conda deactivate  
 //列出环境
@@ -176,7 +178,7 @@ conda-env remove -n 环境名字
 3.创建并进入环境 (python版本为默认的3.x)  
 4.在新环境中安装TensorFlow和OpenCV（若电脑有独立显卡应安装GPU版本的TensorFlow）
 
-```bash {.line-numbers}
+```bash
 //创建一个名字为myenv的虚拟环境
 conda create -n myenv
 
