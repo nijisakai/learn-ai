@@ -1,0 +1,25 @@
+{
+    "plugins": [
+		"page-toc-button",
+		"chapter-fold",
+		"code",
+		"mermaid",
+		"latex-codecogs",
+		"prism",
+		"tbfed-pagefooter",
+		"flexible-alerts"
+	],
+
+    "pluginsConfig": {
+        "page-toc-button": {
+            "maxTocDepth": 2,
+            "minTocSize": 1
+           },
+		"tbfed-pagefooter": {
+            "copyright": "Copyright &copy; 北京师范大学智慧学习研究院",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+	
+}
