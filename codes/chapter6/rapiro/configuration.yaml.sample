@@ -1,0 +1,131 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 40.0018
+  longitude: 116.332
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Asia/Shanghai
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+#   base_url: example.duckdns.org:8123
+    api_password: 123789
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+# Allows you to issue voice commands from the frontend in enabled browsers
+# 意图生成组件，匹配语法规则后生成对应意图
+conversation:
+  intents:
+    # 意图类型（名称），以及对应的语法匹配规则
+    OpenLight:
+      - 打开{item}灯
+      - 把{item}灯打开
+    CloseLight:
+      - 关上{item}灯
+      - 关闭{item}灯
+ 
+ 
+# 意图执行组件，根据配置文件决定对不同意图的执行命令
+intent_script:
+  # 意图类型（名称）
+  OpenLight:
+    # speech返回
+    speech:
+      text: 已打开{{ item }}灯
+    # 执行动作
+    action:
+      service: light.turn_on
+      data_template: 
+        entity_id: >
+          {% if item=="卧室" %}
+            light.office_light_rgb
+          {% endif %}
+ 
+ 
+  CloseLight:
+    speech:
+      text: 已关闭{{ item }}灯
+    action:
+      service: light.turn_off
+      data_template: 
+        entity_id: >
+          {% if item=="卧室" %}
+            light.office_light_rgb
+          {% endif %}
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+
+light:
+  - platform: mqtt
+    name: "Office Light RGB"
+    state_topic: "office/rgb1/light/status"
+    command_topic: "office/rgb1/light/switch"
+    brightness_state_topic: "office/rgb1/brightness/status"
+    brightness_command_topic: "office/rgb1/brightness/set"
+    rgb_state_topic: "office/rgb1/rgb/status"
+    rgb_command_topic: "office/rgb1/rgb/set"
+    state_value_template: "{{ value_json.state }}"
+    brightness_value_template: "{{ value_json.brightness }}"
+    rgb_value_template: "{{ value_json.rgb | join(',') }}"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false

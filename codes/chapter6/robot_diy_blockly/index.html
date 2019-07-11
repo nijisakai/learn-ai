@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>Blockly Demo-教育机器人工程中心</title>
+    <script src="./google-blockly/blockly_compressed.js"></script>
+    <script src="./google-blockly/blocks_compressed.js"></script>
+    <script src="./google-blockly/msg/js/zh-hans.js"></script>
+    <script src="./google-blockly/javascript_compressed.js"></script>
+    <script src="./google-blockly/python_compressed.js"></script>
+    <link rel="stylesheet" href="./robot/face++/bootstrap.css">
+    <link rel="stylesheet" href="./robot/face++/analyze.css">
+    <script src="./robot/face++/handlebars-v4.1.1.js"></script>
+    <script src="./robot/face++/jquery-3.2.1.js"></script>
+    <style>
+        body {
+            background-color:white;
+            font-family: sans-serif;
+        }
+        h1 {
+            font-weight: normal;
+            font-size: 140%;
+        }
+        #circle {
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            background-color: rgb(253, 254, 255);
+            border: solid 1px black;
+            position: absolute;
+            left: 1160px;
+            top:110px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <script>
+        const model = tf.sequential();
+        model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+
+        model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
+
+        // Generate some synthetic data for training.
+        const xs = tf.tensor2d([1, 2, 3, 4], [4, 1]);
+        const ys = tf.tensor2d([1, 3, 5, 7], [4, 1]);
+
+        // Train the model using the data.
+        model.fit(xs, ys, {epochs: 10}).then(() => {
+        // Use the model to do inference on a data point the model hasn't seen before:
+        model.predict(tf.tensor2d([5], [1, 1])).print();
+        // Open the browser devtools to see the output
+        });
+    </script>
+    <p>
+        <button onclick="showCode()">显示JS代码</button>
+        <button onclick="showCodePython()">显示Python代码</button>
+        <button onclick="runCode();disp_alert()">执行</button>
+    </p>
+    <form enctype="multipart/form-data">
+        <input type="file" id="testImg" onchange="detectImg()">
+    </form>
+    <iframe id="frame1"></iframe>
+    <iframe id="frame2"></iframe>
+    <iframe id="dht11" src="http://192.168.0.184" height="80px"></iframe>
+    <iframe id="distance" src="http://192.168.0.170" height="80px"></iframe>
+    <div id="result">
+        <p>年龄:</p>
+        <p>性别:</p>
+        <p>种族:</p>
+        <p>佩戴眼镜:</p>
+        <p>皮肤状况</p>
+        <p>黑眼圈:</p>
+    </div>
+    <button class="btn btn-danger btn-lg btn-block" onclick="disp_alert()" id = "buttonred">测测人脸</button>
+    <script id="tpl" type="text/template">
+        <p>年龄:{{age}}</p>
+        <p>性别:{{gender}}</p>
+        <p>种族:{{ethnicity}}</p>
+        <p>佩戴眼镜:{{glass}}</p>
+        <p>皮肤状况:{{skinstatus.health}}</p>
+        <p>黑眼圈:{{skinstatus.dark_circle}}</p>        
+    </script>
+    <script>
+        document.getElementById('result').style.display='none';
+        document.getElementById('buttonred').style.display='none';
+        function disp_alert()
+            {
+                // alert(document.getElementById('result').innerHTML);
+                var content = document.getElementById("result");  
+                // alert(content.innerHTML);
+                alert(content.innerHTML.replace(/<.+?>/gim,'')); 
+            };
+    </script>
+    <script src="./analyze.js"></script>
+
+
+    <div id="blocklyDiv" style="height: 480px; width: 1000px;"></div>
+    <xml id="toolbox" style="display: none">
+        <category name="人工智能" colour="20">
+            <block type="tts"></block>
+            <block type="goodlooking"></block>
+            <block type="facedetect"></block>
+        </category>
+        <category name="机器人" colour="20">
+            <block type="robot"></block>
+        </category>
+        <category name="物联网" colour="20">
+            <block type="lightswitch"></block>
+            <block type="rgb_v2"></block>
+        </category>
+        <category name="逻辑" colour="210">
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_boolean"></block>
+        </category>
+        <category name="控制" colour="120">
+            <block type="controls_if"></block>
+            <block type="controls_whileUntil"></block>
+            <block type="controls_for">
+        </category>
+        <category name="数学" colour="230">
+            <block type="math_number"><field name="NUM">123</field></block>
+            <block type="math_arithmetic"></block>
+            <block type="math_single"></block>
+            <block type="math_trig"></block>
+            <block type="math_constant"></block>
+            <block type="math_number_property"></block>
+            <block type="math_round"></block>
+            <block type="math_on_list"></block>
+            <block type="math_modulo"></block>
+            <block type="math_constrain">
+                <value name="LOW">
+                    <block type="math_number"><field name="NUM">1</field></block>
+                </value>
+                <value name="HIGH">
+                    <block type="math_number"><field name="NUM">100</field></block>
+                </value>
+            </block>
+        </category>
+        <category name="变量" colour="330" custom="VARIABLE"></category>
+        <category name="函数" colour="290" custom="PROCEDURE"></category>
+        <category name="文本" colour="%{BKY_TEXTS_HUE}">
+                <block type="text"></block>
+                <block type="text_length"></block>
+                <block type="text_print"></block>
+        </category>
+    </xml>
+    <!-- <div id="circle"></div>   -->
+
+
+    <script>
+        document.getElementById('frame1').style.display='none';
+        document.getElementById('frame2').style.display='none';
+        var demoWorkspace = Blockly.inject('blocklyDiv',
+        {media: '../../google-blockly/media/',
+         toolbox: document.getElementById('toolbox')});
+        
+        //Custom Blocks
+        //https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#ya97nm
+        var  urlrobot = ""; 
+
+        
+        //Custom Blocks
+        //https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#rcipnj
+        Blockly.Blocks['tts'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField(" 语音合成：");
+                this.appendValueInput("text")
+                    .setCheck(["Number", "String"]);
+                this.appendDummyInput()
+                    .appendField("发声：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["女声","0"], ["男声","1"], ["情感男声","3"], ["情感女声","4"]]), "per");
+                this.appendDummyInput()
+                    .appendField("音量：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","3"], ["3","3"], ["4","4"], ["5","5"]]), "vol");
+                this.appendDummyInput()
+                    .appendField("语速：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "spd");
+                this.appendDummyInput()
+                    .appendField("音调：");
+                this.appendDummyInput()
+                    .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "pit");
+                this.setInputsInline(true);
+                this.setPreviousStatement(true, null);
+                this.setNextStatement(true, null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+
+        //Custom block of camera 
+        Blockly.Blocks['goodlooking'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("人脸");
+                this.appendValueInput("NAME")
+                    .setCheck(null)
+                    .appendField("");
+                this.appendDummyInput()
+                    .appendField("的颜值");
+                this.setOutput(true, null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+
+        Blockly.Blocks['facedetect'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("人脸检测");
+                this.setOutput(true, null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Blockly.Blocks['robot'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("机器人行动")
+                    .appendField(new Blockly.FieldDropdown([["前进","forward"], ["后退","backward"], ["左转","left"], ["右转","right"], ["跳跃","jump"]]), "action");
+                this.setPreviousStatement(true, null);
+                this.setNextStatement(true, null);
+                this.setColour(150);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+        
+        //stub
+        urldistance = "http://192.168.0.170"
+        Blockly.JavaScript['facedetect'] = function(block) {
+            document.getElementById("frame2").src=urldistance;
+            console.log(document.getElementById("frame2").src) 
+        };
+        
+        function reeq(){
+            document.getElementById("frame2").src=urldistance;
+            console.log(document.getElementById("frame2").innerHTML) 
+        };
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Blockly.JavaScript['robot'] = function(block) {
+            var dropdown_action = block.getFieldValue('action');
+            if (dropdown_action=="forward") {
+                urlrobot = "http://192.168.0.201/otto-walk"; 
+                req();
+            }
+            if (dropdown_action=="backward") {
+                urlrobot = "http://192.168.0.201/otto-walk-back";
+                req();
+            }
+            if (dropdown_action=="left") {
+                urlrobot = "http://192.168.0.201/otto-turn";
+                req();
+            }
+            if (dropdown_action=="right") {
+                urlrobot = "http://192.168.0.201/otto-turn-right";
+                req();
+            }
+            if (dropdown_action=="jump") {
+                urlrobot = "http://192.168.0.201/otto-jump";
+                req();
+            }
+            return urlrobot;
+        }
+        function req() {
+            var xmlHttp = '';
+            var requstData = '';
+            var html = '';
+            if (window.XMLHttpRequest) {                    
+                xmlHttp = new XMLHttpRequest();                
+            } else {                    
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');                
+            }                
+            xmlHttp.open('GET', urlrobot , true);
+            // xmlHttp.open('GET', urldistance , true);                  
+            xmlHttp.send();                 
+            xmlHttp.onreadystatechange = function() {                    
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
+                requstData = xmlHttp.responseText;                      
+            }                
+            };            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        Blockly.Blocks['lightswitch'] = {
+            init: function() {
+                this.appendDummyInput()
+                    .appendField("turn the light")
+                    .appendField(new Blockly.FieldDropdown([["on","ON"], ["off","OFF"]]), "switch");
+                // this.appendStatementInput("rgbstatus")
+                //     .setCheck(null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+        
+        Blockly.Blocks['rgb_v2'] = {
+            init: function() {
+                this.appendValueInput("red")
+                    .setCheck("Number")
+                    .appendField("red");
+                this.appendValueInput("green")
+                    .setCheck("Number")
+                    .appendField("green");
+                this.appendValueInput("blue")
+                    .setCheck("Number")
+                    .appendField("blue");
+                this.setOutput(true, null);
+                this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+            }
+        };
+
+        //stub
+        Blockly.JavaScript['lightswitch'] = function(block) {
+            var dropdown_switch = block.getFieldValue('switch');
+            if (dropdown_switch=="ON") {
+                var code = "document.getElementById('circle').style.backgroundColor='red'";
+            }
+            if (dropdown_switch=="OFF") {
+                var code = "document.getElementById('circle').style.backgroundColor='white'";
+            }
+            return code;
+        };
+        
+        // var urlip ="http://192.168.0.162";
+        var url = "";
+        Blockly.JavaScript['rgb_v2'] = function(block) {
+            var value_red = Blockly.JavaScript.valueToCode(block, 'red', Blockly.JavaScript.ORDER_ATOMIC);
+            var value_green = Blockly.JavaScript.valueToCode(block, 'green', Blockly.JavaScript.ORDER_ATOMIC);
+            var value_blue = Blockly.JavaScript.valueToCode(block, 'blue', Blockly.JavaScript.ORDER_ATOMIC);
+            var url = 'http://192.168.0.184' + '/set-color?red='+value_red+'&green='+value_green+'&blue='+value_blue
+            document.getElementById("frame1").src=url;
+            console.log(document.getElementById("frame1").src)
+        };
+
+        // function changeurl(){
+            
+        //     // console.log(url)
+        //     console.log(document.getElementById("frame1").src)
+        // }
+        // function setRGB() {
+        //     var xmlHttp = '';
+        //     var requstData = '';
+        //     var html = '';
+        //     if (window.XMLHttpRequest) {                    
+        //         xmlHttp = new XMLHttpRequest();                
+        //     } else {                    
+        //         xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');                
+        //     }                
+        //     xmlHttp.open('GET', url, true);                 
+        //     xmlHttp.send();                 
+        //     xmlHttp.onreadystatechange = function() {                    
+        //     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
+        //         requstData = xmlHttp.responseText;                         
+        //         console.log(requstData);                    
+        //         }                
+        //     };            
+        // } 
+        
+
+        var urltts = '';
+        Blockly.JavaScript['tts'] = function(block) {
+            var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+            var dropdown_per = block.getFieldValue('per');
+            var dropdown_vol = block.getFieldValue('vol');
+            var dropdown_spd = block.getFieldValue('spd');
+            var dropdown_pit = block.getFieldValue('pit');
+            console.log("per", dropdown_per);
+            console.log("vol", dropdown_vol);
+            console.log("spd", dropdown_spd);
+            console.log("pit", dropdown_pit);
+            urltts = 'http://tts.baidu.com/text2audio?idx=1&tex={' + value_text + '}&cuid=baidu_speech_demo&cod=2&lan=zh&ctp=1&pdt=1&spd=' + dropdown_spd + '&per=' + dropdown_per + '&vol=' + dropdown_vol + '&pit=' + dropdown_pit;
+            console.log(urltts)
+            // return urltts;
+            var audio = new Audio();
+            audio.src = urltts;
+	        audio.play();
+        };
+
+
+        //stub for goodlooking
+        Blockly.JavaScript['goodlooking'] = function(block) {
+            var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+            
+        };
+        Blockly.JavaScript['facedetect'] = function(block) {
+            
+        };
+
+
+
+
+
+
+
+
+
+        function showCode() {
+        // Generate JavaScript code and display it.
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+            alert(code);
+        }
+        function showCodePython() {
+        // Generate JavaScript code and display it.
+            Blockly.Python.INFINITE_LOOP_TRAP = null;
+            var code = Blockly.Python.workspaceToCode(demoWorkspace);
+            alert(code);
+        }
+        function runCode() {
+        // Generate JavaScript code and run it.
+            window.LoopTrap = 1000;
+            Blockly.JavaScript.INFINITE_LOOP_TRAP =
+                'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+            var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            try {
+                eval(code);
+                } catch (e) {
+            alert(e);
+            }
+        }
+    </script>
+</body>
+</html>

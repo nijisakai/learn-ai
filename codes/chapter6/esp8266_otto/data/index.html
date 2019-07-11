@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esp8266 Otto</title>
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <style type="text/css">
+            input {
+                width: 100%;
+                height: 72px;
+            }
+
+            label {
+                font-size: 24px;
+            }
+
+            button {
+                border-radius: 3px;
+                color: #fff;
+                background-color: #007aff;
+                border: 1px solid #007aff;
+                margin-top: 30px;
+                margin-left: 80px;
+                font-size: 24px;
+                min-width: 100px;
+                /*flex: 1;*/
+            }
+
+            #buttons{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center; ;
+                max-width: 800px;
+            }
+        </style>
+    </head>
+    <body>
+        <H1>Welcome To Servo Test</H1>
+        <div id=buttons></div>
+
+
+<!--             <div>
+                <label for=d0>D0 </label>
+                <div></div>
+                <input type=range name=d0 id=d0 value=0 onchange=Submit()>
+            </div> -->
+
+        </form>
+        <script type='text/javascript'>
+
+            var commands = [
+            {name:'前进',url:'/otto-walk'},
+            {name:'后退',url:'/otto-walk-back'},
+            {name:'左转',url:'/otto-turn'},
+            {name:'右转',url:'/otto-turn-right'},
+            {name:'jump',url:'/otto-jump'},
+            {name:'bend',url:'/otto-bend'},
+            {name:'shakeLeg',url:'/otto-shakeLeg'},
+            {name:'updown',url:'/otto-updown'},
+            {name:'swing',url:'/otto-swing'},
+            {name:'tiptoeSwing',url:'/otto-tiptoeSwing'},
+            {name:'jitter',url:'/otto-jitter'},
+            {name:'ascendingTurn',url:'/otto-ascendingTurn'},
+            {name:'moonwalker',url:'/otto-moonwalker'},
+            {name:'crusaito',url:'/otto-crusaito'},
+            {name:'flapping',url:'/otto-flapping'},
+            {name:'连接舵机',url:'/otto-servos'},
+            {name:'关闭舵机',url:'/dettach-servos'},
+            {name:'舵机归位',url:'/servos-home'},
+            ]
+
+
+            function execute(url){
+                console.log(url);
+                req(url);
+            }
+
+            function init(){
+                var buttons = document.getElementById('buttons')
+                var button_html = ''
+
+
+                for(var i = 0;i < commands.length ; i++){
+                    button_html += '<button onclick=execute("'+commands[i].url + '")>' + commands[i].name + '</button>';
+                }
+                buttons.innerHTML =   button_html;
+            }
+
+
+
+            function req(url) {
+                var xmlHttp = '';
+                var requstData = '';
+                var html = '';
+                if (window.XMLHttpRequest) {                    
+                    xmlHttp = new XMLHttpRequest();                
+                } else {                    
+                    xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');                
+                }                
+                xmlHttp.open('GET', url , true);                 
+                xmlHttp.send();                 
+                xmlHttp.onreadystatechange = function() {                    
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {                        
+                    requstData = xmlHttp.responseText;                         
+                    console.log(requstData);                    
+                }                
+                };            
+            } 
+
+            function setAngle(di,vi) {
+                var url = '/set-servo?di='+di+'&vi='+vi;
+                req(url);
+            }   
+
+            function Submit(i){   
+                debug()
+                var vi = document.getElementById('d'+i).value;   
+                console.log(i,vi);   
+                setAngle(i,vi); 
+            }
+                  init();
+        </script>
+    </body>
+</html>
