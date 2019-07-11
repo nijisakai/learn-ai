@@ -27,7 +27,7 @@
     * [第5节 听声辨位：小白会自动避障了](content/chapter3/第5节 听声辨位：小白会自动避障了.md)
     * [第6节 综合与进阶](content/chapter3/第6节 综合与进阶.md)
     * [第7节 尾声](content/chapter3/第7节 尾声.md)
-* [第四章 自动追踪小车“大白”](chapter4.md)
-* [第五章 无人驾驶小车“老白”](chapter5.md)
-* [第六章 机器人“小绿”](chapter6.md)
+* [第四章 自动追踪小车“大白”](content/chapter4/第四章简介.md)
+* [第五章 无人驾驶小车“老白”](content/chapter5/第五章简介.md)
+* [第六章 机器人“小绿”](content/chapter6/第六章简介.md)
 
