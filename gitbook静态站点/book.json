@@ -4,8 +4,10 @@
 		"code",
 		"latex-codecogs",
 		"prism",
+		"-highlight",
 		"tbfed-pagefooter",
-		"flexible-alerts"
+		"flexible-alerts",
+		"-sharing"
 	],
 
     "pluginsConfig": {
