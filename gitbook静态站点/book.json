@@ -1,9 +1,7 @@
 {
     "plugins": [
-		"page-toc-button",
 		"chapter-fold",
 		"code",
-		"mermaid",
 		"latex-codecogs",
 		"prism",
 		"tbfed-pagefooter",
