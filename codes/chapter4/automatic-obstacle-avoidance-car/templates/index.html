@@ -1,0 +1,80 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<img src="{{ url_for('video_feed') }}" width="50%"><!--Enter the IP Address of your Raspberry Pi-->
+<div style="float:right">
+
+</div>
+<div style=" height:400px; width:350px; float:right;">
+<h2 text-align:left>Car control<h2/>
+<hr>
+<center>
+<a href="#" id="up" style="font-size:30px;text-decoration:none;">  &#x1F881;&#x1F881;<br>Forward</a><br><br></center>
+<a href="#" id="left" style="font-size:30px;text-decoration:none;"> &#x1F880;&#x1F880;Left</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#" id="right" style="font-size:30px; text-decoration:none;"> Right &#x1F882;&#x1F882;</a><br><br>
+<center><a href="#" id="down" style="font-size:30px;text-decoration:none;"> Backward<br> &#x1F883;&#x1F883;</a></center>
+<hr>
+<p>self_driving:<a href="#" id="selfdrive" style="font-size:30px;text-decoration:none;"> ☞☞☞☞☞☞ </a></p>
+<hr>
+<form method="POST" action="test">
+	<p>上：<a href="#" id="sup" style="font-size:30px;text-decoration:none;"> ↑↑ </a> 下：<a href="#" id="sdown" style="font-size:30px;text-decoration:none;"> ↓↓</a></p>
+	<p>左：<a href="#" id="sleft" style="font-size:30px;text-decoration:none;"> ← </a>  右：<a href="#" id="sright" style="font-size:30px;text-decoration:none;"> →</a></p>
+    <p>还原：<a href="#" id="comeback" style="font-size:30px;text-decoration:none;"> ☞☞☞☞☞☞☞☞ </a></p>
+   
+</form>
+</div>
+
+<script>
+$( document ).ready(function(){
+    $("#down").on("mousedown", function() {
+     $.get('/down_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#up").on("mousedown", function() {
+     $.get('/up_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#left").on("mousedown", function() {
+     $.get('/left_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#right").on("mousedown", function() {
+     $.get('/right_side');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+	$("#sup").on("mousedown", function() {
+     $.get('/sup');
+	 }).on('mouseup', function() {
+     $.get('/sstop1');
+	 });
+	$("#sdown").on("mousedown", function() {
+     $.get('/sdown');
+	 }).on('mouseup', function() {
+     $.get('/sstop1');
+	 });
+	$("#sleft").on("mousedown", function() {
+     $.get('/sleft');
+	 }).on('mouseup', function() {
+     $.get('/sstop2');
+	 });
+	$("#sright").on("mousedown", function() {
+     $.get('/sright');
+	 }).on('mouseup', function() {
+     $.get('/sstop2');
+	 });
+	$("#comeback").on("mousedown", function() {
+     $.get('/comeback');});
+     $("#selfdrive").on("mousedown",function(){
+	     $.get('/self_drive');});
+});
+</script>
+
+</body>
+</html>
