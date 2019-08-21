@@ -1,5 +1,3 @@
-__author__ = 'zhengwang'
-
 from model import load_data, NeuralNetwork
 
 input_size = 120 * 320
