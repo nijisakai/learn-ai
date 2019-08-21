@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<link rel='stylesheet' href='https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/style.css?ver=050819'>
+	<script src='https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/js/vendor/custom.modernizr.js'></script>
+
+
+		<link rel="icon" type="image/x-icon" href="/fav.ico">
+
+
+	<link href="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/favicon.ico" rel="shortcut icon">
+	<link href="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/apple-touch-icon.png" rel="apple-touch-icon">
+
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700&display=swap" rel="stylesheet">
+	<title>Home - Scottish Athletics</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/js/jquery.geocomplete.min.js"></script>
+
+	<!--[if lt IE 9]>
+	<style type="text/css">
+		.feat-item img {
+			width: 100%;
+		}
+	</style>
+	<![endif]-->
+
+	
+<!-- This site is optimized with the Yoast SEO plugin v5.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="scottishathletics is the national governing body for athletics in Scotland, established in 2001 and succeeding the Scottish Athletics Federation."/>
+<link rel="canonical" href="https://www.scottishathletics.org.uk/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home - Scottish Athletics" />
+<meta property="og:description" content="scottishathletics is the national governing body for athletics in Scotland, established in 2001." />
+<meta property="og:url" content="https://www.scottishathletics.org.uk/" />
+<meta property="og:site_name" content="Scottish Athletics" />
+<meta property="og:image" content="https://www.scottishathletics.org.uk/wp-content/uploads/2014/04/SAL-logo-1414x936.png" />
+<meta property="og:image:secure_url" content="https://www.scottishathletics.org.uk/wp-content/uploads/2014/04/SAL-logo-1414x936.png" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.scottishathletics.org.uk\/","name":"Scottish Athletics","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.scottishathletics.org.uk\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<meta name="msvalidate.01" content="B15301D69993C91BEC3E6A901692E278" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s7.addthis.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Scottish Athletics &raquo; Home Comments Feed" href="https://www.scottishathletics.org.uk/home/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.scottishathletics.org.uk\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='jquery-ui-css'  href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css?ver=4.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='cff-css'  href='https://www.scottishathletics.org.uk/wp-content/plugins/custom-facebook-feed/css/cff-style.css?ver=2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='sb-font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://www.scottishathletics.org.uk/wp-content/plugins/tablepress/css/default.min.css?ver=1.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='addthis_all_pages-css'  href='https://www.scottishathletics.org.uk/wp-content/plugins/addthis/frontend/build/addthis_wordpress_public.min.css?ver=4.8.2' type='text/css' media='all' />
+<!--[if !IE]><!-->
+<link rel='stylesheet' id='tablepress-responsive-css'  href='https://www.scottishathletics.org.uk/wp-content/plugins/tablepress-responsive-tables/tablepress-responsive.min.css?ver=1.1' type='text/css' media='all' />
+<!--<![endif]-->
+<script type='text/javascript' src='https://www.scottishathletics.org.uk/wp-admin/admin-ajax.php?action=addthis_global_options_settings&#038;ver=4.8.2'></script>
+<script type='text/javascript' src='https://s7.addthis.com/js/300/addthis_widget.js?ver=4.8.2#pubid=ra-538dc2cd4e04e2a2'></script>
+<script type='text/javascript' src='https://www.scottishathletics.org.uk/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.scottishathletics.org.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://www.scottishathletics.org.uk/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.scottishathletics.org.uk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.scottishathletics.org.uk/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8.2" />
+<link rel='shortlink' href='https://www.scottishathletics.org.uk/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.scottishathletics.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.scottishathletics.org.uk%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.scottishathletics.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.scottishathletics.org.uk%2F&#038;format=xml" />
+
+	
+</head>
+<body>
+<section id="header-top">
+	<div class="row">
+        <!-- TODO need to add link to the button below       -->
+		<div class="small-12 large-2 columns">&nbsp;</div>
+		<div class="small-12 large-7 columns signup" style="text-align: right">
+			<p>Are you a member?</p>			<a href="https://sauser.sportserve.net" class="button">Login</a>
+			<a href="https://www.scottishathletics.org.uk/membership/" class="button">Signup</a>
+            <a href="/events/organising-an-event/licensing-and-returns/" class="button" style="padding: 0 10px 0; margin: 0px 10px 0px 30px;">License an event</a>
+		</div>
+		<div class="small-12 large-3 columns searchbar">
+			<form action="/" method="get">
+				<div class="row collapse">
+					<div class="small-10 columns">
+						<label class="hide" for="searchInput">Search</label>
+						<input type="text" name="s" id="searchInput" placeholder="Search">
+					</div>
+					<div class="small-2 columns">
+						<a href="#" class="button prefix">Search</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+
+<header class="header">
+	<div class="row">
+
+
+		<div class="small-12 large-12 columns nav-wrapper">
+			<nav id="main-menu" class="top-bar">
+				<ul class="title-area">
+					<!-- Title Area -->
+					<li class="name">
+												<h1>
+							<span>Scottish Athletics</span>
+														<a href="/"><img alt="Scottish Athletics" src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/logo.png"/></a>
+							</h1>					</li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span></span> Menu</a></li>
+				</ul>
+
+				<section class="top-bar-section">
+
+					<!-- Right Nav Section -->
+					<ul class="right">
+						<li class="has-form menu-search">
+							<form>
+
+
+								<div class="row collapse">
+									<div class="small-11 columns">
+										<input type="text" name="s" placeholder="Search">
+									</div>
+									<div class="small-1 columns">
+										<a href="#" class="button prefix">Search</a>
+									</div>
+								</div>
+							</form>
+						</li>
+
+						<li id="menu-item-557" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-557 active "><a href="/">Home</a></li>
+<li id="menu-item-549" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549"><a href="https://www.scottishathletics.org.uk/about/">About</a></li>
+<li id="menu-item-550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a href="https://www.scottishathletics.org.uk/news/">News</a></li>
+<li id="menu-item-551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551"><a href="https://www.scottishathletics.org.uk/events/">Events</a></li>
+<li id="menu-item-2186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2186"><a href="https://www.scottishathletics.org.uk/athletes/">Athletes</a></li>
+<li id="menu-item-553" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-553"><a href="https://www.scottishathletics.org.uk/clubs/">Clubs</a></li>
+<li id="menu-item-554" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-554"><a href="https://www.scottishathletics.org.uk/teachers/">Teachers</a></li>
+<li id="menu-item-556" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-556"><a href="https://www.scottishathletics.org.uk/coaches/">Coaches</a></li>
+<li id="menu-item-555" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-555"><a href="https://www.scottishathletics.org.uk/officials/">Officials</a></li>
+
+					</ul>
+				</section>
+			</nav>
+
+			<!--[if IE 8]>
+			<style type="text/css">
+
+				div.ie8menu {
+					display: block !important;
+				}
+
+				nav li.menu-icon {
+					display: none;
+				}
+
+				div.ie8menu #menu-main-menu-1 {
+					float: right;
+				}
+
+				div.ie8menu #menu-main-menu-1 li {
+					display: inline;
+				}
+
+				div.ie8menu #menu-main-menu-1 li a {
+					color: #fff;
+					padding: 0 10px;
+				}
+
+				div.ie8menu #menu-main-menu-1 li a:hover {
+					color: #cb6400;
+					text-decoration: underline;
+				}
+
+			</style>
+			<![endif]-->
+			<div class="ie8menu">
+				<ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-557 active "><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549"><a href="https://www.scottishathletics.org.uk/about/">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a href="https://www.scottishathletics.org.uk/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551"><a href="https://www.scottishathletics.org.uk/events/">Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2186"><a href="https://www.scottishathletics.org.uk/athletes/">Athletes</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-553"><a href="https://www.scottishathletics.org.uk/clubs/">Clubs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-554"><a href="https://www.scottishathletics.org.uk/teachers/">Teachers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-556"><a href="https://www.scottishathletics.org.uk/coaches/">Coaches</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-555"><a href="https://www.scottishathletics.org.uk/officials/">Officials</a></li>
+</ul>			</div>
+
+
+		</div>
+	</div>
+</header>
+
+<section id="header-bottom">
+	<div class="row">
+		<div class="small-12 columns signup">
+			<p>Are you a member?</p>
+			<a href="https://sauser.sportserve.net" class="button">Login</a>
+		</div>
+	</div>
+
+</section>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQE2n5c8jwGQ5Wg1MTQwcLWA-0z_Iemmk&amp;libraries=places"></script>
+
+	<section id="news-home">
+
+		
+		<nav class="row news-nav">
+			<ul class="small-12 columns">
+				<li class="itemHome-1 active"><a href="/">All News</a></li>
+				<li class="itemHome-2 ">
+					<a href="/?track-field">Track &amp; Field</a></li>
+				<li class="itemHome-3 ">
+					<a href="/?endurance-events">Endurance Events</a></li>
+				<li class="itemHome-4 ">
+					<a href="/?international">International</a></li>
+				<li class="itemHome-5 ">
+					<a href="/?blog">Blog</a></li>
+			</ul>
+		</nav>
+		<div class="row news-items">
+			
+				<a href="https://www.scottishathletics.org.uk/48407-2/" title="Read FPSG Seniors and U17s &#8211; Sunday review">
+
+											<div class="small-12 large-4 columns">
+							<div class="feat-item">
+								<div class="feat-item-img js-video-swap">
+																												<p class="cat-tag cat-track">Track &amp; Field</p>
+																												<img width="707" height="468" src="https://www.scottishathletics.org.uk/wp-content/uploads/2019/08/Sarahs-Champs-707x468.png" class="attachment-home size-home wp-post-image" alt="" srcset="https://www.scottishathletics.org.uk/wp-content/uploads/2019/08/Sarahs-Champs.png 707w, https://www.scottishathletics.org.uk/wp-content/uploads/2019/08/Sarahs-Champs-300x199.png 300w" sizes="(max-width: 707px) 100vw, 707px" />																	</div>
+								<div class="feat-item-text">
+									<h3>FPSG Seniors and U17s &#8211; Sunday review</h3>
+									<p class="meta-date">Sunday 18th August 2019</p>
+								</div>
+							</div>
+						</div></a>
+
+									
+				<a href="https://www.scottishathletics.org.uk/48488-2/" title="Read Still time for late entries . . . Kyle, Craig relish medals">
+
+											<div class="small-12 large-4 columns middle-column">
+						<div class="cat-item cat-track">
+							<div class="cat-img">
+																	<p class="cat-tag">Track &amp; Field</p>
+																									<img class="live" src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/live.jpg" alt="Video Article" />
+																									<div  class="img-oembed" style="background-image: url('https://img.youtube.com/vi/b7giwOQL9R8/hqdefault.jpg')"></div>
+								
+							</div>
+							<div class="cat-text">
+								<h3>Still time for late entries . . . Kyle, Craig relish medals</h3>
+								<p class="meta-date">Tuesday 20th August 2019</p>
+							</div>
+						</div>
+						</a>
+									
+				<a href="https://www.scottishathletics.org.uk/48335-2/" title="Read Enter now for Masters 10,000m and Jumps Series 3">
+
+											<div class="cat-item cat-track">
+							<div class="cat-img">
+																	<p class="cat-tag">Track &amp; Field</p>
+																																			<img width="707" height="469" src="https://www.scottishathletics.org.uk/wp-content/uploads/2019/05/MasCE-SAT-80862-707x469.jpg" class="attachment-home size-home wp-post-image" alt="" srcset="https://www.scottishathletics.org.uk/wp-content/uploads/2019/05/MasCE-SAT-80862-707x469.jpg 707w, https://www.scottishathletics.org.uk/wp-content/uploads/2019/05/MasCE-SAT-80862-300x200.jpg 300w, https://www.scottishathletics.org.uk/wp-content/uploads/2019/05/MasCE-SAT-80862-768x511.jpg 768w" sizes="(max-width: 707px) 100vw, 707px" />																</div>
+							<div class="cat-text">
+								<h3>Enter now for Masters 10,000m and Jumps Series 3</h3>
+								<p class="meta-date">Tuesday 20th August 2019</p>
+							</div>
+						</div>
+						</a>
+												</div>
+									
+				<a href="https://www.scottishathletics.org.uk/grangemouth-diary-ferguson-hunter-ohara-nelson-wright/" title="Read Grangemouth diary . . . Ferguson, Hunter, O&#8217;Hara, Nelson, Wright">
+
+											<div class="small-12 large-4 columns middle-column">
+						<div class="cat-item cat-track">
+							<div class="cat-img">
+																	<p class="cat-tag">Track &amp; Field</p>
+																																	<img width="707" height="469" src="https://www.scottishathletics.org.uk/wp-content/uploads/2019/08/SAL-Senior17-2019-SUN-3197-707x469.jpg" class="attachment-home size-home wp-post-image" alt="" srcset="https://www.scottishathletics.org.uk/wp-content/uploads/2019/08/SAL-Senior17-2019-SUN-3197-707x469.jpg 707w, https://www.scottishathletics.org.uk/wp-content/uploads/2019/08/SAL-Senior17-2019-SUN-3197-300x200.jpg 300w, https://www.scottishathletics.org.uk/wp-content/uploads/2019/08/SAL-Senior17-2019-SUN-3197-768x511.jpg 768w" sizes="(max-width: 707px) 100vw, 707px" />								
+							</div>
+							<div class="cat-text">
+								<h3>Grangemouth diary . . . Ferguson, Hunter, O&#8217;Hara, Nelson, Wright</h3>
+								<p class="meta-date">Monday 19th August 2019</p>
+							</div>
+						</div>
+						</a>
+									
+				<a href="https://www.scottishathletics.org.uk/watch-interviews-nick-percy-stacey-downie/" title="Read WATCH: Interviews with Nick Percy and Stacey Downie">
+
+											<div class="cat-item cat-track">
+							<div class="cat-img">
+																	<p class="cat-tag">Track &amp; Field</p>
+																									<img class="live" src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/live.jpg" alt="Video Article" />																			<div  class="img-oembed" style="background-image: url('https://img.youtube.com/vi/1is3RoMKy2s/hqdefault.jpg')"></div>
+																</div>
+							<div class="cat-text">
+								<h3>WATCH: Interviews with Nick Percy and Stacey Downie</h3>
+								<p class="meta-date">Sunday 18th August 2019</p>
+							</div>
+						</div>
+						</a>
+													<a href="/news/" class="button right">Read More News</a>
+												</div>
+												
+		</div><!-- end news items-->
+
+	</section>
+
+	<section id="home-main">
+
+		<div class="row banner-ads"> 
+ 
+ 	<div class="small-12 large-4 columns banner-ad">
+ 		 <a rel="nofollow external" target="_blank" href="/wp-content/plugin/banner/ads.php?id=44915&amp;banner"><img height="50" width="300" alt="Banner 1" src="https://www.scottishathletics.org.uk/wp-content/uploads/2019/04/Go-Festival-Banner.jpg" /></a>
+ 	</div>
+
+   
+ 	<div class="small-12 large-4 columns banner-ad">
+ 		 <a rel="nofollow external" target="_blank" href="/wp-content/plugin/banner/ads.php?id=16672&amp;banner"><img height="50" width="300" alt="Banner 2" src="https://www.scottishathletics.org.uk/wp-content/uploads/2016/04/Picture7.png" /></a>
+ 	</div>
+
+   
+ 	<div class="small-12 large-4 columns banner-ad">
+ 		 <a rel="nofollow external" target="_blank" href="/wp-content/plugin/banner/ads.php?id=599&amp;banner"><img height="50" width="300" alt="Banner 3" src="https://www.scottishathletics.org.uk/wp-content/uploads/2014/05/powerorf10logo_black.png" /></a>
+ 	</div>
+
+  
+ </div>
+		<div class="row news-items">
+			<div class="small-12 large-4 columns events">
+				<h2>Events</h2>
+				<p>Visit our fixtures calendar to view a wide range of events and to enter those organised by <b>scottish</b>athletics</p>
+				<a href="/calendar/events" class="button right">View all Events</a>
+
+			</div>
+
+			<div class="small-12 large-4 columns members">
+				<h2>Membership</h2>
+				<p>Find out about the benefits of becoming a <b>scottish</b>athletics member and sign up!</p>
+				<a href="/membership" class="button right">Signup</a>
+			</div>
+
+			<div class="small-12 large-4 columns find-club">
+				<h2>Find your nearest club</h2>
+				<div class="inner">
+					<form class="find-club-form" action="/athletes/get-involved/club-finder/club-search-results/" method="get">
+						<p><label for="city">Enter a location below to search for nearby clubs.</label></p>
+						<div class="row collapse">
+							<div class="small-7 columns">
+								<input id="city" name="city" type="text" placeholder="Enter a location">
+								<input id="lat" type="hidden" name="lat">
+								<input id="long" type="hidden" name="lng">
+								<input id="searchType" type="hidden" name="searchType" value="location">
+								<input id="radius" type="hidden" value="10" name="radius">
+
+							</div>
+							<div class="small-5 columns">
+								<input type="submit" class="button prefix" value="Search"/>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<script type="text/javascript">
+					$( "input#city" ).geocomplete( {details: "form"} );
+				</script>
+
+			</div>
+
+		</div><!-- end news items-->
+					<div class="row">
+				<a href="http://www.jogscotland.org.uk/" target="_blank">
+					<div class="small-12 columns">
+						<div class="home-promo-panel-responsive">
+							<div class="promo-panel-overlay">
+								<h3>New to jogging or running?</h3>
+								<p>jog<strong>scotland</strong> can help you get started</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		
+	</section>
+
+<section id="social-feeds-top">
+	<div class="row">
+
+		<div class="small-12 large-6 columns facebook-feed">
+			<h2>Latest Facebook update</h2>
+
+			<div class="cff-wrapper"><div id="cff" data-char="" class="cff-default-styles" ><div class="cff-item cff-link-item author-scottish-athletics" id="cff_139993569377925_2490587904318468" style="border-bottom: 0px solid #fff; -webkit-border-radius: px; -moz-border-radius: px; border-radius: px; "><div class="cff-author"><div class="cff-author-text"><p class="cff-page-name cff-author-date" ><a href="https://facebook.com/139993569377925" target="_blank" rel="nofollow" >Scottish Athletics</a><span class="cff-story"> </span></p><p class="cff-date" > 9 hours ago </p></div><div class="cff-author-img"><a href="https://facebook.com/139993569377925" target="_blank" rel="nofollow" ><img src="https://graph.facebook.com/139993569377925/picture?type=square" title="Scottish Athletics" alt="Scottish Athletics" width=40 height=40></a></div></div><p class="cff-post-text" ><span class="cff-text" data-color="">ENTER NOW . . . MASTERS 10,000m CHAMPS and our JUMPS SERIES 3<br /><br />Two more events coming up before the track and field season draws to a close.<br />The Masters 10,000m is at Carluke - and entries close this on Thursday.<br />And our Jumps Series 3 meet is at Linwood.<br />Details on where to enter via the story here:<br /><a href="https://www.scottishathletics.org.uk/48335-2/">www.scottishathletics.org.uk/48335-2/</a> </span><span class="cff-expand">... <a href="#" style="color: #"><span class="cff-more"></span><span class="cff-less"></span></a></span></p><div class="cff-shared-link" ><div class="cff-text-link cff-no-image"><p class="cff-link-title" ><a href="https://www.scottishathletics.org.uk/48335-2/" target="_blank" rel="nofollow" style="color:#;">Enter now for Masters 10,000m and Jumps Series 3 - Scottish Athletics</a></p><p class="cff-link-caption" style="color:#;">scottishathletics.org.uk</p><span class="cff-post-desc" style="color:#;">Event section page for Carluke The Scottish Masters 10,000m Champs are taking place at the end of this month in Carluke. It’s happening on Saturday 31 Augu </span></div></div></div><div class="cff-item cff-photo-post author-scottish-athletics" id="cff_139993569377925_2488995287811063" style="border-bottom: 0px solid #fff; -webkit-border-radius: px; -moz-border-radius: px; border-radius: px; "><div class="cff-author"><div class="cff-author-text"><p class="cff-page-name cff-author-date" ><a href="https://facebook.com/139993569377925" target="_blank" rel="nofollow" >Scottish Athletics</a><span class="cff-story"> </span></p><p class="cff-date" > 13 hours ago </p></div><div class="cff-author-img"><a href="https://facebook.com/139993569377925" target="_blank" rel="nofollow" ><img src="https://graph.facebook.com/139993569377925/picture?type=square" title="Scottish Athletics" alt="Scottish Athletics" width=40 height=40></a></div></div><p class="cff-post-text" ><span class="cff-text" data-color="">THANKS, MOIRA<br /><br />Moira Maguire has led our Track and Field Commission with great commitment and diligence for the past eight years.<br />Last weekend marked the final FPSG Seniors of her tenure and scottishathletics wanted to say thanks on behalf of a grateful sport.<br />Chief executive Mark Munro made the presentation to Moira on the podium at Grangemouth.<br />Thanks, Moira . . .<br />*Photo by Bobby Gavin </span><span class="cff-expand">... <a href="#" style="color: #"><span class="cff-more"></span><span class="cff-less"></span></a></span></p><p class="cff-media-link"><a href="https://www.facebook.com/scottishathletics/photos/a.164990113544937/2488994324477826/?type=3" target="_blank" style="color: #;"><i style="padding-right: 5px;" class="fa fas fa-picture-o fa-image" aria-hidden="true"></i>Photo</a></p></div><div class="cff-item cff-link-item author-scottish-athletics" id="cff_139993569377925_2488821181161807" style="border-bottom: 0px solid #fff; -webkit-border-radius: px; -moz-border-radius: px; border-radius: px; "><div class="cff-author"><div class="cff-author-text"><p class="cff-page-name cff-author-date" ><a href="https://facebook.com/139993569377925" target="_blank" rel="nofollow" >Scottish Athletics</a><span class="cff-story"> </span></p><p class="cff-date" > 15 hours ago </p></div><div class="cff-author-img"><a href="https://facebook.com/139993569377925" target="_blank" rel="nofollow" ><img src="https://graph.facebook.com/139993569377925/picture?type=square" title="Scottish Athletics" alt="Scottish Athletics" width=40 height=40></a></div></div><p class="cff-post-text" ><span class="cff-text" data-color="">WANT TO WORK IN ATHLETICS? We're looking for a Performance Administrator - just the job for someone with a passion for sport and a gift for organisation. Closing date is 4 September - details online now: <a href="https://www.scottishathletics.org.uk/vacancy/performance-administrator-2/">www.scottishathletics.org.uk/vacancy/performance-administrator-2/</a> </span><span class="cff-expand">... <a href="#" style="color: #"><span class="cff-more"></span><span class="cff-less"></span></a></span></p><div class="cff-shared-link" ><div class="cff-text-link cff-no-image"><p class="cff-link-title" ><a href="https://www.scottishathletics.org.uk/vacancy/performance-administrator-2/" target="_blank" rel="nofollow" style="color:#;">Performance administrator - Scottish Athletics</a></p><p class="cff-link-caption" style="color:#;">scottishathletics.org.uk</p><span class="cff-post-desc" style="color:#;">we are seeking to appoint an individual to support the Performance and Coaching team to deliver our programs and initiatives. This new Performance Administ </span></div></div></div></div><div class="cff-clear"></div></div>					</div>
+
+		<div class="small-12 large-6 columns twitter-feed">
+						<h2>Latest Twitter update</h2>
+
+			
+			
+					<img class="sa-logo" src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/images/icon-sa.jpg" alt="Scottish Athletics Twitter"/>
+					<div class="social-info">
+						<h3>Scottish Athletics</h3>
+						<a target="_blank" rel="nofollow" href="https://twitter.com/scotathletics">@ScottishAthletics</a>
+					</div>
+					<div class="clearfix"></div>
+
+					<p>TITLE DEEDS
+@Neil_Gourley @gnaac1 won 1500 gold 2018 + 800 on Sunday with classy performances; thanks for supportin… https://t.co/p09aju7Kln</p>
+					<a class="feed-link" target="_blank" rel="nofollow" href="https://twitter.com/scotathletics">twitter.com/scotathletics</a>
+					<p class="meta-time">8 hours						ago</p>
+
+				
+					<div class="hidden-feed">
+						<img class="sa-logo" src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/images/icon-sa.jpg" alt="Scottish Athletics Twitter"/>
+
+						<div class="social-info">
+							<h3>Scottish Athletics</h3>
+							<a target="_blank" rel="nofollow" href="https://twitter.com/scotathletics">@ScottishAthletics</a>
+						</div>
+						<div class="clearfix"></div>
+
+						<p>RT @shetlandaac: BREAKING NEWS: Seumas Mackay has just broken his Shetland Record in the 800m at the BMC in Trafford! The new record is 1:5…</p>
+						<a class="feed-link" target="_blank" rel="nofollow" href="https://twitter.com/scotathletics">twitter.com/scotathletics</a>
+
+						<p class="meta-time">9 hours							ago</p>
+					</div>
+
+				
+					<div class="hidden-feed">
+						<img class="sa-logo" src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/images/icon-sa.jpg" alt="Scottish Athletics Twitter"/>
+
+						<div class="social-info">
+							<h3>Scottish Athletics</h3>
+							<a target="_blank" rel="nofollow" href="https://twitter.com/scotathletics">@ScottishAthletics</a>
+						</div>
+						<div class="clearfix"></div>
+
+						<p>RT @BritAthletics: 🇬🇧 The @MullerUKandI British Athletics Championships take place this weekend and with @IAAFDoha2019 spots on the line, t…</p>
+						<a class="feed-link" target="_blank" rel="nofollow" href="https://twitter.com/scotathletics">twitter.com/scotathletics</a>
+
+						<p class="meta-time">9 hours							ago</p>
+					</div>
+
+				
+		</div>
+
+	</div>
+</section>
+
+<!-- hidden section -->
+<section id="social-feeds-bottom">
+	<div class="row">
+
+		<div class="small-12 large-6 columns facebook-feed">
+
+
+		</div>
+
+		<div class="small-12 large-6 columns twitter-feed">
+
+
+		</div>
+
+	</div>
+</section>
+<!-- // hidden section -->
+
+<section id="social-feeds-pull">
+	<div class="row">
+		<div class="small-12 columns">
+			<p id="expander">Expand Social Feeds</p>
+		</div>
+	</div>
+
+</section>
+
+
+
+
+<footer id="footer">
+	<div class="row">
+		<div class="small-12 columns footer-social">
+			<a target="_blank" href="http://www.facebook.com/scottishathletics" class="ft-facebook">
+				<img src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/images/footer-facebook.jpg" alt="Scottish Athletics Facebook Page"/>
+			</a>
+			<a target="_blank" href="http://twitter.com/scotathletics" class="ft-twitter">
+				<img src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/images/footer-twitter.jpg" alt="Scottish Athletics Twitter"/>
+			</a>
+			<a target="_blank" href="https://www.youtube.com/user/scottishathletics" class="ft-youtube">
+				<img src="https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/img/images/footer-youtube.jpg" alt="Scottish Athletics Youtube"/>
+			</a>
+		</div>
+
+		<div class="small-12 columns partners">
+			<a target="_blank" href="http://www.sportscotland.org.uk"><img src="/wp-content/uploads/2014/06/sportscotland.jpg" alt="Scottish Athletics Affiliate"/></a>
+			<a target="_blank" href="http://www.britishathletics.org.uk"><img src="/wp-content/uploads/2014/06/britishathletics.jpg" alt="Scottish Athletics Affiliate"/></a>
+			<a target="_blank" href="http://www.cgcs.org.uk/"><img src="/wp-content/uploads/2014/06/commonwealthgamesscotland.jpg" alt="Scottish Athletics Affiliate"/></a>
+			<a target="_blank" href="http://www.cgcs.org.uk/"><img src="/wp-content/uploads/2014/06/teamscotland.jpg" alt="Scottish Athletics Affiliate"/></a>
+		</div>
+
+		<div class="small-12 columns footer-nav">
+			<ul>
+				<li><a href="/accessibility/">Accessibility</a></li>
+				<li><a href="/about/privacy-notices/">Privacy</a></li>
+				<li><a href="/cookies/">Cookies</a></li>
+				<li><a href="/terms-conditions/">Terms &amp; Conditions</a></li>
+				<li><a href="/sitemap">Site Map</a></li>
+				<li class="last"><a href="/about/people/staff/">Contact Us</a></li>
+			</ul>
+		</div>
+		<div class="small-12 columns copyright"><p>Copyright © 2014 Scottish Athletics</p></div>
+
+	</div>
+</footer>
+
+<!-- Can also use the heavier js/vendor/jquery may be worth using if you want to take advantage of CDN inproduction! -->
+
+<script src='https://www.scottishathletics.org.uk/wp-content/themes/scottishathletics/js/foundation.min.js'></script>
+
+<script type="text/javascript">
+	jQuery( document ).ready( function () {
+		jQuery( 'input#city' ).keydown( function ( event ) {
+			if ( (event.keyCode == 13) ) {
+				event.preventDefault();
+				return false;
+			}
+		} );
+	} );
+
+	jQuery( 'form.find-club-form' ).submit( function ( event ) {
+		if ( ( jQuery( 'input[name="searchType"]' ).val() == 'location' ) && ( jQuery( 'input[name=lng]' ).val() == '' && jQuery( 'input[name=lat]' ).val() == '' ) ) {
+			event.preventDefault();
+			alert( 'When searching for clubs, please choose from the suggested addresses as you enter your location.' );
+		}
+	} );
+
+</script>
+
+<!-- Google Tag Manager -->
+<noscript>
+	<iframe src="//www.googletagmanager.com/ns.html?id=GTM-5GM3PN"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function ( w, d, s, l, i ) {
+		w[l] = w[l] || [];
+		w[l].push( {
+			'gtm.start': new Date().getTime(), event: 'gtm.js'
+		} );
+		var f = d.getElementsByTagName( s )[0],
+			j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src =
+			'//www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore( j, f );
+	})( window, document, 'script', 'dataLayer', 'GTM-5GM3PN' );</script>
+<!-- End Google Tag Manager -->
+
+<div id="fb-root"></div>
+<script>(function ( d, s, id ) {
+		var js, fjs = d.getElementsByTagName( s )[0];
+		if ( d.getElementById( id ) ) return;
+		js = d.createElement( s );
+		js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=234654626717555";
+		fjs.parentNode.insertBefore( js, fjs );
+	}( document, 'script', 'facebook-jssdk' ));</script>
+
+
+<!-- Custom Facebook Feed JS -->
+<script type="text/javascript">
+var cfflinkhashtags = "true";
+</script>
+<script>var jquery_placeholder_url = 'https://www.scottishathletics.org.uk/wp-content/plugins/gravity-forms-placeholder-support-add-on/jquery.placeholder-1.0.1.js';</script><script type='text/javascript' src='https://www.scottishathletics.org.uk/wp-content/plugins/custom-facebook-feed/js/cff-scripts.js?ver=2.7'></script>
+<script type='text/javascript' src='https://www.scottishathletics.org.uk/wp-includes/js/wp-embed.min.js?ver=4.8.2'></script>
+<script type='text/javascript' src='https://www.scottishathletics.org.uk/wp-content/plugins/gravity-forms-placeholder-support-add-on/gfplaceholderaddon.js?ver=1.0'></script>
+<script>
+	jQuery( document ).foundation();
+</script>
+</body>
+
+</html>
