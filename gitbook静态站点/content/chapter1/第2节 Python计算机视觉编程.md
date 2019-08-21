@@ -1,10 +1,12 @@
 # 第2节 Python计算机视觉编程
 
+计算机视觉，英文 Computer Vision，简称 CV。计算机视觉是一门研究如何使机器 “看” 的科学，更进一步的说，就是指用摄影机和电脑代替人眼对目标进行识别、跟踪和测量等。
+
 ---
 
-## 2.1 基于opencv的人脸识别操作
+## 2.1 基于OpenCV的人脸识别操作
 
-在树莓派上利用opencv进行相关操作，实现对给定图片中相关人脸的识别功能
+在树莓派上利用OpenCV进行相关操作，实现对给定图片中相关人脸的识别功能
 
 ### 硬件准备
 
@@ -15,7 +17,7 @@
 ### 环境准备
 
 1.首先我们需要安装Python3
-打开[Pythong官方网站](https://www.python.org/downloads/source/)，并下载合适的python版本
+打开[Pythong官方网站](https://www.python.org/downloads/source/)，并下载合适的Python版本
 
 2.将树莓派开机并在命令行中安装OpenCV
 
@@ -24,7 +26,7 @@ sudo apt-get install libcv-dev
 sudo apt-get install python-opencv
 ```
 
-3.接着我们需要安装numpy库和 matlitlib库，一个用于计算一个用于图像绘制
+3.接着我们需要安装`numpy`库和`matlitlib`库，一个用于计算一个用于图像绘制
 
 ```bash
 pip install numpy
@@ -37,7 +39,7 @@ sudo apt-get install python3-matplotlib
 
 1.首先点击[这里](https://raw.githubusercontent.com/shantnu/Webcam-Face-Detect/master/haarcascade_frontalface_default.xml)下载一个 cascade file，并将其另存为*_haarcascade_frontalface_default.xml_*
 
-2.创建一个后缀名为*.py的python文件 ( 可用我们之前安装的 Python3 打开 ) 并在文件中输入以下代码
+2.创建一个后缀名为`*.py`的python文件 ( 可用我们之前安装的 Python3 打开 ) 并在文件中输入以下代码
 
 ```python
 # Import OpenCV library
@@ -82,7 +84,7 @@ elif k == 27:
 cv2.destroyAllWindows()
 ```
 
-3.将 cascade file、*.py文件、以及我们所需要识别的图片发在同一路径下就像下图一样 ( 这保证了我们一会程序运行的确定性 )
+3.将 `cascade file`、`*.py`文件、以及我们所需要识别的图片发在同一路径下就像下图一样 ( 这保证了我们一会程序运行的确定性 )
 
 ![文件结构图](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/4.png)
 
