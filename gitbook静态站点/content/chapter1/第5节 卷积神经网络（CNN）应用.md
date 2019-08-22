@@ -4,11 +4,79 @@
 
 ## 4.1 Tensorflow训练自定义图片分类器
 
->简单的项目描述
+使用Tensorflow深度学习框架按类别训练图像。我们将使用狗狗的图片进行模型训练，测试图片分类器对狗的品种的识别。
 
-### 硬件准备
+### 环境准备
+
+1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
+2.输入下面的命令来进入 learn-ai 环境；
+
+```bash
+conda activate learn-ai
+```
+
+3.安装额外的软件包；
+
+```bash
+conda install bleach
+conda install html5lib
+conda install pandas
+conda install python-dateutil
+```
+
+4.切换工作路径到项目文件夹；
+
+```bash
+cd 项目文件夹的路径
+```
 
 ### 程序及操作
+
+1.整理训练数据文件夹
+运行数据处理程序`data_processing.py`来通过狗品种名称重新排列文件夹
+
+![整理好的文件](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification.png)
+
+```bash
+python data_processing.py <项目文件夹的路径>
+```
+
+2.使用处理好数据训练模型
+运行以下命令以使用 CNN 架构训练您的模型。
+默认情况下，脚本下方将下载 Google 的初始架构 -'inception-2015-12-05.tgz'。
+
+```bash
+python retrain.py — image_dir=dataset/ — bottleneck_dir=bottleneck/ — how_many_training_steps=500 — output_graph=trained_model/retrained_graph.pb — output_labels=trained_model/retrained_labels.txt — summaries_dir=summaries
+```
+
+以下是程序的输出。
+
+![训练程序输出](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_output.png)
+
+上述训练模型的 Tensorboard 精度图
+
+![训练精度](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_acc.png)
+
+要运行 TensorBoard，请运行此命令
+
+```bash
+User:/dogs_breed_classification$ tensorboard — logdir summaries/ — host=0.0.0.0 — port=8888
+
+TensorBoard 1.7.0 at http://0.0.0.0:8888 (Press CTRL+C to quit)#
+```
+
+3.测试模型
+
+运行下面的 python 脚本，根据我们预先训练的模型对测试图像进行分类。
+
+```bash
+python classify.py
+```
+
+![测试输出](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_testOutput.png)
+
+> [!NOTE]
+> 您可以跳过上面教程中的第2步，直接使用提供的预训练模型（trained_model /retrained_graph.pb）来测试模型。
 
 ## 4.2 图像风格迁移
 
