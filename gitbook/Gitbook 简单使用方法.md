@@ -21,7 +21,7 @@
    ```bash
    npm install gitbook-cli -g
    ```
-   
+
 3. 切换 terminal 路径到 `gitbook静态站点` 文件夹
 
 4. 安装插件
