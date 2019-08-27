@@ -27,7 +27,7 @@
 * [第4章 机器视觉：自动追踪小车大白](content/chapter4/第4章简介.md)
     * [第1节 环境准备：借我一双慧眼吧](content/chapter4/第1节 环境准备：借我一双慧眼吧.md)
     * [第2节 大白智能分拣系统](content/chapter4/第2节 大白智能分拣系统.md)
-    * [第3节 大白自动追踪车](content/chapter4/第3节 大白自动追踪车.md)
+    * [第3节 教大白自动追踪](content/chapter4/第3节 教大白自动追踪.md)
 * [第5章 深度学习：无人驾驶小车老白](content/chapter5/第5章简介.md)
     * [第1节 环境准备：更加专业的视觉系统](content/chapter5/第1节 环境准备：更加专业的视觉系统.md)
     * [第2节 无人驾驶数据采集、训练与测试](content/chapter5/第2节 无人驾驶数据采集、训练与测试.md)
