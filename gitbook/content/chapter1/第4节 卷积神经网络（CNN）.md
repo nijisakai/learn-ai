@@ -10,14 +10,17 @@
 
 #### 环境准备
 
-1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt
-2.输入下面的命令来进入 learn-ai 环境
+1.在资源管理器中打开`C:\learn-ai\codes\chapter1\part4_dogs_breed_classification`。下载数据库和模型文件，解压到项目文件夹中。
+
+2.macOS 用户打开终端，Windows用户打开 Anaconda Prompt
+
+3.输入下面的命令来进入 learn-ai 环境
 
 ```bash
 conda activate learn-ai
 ```
 
-3.安装额外的软件包
+4.安装额外的软件包
 
 ```bash
 conda install bleach
@@ -26,10 +29,10 @@ conda install pandas
 conda install python-dateutil
 ```
 
-4.切换工作路径到项目文件夹
+5.切换工作路径到项目文件夹
 
 ```bash
-cd 项目文件夹的路径
+cd C:\learn-ai\codes\chapter1\part4_dogs_breed_classification
 ```
 
 #### 程序及操作
@@ -113,7 +116,7 @@ conda install pillow
 4.切换工作路径到项目文件夹；
 
 ```bash
-cd 项目文件夹的路径
+cd C:\learn-ai\codes\chapter1\part4_Neural_Style
 ```
 
 #### 程序及操作
