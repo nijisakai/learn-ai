@@ -1,4 +1,4 @@
-# 第6节 唱跳rap：OpenPose姿态模仿
+# 第5节 唱跳rap：OpenPose姿态模仿
 
 ---
 
@@ -62,7 +62,7 @@ POSE_PAIRS2 = [ { "servo":2,"pair":[2,3] ,"trim":0 ,"factor":-1 , 'angle':-1,'ra
             print((item['servo'],angle))
             item['rangle'] = angle
             if(item['servo'] %2 == 0 and angle > 90):
-                angle = angle - 360 
+                angle = angle - 360
             elif(item['servo'] %2 != 0 and angle < -90):
                 angle = angle + 360
             angle = limitTo(angle,item['trim']-170,item['trim']-10)

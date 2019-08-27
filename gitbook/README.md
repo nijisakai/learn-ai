@@ -21,8 +21,12 @@ PC或树莓派（Raspberry Pi）或NVIDIA Jetson Nano
 ### 第2章家庭智能改造
 
 - 介绍：
-使用在线的积木编程（google blockly）来控制
+使用在线的积木编程（google blockly/scratch）来控制
+
+![微信截图_20190826220833](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190826220833.png)
+
 ![微信截图_20190717113246](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190717113246.png)
+
 - 涉及软硬件：
 PC，ESP8266，LED、温湿度传感器（DHT11），超声波传感器（HC-04）等
 自行开发的物联网控制平台
