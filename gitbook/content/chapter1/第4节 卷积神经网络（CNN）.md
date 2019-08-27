@@ -2,20 +2,22 @@
 
 ---
 
+>卷积神经网络（Convolutional Neural Networks, CNN）是一类包含卷积计算且具有深度结构的前馈神经网络（Feedforward Neural Networks），是深度学习（deep learning）的代表算法之一。卷积神经网络具有表征学习（representation learning）能力，能够按其阶层结构对输入信息进行平移不变分类（shift-invariant classification），因此也被称为“平移不变人工神经网络（Shift-Invariant Artificial Neural Networks, SIANN）
+
 ### Tensorflow训练自定义图片分类器
 
 使用Tensorflow深度学习框架按类别训练图像。我们将使用狗狗的图片进行模型训练，测试图片分类器对狗的品种的识别。
 
 #### 环境准备
 
-1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
-2.输入下面的命令来进入 learn-ai 环境；
+1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt
+2.输入下面的命令来进入 learn-ai 环境
 
 ```bash
 conda activate learn-ai
 ```
 
-3.安装额外的软件包；
+3.安装额外的软件包
 
 ```bash
 conda install bleach
@@ -24,7 +26,7 @@ conda install pandas
 conda install python-dateutil
 ```
 
-4.切换工作路径到项目文件夹；
+4.切换工作路径到项目文件夹
 
 ```bash
 cd 项目文件夹的路径
@@ -42,8 +44,8 @@ python data_processing.py <项目文件夹的路径>
 ```
 
 2.使用处理好数据训练模型
-运行以下命令以使用 CNN 架构训练您的模型。
-默认情况下，脚本下方将下载 Google 的初始架构 -'inception-2015-12-05.tgz'。
+运行以下命令以使用 CNN 架构训练模型。
+默认情况下，脚本下方将下载 Google 的初始架构 -'inception-2015-12-05.tgz'
 
 ```bash
 python retrain.py — image_dir=dataset/ — bottleneck_dir=bottleneck/ — how_many_training_steps=500 — output_graph=trained_model/retrained_graph.pb — output_labels=trained_model/retrained_labels.txt — summaries_dir=summaries
@@ -137,4 +139,4 @@ python neural_style.py --content examples/1-content.jpg --styles examples/2-styl
 
 ![完成](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/finishProcess.jpg)
 
-当窗口中的迭代次数变为 “100/100” 时就完成了整个图片的处理过程，打开 examples 文件夹中的图片就可以开到结果。
+当窗口中的迭代次数变为 “100/100” 时就完成了整个图片的处理过程，打开examples文件夹中的图片就可以开到结果。
