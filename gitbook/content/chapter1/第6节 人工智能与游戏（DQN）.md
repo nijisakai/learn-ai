@@ -1,14 +1,12 @@
-# 第6节 人工智能与游戏
+# 第6节 人工智能与游戏（DQN）
 
 ---
 
-## 6.1 使用强化学习算法（DQN）训练游戏AI
-
->DeepMind《Playing Atari with Deep Reinforcement Learning》提出了DQN ，DQN使用卷积神经网络作为价值函数来拟合Q-learning中的动作价值，这是第一个直接从原始像素中成功学习到控制策略的深度强化学习算法。DQN 模型的核心就是卷积神经网络，使用Q-learning 来训练，其输入为原始像素，输出为价值函数。在不改变模型的架构和参数的情况下，DQN在七个Atari2600游戏上，击败了之前所有的算法，并在其中三个游戏上，击败了人类最佳水平。
+>DeepMind《Playing Atari with Deep Reinforcement Learning》提出了**强化学习算法（DQN）**，DQN使用卷积神经网络作为价值函数来拟合Q-learning中的动作价值，这是第一个直接从原始像素中成功学习到控制策略的深度强化学习算法。DQN 模型的核心就是卷积神经网络，使用Q-learning 来训练，其输入为原始像素，输出为价值函数。在不改变模型的架构和参数的情况下，DQN在七个Atari2600游戏上，击败了之前所有的算法，并在其中三个游戏上，击败了人类最佳水平。
 
 ![atari](https://md.hass.live/640.webp)
 
-### Flappy Bird
+#### Flappy Bird
 
 ![fbird](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821174302.png)
 
@@ -32,11 +30,11 @@ python deep_q_network.py
 python deep_q_network_trained.py
 ```
 
-## 6.2 进化算法超级马里奥
+#### 进化算法超级马里奥
 
 >简单的项目描述
 
-1.1.在资源管理器中打开C:\\learn-ai\\codes\\chapter1\\part6_DQN\\supermario\\Windows\\BizHawk
+1.在资源管理器中打开C:\\learn-ai\\codes\\chapter1\\part6_DQN\\supermario\\Windows\\BizHawk
 
 2.双击打开`EmuHawk.exe`
 
