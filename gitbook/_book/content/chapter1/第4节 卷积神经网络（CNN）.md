@@ -1,12 +1,12 @@
-# 第4节 卷积神经网络（CNN）应用
+# 第4节 卷积神经网络（CNN）
 
 ---
 
-## 4.1 Tensorflow训练自定义图片分类器
+### Tensorflow训练自定义图片分类器
 
 使用Tensorflow深度学习框架按类别训练图像。我们将使用狗狗的图片进行模型训练，测试图片分类器对狗的品种的识别。
 
-### 环境准备
+#### 环境准备
 
 1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
 2.输入下面的命令来进入 learn-ai 环境；
@@ -30,7 +30,7 @@ conda install python-dateutil
 cd 项目文件夹的路径
 ```
 
-### 程序及操作
+#### 程序及操作
 
 1.整理训练数据文件夹
 运行数据处理程序`data_processing.py`来通过狗品种名称重新排列文件夹
@@ -76,22 +76,22 @@ python classify.py
 ![测试输出](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_testOutput.png)
 
 > [!NOTE]
-> 您可以跳过上面教程中的第2步，直接使用提供的预训练模型（trained_model /retrained_graph.pb）来测试模型。
+> 你可以跳过上面教程中的第2步，直接使用提供的预训练模型（trained_model /retrained_graph.pb）来测试模型。
 
-## 4.2 图像风格迁移
+### 图像风格迁移
 
 ![Neural Style 图像风格迁移](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/neuralstyle.jpg)
 
 在神经网络之前，图像风格迁移的程序有一个共同的思路：分析某一种风格的图像，给那一种风格建立一个数学或者统计模型，再改变要做迁移的图像让它能更好的符合建立的模型。这样做出来效果还是不错的，但一个很大的缺点：**一个程序基本只能做某一种风格或者某一个场景**。因此基于传统风格迁移研究的实际应用非常有限。
 而 Neural Style 程序通过输入一张代表内容的图片和一张代表风格的图片，使用深度学习网络输出一张融合了这个风格和内容的新作品。
 
-### 环境准备
+#### 环境准备
 
-#### VGG 网络
+1.VGG网络
 
 [训练好的 VGG 19 网络](http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat)，下载到项目文件夹“Neural Style 图像风格迁移”的中，或在运行时使用参数 `--network` 指定其位置。
 
-#### 软件准备
+2.软件准备
 
 除了在本课程最开始已经在 Anaconda 的 learn-ai 环境中安装好的 `TensorFlow` 外，还需安装 `Pillow` 软件包。
 
@@ -114,7 +114,7 @@ conda install pillow
 cd 项目文件夹的路径
 ```
 
-### 程序及操作
+#### 程序及操作
 
 ```bash
 python neural_style.py --content <输入图片> --styles <风格图片> --output <输出文件名> -- --iterations <迭代次数>
