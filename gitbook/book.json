@@ -1,13 +1,14 @@
 {
+  "gitbook": "3.2.2",
+  "description": "learn ai",
     "plugins": [
 		"chapter-fold",
 		"code",
 		"latex-codecogs",
-		"prism",
 		"-highlight",
 		"tbfed-pagefooter",
         "flexible-alerts",
-        "sequence-diagram-lastest",
+        "js-sequence-diagram-full@>=0.3.1",
 		"-sharing"
 	],
 
