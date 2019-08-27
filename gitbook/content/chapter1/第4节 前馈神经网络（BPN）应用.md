@@ -95,3 +95,17 @@
 ---
 
 ## 3.1 MNIST手写数字识别
+
+在学习机器学习的时候，首要的任务的就是准备一份通用的数据集，方便与其他的算法进行比较。
+
+MNIST数据集是一个手写数字数据集，每一张图片都是0到9中的单个数字，比如下面几个：
+
+![MNISTSample](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/MNISTSample.webp)
+
+MNIST数据库是一个大型数据库的手写数字是通常用于训练各种图像处理系统。该数据库还广泛用于机器学习领域的培训和测试。它是通过 “重新混合” 来自NIST原始数据集的样本而创建的。
+
+MNIST数据库包含60000个训练图像和10000个测试图像。训练集的一半和测试集的一半来自NIST的训练数据集，而训练集的另一半和测试集的另一半来自 NIST 的测试数据集。
+
+我们再网页上简单实现了一个基于MNIST训练的手写数字识别系统，大家可以[点击这里](http://router.hass.live:3032/)来体验。
+
+![MNISTWeb](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/MNISTWeb.webp)
