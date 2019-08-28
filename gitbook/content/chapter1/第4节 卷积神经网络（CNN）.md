@@ -80,7 +80,6 @@ python classify.py
 
 ![测试输出](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_testOutput.png)
 
-> [!NOTE]
 > 你可以跳过上面教程中的第2步，直接使用提供的预训练模型（trained_model /retrained_graph.pb）来测试模型。
 
 ### 图像风格迁移
@@ -136,7 +135,6 @@ python neural_style.py --content <输入图片> --styles <风格图片> --output
 python neural_style.py --content examples/1-content.jpg --styles examples/2-style1.jpg --output examples/output.jpg -- --iterations 100
 ```
 
-> [!NOTE]
 > <输入图片>不建议使用过大的图片，这会明显的增加机器的负担，特别是对于性能差或者没有独立显卡的机器，可能需要数个小时来生成新的图片。
 > <迭代次数>在课程中使用的是 100 次迭代，可以初步看出机器风格迁移的效果。一般来说 1000 次迭代可以获得不错的图像质量，但会花费更多的时间。
 
