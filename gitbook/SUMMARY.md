@@ -34,7 +34,7 @@
 * [第6章 综合进阶：机器人小绿](content/chapter6/第6章简介.md)
     * [第1节 环境准备：物联网平台安装配置](content/chapter6/第1节 环境准备：物联网平台安装配置.md)
     * [第2节 小绿的一小步，我们的一大步](content/chapter6/第2节 小绿的一小步，我们的一大步.md)
-    * [第3节 小绿会说话了：训练语音识别](content/chapter6/第3节 小绿会说话了：训练语音识别.md)
+    * [第3节 “小绿，跳舞！”—训练语音识别](content/chapter6/第3节 “小绿，跳舞！”—训练语音识别.md)
     * [第4节 使用物联网制作人脸解锁](content/chapter6/第4节 使用物联网制作人脸解锁.md)
     * [第5节 唱跳rap：OpenPose姿态模仿](content/chapter6/第5节 唱跳rap：OpenPose姿态模仿.md)
 * [源代码下载](content/codes/下载.md)

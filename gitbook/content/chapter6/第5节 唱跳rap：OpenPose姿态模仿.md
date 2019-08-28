@@ -29,7 +29,6 @@ Note right of 小绿: 动作执行
 #### 活动1：模仿视频文件中的人物动作
 
 1.将小绿通电
-
 2.在电脑上打开Anaconda Prompet，
 
 ```bash
@@ -38,7 +37,7 @@ cd C:\learn-ai\codes\chapter6\OpenPose
 python OpenPoseVideo.py
 ```
 
-**OpenPoseVideo.py部分代码：**
+**OpenPoseVideo.py核心代码：**
 
 ```python
 ……
@@ -73,10 +72,9 @@ POSE_PAIRS2 = [ { "servo":2,"pair":[2,3] ,"trim":0 ,"factor":-1 , 'angle':-1,'ra
 
 ![微信截图_20190826202230](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190826202230.png)
 
-#### 活动2：模仿实时姿态
+#### 活动2：实时姿态模仿
 
 1.将小绿通电
-
 2.在电脑上打开Anaconda Prompet，
 
 ```bash
