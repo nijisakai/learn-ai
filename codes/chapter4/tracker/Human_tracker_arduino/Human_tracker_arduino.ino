@@ -3,14 +3,21 @@
   Yash Chandak    Ankit Dhall
 */
 //Define pin numbers
+//use https://item.taobao.com/item.htm?spm=a1z09.2.0.0.59dd2e8dhPtvjy&id=538230731722&_u=t3h7qibba29
+
+
+int motor1_pwm  = 6;
+int motor3_pwm  = 10;
 
 //right motor
-int m1f = 10;
-int m1r = 9;
+int m1f = 2;
+int m1r = 3;
+
 //left motor
-int m2f = 6;
-int m2r = 5;
-int led = 13;
+int m2f = 7;
+int m2r = 8;
+
+
 char value;
 int val[3];
 int len;
@@ -23,10 +30,10 @@ void setup()
   Serial.begin(9600);
   pinMode(m1f, OUTPUT);
   pinMode(m1r, OUTPUT);
+  pinMode(motor1_pwm, OUTPUT);
+  pinMode(motor3_pwm, OUTPUT);
   pinMode(m2f, OUTPUT);
   pinMode(m2r, OUTPUT);
-  pinMode(led, OUTPUT);
-  digitalWrite(led, HIGH);
 }
 
 void execute()
@@ -62,14 +69,23 @@ void execute()
   switch (no)
   {
     case 0:
+
       a = 0; b = 100; c = 100; d = 0;
       break;
     case 3:
       a = 0; b = 255; c = 0; d = 100;
       break;
+    
+    
     case 2:
-      a = 0; b = 255; c = 0; d = 255;
+      digitalWrite(m1r, HIGH);
+      digitalWrite(m1f, LOW);
+      digitalWrite(m2r, HIGH);
+      digitalWrite(m2f, LOW);
+      a = 150; b = 0; c = 150; d = 0;
       break;
+    
+    
     case 1:
       a = 0; b = 100; c = 0; d = 255;
       break;
@@ -86,6 +102,10 @@ void execute()
       a = 255; b = 0; c = 100; d = 0;
       break;
     case 8:
+      digitalWrite(m1f, HIGH);
+      digitalWrite(m1r, LOW);
+      digitalWrite(m2f, HIGH);
+      digitalWrite(m2r, LOW);
       a = 150; b = 0; c = 150; d = 0;
       break;
     case 9:
@@ -93,10 +113,10 @@ void execute()
       break;
   }
 
-  analogWrite(m1f, a);
-  analogWrite(m1r, b);
-  analogWrite(m2f, c);
-  analogWrite(m2r, d);
+  analogWrite(motor1_pwm, a);
+  //analogWrite(m1r, b);
+  analogWrite(motor3_pwm, c);
+  //analogWrite(m2r, d);
   //delay(255);
 }
 

@@ -16,10 +16,14 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
+                position: absolute;
+                left: 870px;
+                top: 360px;
             }            
             .control{
                 width: 40%;
                 height: 40%;
+               
             }
             button{
                 padding: 10px;
@@ -33,6 +37,20 @@
 
             label {
                 font-size: 24px;
+            }
+            #myForm {
+                width: 35%;
+                position: absolute;
+                left: 800px;
+            }
+            #frame1{
+                position: relative;
+                top: 150px;
+                left: 50px;
+            }
+            #div1{
+                position: absolute;
+                left: 200px;
             }
         </style>
         <script>
@@ -114,7 +132,7 @@
 <br>
 
     
-<center><iframe id="frame1" width="1000" height="600" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe></center>
+<iframe id="frame1" width="640" height="480" scrolling="yes" frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe>
 
     
                 <script type='text/javascript'>
@@ -133,7 +151,7 @@
                         var form = document.getElementById('myForm')
                         var html = ''
                         for (var i = 0; i < 3; i++) {
-                            html+='<div><label for="d'+i+'">D'+i+'</label><div></div></div><input type="range" min="15" max="165" name="d'+i+'" id="d'+i+'" value="90" onchange=Submit("'+i+'")></div>';
+                            html+='<div class="wrap"><label for="d'+i+'">D'+i+'</label><div><input type="range" min="15" max="165" name="d'+i+'" id="d'+i+'" value="90" onchange=Submit("'+i+'")></div></div></div>';
                         }
                         form.innerHTML = html;
                     }
@@ -174,8 +192,8 @@
                   var text = document.getElementById("name1").value;
                   var frame = document.getElementById('frame1');
                   frame.src="http://"+text;
-                var objvisable = document.getElementById("div1")
-                objvisable.style="display: none"
+                // var objvisable = document.getElementById("div1")
+                // objvisable.style="display: none"
                 }
                 </script>
 
