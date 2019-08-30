@@ -1,130 +1,35 @@
+//////////////
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
 #include <FS.h>
+String command;
+ESP8266WebServer server(80);
+//////////////
 
+
+// include libraries
+//#include "SSD1306.h"
 #include <Servo.h>
  
 // setup servo
 #define SERVORIGHT   50
 #define SERVOCENTRE  100
 #define SERVOLEFT    150
-#define SERVOPIN     16
+#define SERVOPIN     16    // D0
 #define TRIGPIN      13    // pin no. 13  is D7 ESP8266
 #define ECHOPIN      15    // pin no. 15  is D8 ESP8266
 #include <WebSocketsServer.h>
-String command;
 
-ESP8266WebServer server(80);
 int Speed = 900;  // max 1024
 int TSpeed = 1020;  //Turning Speed
 Servo servo;
 
-void handleNotFound(){
-  String message = "File Not Found\n\n";
-  message += "URI: ";
-  message += server.uri();
-  message += "\nMethod: ";
-  message += (server.method() == HTTP_GET)?"GET":"POST";
-  message += "\nArguments: ";
-  message += server.args();
-  message += "\n";
-  for (uint8_t i=0; i<server.args(); i++){
-    message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
-  }
-  server.send(404, "text/plain", message);
-}
-void setup()
-{   
-    uint8_t mac[WL_MAC_ADDR_LENGTH];
-  WiFi.softAPmacAddress(mac);
-  String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) + String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
-  macID.toUpperCase();
+//Optional 0.96" OLED display
+//SSD1306  display(0x3c, D5, D6); //sda-D5, sck -D6
 
-  String AP_NameString = "Wifi Car - " + macID;
-
-  char AP_NameChar[AP_NameString.length() + 1];
-  memset(AP_NameChar, 0, AP_NameString.length() + 1);
-
-  for (int i = 0; i < AP_NameString.length(); i++)
-    AP_NameChar[i] = AP_NameString.charAt(i);
-
-const char* ssid = "AI";
-const char* password = "raspberry";
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-  Serial.println("");
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
-  if (MDNS.begin("esp8266")) {
-    Serial.println("MDNS responder started");
-  }
-
-
-    SPIFFS.begin();
-    Serial.begin(115200);
- 
-    // set the servo data pin
-    servo.attach(SERVOPIN);
-
-    pinMode(5, OUTPUT);
-    pinMode(4, OUTPUT);
-    pinMode(0, OUTPUT);
-    pinMode(2, OUTPUT);
-    digitalWrite(5, 0);
-    digitalWrite(4, 0);
-    digitalWrite(0, 1);
-    digitalWrite(2, 1);
-    // set the trig pin to output (send sound waves)
-    pinMode(TRIGPIN, OUTPUT);
- 
-    // set the echo pin to input (receive sound waves)
-    pinMode(ECHOPIN, INPUT);
-
-//display.init();
-//display.flipScreenVertically();
-//display.setFont(ArialMT_Plain_16);
-//display.setTextAlignment(TEXT_ALIGN_LEFT);
-    
-    server.serveStatic("/", SPIFFS, "/index.html");
-
-  server.on("/get", [](){
-    String uri = server.uri();
-    Serial.println(uri);
-    command = server.arg("command");
-    if(command == "forward")
-      forward();
-    else if(command == "backward")
-      back( );
-    else if(command == "left")
-      left();
-    else if(command == "right")
-       right();
-    else if(command == "stop")
-       stopped();
-    else if(command == "obstacle")
-       obstacle();
-    Serial.println(command);
-//    setCorlor(red.toInt(),green.toInt(),blue.toInt());
-    server.send(200, "text/plain", String("set to ")+command);
-  });
-
-  server.onNotFound(handleNotFound);
-
-  server.begin();
-  Serial.println("http server started");
-}
-
-void stopped()
+void stoped()
 {
     analogWrite(5, 0);
     analogWrite(4, 0);
@@ -167,7 +72,32 @@ void right()
     Serial.println("right");
 }
 
+/////////////
 
+void handleNotFound(){
+  String message = "File Not Found\n\n";
+  message += "URI: ";
+  message += server.uri();
+  message += "\nMethod: ";
+  message += (server.method() == HTTP_GET)?"GET":"POST";
+  message += "\nArguments: ";
+  message += server.args();
+  message += "\n";
+  for (uint8_t i=0; i<server.args(); i++){
+    message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
+  }
+  server.send(404, "text/plain", message);
+}
+
+
+
+
+
+
+//////////////
+
+
+int stopCount = 0;
 
 int ping()
 {
@@ -226,18 +156,81 @@ char scan()
     return choice;
 }
  
-
-void loop()
-{   
-    server.handleClient();
-    // get distance from obstacle straight ahead
+void setup()
+{
+    SPIFFS.begin();
+    Serial.begin(115200);
+    Serial.println("Alictronix Obstacle Bot 2WD/4WD v1.0");
+    // set the servo data pin
+    servo.attach(SERVOPIN);
+    server.serveStatic("/", SPIFFS, "/index.html");
     
+    pinMode(5, OUTPUT);
+    pinMode(4, OUTPUT);
+    pinMode(0, OUTPUT);
+    pinMode(2, OUTPUT);
+
+    digitalWrite(5, 0);
+    digitalWrite(4, 0);
+    digitalWrite(0, 1);
+    digitalWrite(2, 1);
+
+    // set the trig pin to output (send sound waves)
+    pinMode(TRIGPIN, OUTPUT);
+ 
+    // set the echo pin to input (receive sound waves)
+    pinMode(ECHOPIN, INPUT);
+
+//display.init();
+//display.flipScreenVertically();
+//display.setFont(ArialMT_Plain_16);
+//display.setTextAlignment(TEXT_ALIGN_LEFT);
+
+    const char* ssid = "AI";
+    const char* password = "raspberry";
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(ssid, password);
+    Serial.println("");
+  // Wait for connection
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
+    }
+    server.on("/get", [](){
+    String uri = server.uri();
+    Serial.println(uri);
+    command = server.arg("command");
+    if(command == "forward")
+      forward();
+    else if(command == "backward")
+      back( );
+    else if(command == "left")
+      left();
+    else if(command == "right")
+       right();
+    else if(command == "obob")
+       obob();
+    else if(command == "stop")
+       stoped();
+    Serial.println(command);
+//    setCorlor(red.toInt(),green.toInt(),blue.toInt());
+    server.send(200, "text/plain", String("set to ")+command);
+  });
+
+  server.onNotFound(handleNotFound);
+  server.begin();
+  Serial.println("HTTP server started");
 }
-int stopCount = 0;
-unsigned int distance = ping();
-void obstacle()
+
+void obob()
 {
     while(1){
+    // get distance from obstacle straight ahead
+    unsigned int distance = ping();
+    Serial.print("Distance: "); Serial.println(distance);
+   // display.clear();
+   // display.drawString(10, 20, "Distance: "+String(distance));
+  //  display.display();
     if (distance < 30 && distance > 0)
     {
         if (distance < 10)
@@ -255,7 +248,7 @@ void obstacle()
             // stop both motors
             Serial.println("Motor stop...");
            // display.drawString(10, 40, "Motor stop...") ; 
-            stopped();
+            stoped();
             
             // scan for obstacles
             char turn_direction = scan();
@@ -289,13 +282,14 @@ void obstacle()
             }
         }
     }
-            else
-            {
-                // no obstacle, keep going forward
-                Serial.println("No obstacle, keep going forward...");
-            //  display.drawString(5, 40, "keep going forward...") ; 
-                forward();
-            }
-    
+    else
+    {
+        // no obstacle, keep going forward
+        Serial.println("No obstacle, keep going forward...");
+      //  display.drawString(5, 40, "keep going forward...") ; 
+        forward();
     }
-}    
+}}
+void loop(){
+  server.handleClient();
+}
