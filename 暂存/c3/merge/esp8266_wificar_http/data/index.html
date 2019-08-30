@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=, initial-scale=1.0">
+        <meta name="viewport" content="device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>esp8266_wificar_http</title>
         <style type=text/css>
@@ -57,6 +57,8 @@
                     command = 'right';
                 else if (element == '40')
                     command = 'backward';
+                else if (element == '41')
+                    command = 'obstacle';
                 else
                     command = 'stop';
                 if(stored_command == command)
@@ -84,7 +86,7 @@
             <button type='button' value='' id='right' onclick=send_command('right') >向右</button>
         </div>
         <button type='button' value='' id='down' onclick=send_command('backward') >向下</button>
-        <button type='button' value='' id='down' onclick=send_command('obstacle') >避障</button>
+        <button type='button' value='' id='obstacle' onclick=send_command('obstacle') >避障</button>
         <div id='out'></div>
         </div>
     </div>

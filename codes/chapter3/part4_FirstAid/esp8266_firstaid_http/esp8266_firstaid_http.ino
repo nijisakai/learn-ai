@@ -127,7 +127,7 @@ const char* password = "raspberry";
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-  if (MDNS.begin("esp8266")) {
+  if (MDNS.begin("ESP8266")) {
     Serial.println("MDNS responder started");
   }
 
