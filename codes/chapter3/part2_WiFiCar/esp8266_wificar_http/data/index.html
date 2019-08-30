@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>esp8266_wificar_http</title>
+        <style type=text/css>
+            .row{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .col{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .control{
+                width: 40%;
+                height: 40%;
+            }
+            button{
+                padding: 10px;
+                margin: 20px 30px;
+            }
+        </style>
+        <script>
+            var keys = {};
+            var command = '';
+            var stored_command = '';
+            function send_command(comm){
+                if(stored_command == comm)
+                    return;
+                stored_command = comm;
+                command = comm;
+                printKeys();
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('GET', '/get?command='+comm);
+                xmlhttp.send();
+                xmlhttp.onreadystatechange = function() {
+                      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            requstData = xmlhttp.responseText;
+                            console.log(requstData);
+                      };
+                };
+            }
+            document.onkeydown = function (e) {
+                var element = e.which;
+                if (element == '37')
+                    command = 'left';
+                else if (element == '38')
+                    command = 'forward';
+                else if (element == '39')
+                    command = 'right';
+                else if (element == '40')
+                    command = 'backward';
+                else
+                    command = 'stop';
+                if(stored_command == command)
+                    return;
+                console.log(command,stored_command);
+                send_command(command)
+            };
+            document.onkeyup = function (e) {
+                command = 'stop';
+                send_command(command);
+            }
+            function printKeys() {
+                var html = command;
+                document.getElementById('out').innerHTML = html;
+            }
+        </script>
+    </head>
+    <body>
+    <div class=control>
+        <div class=col>
+        <button type='button' value='' id='up' onclick=send_command('forward') >向上</button>
+        <div class=row>
+            <button type='button' value='' id='left' onclick=send_command('left') >向左</button>
+            <button type='button' value='' id='stop'  onclick=send_command('stop') >停止</button>
+            <button type='button' value='' id='right' onclick=send_command('right') >向右</button>
+        </div>
+        <button type='button' value='' id='down' onclick=send_command('backward') >向下</button>
+        <button type='button' value='' id='down' onclick=send_command('obstacle') >避障</button>
+        <div id='out'></div>
+        </div>
+    </div>
+    
+    </body>
+</html>

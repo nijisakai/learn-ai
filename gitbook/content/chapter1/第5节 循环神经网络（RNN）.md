@@ -29,7 +29,7 @@
 
 ### 利用循环神经网络生成古诗词
 
-1.在资源管理器中打开C:\\learn-ai\\codes\\chapter1\\part5_RNN，(macOS:`Shift`+`Command`+`G`，输入`~/Desktop/learn-ai/codes/chapter1/part5_RNN`，回车)包含3个文件：
+1.打开项目文件夹`learn-ai/codes/chapter1/part5_RNN/PoetAI`
 
 ![filestructure](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153025.png)
 
@@ -38,14 +38,15 @@
 `poet_rnn.py`用来训练模型
 `poet_rnn_output`用来生成古诗词
 
-2.在电脑上打开Anaconda Prompt，执行：
+2.打开Anaconda Prompt，执行：
 
 ```bash
-conda activate myenv
-cd C:\\learn-ai\\codes\\chapter1\\part5_RNN
+conda activate learn-ai
 
-//macOS执行
-cd ~/Desktop/learn-ai/codes/chapter1/part5_RNN
+//Windows
+cd C:\learn-ai\codes\chapter1\part5_RNN\PoetAI
+//macOS
+cd ~/Desktop/learn-ai/codes/chapter1/part5_RNN/PoetAI
 
 python poet_rnn.py
 ```

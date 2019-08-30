@@ -1,6 +1,0 @@
-model_checkpoint_path: "game.cpk-100000"
-all_model_checkpoint_paths: "game.cpk-60000"
-all_model_checkpoint_paths: "game.cpk-70000"
-all_model_checkpoint_paths: "game.cpk-80000"
-all_model_checkpoint_paths: "game.cpk-90000"
-all_model_checkpoint_paths: "game.cpk-100000"

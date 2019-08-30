@@ -10,15 +10,17 @@
 
 ![fbird](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821174302.png)
 
-1.在资源管理器中打开C:\\learn-ai\\codes\\chapter1\\part6_DQN\\DeepLearningFlappyBird，(macOS:`Shift`+`Command`+`G`，输入`~/Desktop/learn-ai/codes/chapter1/part6_DQN/DeepLearningFlappyBird`，回车)
+1.打开项目文件夹`learn-ai/codes/chapter1/part6_DQN/DeepLearningFlappyBird`
 
-2.在电脑上打开Anaconda Prompt，进行训练：
+2.打开Anaconda Prompt，进行训练：
 
 ```bash
 conda activate myenv
+
+//Windows
 cd C:\\learn-ai\\codes\\chapter1\\part6_DQN\\DeepLearningFlappyBird
 
-//macOS执行
+//macOS
 cd ~/Desktop/learn-ai/codes/chapter1/part6_DQN/DeepLearningFlappyBird
 
 python deep_q_network.py
@@ -36,7 +38,7 @@ python deep_q_network_trained.py
 
 实际进化过程中，超级马里奥并不会进行预测以改变其行动。通过进行不同的尝试，而不是做其“应该”做的事情，这样每次都会产生新的点子。当一个点子成功后，就会被记住，反之则被作废。就这样，超级马里奥在经历了34尝试后，完全通关了！当然，如果重新运行的话，这套AI机会肯定可以找到一条不同但不会更加成功的线路。
 
-1.在资源管理器中打开C:\\learn-ai\\codes\\chapter1\\part6_DQN\\supermario\\Windows\\BizHawk
+1.打开项目文件夹`learn-ai/codes/chapter1/part6_DQN/SuperMario`
 
 2.双击打开`EmuHawk.exe`
 

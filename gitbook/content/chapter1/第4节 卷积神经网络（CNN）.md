@@ -10,11 +10,11 @@
 
 #### 环境准备
 
-1.在资源管理器中打开`C:\learn-ai\codes\chapter1\part4_dogs_breed_classification`。下载数据库和模型文件，解压到项目文件夹中。
+1.在资源管理器中打开`learn-ai\codes\chapter1\part4_CNN\DogsBreedClassification`。下载数据库和模型文件，解压到项目文件夹中。
 
-2.macOS 用户打开终端，Windows用户打开 Anaconda Prompt
+2.Windows用户打开Anaconda Prompt，macOS用户打开终端
 
-3.输入下面的命令来进入 learn-ai 环境
+3.输入下面的命令来进入learn-ai环境
 
 ```bash
 conda activate learn-ai
@@ -32,7 +32,10 @@ conda install python-dateutil
 5.切换工作路径到项目文件夹
 
 ```bash
-cd C:\learn-ai\codes\chapter1\part4_dogs_breed_classification
+//Windows
+cd C:\learn-ai\codes\chapter1\part4_CNN\DogsBreedClassification
+//macOS
+cd ~/Desktop/learn-ai/codes/chapter1/part4_CNN/DogsBreedClassification
 ```
 
 #### 程序及操作
@@ -54,7 +57,7 @@ python data_processing.py <项目文件夹的路径>
 python retrain.py — image_dir=dataset/ — bottleneck_dir=bottleneck/ — how_many_training_steps=500 — output_graph=trained_model/retrained_graph.pb — output_labels=trained_model/retrained_labels.txt — summaries_dir=summaries
 ```
 
-以下是程序的输出。
+以下是程序的输出
 
 ![训练程序输出](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_output.png)
 
@@ -95,27 +98,11 @@ python classify.py
 
 [训练好的 VGG 19 网络](http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat)，下载到项目文件夹“Neural Style 图像风格迁移”的中，或在运行时使用参数 `--network` 指定其位置。
 
-2.软件准备
-
-除了在本课程最开始已经在 Anaconda 的 learn-ai 环境中安装好的 `TensorFlow` 外，还需安装 `Pillow` 软件包。
-
-1.macOS 用户打开终端，Windows用户打开 Anaconda Prompt；
-2.输入下面的命令来进入 learn-ai 环境；
+2.Pillow
 
 ```bash
 conda activate learn-ai
-```
-
-3.安装 `Pillow` 软件包；
-
-```bash
 conda install pillow
-```
-
-4.切换工作路径到项目文件夹；
-
-```bash
-cd C:\learn-ai\codes\chapter1\part4_Neural_Style
 ```
 
 #### 程序及操作

@@ -33,7 +33,12 @@ Note right of 小绿: 动作执行
 
 ```bash
 conda activate learn-ai
-cd C:\learn-ai\codes\chapter6\OpenPose
+
+//Windows
+cd C:\learn-ai\codes\chapter6\part5_OpenPose
+//macOS
+cd ~/Desktop/learn-ai/codes/chapter6/part5_OpenPose
+
 python OpenPoseVideo.py
 ```
 
@@ -79,7 +84,12 @@ POSE_PAIRS2 = [ { "servo":2,"pair":[2,3] ,"trim":0 ,"factor":-1 , 'angle':-1,'ra
 
 ```bash
 conda activate learn-ai
-cd C:\learn-ai\codes\chapter6\OpenPose
+
+//Windows
+cd C:\learn-ai\codes\chapter6\part5_OpenPose
+//macOS
+cd ~/Desktop/learn-ai/codes/chapter6/part5_OpenPose
+
 python OpenPoseRealtimeVideo.py
 ```
 
