@@ -1,8 +1,8 @@
-/*
+ /*
    MQTT RGB Light for Home-Assistant - NodeMCU (ESP8266)
    https://home-assistant.io/components/light.mqtt/
    Libraries :
-    - ESP8266 core for Arduino : https://github.com/esp8266/Arduino
+    - ESP8266 core for Arduino : https://github.com/esp8266 /Arduino
     - PubSubClient : https://github.com/knolleary/pubsubclient
    Sources :
     - File > Examples > ES8266WiFi > WiFiClient
@@ -31,6 +31,7 @@
    If you like this example, please add a star! Thank you!
    https://github.com/mertenats/open-home-automation
 */
+//#define FASTLED_ESP8266_NODEMCU_PIN_ORDER
 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -56,8 +57,8 @@ void setColor(int red,int green,int blue){
 #define MQTT_VERSION MQTT_VERSION_3_1_1
 
 // Wifi: SSID and password
-const char* WIFI_SSID = "AI";
-const char* WIFI_PASSWORD = "raspberry";
+const char* WIFI_SSID = "PDCN";
+const char* WIFI_PASSWORD = "shiyan2009";
 
 // MQTT: ID, server IP, port, username and password
 const PROGMEM char* MQTT_CLIENT_ID = "classroom_rgb_light";
