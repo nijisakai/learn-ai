@@ -37,7 +37,7 @@
 #include <FS.h>
 #include "FastLED.h"
 #include "server.h"
-#define NUM_LEDS 3
+#define NUM_LEDS 36
 // pins used for the rgb led
 
 
@@ -56,8 +56,8 @@ void setColor(int red,int green,int blue){
 #define MQTT_VERSION MQTT_VERSION_3_1_1
 
 // Wifi: SSID and password
-const char* WIFI_SSID = "AI";
-const char* WIFI_PASSWORD = "raspberry";
+const char* WIFI_SSID = "PDCN";
+const char* WIFI_PASSWORD = "shiyan2009";
 
 // MQTT: ID, server IP, port, username and password
 const PROGMEM char* MQTT_CLIENT_ID = "classroom_rgb_light";
