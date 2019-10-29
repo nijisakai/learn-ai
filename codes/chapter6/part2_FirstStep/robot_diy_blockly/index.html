@@ -288,19 +288,19 @@
         Blockly.JavaScript['robot'] = function(block) {
             var dropdown_action = block.getFieldValue('action');
             if (dropdown_action=="forward") {
-                urlrobot = "http://192.168.0.201/otto-walk"; 
+                urlrobot = "http://192.168.123.201/otto-walk"; 
                 req();
             }
             if (dropdown_action=="backward") {
-                urlrobot = "http://192.168.0.201/otto-walk-back";
+                urlrobot = "http://192.168.123.201/otto-walk-back";
                 req();
             }
             if (dropdown_action=="left") {
-                urlrobot = "http://192.168.0.201/otto-turn";
+                urlrobot = "http://192.168.123.201/otto-turn";
                 req();
             }
             if (dropdown_action=="right") {
-                urlrobot = "http://192.168.0.201/otto-turn-right";
+                urlrobot = "http://192.168.123.201/otto-turn-right";
                 req();
             }
             if (dropdown_action=="jump") {

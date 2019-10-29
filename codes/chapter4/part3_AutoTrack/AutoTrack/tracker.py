@@ -34,7 +34,7 @@ Confirm and change this value accordingly from control panel
 Baud Rate = 9600
 """
 
-arduino = serial.Serial('/dev/ttyACM0', 115200)
+arduino = serial.Serial('com9', 9600)
 time.sleep(2) # waiting the initialization...
 print("initialised")
 
@@ -124,7 +124,7 @@ def direction(bound, initArea=40000):
 def detectAndDisplay(frame):
     #use OpenCV HAAR face detetcion algorithm to detect faces
     faces = cascade.detectMultiScale(frame, scaleFactor=1.2, minNeighbors=3,
-                                          minSize=(100, 100),maxSize=(500,500),
+                                          minSize=(50, 50),maxSize=(500,500),
                                           flags=cv2.CASCADE_SCALE_IMAGE)
     #if any face is detected then process else continue searching
     if(len(faces)!=0):

@@ -38,9 +38,9 @@ inHeight = 368
 threshold = 0.1
 
 
-input_source = "sample_video.mp4"
-cap = cv2.VideoCapture(input_source)
-#cap = cv2.VideoCapture(0)
+#input_source = "sample_video.mp4"
+#cap = cv2.VideoCapture(input_source)
+cap = cv2.VideoCapture(0)
 hasFrame, frame = cap.read()
 
 vid_writer = cv2.VideoWriter('output.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame.shape[1],frame.shape[0]))
