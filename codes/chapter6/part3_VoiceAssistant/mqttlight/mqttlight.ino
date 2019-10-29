@@ -38,7 +38,7 @@
 #include <FS.h>
 #include "FastLED.h"
 #include "server.h"
-#define NUM_LEDS 3
+#define NUM_LEDS 36
 // pins used for the rgb led
 
 
