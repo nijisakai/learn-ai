@@ -6,7 +6,7 @@ import  numpy as np
 import serial
 ser = serial.Serial()
 ser.baudrate = 4800  # 设置波特率
-ser.port = 'COM9'  # 端口是COM3
+ser.port = 'COM4'  # 端口是COM3
 print(ser)
 ser.open()  # 打开串口
 print(ser.is_open)  # 检验串口是否打开
