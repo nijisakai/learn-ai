@@ -11,7 +11,7 @@ print(ser)
 ser.open()  # 打开串口
 print(ser.is_open)  # 检验串口是否打开
 # board = Arduino('COM3')
-"""
+
 def duoji ():
     board.servo_config(13, 0, 255, 20)
     print("ceshi")
@@ -24,7 +24,7 @@ def arduino ():
     board.digital[13].write(1)  # 向io口13写入1
     time.sleep(0.1)
     board.analog [13].write(100)
-"""
+
 def detect_circle_demo ():
     video_capture = cv2.VideoCapture(0)
     while True:
