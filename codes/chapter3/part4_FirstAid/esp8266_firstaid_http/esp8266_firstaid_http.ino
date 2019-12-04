@@ -26,7 +26,7 @@ const int led = 13;
 
 
 Servo servos[3];
-uint8_t servo_pins[3] = {D0,D1,D2};
+uint8_t servo_pins[3] = {D0,D5,D6};
 uint8_t count = 3;
 void setAngle(uint8_t di,uint8_t vi){
   if(di< 3 && vi < 180)

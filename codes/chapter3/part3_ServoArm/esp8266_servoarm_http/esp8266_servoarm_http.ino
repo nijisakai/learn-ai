@@ -7,7 +7,6 @@
 
 #define Motor_AE D1      //Motor A/B,E enable,D Direction
 #define Motor_AD D3
-
 #define Motor_BE D2
 #define Motor_BD D4
 
@@ -15,18 +14,11 @@
 #define L_AHEAD LOW
 
 String command;
-
-// D1 On / Off 
-// D2 On / Off
-// D3 Direction
-
 ESP8266WebServer server(80);
-
 const int led = 13;
 
-
 Servo servos[3];
-uint8_t servo_pins[3] = {D0,D1,D2};
+uint8_t servo_pins[3] = {D0,D5,D6};
 uint8_t count = 3;
 void setAngle(uint8_t di,uint8_t vi){
   if(di< 3 && vi < 180)
@@ -44,7 +36,6 @@ void detachServos(){
   }  
 }
 
-
 void carInit(){  
    
   pinMode(Motor_AE, OUTPUT);
@@ -54,7 +45,7 @@ void carInit(){
 
   Serial.begin(115200); 
   Serial.println("Car begin"); 
-  } 
+  }
 void goAhead(){ 
       digitalWrite(Motor_AE, HIGH);
       digitalWrite(Motor_AD, L_AHEAD);
@@ -103,8 +94,7 @@ void handleNotFound(){
   digitalWrite(led, 0);
 }
 
-void setup(void){
-  
+void setup(void){ 
   Serial.begin(115200);
   carInit();
   SPIFFS.begin();
@@ -112,8 +102,8 @@ void setup(void){
   Serial.println("Servos attached");
   server.serveStatic("/", SPIFFS, "/index.html");
 
-const char* ssid = "AI";
-const char* password = "raspberry";
+  const char* ssid = "AI";
+  const char* password = "raspberry";
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
   Serial.println("");
@@ -131,14 +121,7 @@ const char* password = "raspberry";
     Serial.println("MDNS responder started");
   }
 
-
-
-
-
-
-
-
-  server.on("/set-servo", [](){
+    server.on("/set-servo", [](){
     String uri = server.uri();
     Serial.println(uri);
     String di = server.arg("di");
@@ -163,7 +146,6 @@ const char* password = "raspberry";
     else if(command == "stop")
        stopRobot();
     Serial.println(command);
-//    setCorlor(red.toInt(),green.toInt(),blue.toInt());
     server.send(200, "text/plain", String("set to ")+command);
   });
 

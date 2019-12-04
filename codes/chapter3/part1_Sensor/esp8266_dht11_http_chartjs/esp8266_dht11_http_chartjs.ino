@@ -3,12 +3,12 @@
 #include <ESP8266WebServer.h>
  
 #include "index.h" //Our HTML webpage contents with javascripts
-#include "DHTESP.h"  //DHT11 Library for ESP
+#include "DHTesp.h"  //DHT11 Library for ESP
   
 #define LED 2        //On board LED
 #define DHTpin 15    //D8 of NodeMCU is GPIO15
 
-DHTESP dht;
+DHTesp dht;
 
 const char* ssid = "AI";
 const char* password = "raspberry";
@@ -50,8 +50,8 @@ void setup()
   Serial.begin(115200);
   Serial.println();
 
-  dht.setup(DHTpin, DHTESP::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
-  //dht.setup(DHTpin, DHTESP::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
+  dht.setup(DHTpin, DHTesp::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
+  //dht.setup(DHTpin, DHTesp::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
 
   WiFi.begin(ssid, password);     //Connect to your WiFi router
   Serial.println("");
