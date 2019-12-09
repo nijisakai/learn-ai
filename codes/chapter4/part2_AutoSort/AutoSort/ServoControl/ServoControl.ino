@@ -12,11 +12,11 @@ int serial_line_length=0;
  int i ;
 void setup()
 {
-  Serial.begin(4800);
+  Serial.begin(9600);
   pinMode(5,OUTPUT);
   digitalWrite(5,HIGH);
     myservo.attach(3);
-    myservo1.attach(4);
+      myservo1.attach(4);
    myservo.write(150);  
    myservo1.write(120);  
   stepper.setSpeed(400);
