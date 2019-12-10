@@ -15,7 +15,7 @@
 - 介绍：
 通过本章内容，学生对人工智能的数学基础、概率论和博弈论、人工智能在图形图像和语言处理、电子游戏及其他领域的应用有感性认识。
 
-![atari](https://md.hass.live/640.webp)
+![sssfdffdfgdg](https://md.hass.live/niji/2019-12-10-1.webp)
 
 ![微信截图_20190717113637](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190717113637.png)
 
