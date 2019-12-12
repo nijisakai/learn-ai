@@ -5,8 +5,9 @@ import cv2
 import  numpy as np
 import serial
 ser = serial.Serial()
-ser.baudrate = 4800  # 设置波特率
-ser.port = 'COM4'  # 端口是COM3
+ser.baudrate = 9600  # 设置波特率
+#ser.port = 'COM4'  # for Windows 端口是COM4  查看端口方法 在资源管理器中查看 win+x，输入M，回车。
+ser.port = '/dev/ttyUSB0' # for Linux 查看端口方法 ls /dev/ttyUSB*
 print(ser)
 ser.open()  # 打开串口
 print(ser.is_open)  # 检验串口是否打开

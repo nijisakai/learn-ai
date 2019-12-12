@@ -126,6 +126,19 @@ def detectAndDisplay(frame):
     faces = cascade.detectMultiScale(frame, scaleFactor=1.2, minNeighbors=3,
                                           minSize=(100, 100),maxSize=(500,500),
                                           flags=cv2.CASCADE_SCALE_IMAGE)
+# 关于detectMultiScale函数的几个参数：
+# 1.image表示的是要检测的输入图像
+
+# 2.objects表示检测到的人脸目标序列
+
+# 3.scaleFactor表示每次图像尺寸减小的比例
+# 提高这个参数，比如1.4，来提高检测速度
+# 4. minNeighbors表示每一个目标至少要被检测到3次才算是真的目标(因为周围的像素和不同的窗口大小都可以检测到人脸),
+# 降低这个参数来提高检测速度
+# 5.minSize为目标的最小尺寸
+# 降低这个参数来提高检测速度，损失精度
+# 6.minSize为目标的最大尺寸
+# 增加这个参数来提高检测维度    
     #if any face is detected then process else continue searching
     if(len(faces)!=0):
         #If number of faces in the image is more than 1
