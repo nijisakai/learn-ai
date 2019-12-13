@@ -191,7 +191,7 @@ class Motor:
         self.left_motor.run(Adafruit_MotorHAT.BACKWARD)
         self.right_motor.run(Adafruit_MotorHAT.BACKWARD)
         self.left_motor.setSpeed(speed)
-        self.right_motor.setSpeed(speed+20)
+        self.right_motor.setSpeed(speed)
 
 
     def left(self, speed=100):

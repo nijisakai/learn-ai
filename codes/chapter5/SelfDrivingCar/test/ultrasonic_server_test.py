@@ -28,7 +28,7 @@ class SensorStreamingTest(object):
                 print("Distance: %0.1f cm" % sensor_data)
 
                 # test for 10 seconds
-                if time.time() - start > 10:
+                if time.time() - start > 100:
                     break
         finally:
             self.connection.close()
@@ -36,5 +36,5 @@ class SensorStreamingTest(object):
 
 
 if __name__ == '__main__':
-    h, p = "192.168.1.100", 8002
+    h, p = "127.0.0.1", 8002
     SensorStreamingTest(h, p)

@@ -8,7 +8,7 @@ from pygame.locals import *
 import socket
 import time
 import os
-from drive_api2 import Motor
+from drive_api import Motor
 
 class CollectTrainingData(object):
     
@@ -31,11 +31,10 @@ class CollectTrainingData(object):
         self.k = np.zeros((4, 4), 'float')
         for i in range(4):
             self.k[i, i] = 1
-        #####################
-        self.temp_label = np.zeros((1, 4), 'float')
 
         pygame.init()
-        #pygame.display.set_mode((250, 250))
+        pygame.display.set_mode((250, 250))
+
     def collect(self):
 
         saved_frame = 0
@@ -45,10 +44,9 @@ class CollectTrainingData(object):
         print("Start collecting images...")
         print("Press 'q' or 'x' to finish...")
         start = cv2.getTickCount()
-        ##############################
-        X = np.empty((1, self.input_size))
-        ##############################
-        y = np.empty((1, 4))
+
+        X = np.empty((0, self.input_size))
+        y = np.empty((0, 4))
 
         # stream video frames one by one
         try:
@@ -70,10 +68,6 @@ class CollectTrainingData(object):
                     else:
                         continue
                     roi = image[int(height/2):height, :]
-
-                    #############增加了io开销
-                    cv2.imwrite('training_images/frame{:05}.jpg'.format(frame), image)
-
 
                     cv2.imshow('image', image)
 
@@ -119,10 +113,6 @@ class CollectTrainingData(object):
 
                             elif key_input[pygame.K_DOWN]:
                                 print("Reverse")
-                                ###########增加了io开销
-                                saved_frame += 1
-                                X = np.vstack((X, temp_array))
-                                y = np.vstack((y, self.k[3]))
                                 self.car.backward()
 
                             elif key_input[pygame.K_RIGHT]:
@@ -149,8 +139,7 @@ class CollectTrainingData(object):
 
                         elif event.type == pygame.KEYUP:
                                 self.car.stop()
-                                #####################
-                                # self.car.forward(50)
+                                self.car.forward(50)
                                 pass
 
                     if cv2.waitKey(1) & 0xFF == ord('q'):
