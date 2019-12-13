@@ -173,7 +173,7 @@ def detectAndDisplay(frame):
 
 
 cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-#cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
+#cascade = cv2.CascadeClassifier('cascade.xml')
 
 
 cap = cv2.VideoCapture(0)
