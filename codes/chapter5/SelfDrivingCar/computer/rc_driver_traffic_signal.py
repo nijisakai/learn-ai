@@ -43,7 +43,9 @@ class VideoStreamHandler(socketserver.StreamRequestHandler):
     # cascade classifiers
     stop_cascade = cv2.CascadeClassifier("cascade_xml/stop_sign.xml")
     light_cascade = cv2.CascadeClassifier("cascade_xml/traffic_light.xml")
-
+# 自定义训练器
+    my_cascade = cv2.CascadeClassifier("cascade_xml/my_cascade.xml")
+    
     d_to_camera = DistanceToCamera()
     d_stop_sign = 25
     d_light = 25
