@@ -1,0 +1,197 @@
+# 第3节 大白自动追踪
+
+---
+
+>通过拍照、爬虫等方式获取待训练图片，使用python进行简单的文件处理，用OpenCV训练后，可实现对特定物体的识别和追踪
+
+### 级联分类器简介
+
+目前图像检测方法主要分为两大类，**基于知识**和**基于统计**。
+
+以人脸检测来说，基于知识的人脸检测方法主要包括：模板匹配，人脸特征，形状与边缘，纹理特征，颜色特征。
+
+基于统计的人脸检测方法主要包括：主成分分析与特征脸法，神经网络模型，隐马尔可夫模型，支持向量机，Adaboost算法。
+
+基于知识的方法将人脸看成不同特征的特定组合，即通过人脸的眼睛、嘴巴、鼻子、耳朵等特征及其组合关系来检测人脸。
+
+基于统计的方法将人脸看成统一的二维像素矩阵，通过大量的样本构建人脸子空间，通过相似度的大小来判断人脸是否存在。
+
+OpenCV采用的级联分类器，可以理解为将采用Adaboost算法构建的若干分类器串联起来，即级联。只有通过所有分类器后才识别为检测正确。这样可以提高检测的准确度。
+![1446497-20180809111640447-741585916](https://md.hass.live/1446497-20180809111640447-741585916.png)
+
+OpenCV提供了若干已经提前训练好的级联分类器供使用，包括人体、人脸、猫咪等。
+![微信截图_20190808123116](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190808123116.png)
+
+##### 示例：识别猫脸
+
+核心代码：
+
+``` python
+String catFileName = "~/opencv/build/etc/haarcascades/haarcascade_frontalcatface.xml"
+CascadeClassifier catclassifier
+```
+
+结果：
+![微信截图_20190808132617](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190808132617.png)
+
+### 活动1：人脸分类器：追着人跑的大白
+
+#### 原理图
+
+``` sequence
+摄像头->大白\n树莓派: CSI/USB
+大白\n树莓派-->Arduino: 串口指令
+Note right of 大白\n树莓派: OpenCV处理摄像头数据（级联分类器）\n发送指令给Arduino
+```
+
+#### 硬件准备
+
+- 大白车
+
+- Arduino
+
+- 树莓派摄像头
+
+- 待识别的人或猫的照片（电子或纸质打印任选）
+
+#### 硬件连接
+
+- 将烧录好程序的Arduino通过USB连接到树莓派
+
+#### 启动追踪小车
+
+1.使用远程桌面或HDMI视频输出连接到树莓派
+
+2.打开`终端`，输入`cd ~/Desktop/learn-ai/codes/chapter4/part3_AutoTrack/AutoTrack`
+
+3.输入`python tracker.py`
+
+4.将待识别的物体（人脸或猫）在车前移动，观察车的追踪行为
+
+### 活动2：训练新的分类器
+
+通过收集大量样本图片，可以训练自定义的分类器，可以识别任意的物体。
+
+#### 1.收集负样本
+
+训练样本包括正样本和负样本。正样本，通俗点说，就是图片中只有你需要的目标。而负样本的图片只要其中不含有目标就可以了。但需要说明的是，负样本也并非随便选取的。
+例如，需要检测的目标是汽车，那么正样本就应该是仅仅含有汽车的图片，而负样本显然不能是一些包含天空的，海洋的，风景的图片。因为最终训练分类器的目的是检测汽车，而汽车应该出现在马路上。也就是说，分类器最终检测的图片应该是那些包含马路，交通标志，建筑物，广告牌，汽车，摩托车，三轮车，行人，自行车等在内的图片。很明显，这里的负样本应该是包含摩托车、三轮车、自行车、行人、路面、灌木丛、花草、交通标志、广告牌等。
+
+Adaboost方法是机器学习中的一个经典算法，而机器学习算法的前提条件是，测试样本和训练样本独立同分布。所谓的独立同分布，可以简单理解为：训练样本要和最终的应用场合非常接近或者一致。否则，基于机器学习的算法并不能保证算法的有效性。此外，足够的训练样本（至少得几千张正样本、几千张负样本）也是保证训练算法有效性的一个前提条件。
+
+**在Windows桌面上执行：**
+
+```bash
+//采集的图像存在文件夹input，正样本存在文件夹pos下，负样本存在文件夹neg下，输出文件夹为output
+//在桌面上新建工作目录并建立相应文件夹
+mkdir -p ~/Desktop/myclassifier/{data,info,neg,ugiles}
+cp ~/Desktop/learn-ai/codes/chapter4/part3/myclassifier/scripts/* ~/Desktop/myclassifier
+cd ~/Desktop/myclassifier
+//使用Python脚本下载负样本图像并调整样式和尺寸
+python 01store_raw_images.py
+```
+
+这个脚本会自动从image-net.org下载图片，并调整为灰度图，分辨率为100*100
+
+```python
+def store_raw_images():
+    # 从image-net.org下载负样本
+    neg_images_link = 'http://image-net.org/api/text/imagenet.synset.geturls?wnid=n00523513'
+    neg_image_urls = urllib.request.urlopen(neg_images_link).read().decode()
+    # 图片从1开始编号
+    pic_num = 1
+
+    #将负样本图片存储在neg文件夹下
+    if not os.path.exists('neg'):
+        os.makedirs('neg')
+    #把下载的图片变成灰度图，并调整尺寸为100*100
+    for i in neg_image_urls.split('\n'):
+        try:
+            print(i)
+            urllib.request.urlretrieve(i, "neg/"+str(pic_num)+".jpg")
+            img = cv2.imread("neg/"+str(pic_num)+".jpg",cv2.IMREAD_GRAYSCALE)
+            # should be larger than samples / pos pic (so we can place our image on it)
+            resized_image = cv2.resize(img, (100, 100))
+            cv2.imwrite("neg/"+str(pic_num)+".jpg",resized_image)
+            pic_num += 1
+
+        except Exception as e:
+            print(str(e))  
+```
+
+打开neg文件夹，查看下载的文件是否按序号进行排列。
+**如果发现有异常的图片，执行脚本：**
+
+```bash
+python 02find_uglies.py
+```
+
+这可以将异常图片删除。
+至此，训练所需的负样本就收集完毕了。
+
+#### 2.收集正样本
+
+正样本就是想要识别出来的物体。本例中，只要识别的物体不是人体即可。（因为负样本中包含大量的人体）
+**使用手机或相机，拍摄待识别的物体，并将其存储在`~/Desktop/myclassifier`路径下，将图片命名为object.jpg**
+
+**打开终端，执行：**
+
+```bash
+python 03resize_image.py
+```
+
+这个脚本可以将正样本图片的尺寸调整到50*50，并重命名为object5050.jpg
+
+```python
+def resize_image():
+    img = cv2.imread("object.jpg")
+    resized_image = cv2.resize(img, (50, 50))
+    cv2.imwrite("object5050.jpg",resized_image)
+```
+
+**打开终端，执行：**
+
+```bash
+python 04create_pos_n_neg.py
+```
+
+#### 3.提取正样本的特征
+
+这一步骤使用OpenCV的命令来执行。
+**打开终端，执行：**
+
+```bash
+opencv_createsamples -img object5050.jpg -bg bg.txt -info info/info.lst -pngoutput info -maxxangle 0.5 -maxyangle 0.5 -maxzangle 0.5 -num 100
+opencv_createsamples -info info/info.lst -num 100 -w 20 -h 20 -vec positives.vec
+```
+
+#### 4.训练分类器
+
+**打开终端，执行：**
+
+```bash
+opencv_traincascade -data data -vec positives.vec -bg bg.txt -numPos 200 -numNeg 100 -numStages 10 -w 20 -h 20
+```
+
+训练可能会持续数小时。在训练完毕后，data文件夹中会产生一个名为`cascade.xml`的文件。将其重命名为`object.xml`。
+
+#### 5.测试
+
+**打开终端，执行：**
+
+```bash
+python test.py
+```
+
+摄像头将会打开，将待识别物体置于摄像头前，观察效果。
+
+#### 6.启动追踪小车
+
+**打开终端，执行：**
+
+```bash
+cp ~/Desktop/learn-ai/codes/chapter4/part3_AutoTrack/AutoTracktracker/tracker_my_object.py ~/Desktop/myclassifier/
+python tracker_my_object.py
+```
+
+大白将会跟随训练的物体进行移动。
