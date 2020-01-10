@@ -57,15 +57,15 @@ void setColor(int red,int green,int blue){
 #define MQTT_VERSION MQTT_VERSION_3_1_1
 
 // Wifi: SSID and password
-const char* WIFI_SSID = "PDCN";
-const char* WIFI_PASSWORD = "shiyan2009";
+const char* WIFI_SSID = "AI";
+const char* WIFI_PASSWORD = "raspberry";
 
 // MQTT: ID, server IP, port, username and password
 const PROGMEM char* MQTT_CLIENT_ID = "classroom_rgb_light";
-const PROGMEM char* MQTT_SERVER_IP = "192.168.123.106";
+const PROGMEM char* MQTT_SERVER_IP = "192.168.123.10";
 const PROGMEM uint16_t MQTT_SERVER_PORT = 1883;
-//const PROGMEM char* MQTT_USER = "sli";
-//const PROGMEM char* MQTT_PASSWORD = "sli";
+const PROGMEM char* MQTT_USER = "homeassistant";
+const PROGMEM char* MQTT_PASSWORD = "welcome";
 
 // MQTT: topics
 // state
