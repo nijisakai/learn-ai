@@ -73,7 +73,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="第5节 唱跳rap：小绿实时姿态模仿.html" />
+    <link rel="next" href="第5节 物联网进阶：执行自动化操作.html" />
     
     
     <link rel="prev" href="第3节 “小绿，跳舞！”——制作自己的语音助手.html" />
@@ -190,9 +190,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../chapter1/第1节 人工智能、机器学习的相关概念.md">
+        <li class="chapter " data-level="1.3.1" data-path="../chapter1/第1节 Python语言基础.html">
             
-                <span>
+                <a href="../chapter1/第1节 Python语言基础.html">
             
                     
                     第1节 Python语言基础
@@ -203,9 +203,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../chapter1/第2节 知识图谱.md">
+        <li class="chapter " data-level="1.3.2" data-path="../chapter1/第2节 Linux基本操作.html">
             
-                <span>
+                <a href="../chapter1/第2节 Linux基本操作.html">
             
                     
                     第2节 Linux基本操作
@@ -216,12 +216,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../chapter1/第3节 开源硬件基本操作.md">
+        <li class="chapter " data-level="1.3.3" data-path="../chapter1/第3节 Web服务基础.html">
             
-                <span>
+                <a href="../chapter1/第3节 Web服务基础.html">
             
                     
-                    第3节 开源硬件基本操作
+                    第3节 Web服务基础
             
                 </a>
             
@@ -229,12 +229,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../chapter1/第4节 认识硬件——树莓派.md">
+        <li class="chapter " data-level="1.3.4" data-path="../chapter1/第4节 开源硬件基本操作.html">
             
-                <span>
+                <a href="../chapter1/第4节 开源硬件基本操作.html">
             
                     
-                    第4节 认识硬件——树莓派
+                    第4节 开源硬件基本操作
             
                 </a>
             
@@ -242,12 +242,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../chapter1/第5节 认识硬件——Arduino.md">
+        <li class="chapter " data-level="1.3.5" data-path="../chapter1/第5节 认识硬件—树莓派.html">
             
-                <span>
+                <a href="../chapter1/第5节 认识硬件—树莓派.html">
             
                     
-                    第5节 认识硬件——Arduino
+                    第5节 认识硬件—树莓派
             
                 </a>
             
@@ -255,12 +255,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../chapter1/第6节 认识硬件——ESP8266.md">
+        <li class="chapter " data-level="1.3.6" data-path="../chapter1/第6节 认识硬件—Arduino.html">
             
-                <span>
+                <a href="../chapter1/第6节 认识硬件—Arduino.html">
             
                     
-                    第6节 认识硬件——ESP8266
+                    第6节 认识硬件—Arduino
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../chapter1/第7节 认识硬件—ESP8266.html">
+            
+                <a href="../chapter1/第7节 认识硬件—ESP8266.html">
+            
+                    
+                    第7节 认识硬件—ESP8266
             
                 </a>
             
@@ -623,12 +636,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="第5节 唱跳rap：小绿实时姿态模仿.html">
+        <li class="chapter " data-level="1.8.5" data-path="第5节 物联网进阶：执行自动化操作.html">
             
-                <a href="第5节 唱跳rap：小绿实时姿态模仿.html">
+                <a href="第5节 物联网进阶：执行自动化操作.html">
             
                     
-                    第5节 唱跳rap：小绿实时姿态模仿
+                    第5节 物联网进阶：执行自动化操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="第6节 唱跳rap：小绿实时姿态模仿.html">
+            
+                <a href="第6节 唱跳rap：小绿实时姿态模仿.html">
+            
+                    
+                    第6节 唱跳rap：小绿实时姿态模仿
             
                 </a>
             
@@ -741,31 +767,13 @@ vi configuration.yaml
 # &#x9000;&#x51FA;bash&#x73AF;&#x5883;&#x8F93;&#x5165;exit&#xFF0C;&#x56DE;&#x8F66;
 </code></pre>
 <h4 id="1&#x57FA;&#x7840;&#x914D;&#x7F6E;">1.&#x57FA;&#x7840;&#x914D;&#x7F6E;</h4>
-<pre><code class="lang-bash">homeassistant:
-  # &#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x540D;&#x5B57;
-  name: &#x7814;&#x7A76;&#x9662;&#xFF08;&#x8D77;&#x4E2A;&#x540D;&#x5B57;&#x5427;&#xFF09;
-  # &#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x67E5;&#x8BE2;&#x5F53;&#x5730;&#x7684;&#x7ECF;&#x7EAC;&#x5EA6;&#xFF0C;&#x586B;&#x5230;&#x4E0B;&#x9762;
-  latitude: 40.0018
-  longitude: 116.332
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
-  # metric for Metric, imperial for Imperial
-  unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: Asia/Shanghai
-  # Customization file
-  customize: !include customize.yaml
-
-
-introduction:
-frontend:
-config:
+<pre><code class="lang-bash">group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
 
 # &#x5982;&#x679C;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x4ECE;iOS&#x6216;macOS&#x4E2D;&#x7684;&#x5BB6;&#x5EAD;&#x5E94;&#x7528;&#x6765;&#x7BA1;&#x7406;&#xFF0C;&#x589E;&#x52A0;&#x4E0B;&#x9762;&#x8FD9;&#x4E00;&#x884C;&#x3002;
 homekit:
-
-http:
-    api_password: welcome
 
 &#x2026;&#x2026;
 &#x2026;&#x2026;
@@ -776,14 +784,32 @@ http:
 &#x2026;&#x2026;
 &#x2026;&#x2026;
 
-# &#x5728;host&#x5904;&#x586B;&#x5165;&#x5B89;&#x5353;&#x624B;&#x673A;&#x7684;ip&#x5730;&#x5740;
+# &#x5728;host&#x5904;&#x586B;&#x5165;&#x5B89;&#x5353;&#x5E73;&#x677F;&#x7684;ip&#x5730;&#x5740;
 media_player:
   - platform: kodi
     host: 192.168.123.194
 
-android_ip_webcam:
-  - host: 192.168.123.194
-    port: 8090
+# android_ip_webcam:
+#  - host: 192.168.123.194
+#    port: 8090
+
+# ffmpeg:
+# camera:
+# - platform: ffmpeg
+#   name: Camera
+#   input: -rtsp_transport tcp -i rtsp://192.168.123.29:8554/live
+# camera:
+#   - platform: rpi_camera
+
+# camera:
+#   - platform: local_file
+#     name: camera01
+#     file_path: /share/motion/lastsnap.jpg
+
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.123.218:8080/?action=stream
+    # mjpeg_url: http://192.168.123.59:8088/?action=snapshot
 </code></pre>
 <h4 id="3&#x7EA2;&#x5916;&#x53D1;&#x5C04;&#x914D;&#x7F6E;">3.&#x7EA2;&#x5916;&#x53D1;&#x5C04;&#x914D;&#x7F6E;</h4>
 <pre><code class="lang-bash">&#x2026;&#x2026;
@@ -820,20 +846,36 @@ switch:
 
 # &#x6B63;&#x786E;&#x586B;&#x5199;&#x4E0B;&#x9762;&#x7684;&#x53C2;&#x6570;
 # &#x767E;&#x5EA6;&#x4EBA;&#x8138;&#x8BC6;&#x522B;&#x6CE8;&#x518C;&#xFF1A;https://cloud.baidu.com/product/face
-image_processing:
-  - platform: baidu_face_indentify
-    app_id: &apos;11478116&apos;
-    api_key: &apos;tHjWWiNXlQLFNT2SdrNPWwH3&apos;
-    secret_key: &apos;LXHQ5kP6GYewzOqFL1umrK4mfljx3W4r&apos;
-    snapshot_filepath: /config/images
-    resize: 0
-    detect_top_num: 3
-    ha_url: &apos;http://192.168.123.106:8123&apos;
-    ha_password: &apos;welcome&apos;
+sensor:
+  - platform: baidu_face
+    api_key: &quot;tHjWWiNXlQLFNT2SdrNPWwH3&quot;
+    secret_key: &quot;LXHQ5kP6GYewzOqFL1umrK4mfljx3W4r&quot;
+    group_list: &quot;[&apos;normal_group&apos;]&quot;
+    camera_entity_id: &quot;camera.mjpeg_camera&quot;
+    token: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0NjBjMjFlM2NiZjY0YTliYTdjZTFjMzVhNDYzY2I2YiIsImlhdCI6MTU3ODU0NjU3OSwiZXhwIjoxODkzOTA2NTc5fQ.rUDysZx983VxFJPj4cq5gynlNa3A7HO5zd8H9FxTHAQ&quot;
+    # liveness: &quot;NORMAL&quot;
+    # name: &quot;ren lian shi bie&quot;
+    # port: 8123
+    # pic_url: &quot;&#x7F51;&#x7EDC;&#x3001;&#x672C;&#x5730;&#x56FE;&#x7247;&#x5730;&#x5740;&quot;
     scan_interval: 1
-    source:
-     - entity_id: camera.ip_webcam
-       name: facerec
+
+# image_processing:
+#   - platform: baidu_face_indentify
+#     app_id: &apos;11478116&apos;
+#     api_key: &apos;tHjWWiNXlQLFNT2SdrNPWwH3&apos;
+#     secret_key: &apos;LXHQ5kP6GYewzOqFL1umrK4mfljx3W4r&apos;
+#     snapshot_filepath: &apos;/home/pi/images/&apos;
+#     resize: 0
+#     detect_top_num: 3
+#     ha_url: &apos;http://192.168.123.201:8123&apos;
+#     # ha_password: &apos;welcome&apos;
+#     scan_interval: 1
+#     source:
+#      - entity_id: camera.mjpeg_camera
+#        name: faceRec
+
+
+
 # &#x767E;&#x5EA6;TTS&#x6CE8;&#x518C;&#xFF1A;https://cloud.baidu.com/product/speech/tts
 tts:
   - platform: baidu
@@ -872,29 +914,31 @@ tts:
 <code>{&quot;image&quot;:&quot;/config/uploadpics/zhangcuihua.jpg&quot;}</code></p>
 <p>&#x68C0;&#x6D4B;&#x6210;&#x529F;&#x4F1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</p>
 <p><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190829164611.png" alt="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190829164611"></p>
-<h4 id="6&#x81EA;&#x52A8;&#x5316;&#x914D;&#x7F6E;">6.&#x81EA;&#x52A8;&#x5316;&#x914D;&#x7F6E;</h4>
+<h4 id="6&#x81EA;&#x52A8;&#x5316;&#x914D;&#x7F6E;-automationsyaml">6.&#x81EA;&#x52A8;&#x5316;&#x914D;&#x7F6E; automations.yaml</h4>
 <pre><code class="lang-bash">&#x2026;&#x2026;
 &#x2026;&#x2026;
 &#x2026;&#x2026;
 
 # &#x5F53;&#x68C0;&#x6D4B;&#x5230;&#x4EBA;&#x8138;&#xFF08;&#x4EBA;&#x8138;&#x8BC6;&#x522B;&#x7ED3;&#x679C;&#x5927;&#x4E8E;0&#xFF09;&#xFF0C;&#x5C31;&#x6267;&#x884C;tts&#x548C;&#x5F00;&#x5173;&#x64CD;&#x4F5C;&#x3002;
-automation:
-  - alias: face_indentify
-    trigger:
-      platform: numeric_state
-      entity_id: image_processing.facerec
-      above: 0
-
-    action:
-      - service: tts.baidu_say
-        data_template:
-          message: &gt;
-
-             &quot; &#x4F60;&#x597D;&#xFF0C;&#x964C;&#x751F;&#x4EBA;&#xFF01;&quot;
-
-      - service: switch.turn_on
-        data:
-          - entity_id: switch.door
+- id: baiduface
+  alias: face_indentify
+  trigger:
+  - entity_id: sensor.ren_lian_shi_bie
+    platform: state
+    to: &apos;True&apos;
+  action:
+  - data_template:
+      entity_id: media_player.kodi
+      message: &gt;
+        {% if states.sensor.ren_lian_shi_bie.attributes[&quot;user_id&quot;] == &quot;chy01&quot; %}
+          &#x4F60;&#x597D;&#xFF0C;&#x9648;&#x8679;&#x5B87;&#xFF01;
+        {% elif states.sensor.ren_lian_shi_bie.attributes[&quot;user_id&quot;] == &quot;sjc&quot; %}
+          &#x4F60;&#x597D;&#xFF0C;&#x5BBF;&#x91D1;&#x8D85;&#xFF01;
+        {% endif %}
+    service: tts.baidu_say
+    service: switch.turn_on
+      data:
+        - entity_id: switch.door
 </code></pre>
 <h3 id="&#x6267;&#x884C;&#x4EBA;&#x8138;&#x89E3;&#x9501;">&#x6267;&#x884C;&#x4EBA;&#x8138;&#x89E3;&#x9501;</h3>
 <ul>
@@ -905,7 +949,7 @@ automation:
 <p><strong>&#x5728;&#x8FD9;&#x4E2A;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x51FA;&#x5404;&#x79CD;&#x5176;&#x4ED6;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x57FA;&#x672C;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x6B63;&#x786E;&#x7684;&#x4EBA;&#x8138;&#x8BC6;&#x522B;&#xFF0C;&#x89E6;&#x53D1;&#x5176;&#x4ED6;&#x7269;&#x8054;&#x7F51;&#x64CD;&#x4F5C;&#x3002;
 &#x6BD4;&#x5982;&#x5728;&#x6559;&#x5BA4;&#x95E8;&#x53E3;&#x8BC6;&#x522B;&#x5230;&#x6559;&#x5E08;&#x540E;&#xFF0C;&#x5C31;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x6253;&#x5F00;&#x6295;&#x5F71;&#x4EEA;&#x3001;&#x653E;&#x4E0B;&#x6295;&#x5F71;&#x5E55;&#x5E03;&#xFF0C;&#x62C9;&#x4E0A;&#x7A97;&#x5E18;&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x4E0A;&#x8BFE;&#x64CD;&#x4F5C;&#x3002;</strong></p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5317;&#x4EAC;&#x5E08;&#x8303;&#x5927;&#x5B66;&#x667A;&#x6167;&#x5B66;&#x4E60;&#x7814;&#x7A76;&#x9662; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-12-17 17:47:06
+2020-01-18 09:50:07
 </span></footer>
                                 
                                 </section>
@@ -938,7 +982,7 @@ automation:
                 </a>
                 
                 
-                <a href="第5节 唱跳rap：小绿实时姿态模仿.html" class="navigation navigation-next " aria-label="Next page: 第5节 唱跳rap：小绿实时姿态模仿">
+                <a href="第5节 物联网进阶：执行自动化操作.html" class="navigation navigation-next " aria-label="Next page: 第5节 物联网进阶：执行自动化操作">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -949,7 +993,7 @@ automation:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第4节 使用物联网制作人脸解锁","level":"1.8.4","depth":2,"next":{"title":"第5节 唱跳rap：小绿实时姿态模仿","level":"1.8.5","depth":2,"path":"content/chapter6/第5节 唱跳rap：小绿实时姿态模仿.md","ref":"content/chapter6/第5节 唱跳rap：小绿实时姿态模仿.md","articles":[]},"previous":{"title":"第3节 “小绿，跳舞！”——制作自己的语音助手","level":"1.8.3","depth":2,"path":"content/chapter6/第3节 “小绿，跳舞！”——制作自己的语音助手.md","ref":"content/chapter6/第3节 “小绿，跳舞！”——制作自己的语音助手.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","code","latex-codecogs","-highlight","tbfed-pagefooter","flexible-alerts","js-sequence-diagram-full@>=0.3.1","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy; 北京师范大学智慧学习研究院","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"latex-codecogs":{"type":"gif"},"chapter-fold":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"js-sequence-diagram-full":{},"fontsettings":{"theme":"white","family":"sans","size":2},"page-toc-button":{"maxTocDepth":2,"minTocSize":1},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"3.2.2","description":"learn ai"},"file":{"path":"content/chapter6/第4节 使用物联网制作人脸解锁.md","mtime":"2019-12-17T09:47:06.808Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-01-10T06:49:02.321Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第4节 使用物联网制作人脸解锁","level":"1.8.4","depth":2,"next":{"title":"第5节 物联网进阶：执行自动化操作","level":"1.8.5","depth":2,"path":"content/chapter6/第5节 物联网进阶：执行自动化操作.md","ref":"content/chapter6/第5节 物联网进阶：执行自动化操作.md","articles":[]},"previous":{"title":"第3节 “小绿，跳舞！”——制作自己的语音助手","level":"1.8.3","depth":2,"path":"content/chapter6/第3节 “小绿，跳舞！”——制作自己的语音助手.md","ref":"content/chapter6/第3节 “小绿，跳舞！”——制作自己的语音助手.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","code","latex-codecogs","-highlight","tbfed-pagefooter","flexible-alerts","js-sequence-diagram-full@>=0.3.1","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy; 北京师范大学智慧学习研究院","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"latex-codecogs":{"type":"gif"},"chapter-fold":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"js-sequence-diagram-full":{},"fontsettings":{"theme":"white","family":"sans","size":2},"page-toc-button":{"maxTocDepth":2,"minTocSize":1},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"3.2.2","description":"learn ai"},"file":{"path":"content/chapter6/第4节 使用物联网制作人脸解锁.md","mtime":"2020-01-18T01:50:07.420Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-02-17T03:47:08.522Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
