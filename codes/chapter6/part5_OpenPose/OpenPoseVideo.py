@@ -45,6 +45,8 @@ hasFrame, frame = cap.read()
 
 vid_writer = cv2.VideoWriter('output.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame.shape[1],frame.shape[0]))
 
+net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
+net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 
 while cv2.waitKey(1) < 0:
@@ -97,6 +99,10 @@ while cv2.waitKey(1) < 0:
             cv2.line(frame, points[partA], points[partB], (0, 255, 255), 3, lineType=cv2.LINE_AA)
             cv2.circle(frame, points[partA], 8, (0, 0, 255), thickness=-1, lineType=cv2.FILLED)
             cv2.circle(frame, points[partB], 8, (0, 0, 255), thickness=-1, lineType=cv2.FILLED)
+
+
+
+#################################################################
 
 
     POSE_PAIRS2 = [ { "servo":2,"pair":[2,3] ,"trim":0 ,"factor":-1 , 'angle':-1,'rangle':-1 } ,{ "servo":3,"pair": [5,6] , "trim": 180 ,"factor":-1 , 'angle':-1,'rangle':-1} ]
