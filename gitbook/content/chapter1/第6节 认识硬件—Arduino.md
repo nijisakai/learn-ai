@@ -72,8 +72,7 @@ Arduino Nano 与Arduino UNO 同样搭载一块Atmel公司生产的AVR单片机�
 ## 3. Arduino Leonardo
 
 ![alt leonardo](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581965378734&di=50ff6606d57beebdbb56fd3bf2af85ec&imgtype=0&src=http%3A%2F%2Fwww.yahboom.com%2FPublic%2Fueditor%2Fphp%2Fupload%2Fimage%2F20170428%2F1493367817190630.jpg)  
-Arduino Leonardo 是一个搭载ATmega32u4的8位AVR单片机的开发板，其上同样有与Arduino UNO 相同的I/O口，唯一不同的是，ATmega32u4单片机支持原生的USB接口，并且可以通过程序控制，来讲此USB接口模拟成各类电脑USB外设，如鼠标，键盘，游戏手柄等等。详细信息如下图表格所示：  
-
+Arduino Leonardo 是一个搭载ATmega32u4的8位AVR单片机的开发板，其上同样有与Arduino UNO 相同的I/O口，唯一不同的是，ATmega32u4单片机支持原生的USB接口，并且可以通过程序控制，来讲此USB接口模拟成各类电脑USB外设，如鼠标，键盘，游戏手柄等等。详细信息如下图表格所示：
 |项目|参数|
 :-:|:-:
 |名称|Arduino Leonardo (ATmega32u4)|
