@@ -5,8 +5,9 @@
    ![alt arduino](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581959664264&di=2551cfc0ee07302a8db66987fc49a378&imgtype=0&src=http%3A%2F%2Fimg.china-scratch.com%2Ftimg%2F180819%2F114J9B39-0.jpg)  
 
    Arduino UNO 上搭载一块Atmel公司生产的AVR单片机，名称为ATmega328P。详细信息如下表所示  
-   项目|参数
-   :-: | :-:
+
+   |项目|参数
+   |:-:|:-:|
    |名称|Arduino UNO (ATmega328P)|
    |工作电压|5V|
    |输入电压|7V~12V|
