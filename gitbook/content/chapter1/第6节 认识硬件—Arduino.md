@@ -65,7 +65,8 @@ Arduino Nano 与Arduino UNO 同样搭载一块Atmel公司生产的AVR单片机�
    |板载LED灯控制引脚|13号数字I/O口|
    |程序下载接口|Micro-USB接口|
    |外部供电接口|5.2mm DC接口|
-   |程序编码与编译环境|Arduino IDE (IDE:集成开发环境)|  
+   |程序编码与编译环境|Arduino IDE (IDE:集成开发环境)|
+
 注：Arduino Nano的程序烧写方法与Arduino UNO 相同。
 
 ## 3. Arduino Leonardo
