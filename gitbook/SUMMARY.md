@@ -13,6 +13,7 @@
     * [第5节 认识硬件—树莓派](content/chapter1/第5节 认识硬件—树莓派.md)
     * [第6节 认识硬件—Arduino](content/chapter1/第6节 认识硬件—Arduino.md)
     * [第7节 认识硬件—ESP8266](content/chapter1/第7节 认识硬件—ESP8266.md)
+    * [第8节 嵌入式系统软件开发流程](content/chapter1/第8节 嵌入式系统软件开发流程.md)
 * [第2章 人工智能初体验](content/chapter2/第2章简介.md)
     * [第1节 人工智能、机器学习的相关概念](content/chapter2/第1节 人工智能、机器学习的相关概念.md)
     * [第2节 知识图谱](content/chapter2/第2节 知识图谱.md)
