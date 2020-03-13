@@ -41,4 +41,5 @@
     * [第4节 使用物联网制作人脸解锁](content/chapter6/第4节 使用物联网制作人脸解锁.md)
     * [第5节 物联网进阶：执行自动化操作](content/chapter6/第5节 物联网进阶：执行自动化操作.md)
     * [第6节 唱跳rap：小绿实时姿态模仿](content/chapter6/第6节 唱跳rap：小绿实时姿态模仿.md)
-* [代码及资料下载](content/codes/下载.md)
+* [资料下载](content/codes/下载.md)
+* [交流反馈](content/comment/评论.md)
