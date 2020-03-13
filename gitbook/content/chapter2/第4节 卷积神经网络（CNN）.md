@@ -4,6 +4,14 @@
 
 >卷积神经网络（Convolutional Neural Networks, CNN）是一类包含卷积计算且具有深度结构的前馈神经网络（Feedforward Neural Networks），是深度学习（deep learning）的代表算法之一。卷积神经网络具有表征学习（representation learning）能力，能够按其阶层结构对输入信息进行平移不变分类（shift-invariant classification），因此也被称为“平移不变人工神经网络（Shift-Invariant Artificial Neural Networks, SIANN）
 
+### 在线体验
+
+点击[CNN可视化](http://hass.live:9024)或[全连接CNN可视化](http://hass.live:9025)来进行可视化CNN体验
+
+![微信截图_20200313131651](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200313131651.png)
+
+![微信截图_20200313131713](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200313131713.png)
+
 ### Tensorflow训练自定义图片分类器
 
 使用Tensorflow深度学习框架按类别训练图像。我们将使用狗狗的图片进行模型训练，测试图片分类器对狗的品种的识别。
