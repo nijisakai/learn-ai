@@ -4,19 +4,19 @@
 
 ### Python简介
 
-Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。
+Python是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。
 
-Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。
+Python的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。
 
-Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。
+Python是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。
 
-Python 是交互式语言： 这意味着，您可以在一个 Python 提示符 >>> 后直接执行代码。
+Python是交互式语言： 这意味着，您可以在一个Python提示符 >>> 后直接执行代码。
 
-Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。
+Python是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。
 
-Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到浏览器再到游戏。
+Python是初学者的语言：Python对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到浏览器再到游戏。
 
-#### Python 发展历史
+#### Python发展历史
 
 Python是由Guido van Rossum在八十年代末和九十年代初，在荷兰国家数学和计算机科学研究所设计出来的。
 
@@ -49,6 +49,39 @@ Python 2.7被确定为最后一个Python 2.x版本，它除了支持 Python 2.x�
 9.GUI编程：Python支持GUI可以创建和移植到许多系统调用。
 
 10.可嵌入: 你可以将Python嵌入到C/C++程序，让你的程序的用户获得"脚本化"的能力。
+
+#### Python版本说明(以树莓派已安装版本为例)
+
+|版本|说明|备注|
+:-:|:-:|:-:
+|Python|Python2.7|属于Python早期版本，官方逐渐放弃维护该版本|
+|Python3|Pyhton3.7|Python3是较新的版本，Python2.7语法与Python3不兼容，其程序代码无法使用Python3的解释器运行|
+
+树莓派上运行python2环境，如下图：
+![alt python2](http://q6c64umf6.bkt.clouddn.com/python2.png)
+
+树莓派上运行python3环境，如下图：
+![alt python3](http://q6c64umf6.bkt.clouddn.com/python3.png)
+
+#### Python文件的执行
+
+我们一般在终端里，通过`python test.py`的方式来运行Python文件。
+
+#### Python包管理工具—pip
+
+pip是一个现代的，通用的Python包管理工具,提供了对Python包的查找，下载，安装，卸载的功能。  
+PIP的使用方法:  
+【注】：由于Python2与Python3的语法不兼容，故pip为Python2的包管理工具，Python3的包管理工具为“pip3”。
+|pip命令|功能|备注
+:-:|:-:|:-:
+|install|安装软件包|pip install [package name]|
+|download|下载软件包||
+|uninstall|卸载软件包|pip uninstall [package name]|
+|list|列表列出已安装的软件包|pip list|
+|show|显示已安装软件包的信息|pip show [package name]|
+|check|检查已安装的软件包是否具有兼容的依赖项||
+|search|搜索PyPI查找软件包||
+|help|显示帮助命令||
 
 ### Python基本语法
 
@@ -187,7 +220,3 @@ def Avg(Score, Num=100):
 ```
 
 文档字符串通常用于提供在线帮助信息。
-
-### Python文件的执行
-
-我们一般在终端里，通过`python test.py`的方式来运行Python文件。

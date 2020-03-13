@@ -6,7 +6,7 @@
 
 ### MNIST手写数字识别
 
-我们在网页上简单实现了一个基于MNIST训练的手写数字识别系统。**[点击这里](http://router.hass.live:3032/)来体验。**
+我们在网页上简单实现了一个基于MNIST训练的手写数字识别系统。**[点击这里](http://hass.live:9023/)来体验。**
 
 ![MNISTWeb](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/MNISTWeb.webp)
 
