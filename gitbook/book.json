@@ -14,9 +14,11 @@
         "popup",
         "sharing-plus",
         "latex-codecogs",
+        "mygitalk",
         "lightbox",
         "expandable-chapters-small",
-		"-highlight",
+        "-highlight",
+        "baidu-tongji",
 		"tbfed-pagefooter",
         "flexible-alerts",
         "js-sequence-diagram-full@>=0.3.1",
@@ -40,12 +42,18 @@
             "qq": true,
             "qzone": true,
             "twitter": false,
-            "weibo": true,
-            "all": [
-                "douban",
-                "qq",
-                "qzone"
-            ]
+            "weibo": true
+        },
+        "baidu-tongji": {
+            "token": "8eb90132f665eaecfd1fe05951de80d3"
+          },
+        "mygitalk": {
+            "clientID": "798b04735e47ac6c4c4c",
+            "clientSecret": "75ef25db8938a0cd8f88e0cdcf13d96441feeee8",
+            "repo": "learnaigitbook",
+            "owner": "nijisakai",
+            "admin": ["nijisakai"],
+            "distractionFreeMode": false
         }
     }
 	
