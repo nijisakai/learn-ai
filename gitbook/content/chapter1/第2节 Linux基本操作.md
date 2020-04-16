@@ -151,126 +151,126 @@ Shell 是一个程序，同时它又是一种程序设计语言。作为命令�
 `which [命令]`|在系统中搜索命令以确定该命令是否存在|
 &nbsp;
 
-2.`sudo` 功能：以超级用户身份运行软件或修改系统文件(类似windows10上的`以管理员身份运行`)
-　　实例：`sudo apt-get install nano` :安装`nano`文本编辑软件时，由于是更改系统环境，所以需要加`sudo`
+2.`sudo` 功能：以超级用户身份运行软件或修改系统文件(类似windows10上的`以管理员身份运行`)  
+　　实例：`sudo apt-get install nano` :安装`nano`文本编辑软件时，由于是更改系统环境，所以需要加`sudo`  
 &nbsp;
 
-3.`sudo shutdown -r now` 重启系统
-　`sudo shutdown -h now` 关机
+3.`sudo shutdown -r now` 重启系统  
+　`sudo shutdown -h now` 关机  
 &nbsp;
 
-4.`chmod` 功能：Linux的文件调用权限分为三级: 文件所有者、所属组、其他。`chmod`可修改文件的使用权限，即是否允许文件被其所有者，所属组，其他进行 `读(r)，写(w)，执行(x)`，三类权限分别对应八进制数：`r -> 4`,`w -> 2`,`x -> 1`
-　说明：(1) User（所有者），Group(所属组)，Other(其他)分别都拥有对该文件的`rwx`权限，即：
+4.`chmod` 功能：Linux的文件调用权限分为三级: 文件所有者、所属组、其他。`chmod`可修改文件的使用权限，即是否允许文件被其所有者，所属组，其他进行 `读(r)，写(w)，执行(x)`，三类权限分别对应八进制数：`r -> 4`,`w -> 2`,`x -> 1`  
+　说明：(1) User（所有者），Group(所属组)，Other(其他)分别都拥有对该文件的`rwx`权限，即：  
 文件所属 | User | Group | Other
 :-:|:-:|:-:|:-:
 权限|rwx|rwx|rwx
 各权限值|421|421|421
 八进制值|7|7|7
-实例：`sudo chmod 666 123.sh` 去除当前目录下123.sh文件的所有所属的`可执行权限x`(八进制数为`1`)
-　　　`sudo shmod 775 123.sh` 为当前目录下123.sh文件的所有所属添加`可执行权限x`
+实例：`sudo chmod 666 123.sh` 去除当前目录下123.sh文件的所有所属的`可执行权限x`(八进制数为`1`)  
+　　　`sudo shmod 775 123.sh` 为当前目录下123.sh文件的所有所属添加`可执行权限x`  
 &nbsp;
 
-5.`chown` 功能：指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID
-　实例：`sudo chown root:root 123.py` 将123.py的用户以及用户组改为`root`(管理员用户)
-　实例：`sudo chown pi:pi 123.py` 将123.py的用户以及用户组改为`pi`(普通用户)
+5.`chown` 功能：指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID  
+　实例：`sudo chown root:root 123.py` 将123.py的用户以及用户组改为`root`(管理员用户)  
+　实例：`sudo chown pi:pi 123.py` 将123.py的用户以及用户组改为`pi`(普通用户)  
 &nbsp;
 
-6.`netstat` 功能：用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各端口的网络连接情况。（如下图所示）
-![alt netstat](https://images2018.cnblogs.com/blog/519608/201807/519608-20180706222609498-2078850432.png)
-　解析：(1) `netstat`会显示当前`活动的网络连接(Active Internet connections)` 和 `活动的本地进程间通信的状态`；
-　　　　(2) 通过查看这些信息我们能知道当前有哪些通信端口被占用以及当前程序工作的状态。
+6.`netstat` 功能：用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各端口的网络连接情况。（如下图所示）  
+![alt netstat](https://images2018.cnblogs.com/blog/519608/201807/519608-20180706222609498-2078850432.png)  
+　解析：(1) `netstat`会显示当前`活动的网络连接(Active Internet connections)` 和 `活动的本地进程间通信的状态`；  
+　　　　(2) 通过查看这些信息我们能知道当前有哪些通信端口被占用以及当前程序工作的状态。  
 &nbsp;
 
-7.`pkill` 功能：控制(关闭)同名程序的所有进程
-　语法：`pkill 选项 pattern（模式）`
-　参数：-G:仅匹配真实组ID在给定列表中的进程。
-　　　　-t termlist:仅匹配与给定列表中终端关联的进程。
-　　　　-signal:指定发往每一个匹配进程的信号
-　　　　-U uidlist:仅匹配真实的用户ID在给定列表中的进程。
-　实例：`pkill -9 -U UserName` 强制退出`UserName`用户
+7.`pkill` 功能：控制(关闭)同名程序的所有进程  
+　语法：`pkill 选项 pattern（模式）`  
+　参数：-G:仅匹配真实组ID在给定列表中的进程。  
+　　　　-t termlist:仅匹配与给定列表中终端关联的进程。  
+　　　　-signal:指定发往每一个匹配进程的信号  
+　　　　-U uidlist:仅匹配真实的用户ID在给定列表中的进程。  
+　实例：`pkill -9 -U UserName` 强制退出`UserName`用户  
 &nbsp;
 
 #### 终端下常用应用软件的使用方法
 
-1.`tar` 功能：将单个或多个文件(文件夹)打包或打包并压缩或解压
-　参数：-c：新建打包文件，同 -v 一起使用 查看过程中打包文件名
-　　　　-x：解压文件
-　　　　-C：解压到对应的文件目录
-　　　　-f：后边接要处理的文件
-　　　　-j：通过bzip2方式压缩或解压，最后以.tar.br2 为后缀。压缩后大小小于.tar.gz
-　　　　-z：通过gzip方式压缩或解压，最后以.tar.gz 为后缀
-　　　　-v：显示解压或压缩的过程
-　　　　-t：查看打包文件中内容，重点文件名
-　　　　-u：更新压缩文件中的内容
-　　　　-p：保留绝对路径，即允许备份数据中含有根目录
-　　　　-P：保留数据原来权限及属性
-　　　　--exclude = FILE ：压缩过程中不包含`FILE`文件
-　实例：(1) `tar czvf all-txt.tar.gz ./*.txt` 将当前目录下的所有文件名以`.txt`结尾的文件，使用gzip方式压缩打包`all-txt.tar.gz`文件
-　　　　(2) `tar xvf JieYaWenJian.tar.gz` 将`JieYaWenJian.tar.gz` 文件解压到当前文件夹下
+1.`tar` 功能：将单个或多个文件(文件夹)打包或打包并压缩或解压  
+　参数：-c：新建打包文件，同 -v 一起使用 查看过程中打包文件名  
+　　　　-x：解压文件  
+　　　　-C：解压到对应的文件目录  
+　　　　-f：后边接要处理的文件  
+　　　　-j：通过bzip2方式压缩或解压，最后以.tar.br2 为后缀。压缩后大小小于.tar.gz  
+　　　　-z：通过gzip方式压缩或解压，最后以.tar.gz 为后缀  
+　　　　-v：显示解压或压缩的过程  
+　　　　-t：查看打包文件中内容，重点文件名  
+　　　　-u：更新压缩文件中的内容  
+　　　　-p：保留绝对路径，即允许备份数据中含有根目录  
+　　　　-P：保留数据原来权限及属性  
+　　　　--exclude = FILE ：压缩过程中不包含`FILE`文件  
+　实例：(1) `tar czvf all-txt.tar.gz ./*.txt` 将当前目录下的所有文件名以`.txt`结尾的文件，使用gzip方式压缩打包`all-txt.tar.gz`文件  
+　　　　(2) `tar xvf JieYaWenJian.tar.gz` 将`JieYaWenJian.tar.gz` 文件解压到当前文件夹下  
 &nbsp;
 
-2.`zip` 功能：`zip`压缩文件
-　参数：-d：从压缩文件内删除指定的文件
-　　　　-D：压缩文件内不建立目录名称
-　　　　-F：尝试修复已损坏的压缩文件
-　　　　-g：将文件压缩后附加在既有的压缩文件之后，而非另行建立新的压缩文件
-　　　　-i：<范本样式> 只压缩符合条件的文件
-　　　　-m：将文件压缩并加入压缩文件后，删除原始文件，即把文件移到压缩文件中
-　　　　-n：<字尾字符串> 不压缩具有特定字尾字符串的文件
-　　　　-o：以压缩文件内拥有最新更改时间的文件为准，将压缩文件的更改时间设成和该文件相同
-　　　　-r：递归处理，将指定目录下的所有文件和子目录一并处理
-　　　　-q：不显示指令执行过程
-　　　　-V：保存VMS操作系统的文件属性
-　实例：(1) `zip -q -r html.zip /home/html` 将 /home/html/ 这个目录下所有文件和文件夹打包为当前目录下的 html.zip
-　　　　(2) `zip -dv cp.zip a.c` 从压缩文件 cp.zip 中删除文件 a.c
+2.`zip` 功能：`zip`压缩文件  
+　参数：-d：从压缩文件内删除指定的文件  
+　　　　-D：压缩文件内不建立目录名称  
+　　　　-F：尝试修复已损坏的压缩文件  
+　　　　-g：将文件压缩后附加在既有的压缩文件之后，而非另行建立新的压缩文件  
+　　　　-i：<范本样式> 只压缩符合条件的文件  
+　　　　-m：将文件压缩并加入压缩文件后，删除原始文件，即把文件移到压缩文件中  
+　　　　-n：<字尾字符串> 不压缩具有特定字尾字符串的文件  
+　　　　-o：以压缩文件内拥有最新更改时间的文件为准，将压缩文件的更改时间设成和该文件相同  
+　　　　-r：递归处理，将指定目录下的所有文件和子目录一并处理  
+　　　　-q：不显示指令执行过程  
+　　　　-V：保存VMS操作系统的文件属性  
+　实例：(1) `zip -q -r html.zip /home/html` 将 /home/html/ 这个目录下所有文件和文件夹打包为当前目录下的 html.zip  
+　　　　(2) `zip -dv cp.zip a.c` 从压缩文件 cp.zip 中删除文件 a.c  
 &nbsp;
 
-3.`unzip`解压`*.zip`文件(`*`为通配符，代指任意字符)
-　用法: `unzip JieYaSuo.zip` 将`JieYaSuo.zip`文件解压到当前文件夹
+3.`unzip`解压`*.zip`文件(`*`为通配符，代指任意字符)  
+　用法: `unzip JieYaSuo.zip` 将`JieYaSuo.zip`文件解压到当前文件夹  
 &nbsp;
 
-4.`wget` 功能：下载URL所连接的文件到本地
-　用法：`wget [参数] [URL]` (`URL`即文件的下载链接，可通过浏览器点击鼠标右键并选择`复制链接地址`来获取目标的URL)
-　参数：-v：显示Wget的版本信息并退出
-　　　　-b：wget启动后转入后台
-　　　　-q：安静模式(无信息输出)
-　　　　-v：详尽的输出(此为默认值)
-　　　　-nc：不要重复下载已存在的文件
-　　　　-c：继续下载部分下载的文件
-　　　　-O：下载文件到对应目录，并且修改文件名称
-　　　　-spider：模拟下载，不会下载，只是会检查是否网站是否正常可用
-　实例：(1) `wget http://mirrors.aliyun.com/ubuntu-16.04.6.iso` 将`ubuntu-16.04.6.iso`文件下载到当前目录
-　　　　(2) `wget --spider www.baidu.com` 模拟下载，不会下载，只是会检查是否网站是正常可用
+4.`wget` 功能：下载URL所连接的文件到本地  
+　用法：`wget [参数] [URL]` (`URL`即文件的下载链接，可通过浏览器点击鼠标右键并选择`复制链接地址`来获取目标的URL)  
+　参数：-v：显示Wget的版本信息并退出  
+　　　　-b：wget启动后转入后台  
+　　　　-q：安静模式(无信息输出)  
+　　　　-v：详尽的输出(此为默认值)  
+　　　　-nc：不要重复下载已存在的文件  
+　　　　-c：继续下载部分下载的文件  
+　　　　-O：下载文件到对应目录，并且修改文件名称  
+　　　　-spider：模拟下载，不会下载，只是会检查是否网站是否正常可用  
+　实例：(1) `wget http://mirrors.aliyun.com/ubuntu-16.04.6.iso` 将`ubuntu-16.04.6.iso`文件下载到当前目录  
+　　　　(2) `wget --spider www.baidu.com` 模拟下载，不会下载，只是会检查是否网站是正常可用  
 &nbsp;
 
-5.`curl` 功能：curl是一个非常实用的、用来与服务器之间传输数据的工具
-　用法：(1) `curl http://localhost:8080/simple-service-webapp/test/hello` 获取页面内容
+5.`curl` 功能：curl是一个非常实用的、用来与服务器之间传输数据的工具  
+　用法：(1) `curl http://localhost:8080/simple-service-webapp/test/hello` 获取页面内容  
 ![alt curl](https://img-blog.csdnimg.cn/20190526213928447.png)
-　　　　(2) `curl -I http://localhost:8080/simple-service-webapp/test/hello`显示 HTTP 头，而不显示文件内容，使用 -I 选项
+　　　　(2) `curl -I http://localhost:8080/simple-service-webapp/test/hello`显示 HTTP 头，而不显示文件内容，使用 -I 选项  
 ![alt curl](https://img-blog.csdnimg.cn/20190526213941838.png)
-　　　　(3) `curl -o save.txt http://localhost:8080/simple-service-webapp/test/hello` 将返回的结果保存到文件
+　　　　(3) `curl -o save.txt http://localhost:8080/simple-service-webapp/test/hello` 将返回的结果保存到文件  
 ![alt curl](https://img-blog.csdnimg.cn/20190526214004389.png)
 &nbsp;
 
-6.`git clone` 功能：将URL指定的github代码仓库克隆到本地当前目录
-　用法：`git clone [git仓库的URL]`
-　实例：`git clone https://github.com/esp8266/Arduino.git` 将此链接对应的仓库克隆到本地当前目录
+6.`git clone` 功能：将URL指定的github代码仓库克隆到本地当前目录  
+　用法：`git clone [git仓库的URL]`  
+　实例：`git clone https://github.com/esp8266/Arduino.git` 将此链接对应的仓库克隆到本地当前目录  
 
 #### 使用文本编辑器`nano`编辑文件
 
-1.使用nano文本编辑器打开文件`123.txt`:
-　`nano 123.txt`
+1.使用nano文本编辑器打开文件`123.txt`:  
+　`nano 123.txt`  
 
-2.打开文件的同时显示文件行数
-　`nano -c 123.txt`
+2.打开文件的同时显示文件行数  
+　`nano -c 123.txt`  
 
-3.若编辑文件时提示“权限不够”，则在命令前加`sudo` 即：
-　`sudo nano 123.txt`
+3.若编辑文件时提示“权限不够”，则在命令前加`sudo` 即：  
+　`sudo nano 123.txt`  
 
 ![alt nano](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1880588524,1987185276&fm=11&gp=0.jpg)
 
-4.保存使用nano编辑好的文件：键入`Ctrl + o`,然后 按下`Enter`键
-　退出nano编辑器：键入`Ctrl + x`
+4.保存使用nano编辑好的文件：键入`Ctrl + o`,然后 按下`Enter`键  
+　退出nano编辑器：键入`Ctrl + x`  
 
 #### 其他常见Linux命令
 
