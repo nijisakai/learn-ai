@@ -152,7 +152,8 @@ Shell 是一个程序，同时它又是一种程序设计语言。作为命令�
 &nbsp;
 
 2.`sudo` 功能：以超级用户身份运行软件或修改系统文件(类似windows10上的`以管理员身份运行`)  
-　　实例：`sudo apt-get install nano` :安装`nano`文本编辑软件时，由于是更改系统环境，所以需要加`sudo`  
+　　实例：`sudo apt-get install nano` :安装`nano`  
+   在安装软件时，由于是更改系统环境，所以需要加`sudo`  
 &nbsp;
 
 3.`sudo shutdown -r now` 重启系统  
