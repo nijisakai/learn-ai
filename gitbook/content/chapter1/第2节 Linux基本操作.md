@@ -245,11 +245,11 @@ Shell 是一个程序，同时它又是一种程序设计语言。作为命令�
 
 5.`curl` 功能：curl是一个非常实用的、用来与服务器之间传输数据的工具  
 　用法：(1) `curl http://localhost:8080/simple-service-webapp/test/hello` 获取页面内容  
-![alt curl](https://img-blog.csdnimg.cn/20190526213928447.png)
+![alt curl](https://img-blog.csdnimg.cn/20190526213928447.png)  
 　　　　(2) `curl -I http://localhost:8080/simple-service-webapp/test/hello`显示 HTTP 头，而不显示文件内容，使用 -I 选项  
-![alt curl](https://img-blog.csdnimg.cn/20190526213941838.png)
+![alt curl](https://img-blog.csdnimg.cn/20190526213941838.png)  
 　　　　(3) `curl -o save.txt http://localhost:8080/simple-service-webapp/test/hello` 将返回的结果保存到文件  
-![alt curl](https://img-blog.csdnimg.cn/20190526214004389.png)
+![alt curl](https://img-blog.csdnimg.cn/20190526214004389.png)  
 &nbsp;
 
 6.`git clone` 功能：将URL指定的github代码仓库克隆到本地当前目录  
