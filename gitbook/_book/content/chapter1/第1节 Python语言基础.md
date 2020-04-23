@@ -71,7 +71,7 @@ Python 2.7被确定为最后一个Python 2.x版本，它除了支持 Python 2.x�
 
 pip是一个现代的，通用的Python包管理工具,提供了对Python包的查找，下载，安装，卸载的功能。  
 PIP的使用方法:  
-【注】：由于Python2与Python3的语法不兼容，故pip为Python2的包管理工具，Python3的包管理工具为“pip3”。
+【注】：由于Python2与Python3的语法不兼容，故pip为Python2的包管理工具，Python3的包管理工具为**pip3**。
 |pip命令|功能|备注
 :-:|:-:|:-:
 |install|安装软件包|pip install [package name]|

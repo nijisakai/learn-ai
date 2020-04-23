@@ -1,3 +1,4 @@
+
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include "DHT.h"
@@ -8,8 +9,8 @@
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
 
 /*Put your SSID & Password*/
-const char* ssid = "AI";  // Enter SSID here
-const char* password = "raspberry";  //Enter Password here
+const char* ssid = "nijinetwork";  // Enter SSID here
+const char* password = "shiyan2009";  //Enter Password here
 
 ESP8266WebServer server(80);
 
