@@ -29,6 +29,10 @@
 
 ### 利用循环神经网络生成古诗词
 
+#### 在线版本
+
+<center><iframe src="http://hass.live:8000" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
 1.打开项目文件夹`learn-ai/codes/chapter1/part5_RNN/PoetAI`
 
 ![filestructure](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153025.png)

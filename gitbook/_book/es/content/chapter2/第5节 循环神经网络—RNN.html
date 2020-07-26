@@ -17,6 +17,22 @@
     
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -25,7 +41,27 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-mcqx/mcqx.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fbqx/fbqx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-spoiler/spoiler.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-youtubex/player.css">
                 
             
                 
@@ -34,6 +70,14 @@
             
                 
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
                 
             
                 
@@ -61,7 +105,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
@@ -93,6 +137,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -107,9 +152,27 @@
     <link rel="prev" href="第4节 卷积神经网络—CNN.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"nijisakai","repo":"TeachableMachine_with_MQTTWSS_and_HomeAssistant","type":"star","size":"large"}]};
+    </script>
+
     </head>
     <body>
         
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+  
 <div class="book">
     <div class="book-summary">
         
@@ -751,16 +814,19 @@
 <div id="book-search-results">
     <div class="search-noresults">
     
+<div id="book-search-results">
+    <div class="search-noresults">
+    
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7B2C;5&#x8282;-&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;rnn">&#x7B2C;5&#x8282; &#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;RNN</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x7B2C;5&#x8282;-&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;rnn"><b></b>&#x7B2C;5&#x8282; &#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;RNN</a></li></ul></div><a href="#&#x7B2C;5&#x8282;-&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;rnn" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B2C;5&#x8282;-&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;rnn"><a name="&#x7B2C;5&#x8282;-&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;rnn" class="anchor-navigation-ex-anchor" href="#&#x7B2C;5&#x8282;-&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;rnn"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;5&#x8282; &#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;RNN</h1>
 <hr>
 <blockquote>
 <p>RNN&#xFF08;Recurrent Neural Network&#xFF09;&#x662F;&#x4E00;&#x7C7B;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x8981;&#x660E;&#x786E;&#x4EC0;&#x4E48;&#x662F;&#x5E8F;&#x5217;&#x6570;&#x636E;&#xFF0C;&#x6458;&#x53D6;&#x767E;&#x5EA6;&#x767E;&#x79D1;&#x8BCD;&#x6761;&#xFF1A;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x662F;&#x6307;&#x5728;&#x4E0D;&#x540C;&#x65F6;&#x95F4;&#x70B9;&#x4E0A;&#x6536;&#x96C6;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x7C7B;&#x6570;&#x636E;&#x53CD;&#x6620;&#x4E86;&#x67D0;&#x4E00;&#x4E8B;&#x7269;&#x3001;&#x73B0;&#x8C61;&#x7B49;&#x968F;&#x65F6;&#x95F4;&#x7684;&#x53D8;&#x5316;&#x72B6;&#x6001;&#x6216;&#x7A0B;&#x5EA6;&#x3002;&#x8FD9;&#x662F;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x662F;&#x65F6;&#x95F4;&#xFF0C;&#x6BD4;&#x5982;&#x6587;&#x5B57;&#x5E8F;&#x5217;&#xFF0C;&#x4F46;&#x603B;&#x5F52;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x70B9;&#x2014;&#x2014;&#x540E;&#x9762;&#x7684;&#x6570;&#x636E;&#x8DDF;&#x524D;&#x9762;&#x7684;&#x6570;&#x636E;&#x6709;&#x5173;&#x7CFB;&#x3002;</p>
 </blockquote>
-<h3 id="&#x8BED;&#x97F3;&#x52A9;&#x624B;">&#x8BED;&#x97F3;&#x52A9;&#x624B;</h3>
+<h3 id="&#x8BED;&#x97F3;&#x52A9;&#x624B;"><a name="&#x8BED;&#x97F3;&#x52A9;&#x624B;" class="anchor-navigation-ex-anchor" href="#&#x8BED;&#x97F3;&#x52A9;&#x624B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x97F3;&#x52A9;&#x624B;</h3>
 <p>&#x5F53;&#x4F60;&#x7528;&#x5C0F;&#x7C73;&#x624B;&#x673A;&#x547C;&#x53EB;&#x5C0F;&#x7231;&#x540C;&#x5B66;&#xFF0C;&#x8BA9;&#x5979;&#x5E2E;&#x4F60;&#x8BBE;&#x5B9A;&#x95F9;&#x949F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B9E;&#x9645;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x60C5;&#x5982;&#x4E0B;</p>
-<p><a href="https://md.hass.live/1060404-667c04dab1571032.webp" data-lightbox="9780b352-f463-48dd-bcef-92c651e14002" data-title="1060404-667c04dab1571032" target="_blank"><img src="https://md.hass.live/1060404-667c04dab1571032.webp" alt="1060404-667c04dab1571032"></a></p>
+<p><a href="https://md.hass.live/1060404-667c04dab1571032.webp" data-lightbox="3ed0e98b-1078-496c-8b96-9ee93788b351" data-title="1060404-667c04dab1571032" target="_blank"><img src="https://md.hass.live/1060404-667c04dab1571032.webp" alt="1060404-667c04dab1571032"></a></p>
 <p>&#x6B65;&#x9AA4;&#xFF1A;</p>
 <ul>
 <li>&#x5C06;&#x7528;&#x6237;&#x7684;&#x8BED;&#x97F3;&#x8F6C;&#x5316;&#x4E3A;&#x6587;&#x5B57;</li>
@@ -769,13 +835,16 @@
 <li>&#x53CD;&#x9988;&#x7ED3;&#x679C;&#x5230;&#x754C;&#x9762;</li>
 </ul>
 <p>&#x8FD9;&#x91CC;&#x7684;Slot Filling&#xFF0C;&#x4E2D;&#x6587;&#x79F0;&#x4E3A;&#x586B;&#x69FD;&#xFF0C;&#x5C06;&#x53E5;&#x5B50;&#x7684;&#x5185;&#x5BB9;&#x7684;&#x6587;&#x5B57;&#x586B;&#x5199;&#x5230;&#x6B63;&#x786E;&#x7684;&#x69FD;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
-<p><a href="https://md.hass.live/1060404-cdd510d5832d89d9.webp" data-lightbox="c0bdcede-ede2-4d1f-a1ff-f151c87e507b" data-title="1060404-cdd510d5832d89d9" target="_blank"><img src="https://md.hass.live/1060404-cdd510d5832d89d9.webp" alt="1060404-cdd510d5832d89d9"></a></p>
-<h3 id="&#x6587;&#x5B57;&#x60C5;&#x611F;&#x5206;&#x6790;&#x3001;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;">&#x6587;&#x5B57;&#x60C5;&#x611F;&#x5206;&#x6790;&#x3001;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;</h3>
-<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155809.png" data-lightbox="91c33756-ad6d-48b2-b79c-22042c8a0ef8" data-title="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155809" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155809.png" alt="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155809"></a></p>
-<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155851.png" data-lightbox="b8c9d5ae-3ba7-47af-8527-feaeae73425a" data-title="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155851" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155851.png" alt="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155851"></a></p>
-<h3 id="&#x5229;&#x7528;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x751F;&#x6210;&#x53E4;&#x8BD7;&#x8BCD;">&#x5229;&#x7528;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x751F;&#x6210;&#x53E4;&#x8BD7;&#x8BCD;</h3>
+<p><a href="https://md.hass.live/1060404-cdd510d5832d89d9.webp" data-lightbox="87fa6cca-4567-45b5-8ccc-b422eb59cbbb" data-title="1060404-cdd510d5832d89d9" target="_blank"><img src="https://md.hass.live/1060404-cdd510d5832d89d9.webp" alt="1060404-cdd510d5832d89d9"></a></p>
+<h3 id="&#x6587;&#x5B57;&#x60C5;&#x611F;&#x5206;&#x6790;&#x3001;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;"><a name="&#x6587;&#x5B57;&#x60C5;&#x611F;&#x5206;&#x6790;&#x3001;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x5B57;&#x60C5;&#x611F;&#x5206;&#x6790;&#x3001;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6587;&#x5B57;&#x60C5;&#x611F;&#x5206;&#x6790;&#x3001;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;</h3>
+<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155809.png" data-lightbox="d77f5a54-ed4f-4240-8a41-29a6e7a5d5aa" data-title="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155809" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155809.png" alt="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155809"></a></p>
+<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155851.png" data-lightbox="38f8bcad-583f-4506-b786-90fb87826a61" data-title="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155851" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821155851.png" alt="&#x5FAE;&#x4FE1;&#x622A;&#x56FE;_20190821155851"></a></p>
+<h3 id="&#x5229;&#x7528;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x751F;&#x6210;&#x53E4;&#x8BD7;&#x8BCD;"><a name="&#x5229;&#x7528;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x751F;&#x6210;&#x53E4;&#x8BD7;&#x8BCD;" class="anchor-navigation-ex-anchor" href="#&#x5229;&#x7528;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x751F;&#x6210;&#x53E4;&#x8BD7;&#x8BCD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5229;&#x7528;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x751F;&#x6210;&#x53E4;&#x8BD7;&#x8BCD;</h3>
+<h4 id="&#x5728;&#x7EBF;&#x7248;&#x672C;"><a name="&#x5728;&#x7EBF;&#x7248;&#x672C;" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x7EBF;&#x7248;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x7EBF;&#x7248;&#x672C;</h4>
+<center><iframe src="http://hass.live:8000" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
 <p>1.&#x6253;&#x5F00;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;<code>learn-ai/codes/chapter1/part5_RNN/PoetAI</code></p>
-<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153025.png" data-lightbox="12bd1db6-0360-4668-b9b9-0a97537eafec" data-title="filestructure" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153025.png" alt="filestructure"></a></p>
+<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153025.png" data-lightbox="3c6628bb-0c2f-40a2-8905-8cb615b4c75b" data-title="filestructure" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153025.png" alt="filestructure"></a></p>
 <p>&#x5176;&#x4E2D;&#xFF0C;
 <code>poetry.txt</code>&#x5185;&#x5305;&#x542B;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x53E4;&#x8BD7;&#x8BCD;
 <code>poet_rnn.py</code>&#x7528;&#x6765;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;
@@ -798,16 +867,32 @@ python poet_rnn.py
 <p>&#x5C06;&#x4F1A;&#x751F;&#x6210;&#x4EE5;<code>&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;</code>&#x56DB;&#x4E2A;&#x5B57;&#x5F00;&#x5934;&#x7684;&#x4E03;&#x8A00;&#x85CF;&#x5934;&#x8BD7;&#x3002;&#x5C1D;&#x8BD5;&#x5C06;&#x6587;&#x5B57;&#x66FF;&#x6362;&#x4E3A;&#x5176;&#x4ED6;&#xFF0C;7&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x4E3A;5&#xFF0C;&#x5373;&#x751F;&#x6210;&#x4E94;&#x8A00;&#x8BD7;&#x3002;&#x4FDD;&#x5B58;&#x540E;&#x6267;&#x884C;&#xFF1A;</p>
 <pre><code class="lang-bash">python poet_rnn_output.py
 </code></pre>
-<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153928.png" data-lightbox="4ec9ce14-da16-4fcf-95a3-f9a34694d3d8" data-title="outputpoet" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153928.png" alt="outputpoet"></a></p>
+<p><a href="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153928.png" data-lightbox="bb7bd582-e3dd-4b30-b73f-4df0e86be45a" data-title="outputpoet" target="_blank"><img src="https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821153928.png" alt="outputpoet"></a></p>
 <div id="gitalk-container"></div> 
 
 <footer class="page-footer"><span class="copyright">&#xA9; &#x5317;&#x4EAC;&#x5E08;&#x8303;&#x5927;&#x5B66;&#x667A;&#x6167;&#x5B66;&#x4E60;&#x7814;&#x7A76;&#x9662; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-06-30
-</span></footer>
+2020-07-25
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
     </div>
     <div class="search-results">
         <div class="has-results">
@@ -847,14 +932,27 @@ python poet_rnn.py
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第5节 循环神经网络—RNN","level":"1.4.5","depth":2,"next":{"title":"第6节 人工智能与游戏—DQN","level":"1.4.6","depth":2,"path":"content/chapter2/第6节 人工智能与游戏—DQN.md","ref":"content/chapter2/第6节 人工智能与游戏—DQN.md","articles":[]},"previous":{"title":"第4节 卷积神经网络—CNN","level":"1.4.4","depth":2,"path":"content/chapter2/第4节 卷积神经网络—CNN.md","ref":"content/chapter2/第4节 卷积神经网络—CNN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","code","back-to-top-button","splitter","-lunr","-search","search-pro","pageview-count","hide-element","popup","sharing-plus","latex-codecogs","mygitalk","lightbox","expandable-chapters-small","-highlight","theme-comscore","baidu-tongji","tbfed-pagefooter","flexible-alerts","js-sequence-diagram-full@>=0.3.1","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy 北京师范大学智慧学习研究院","modify_label":"修订时间：","modify_format":"YYYY-MM-DD"},"latex-codecogs":{"type":"gif"},"chapter-fold":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"8eb90132f665eaecfd1fe05951de80d3"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"js-sequence-diagram-full":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"mygitalk":{"flipMoveOptions":{},"clientID":"798b04735e47ac6c4c4c","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["nijisakai"],"createIssueManually":false,"distractionFreeMode":false,"repo":"learnaigitbook","owner":"nijisakai","enableHotKey":true,"clientSecret":"75ef25db8938a0cd8f88e0cdcf13d96441feeee8","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"douban":true,"facebook":false,"google":false,"pocket":false,"qq":true,"qzone":true,"twitter":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"北京师范大学智慧学习研究院","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"青少年人工智能实验教程","language":"es","gitbook":"3.2.2","description":"learn ai"},"file":{"path":"content/chapter2/第5节 循环神经网络—RNN.md","mtime":"2020-06-30T13:33:07.792Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-07-24T15:16:59.146Z"},"basePath":"../..","book":{"language":"es"}});
+            gitbook.page.hasChanged({"page":{"title":"第5节 循环神经网络—RNN","level":"1.4.5","depth":2,"next":{"title":"第6节 人工智能与游戏—DQN","level":"1.4.6","depth":2,"path":"content/chapter2/第6节 人工智能与游戏—DQN.md","ref":"content/chapter2/第6节 人工智能与游戏—DQN.md","articles":[]},"previous":{"title":"第4节 卷积神经网络—CNN","level":"1.4.4","depth":2,"path":"content/chapter2/第4节 卷积神经网络—CNN.md","ref":"content/chapter2/第4节 卷积神经网络—CNN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ancre-navigation","flexible-alerts","advanced-emoji","chapter-fold","code","github","splitter","search-pro","sectionx","klipse","pageview-count","hide-element","popup","sharing-plus","latex-codecogs","mygitalk","lightbox","expandable-chapters-small","-highlight","theme-comscore","baidu-tongji","tbfed-pagefooter","flexible-alerts","js-sequence-diagram-full@>=0.3.1","-sharing","theme-comscore","baidu-tongji","tbfed-pagefooter","flexible-alerts","js-sequence-diagram-full@>=0.3.1","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy 北京师范大学智慧学习研究院","modify_label":"修订时间：","modify_format":"YYYY-MM-DD"},"latex-codecogs":{"type":"gif"},"chapter-fold":{},"spoiler":{},"github":{"url":"https://github.com/nijisakai"},"fbqx":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"8eb90132f665eaecfd1fe05951de80d3"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"js-sequence-diagram-full":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"youtubex":{"embedDescription":{"de":"Eingebettetes Video:","default":"Embedded video:"}},"pageview-count":{},"github-buttons":{"buttons":[{"user":"nijisakai","repo":"TeachableMachine_with_MQTTWSS_and_HomeAssistant","type":"star","size":"large"}]},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"mygitalk":{"flipMoveOptions":{},"clientID":"798b04735e47ac6c4c4c","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["nijisakai"],"createIssueManually":false,"distractionFreeMode":false,"repo":"learnaigitbook","owner":"nijisakai","enableHotKey":true,"clientSecret":"75ef25db8938a0cd8f88e0cdcf13d96441feeee8","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"douban":true,"facebook":false,"google":false,"pocket":false,"qq":false,"qzone":true,"twitter":false,"weibo":true},"mcqx":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"http://yuanzhuo.bnu.edu.cn/files/system/2019/12-26/230202a57305799451.png"}},"theme":"default","author":"北京师范大学智慧学习研究院","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"青少年人工智能实验教程","language":"es","gitbook":"3.2.2","description":"learn ai"},"file":{"path":"content/chapter2/第5节 循环神经网络—RNN.md","mtime":"2020-07-25T08:15:47.417Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-07-26T04:59:41.745Z"},"basePath":"../..","book":{"language":"es"}});
         });
     </script>
 </div>
 
+
         
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
@@ -865,7 +963,35 @@ python poet_rnn.py
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mcqx/js.cookie.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mcqx/mcqx.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fbqx/fbqx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-spoiler/spoiler.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-youtubex/player.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
         
     
         
@@ -878,6 +1004,14 @@ python poet_rnn.py
     
         
         <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
         
     
         
@@ -917,15 +1051,27 @@ python poet_rnn.py
         
     
         
-        <script src="../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
-        
-    
-        
         <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram-full/sequence-diagram-min.js"></script>
         
     
         
         <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram-full/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
         
     
         

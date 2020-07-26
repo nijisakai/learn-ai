@@ -8,7 +8,9 @@
 
 一个基于MNIST训练的手写数字识别系统。**[点击这里](https://transcranial.github.io/keras-js/#/mnist-cnn)来体验。**
 
-![MNISTWeb](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/MNISTWeb.webp)
+<center><iframe src="https://transcranial.github.io/keras-js/#/mnist-cnn/" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+<!-- ![MNISTWeb](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/MNISTWeb.webp) -->
 
 在学习机器学习的时候，首要的任务的就是准备一份通用的数据集，方便与其他的算法进行比较。
 

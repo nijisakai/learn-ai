@@ -2,13 +2,16 @@
   "gitbook": "3.2.2",
   "description": "learn ai",
     "plugins": [
-		"chapter-fold",
+        "ancre-navigation",
+        "flexible-alerts",
+        "advanced-emoji",
+        "chapter-fold",
         "code",
-        "back-to-top-button",
+        "github",
         "splitter",
-        "-lunr",
-        "-search",
         "search-pro",
+        "sectionx",
+        "klipse",
         "pageview-count",
         "hide-element",
         "popup",
@@ -25,7 +28,8 @@
         "js-sequence-diagram-full@>=0.3.1",
 		"-sharing"
 	],
- "title": "青少年人工智能实验教程",
+ 
+"title": "青少年人工智能实验教程",
  "author": "北京师范大学智慧学习研究院",
     "pluginsConfig": {
         "hide-element": {
@@ -41,7 +45,7 @@
             "facebook": false,
             "google": false,
             "pocket": false,
-            "qq": true,
+            "qq": false,
             "qzone": true,
             "twitter": false,
             "weibo": true
@@ -49,6 +53,9 @@
         "baidu-tongji": {
             "token": "8eb90132f665eaecfd1fe05951de80d3"
           },
+        "github": {
+            "url": "https://github.com/nijisakai"
+        },
         "mygitalk": {
             "clientID": "798b04735e47ac6c4c4c",
             "clientSecret": "75ef25db8938a0cd8f88e0cdcf13d96441feeee8",

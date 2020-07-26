@@ -2,7 +2,7 @@
 
 ---
 
-### Python简介
+## Python简介
 
 Python是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。
 
@@ -16,7 +16,9 @@ Python是面向对象语言: 这意味着Python支持面向对象的风格或代
 
 Python是初学者的语言：Python对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到浏览器再到游戏。
 
-#### 1.Python发展历史
+<center><iframe src="http://hass.live:8000/user/yuanzhuo/notebooks/L01_PMC%20-%20Intro%20to%20Python%20and%20Turtle.ipynb" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+### 1.Python发展历史
 
 Python是由Guido van Rossum在八十年代末和九十年代初，在荷兰国家数学和计算机科学研究所设计出来的。
 
@@ -28,7 +30,7 @@ Python本身也是由诸多其他语言发展而来的,这包括ABC、Modula-3�
 
 Python 2.7被确定为最后一个Python 2.x版本，它除了支持 Python 2.x语法外，还支持部分Python 3.1语法。
 
-#### 2.Python特点
+### 2.Python特点
 
 1).易于学习：Python有相对较少的关键字，结构简单，和一个明确定义的语法，学习起来更加简单。
 
@@ -50,7 +52,7 @@ Python 2.7被确定为最后一个Python 2.x版本，它除了支持 Python 2.x�
 
 10).可嵌入: 你可以将Python嵌入到C/C++程序，让你的程序的用户获得"脚本化"的能力。
 
-#### 3.Python版本说明(以树莓派已安装版本为例)
+### 3.Python版本说明(以树莓派已安装版本为例)
 
 |版本|说明|备注|
 :-:|:-:|:-:
@@ -58,16 +60,14 @@ Python 2.7被确定为最后一个Python 2.x版本，它除了支持 Python 2.x�
 |Python3|Pyhton3.7|Python3是较新的版本，Python2.7语法与Python3不兼容，其程序代码无法使用Python3的解释器运行|
 
 树莓派上运行python2环境，如下图：
-![alt python2](http://q6c64umf6.bkt.clouddn.com/python2.png)
 
 树莓派上运行python3环境，如下图：
-![alt python3](http://q6c64umf6.bkt.clouddn.com/python3.png)
 
-#### 4.Python文件的执行
+### 4.Python文件的执行
 
 我们一般在终端里，通过`python test.py`的方式来运行Python文件。
 
-#### 5.Python包管理工具—pip
+### 5.Python包管理工具—pip
 
 pip是一个现代的，通用的Python包管理工具,提供了对Python包的查找，下载，安装，卸载的功能。  
 PIP的使用方法:  
@@ -83,11 +83,38 @@ PIP的使用方法:
 |search|搜索PyPI查找软件包||
 |help|显示帮助命令||
 
-### Python基本语法
+## Python基本语法
 
 ![20180823164259854](https://md.hass.live/20180823164259854.png)
 
-#### 1.Python语言源程序模块的初识
+> [!NOTE]
+> 测试一下测试一下
+
+<!--sec data-title="Introduction" data-id="intro" data-nopdf="true" ces-->
+This page is implemented using the two plugins developed by me: ```gitbook-plugin-sectionx```, please check the [Github repo](https://github.com/ymcatar/gitbook-plugin-sectionx) for the plugin.
+
+The source code for this page is available [here](https://raw.githubusercontent.com/ymcatar/gitbook-test/master/testing_sectionx.md).
+<!--endsec-->
+
+<!--sec data-title="Example 1" data-id="section1" ces-->
+This is a section that is by default visible. You can toggle this with the button in the title. The next section is hidden by default, you can add a custom button to toggle it (see GitHub for the syntax).
+
+<button class="section" target="section3" show="Show the next section" hide="Hide the next section"></button>
+<!--endsec-->
+
+<!--sec data-title="Example 2" data-id="section2" data-collapse=true ces-->
+This is a section that is by default closed but visible (with ```data-collapse=true```)
+<!--endsec-->
+
+<!--sec data-title="Hidden 3" data-id="section3" data-show=false ces-->
+This section can only be opened with that button.
+<!--endsec-->
+
+```eval-python
+print [x + 1 for x in range(10)]
+```
+
+### 1.Python语言源程序模块的初识
 
 一个Python程序可能由一个或多个模块组成。模块是程序的功能单元。Python模块的典型结构由:**模块文档、模块导入、变量定义、类定义语句、函数定义语句、主程序**等组成。
 
@@ -122,7 +149,7 @@ keyword.kwlist
 **语句**：是由函数、表达式调用组成的。另外，各种控制结构也属于语句，例如： if语句、for语句。
 **类**：是同一类事物的抽象。我们处理的数据都可以看做数据对象。Python是面向对象的程序设计语言，它是一个事物的静态特征（属性）和动态行为（方法）封装在一个结构里，称之为对象。
 
-#### 3.程序的书写格式与基本规则
+### 3.程序的书写格式与基本规则
 
 **缩进**：使用缩进来区分代码块的级别。Python语言中没有采用花括号或begin...end等来分隔代码块，而是使用冒号和代码缩进来区分代码之间的层次。代码缩进是一种语法规则，错误的缩进可能导致代码的含义完全不同。如下2个代码块
 ![1728484-77bb1c5e0daf3c45](https://md.hass.live/1728484-77bb1c5e0daf3c45.webp)
