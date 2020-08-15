@@ -4,6 +4,8 @@
 
 >DeepMind《Playing Atari with Deep Reinforcement Learning》提出了**强化学习算法（DQN）**，DQN使用卷积神经网络作为价值函数来拟合Q-learning中的动作价值，这是第一个直接从原始像素中成功学习到控制策略的深度强化学习算法。DQN 模型的核心就是卷积神经网络，使用Q-learning 来训练，其输入为原始像素，输出为价值函数。在不改变模型的架构和参数的情况下，DQN在七个Atari2600游戏上，击败了之前所有的算法，并在其中三个游戏上，击败了人类最佳水平。
 
+
+
 ![atari](https://md.hass.live/640.webp)
 
 ### Flappy Bird

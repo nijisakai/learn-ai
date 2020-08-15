@@ -1,0 +1,1124 @@
+
+<!DOCTYPE HTML>
+<html lang="es" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第4节 卷积神经网络—CNN · 青少年人工智能实验教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="北京师范大学智慧学习研究院">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-navbar/navbar.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-mcqx/mcqx.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fbqx/fbqx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-spoiler/spoiler.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-youtubex/player.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-latex-codecogs/latex-codecogs.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第5节 循环神经网络—RNN.html" />
+    
+    
+    <link rel="prev" href="第3节 前馈神经网络—FFNN.html" />
+    
+
+    </head>
+    <body>
+        
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+  
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Escribe para buscar" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于本课程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter0/第0章简介.html">
+            
+                <a href="../chapter0/第0章简介.html">
+            
+                    
+                    开始之前
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter0/课程说明.html">
+            
+                <a href="../chapter0/课程说明.html">
+            
+                    
+                    课程说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter0/课前读物.html">
+            
+                <a href="../chapter0/课前读物.html">
+            
+                    
+                    课前读物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter0/环境准备.html">
+            
+                <a href="../chapter0/环境准备.html">
+            
+                    
+                    环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter1/第1章简介.html">
+            
+                <a href="../chapter1/第1章简介.html">
+            
+                    
+                    第1章 基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter1/第1节 Python语言基础.html">
+            
+                <a href="../chapter1/第1节 Python语言基础.html">
+            
+                    
+                    第1节 Python语言基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter1/第2节 Linux基本操作.html">
+            
+                <a href="../chapter1/第2节 Linux基本操作.html">
+            
+                    
+                    第2节 Linux基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter1/第3节 Web服务基础.html">
+            
+                <a href="../chapter1/第3节 Web服务基础.html">
+            
+                    
+                    第3节 Web服务基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter1/第4节 开源硬件基本操作.html">
+            
+                <a href="../chapter1/第4节 开源硬件基本操作.html">
+            
+                    
+                    第4节 开源硬件基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter1/第5节 认识硬件—树莓派.html">
+            
+                <a href="../chapter1/第5节 认识硬件—树莓派.html">
+            
+                    
+                    第5节 认识硬件—树莓派
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../chapter1/第6节 认识硬件—Arduino.html">
+            
+                <a href="../chapter1/第6节 认识硬件—Arduino.html">
+            
+                    
+                    第6节 认识硬件—Arduino
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../chapter1/第7节 认识硬件—ESP8266.html">
+            
+                <a href="../chapter1/第7节 认识硬件—ESP8266.html">
+            
+                    
+                    第7节 认识硬件—ESP8266
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../chapter1/第8节 嵌入式系统软件开发流程.html">
+            
+                <a href="../chapter1/第8节 嵌入式系统软件开发流程.html">
+            
+                    
+                    第8节 嵌入式系统软件开发流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第2章简介.html">
+            
+                <a href="第2章简介.html">
+            
+                    
+                    第2章 人工智能初体验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="第1节 人工智能、机器学习的相关概念.html">
+            
+                <a href="第1节 人工智能、机器学习的相关概念.html">
+            
+                    
+                    第1节 人工智能、机器学习的相关概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="第2节 知识图谱.html">
+            
+                <a href="第2节 知识图谱.html">
+            
+                    
+                    第2节 知识图谱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="第3节 前馈神经网络—FFNN.html">
+            
+                <a href="第3节 前馈神经网络—FFNN.html">
+            
+                    
+                    第3节 前馈神经网络—FFNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="第4节 卷积神经网络—CNN.html">
+            
+                <a href="第4节 卷积神经网络—CNN.html">
+            
+                    
+                    第4节 卷积神经网络—CNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="第5节 循环神经网络—RNN.html">
+            
+                <a href="第5节 循环神经网络—RNN.html">
+            
+                    
+                    第5节 循环神经网络—RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="第6节 人工智能与游戏—DQN.html">
+            
+                <a href="第6节 人工智能与游戏—DQN.html">
+            
+                    
+                    第6节 人工智能与游戏—DQN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter3/第3章简介.html">
+            
+                <a href="../chapter3/第3章简介.html">
+            
+                    
+                    第3章 硬件基础—智能小白
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chapter3/第1节 小白的心脏—esp8266开发板.html">
+            
+                <a href="../chapter3/第1节 小白的心脏—esp8266开发板.html">
+            
+                    
+                    第1节 小白的心脏—esp8266开发板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chapter3/第2节 无线控制—遥控小车.html">
+            
+                <a href="../chapter3/第2节 无线控制—遥控小车.html">
+            
+                    
+                    第2节 无线控制—遥控小车
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chapter3/第3节 汽车人小白—机械臂.html">
+            
+                <a href="../chapter3/第3节 汽车人小白—机械臂.html">
+            
+                    
+                    第3节 汽车人小白—机械臂
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../chapter3/第4节 视物而行—远程视频救援.html">
+            
+                <a href="../chapter3/第4节 视物而行—远程视频救援.html">
+            
+                    
+                    第4节 视物而行—远程视频救援
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter4/第4章简介.html">
+            
+                <a href="../chapter4/第4章简介.html">
+            
+                    
+                    第4章 机器视觉—自动追踪小车大白
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter4/第1节 借我一双慧眼吧.html">
+            
+                <a href="../chapter4/第1节 借我一双慧眼吧.html">
+            
+                    
+                    第1节 借我一双慧眼吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter4/第2节 大白智能分拣.html">
+            
+                <a href="../chapter4/第2节 大白智能分拣.html">
+            
+                    
+                    第2节 大白智能分拣
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../chapter4/第3节 大白自动追踪.html">
+            
+                <a href="../chapter4/第3节 大白自动追踪.html">
+            
+                    
+                    第3节 大白自动追踪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../chapter5/第5章简介.html">
+            
+                <a href="../chapter5/第5章简介.html">
+            
+                    
+                    第5章 深度学习—无人驾驶小车老白
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter5/第1节 更加专业的视觉系统.html">
+            
+                <a href="../chapter5/第1节 更加专业的视觉系统.html">
+            
+                    
+                    第1节 更加专业的视觉系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter5/第2节 无人驾驶数据采集、训练与测试.html">
+            
+                <a href="../chapter5/第2节 无人驾驶数据采集、训练与测试.html">
+            
+                    
+                    第2节 无人驾驶数据采集、训练与测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter5/第3节 红灯停绿灯行—识别交通信号.html">
+            
+                <a href="../chapter5/第3节 红灯停绿灯行—识别交通信号.html">
+            
+                    
+                    第3节 红灯停绿灯行—识别交通信号
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chapter6/第6章简介.html">
+            
+                <a href="../chapter6/第6章简介.html">
+            
+                    
+                    第6章 综合进阶—机器人小绿
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chapter6/第1节 小绿的一小步，我们的一大步.html">
+            
+                <a href="../chapter6/第1节 小绿的一小步，我们的一大步.html">
+            
+                    
+                    第1节 小绿的一小步，我们的一大步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chapter6/第2节 “小绿，跳舞！”制作自己的语音助手.html">
+            
+                <a href="../chapter6/第2节 “小绿，跳舞！”制作自己的语音助手.html">
+            
+                    
+                    第2节 “小绿，跳舞！”制作自己的语音助手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../chapter6/第3节 使用物联网制作人脸解锁.html">
+            
+                <a href="../chapter6/第3节 使用物联网制作人脸解锁.html">
+            
+                    
+                    第3节 使用物联网制作人脸解锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../chapter6/第4节 物联网进阶—执行自动化操作.html">
+            
+                <a href="../chapter6/第4节 物联网进阶—执行自动化操作.html">
+            
+                    
+                    第4节 物联网进阶—执行自动化操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../chapter6/第5节 唱跳rap—小绿实时姿态模仿.html">
+            
+                <a href="../chapter6/第5节 唱跳rap—小绿实时姿态模仿.html">
+            
+                    
+                    第5节 唱跳rap—小绿实时姿态模仿
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../codes/下载.html">
+            
+                <a href="../codes/下载.html">
+            
+                    
+                    资料下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Publicado con GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >第4节 卷积神经网络—CNN</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x7B2C;4&#x8282;-&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;cnn"><b></b>&#x7B2C;4&#x8282; &#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;CNN</a></li></ul></div><a href="#&#x7B2C;4&#x8282;-&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;cnn" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B2C;4&#x8282;-&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;cnn"><a name="&#x7B2C;4&#x8282;-&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;cnn" class="anchor-navigation-ex-anchor" href="#&#x7B2C;4&#x8282;-&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;cnn"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;4&#x8282; &#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;CNN</h1>
+<hr>
+<blockquote>
+<p>&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;Convolutional Neural Networks, CNN&#xFF09;&#x662F;&#x4E00;&#x7C7B;&#x5305;&#x542B;&#x5377;&#x79EF;&#x8BA1;&#x7B97;&#x4E14;&#x5177;&#x6709;&#x6DF1;&#x5EA6;&#x7ED3;&#x6784;&#x7684;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;Feedforward Neural Networks&#xFF09;&#xFF0C;&#x662F;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#xFF08;deep learning&#xFF09;&#x7684;&#x4EE3;&#x8868;&#x7B97;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5177;&#x6709;&#x8868;&#x5F81;&#x5B66;&#x4E60;&#xFF08;representation learning&#xFF09;&#x80FD;&#x529B;&#xFF0C;&#x80FD;&#x591F;&#x6309;&#x5176;&#x9636;&#x5C42;&#x7ED3;&#x6784;&#x5BF9;&#x8F93;&#x5165;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x5E73;&#x79FB;&#x4E0D;&#x53D8;&#x5206;&#x7C7B;&#xFF08;shift-invariant classification&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x5E73;&#x79FB;&#x4E0D;&#x53D8;&#x4EBA;&#x5DE5;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;Shift-Invariant Artificial Neural Networks, SIANN&#xFF09;</p>
+</blockquote>
+<h3 id="&#x5728;&#x7EBF;&#x4F53;&#x9A8C;"><a name="&#x5728;&#x7EBF;&#x4F53;&#x9A8C;" class="anchor-navigation-ex-anchor" href="#&#x5728;&#x7EBF;&#x4F53;&#x9A8C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x7EBF;&#x4F53;&#x9A8C;</h3>
+<p>&#x5728;&#x5DE6;&#x4E0A;&#x89D2;&#x65B9;&#x6846;&#x4E2D;&#x5199;&#x6570;&#x5B57;&#x6765;&#x8FDB;&#x884C;&#x53EF;&#x89C6;&#x5316;CNN&#x4F53;&#x9A8C;</p>
+<center><iframe src="http://hass.live:9024/" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+<!-- ![微信截图_20200313131651](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200313131651.png)
+
+![微信截图_20200313131713](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200313131713.png) -->
+<h3 id="tensorflow&#x8BAD;&#x7EC3;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x7247;&#x5206;&#x7C7B;&#x5668;"><a name="tensorflow&#x8BAD;&#x7EC3;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x7247;&#x5206;&#x7C7B;&#x5668;" class="anchor-navigation-ex-anchor" href="#tensorflow&#x8BAD;&#x7EC3;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x7247;&#x5206;&#x7C7B;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>Tensorflow&#x8BAD;&#x7EC3;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x7247;&#x5206;&#x7C7B;&#x5668;</h3>
+<p>&#x4F7F;&#x7528;Tensorflow&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x6309;&#x7C7B;&#x522B;&#x8BAD;&#x7EC3;&#x56FE;&#x50CF;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x72D7;&#x72D7;&#x7684;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#xFF0C;&#x6D4B;&#x8BD5;&#x56FE;&#x7247;&#x5206;&#x7C7B;&#x5668;&#x5BF9;&#x72D7;&#x7684;&#x54C1;&#x79CD;&#x7684;&#x8BC6;&#x522B;&#x3002;</p>
+<p></p><center><iframe src="https://teachablemachine.withgoogle.com/train" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center><p></p>
+<h4 id="&#x73AF;&#x5883;&#x51C6;&#x5907;"><a name="&#x73AF;&#x5883;&#x51C6;&#x5907;" class="anchor-navigation-ex-anchor" href="#&#x73AF;&#x5883;&#x51C6;&#x5907;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x73AF;&#x5883;&#x51C6;&#x5907;</h4>
+<p>1.&#x5728;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x4E2D;&#x6253;&#x5F00;<code>learn-ai\codes\chapter1\part4_CNN\DogsBreedClassification</code>&#x3002;&#x4E0B;&#x8F7D;&#x6570;&#x636E;&#x5E93;&#x548C;&#x6A21;&#x578B;&#x6587;&#x4EF6;&#xFF0C;&#x89E3;&#x538B;&#x5230;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x3002;</p>
+<p>2.Windows&#x7528;&#x6237;&#x6253;&#x5F00;Anaconda Prompt&#xFF0C;macOS&#x7528;&#x6237;&#x6253;&#x5F00;&#x7EC8;&#x7AEF;</p>
+<p>3.&#x8F93;&#x5165;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x6765;&#x8FDB;&#x5165;learn-ai&#x73AF;&#x5883;</p>
+<pre><code class="lang-bash">conda activate learn-ai
+</code></pre>
+<p>4.&#x5B89;&#x88C5;&#x989D;&#x5916;&#x7684;&#x8F6F;&#x4EF6;&#x5305;</p>
+<pre><code class="lang-bash">conda install bleach
+conda install html5lib
+conda install pandas
+conda install python-dateutil
+</code></pre>
+<p>5.&#x5207;&#x6362;&#x5DE5;&#x4F5C;&#x8DEF;&#x5F84;&#x5230;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;</p>
+<pre><code class="lang-bash">//Windows
+cd C:\learn-ai\codes\chapter1\part4_CNN\DogsBreedClassification
+//macOS
+cd ~/Desktop/learn-ai/codes/chapter1/part4_CNN/DogsBreedClassification
+</code></pre>
+<h4 id="&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;"><a name="&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;</h4>
+<p>1.&#x6574;&#x7406;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x5939;
+&#x8FD0;&#x884C;&#x6570;&#x636E;&#x5904;&#x7406;&#x7A0B;&#x5E8F;<code>data_processing.py</code>&#x6765;&#x901A;&#x8FC7;&#x72D7;&#x54C1;&#x79CD;&#x540D;&#x79F0;&#x91CD;&#x65B0;&#x6392;&#x5217;&#x6587;&#x4EF6;&#x5939;</p>
+<p><a href="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification.png" data-lightbox="207b93f0-fb5f-44c2-9072-dabb920a9159" data-title="&#x6574;&#x7406;&#x597D;&#x7684;&#x6587;&#x4EF6;" target="_blank"><img src="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification.png" alt="&#x6574;&#x7406;&#x597D;&#x7684;&#x6587;&#x4EF6;"></a></p>
+<pre><code class="lang-bash">python data_processing.py &lt;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x8DEF;&#x5F84;&gt;
+</code></pre>
+<p>2.&#x4F7F;&#x7528;&#x5904;&#x7406;&#x597D;&#x6570;&#x636E;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;
+&#x8FD0;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x4EE5;&#x4F7F;&#x7528; CNN &#x67B6;&#x6784;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x3002;
+&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x811A;&#x672C;&#x4E0B;&#x65B9;&#x5C06;&#x4E0B;&#x8F7D; Google &#x7684;&#x521D;&#x59CB;&#x67B6;&#x6784; -&apos;inception-2015-12-05.tgz&apos;</p>
+<pre><code class="lang-bash">python retrain.py &#x2014; image_dir=dataset/ &#x2014; bottleneck_dir=bottleneck/ &#x2014; how_many_training_steps=500 &#x2014; output_graph=trained_model/retrained_graph.pb &#x2014; output_labels=trained_model/retrained_labels.txt &#x2014; summaries_dir=summaries
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x7A0B;&#x5E8F;&#x7684;&#x8F93;&#x51FA;</p>
+<p><a href="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_output.png" data-lightbox="cca6e457-380f-4d26-acb6-95e3c5d3b229" data-title="&#x8BAD;&#x7EC3;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;" target="_blank"><img src="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_output.png" alt="&#x8BAD;&#x7EC3;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;"></a></p>
+<p>&#x4E0A;&#x8FF0;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x7684; Tensorboard &#x7CBE;&#x5EA6;&#x56FE;</p>
+<p><a href="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_acc.png" data-lightbox="a4bbc5b7-585a-402e-8c33-5f44130e704a" data-title="&#x8BAD;&#x7EC3;&#x7CBE;&#x5EA6;" target="_blank"><img src="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_acc.png" alt="&#x8BAD;&#x7EC3;&#x7CBE;&#x5EA6;"></a></p>
+<p>&#x8981;&#x8FD0;&#x884C; TensorBoard&#xFF0C;&#x8BF7;&#x8FD0;&#x884C;&#x6B64;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-bash">User:/dogs_breed_classification$ tensorboard &#x2014; logdir summaries/ &#x2014; host=0.0.0.0 &#x2014; port=8888
+
+TensorBoard 1.7.0 at http://0.0.0.0:8888 (Press CTRL+C to quit)#
+</code></pre>
+<p>3.&#x6D4B;&#x8BD5;&#x6A21;&#x578B;</p>
+<p>&#x8FD0;&#x884C;&#x4E0B;&#x9762;&#x7684; python &#x811A;&#x672C;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x5BF9;&#x6D4B;&#x8BD5;&#x56FE;&#x50CF;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002;</p>
+<pre><code class="lang-bash">python classify.py
+</code></pre>
+<p><a href="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_testOutput.png" data-lightbox="ae5e23ef-3f76-45ce-9a2c-3be113b90925" data-title="&#x6D4B;&#x8BD5;&#x8F93;&#x51FA;" target="_blank"><img src="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/classification_testOutput.png" alt="&#x6D4B;&#x8BD5;&#x8F93;&#x51FA;"></a></p>
+<blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x4E0A;&#x9762;&#x6559;&#x7A0B;&#x4E2D;&#x7684;&#x7B2C;2&#x6B65;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x9884;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#xFF08;trained_model /retrained_graph.pb&#xFF09;&#x6765;&#x6D4B;&#x8BD5;&#x6A21;&#x578B;&#x3002;</p>
+</blockquote>
+<h3 id="&#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;"><a name="&#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;" class="anchor-navigation-ex-anchor" href="#&#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;</h3>
+<p><a href="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/neuralstyle.jpg" data-lightbox="e961eb21-d3f1-4a58-9826-90f64b5a841d" data-title="Neural Style &#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;" target="_blank"><img src="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/neuralstyle.jpg" alt="Neural Style &#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;"></a></p>
+<p>&#x5728;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x4E4B;&#x524D;&#xFF0C;&#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;&#x7684;&#x7A0B;&#x5E8F;&#x6709;&#x4E00;&#x4E2A;&#x5171;&#x540C;&#x7684;&#x601D;&#x8DEF;&#xFF1A;&#x5206;&#x6790;&#x67D0;&#x4E00;&#x79CD;&#x98CE;&#x683C;&#x7684;&#x56FE;&#x50CF;&#xFF0C;&#x7ED9;&#x90A3;&#x4E00;&#x79CD;&#x98CE;&#x683C;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x6570;&#x5B66;&#x6216;&#x8005;&#x7EDF;&#x8BA1;&#x6A21;&#x578B;&#xFF0C;&#x518D;&#x6539;&#x53D8;&#x8981;&#x505A;&#x8FC1;&#x79FB;&#x7684;&#x56FE;&#x50CF;&#x8BA9;&#x5B83;&#x80FD;&#x66F4;&#x597D;&#x7684;&#x7B26;&#x5408;&#x5EFA;&#x7ACB;&#x7684;&#x6A21;&#x578B;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x51FA;&#x6765;&#x6548;&#x679C;&#x8FD8;&#x662F;&#x4E0D;&#x9519;&#x7684;&#xFF0C;&#x4F46;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x7F3A;&#x70B9;&#xFF1A;<strong>&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x57FA;&#x672C;&#x53EA;&#x80FD;&#x505A;&#x67D0;&#x4E00;&#x79CD;&#x98CE;&#x683C;&#x6216;&#x8005;&#x67D0;&#x4E00;&#x4E2A;&#x573A;&#x666F;</strong>&#x3002;&#x56E0;&#x6B64;&#x57FA;&#x4E8E;&#x4F20;&#x7EDF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;&#x7814;&#x7A76;&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x975E;&#x5E38;&#x6709;&#x9650;&#x3002;
+&#x800C; Neural Style &#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x8F93;&#x5165;&#x4E00;&#x5F20;&#x4EE3;&#x8868;&#x5185;&#x5BB9;&#x7684;&#x56FE;&#x7247;&#x548C;&#x4E00;&#x5F20;&#x4EE3;&#x8868;&#x98CE;&#x683C;&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7F51;&#x7EDC;&#x8F93;&#x51FA;&#x4E00;&#x5F20;&#x878D;&#x5408;&#x4E86;&#x8FD9;&#x4E2A;&#x98CE;&#x683C;&#x548C;&#x5185;&#x5BB9;&#x7684;&#x65B0;&#x4F5C;&#x54C1;&#x3002;</p>
+<h4 id="&#x73AF;&#x5883;&#x51C6;&#x5907;_1"><a name="&#x73AF;&#x5883;&#x51C6;&#x5907;_1" class="anchor-navigation-ex-anchor" href="#&#x73AF;&#x5883;&#x51C6;&#x5907;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x73AF;&#x5883;&#x51C6;&#x5907;</h4>
+<p>1.VGG&#x7F51;&#x7EDC;</p>
+<p><a href="http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat" target="_blank">&#x8BAD;&#x7EC3;&#x597D;&#x7684; VGG 19 &#x7F51;&#x7EDC;</a>&#xFF0C;&#x4E0B;&#x8F7D;&#x5230;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;&#x201C;Neural Style &#x56FE;&#x50CF;&#x98CE;&#x683C;&#x8FC1;&#x79FB;&#x201D;&#x7684;&#x4E2D;&#xFF0C;&#x6216;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4F7F;&#x7528;&#x53C2;&#x6570; <code>--network</code> &#x6307;&#x5B9A;&#x5176;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>2.Pillow</p>
+<pre><code class="lang-bash">conda activate learn-ai
+conda install pillow
+</code></pre>
+<h4 id="&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;_1"><a name="&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;_1" class="anchor-navigation-ex-anchor" href="#&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7A0B;&#x5E8F;&#x53CA;&#x64CD;&#x4F5C;</h4>
+<pre><code class="lang-bash">python neural_style.py --content &lt;&#x8F93;&#x5165;&#x56FE;&#x7247;&gt; --styles &lt;&#x98CE;&#x683C;&#x56FE;&#x7247;&gt; --output &lt;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x540D;&gt; -- --iterations &lt;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&gt;
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528; examples &#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684; 1-content.jpg &#x548C; 2-style1.jpg &#x6765;&#x4E3E;&#x4F8B;&#xFF0C;&#x628A;&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x4E2D;&#xFF1A;
+&lt;&#x8F93;&#x5165;&#x56FE;&#x7247;&gt; &#x66FF;&#x6362;&#x4E3A; <code>examples/1-content.jpg</code>
+&lt;&#x98CE;&#x683C;&#x56FE;&#x7247;&gt; &#x66FF;&#x6362;&#x4E3A; <code>examples/2-style1.jpg</code>
+&lt;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x540D;&gt; &#x66FF;&#x6362;&#x4E3A; <code>examples/output.jpg</code>&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x53EB;output&#xFF0C;&#x4F7F;&#x7528;&#x4F60;&#x81EA;&#x5DF1;&#x559C;&#x6B22;&#x7684;&#x540D;&#x5B57;&#xFF1B;
+&lt;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&gt; &#x66FF;&#x6362;&#x4E3A; <code>100</code>
+&#x66FF;&#x6362;&#x540E;&#x7684;&#x547D;&#x4EE4;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-bash">python neural_style.py --content examples/1-content.jpg --styles examples/2-style1.jpg --output examples/output.jpg -- --iterations 100
+</code></pre>
+<blockquote>
+<p>&lt;&#x8F93;&#x5165;&#x56FE;&#x7247;&gt;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x8FC7;&#x5927;&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x8FD9;&#x4F1A;&#x660E;&#x663E;&#x7684;&#x589E;&#x52A0;&#x673A;&#x5668;&#x7684;&#x8D1F;&#x62C5;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5BF9;&#x4E8E;&#x6027;&#x80FD;&#x5DEE;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x72EC;&#x7ACB;&#x663E;&#x5361;&#x7684;&#x673A;&#x5668;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6570;&#x4E2A;&#x5C0F;&#x65F6;&#x6765;&#x751F;&#x6210;&#x65B0;&#x7684;&#x56FE;&#x7247;&#x3002;
+&lt;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&gt;&#x5728;&#x8BFE;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x662F; 100 &#x6B21;&#x8FED;&#x4EE3;&#xFF0C;&#x53EF;&#x4EE5;&#x521D;&#x6B65;&#x770B;&#x51FA;&#x673A;&#x5668;&#x98CE;&#x683C;&#x8FC1;&#x79FB;&#x7684;&#x6548;&#x679C;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4; 1000 &#x6B21;&#x8FED;&#x4EE3;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x4E0D;&#x9519;&#x7684;&#x56FE;&#x50CF;&#x8D28;&#x91CF;&#xFF0C;&#x4F46;&#x4F1A;&#x82B1;&#x8D39;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+</blockquote>
+<p><a href="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/finishProcess.jpg" data-lightbox="a9265556-5b8c-42d1-aaac-a3c706e648da" data-title="&#x5B8C;&#x6210;" target="_blank"><img src="http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/finishProcess.jpg" alt="&#x5B8C;&#x6210;"></a></p>
+<p>&#x5F53;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x53D8;&#x4E3A; &#x201C;100/100&#x201D; &#x65F6;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x6574;&#x4E2A;&#x56FE;&#x7247;&#x7684;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF0C;&#x6253;&#x5F00;examples&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x5230;&#x7ED3;&#x679C;&#x3002;</p>
+<div id="gitalk-container"></div> 
+
+<footer class="page-footer"><span class="copyright">&#xA9; &#x5317;&#x4EAC;&#x5E08;&#x8303;&#x5927;&#x5B66;&#x667A;&#x6167;&#x5B66;&#x4E60;&#x7814;&#x7A76;&#x9662; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-25
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第3节 前馈神经网络—FFNN.html" class="navigation navigation-prev " aria-label="Previous page: 第3节 前馈神经网络—FFNN">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第5节 循环神经网络—RNN.html" class="navigation navigation-next " aria-label="Next page: 第5节 循环神经网络—RNN">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第4节 卷积神经网络—CNN","level":"1.4.4","depth":2,"next":{"title":"第5节 循环神经网络—RNN","level":"1.4.5","depth":2,"path":"content/chapter2/第5节 循环神经网络—RNN.md","ref":"content/chapter2/第5节 循环神经网络—RNN.md","articles":[]},"previous":{"title":"第3节 前馈神经网络—FFNN","level":"1.4.3","depth":2,"path":"content/chapter2/第3节 前馈神经网络—FFNN.md","ref":"content/chapter2/第3节 前馈神经网络—FFNN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ancre-navigation","flexible-alerts","advanced-emoji","chapter-fold","code","github","splitter","search-pro","sectionx","klipse","pageview-count","hide-element","popup","sharing-plus","latex-codecogs","mygitalk","lightbox","expandable-chapters-small","-highlight","theme-comscore","baidu-tongji","tbfed-pagefooter","flexible-alerts","js-sequence-diagram-full@>=0.3.1","-sharing","theme-comscore","baidu-tongji","tbfed-pagefooter","flexible-alerts","js-sequence-diagram-full@>=0.3.1","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy 北京师范大学智慧学习研究院","modify_label":"修订时间：","modify_format":"YYYY-MM-DD"},"latex-codecogs":{"type":"gif"},"chapter-fold":{},"spoiler":{},"ace":{},"github":{"url":"https://github.com/nijisakai"},"fbqx":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"8eb90132f665eaecfd1fe05951de80d3"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"navbar":{"logo":{"link":"http://yuanzhuo.bnu.edu.cn/","image":"http://yuanzhuo.bnu.edu.cn/files/system/2019/12-26/230202a57305799451.png","alt":"Yuanzhuo"},"menu":{"items":[{"text":"Home","link":"http://example.com"},{"text":"Page","link":"http://example.com/page/"}],"style":{"color":"black","hover":"#3579e2"}},"style":{"backgroundColor":"white","linkColor":"black","linkHoverColor":"blue"}},"js-sequence-diagram-full":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"youtubex":{"embedDescription":{"de":"Eingebettetes Video:","default":"Embedded video:"}},"pageview-count":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"mygitalk":{"flipMoveOptions":{},"clientID":"798b04735e47ac6c4c4c","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["nijisakai"],"createIssueManually":false,"distractionFreeMode":false,"repo":"learnaigitbook","owner":"nijisakai","enableHotKey":true,"clientSecret":"75ef25db8938a0cd8f88e0cdcf13d96441feeee8","pagerDirection":"last","labels":["Gitalk"]},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{"douban":true,"facebook":false,"google":false,"pocket":false,"qq":false,"qzone":true,"twitter":false,"weibo":true},"mcqx":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"北京师范大学智慧学习研究院","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"青少年人工智能实验教程","language":"es","gitbook":"3.2.2","description":"learn ai"},"file":{"path":"content/chapter2/第4节 卷积神经网络—CNN.md","mtime":"2020-07-25T08:38:23.999Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2020-07-26T04:09:41.475Z"},"basePath":"../..","book":{"language":"es"}});
+        });
+    </script>
+</div>
+
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-navbar/navbar.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mcqx/js.cookie.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mcqx/mcqx.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fbqx/fbqx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-spoiler/spoiler.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-youtubex/player.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-baidu-tongji/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram-full/sequence-diagram-min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram-full/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
