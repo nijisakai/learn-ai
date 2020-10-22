@@ -1,7 +1,7 @@
-#include <esp8266WiFi.h>
+#include <ESP8266WiFi.h>
 #include <FS.h>
-#include <Servo.h>
-#include "Server.h"
+//#include <Servo.h>
+#include "server.h"
 #include "Otto2.h"
 
 // pins used for the rgb led
