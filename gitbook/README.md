@@ -88,3 +88,5 @@ Python
 ![微信截图_20190717112931](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190717112931.png)
 - 涉及软硬件：
 树莓派、ESP8266、麦克风阵列、舵机、3D打印机、摄像头等
+
+![license](https://img.shields.io/badge/license-GPL-blue)
