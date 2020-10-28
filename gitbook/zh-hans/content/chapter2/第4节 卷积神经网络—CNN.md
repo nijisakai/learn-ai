@@ -2,7 +2,7 @@
 
 ---
 
->卷积神经网络（Convolutional Neural Networks, CNN）是一类包含卷积计算且具有深度结构的前馈神经网络（Feedforward Neural Networks），是深度学习（deep learning）的代表算法之一。卷积神经网络具有表征学习（representation learning）能力，能够按其阶层结构对输入信息进行平移不变分类（shift-invariant classification），因此也被称为“平移不变人工神经网络（Shift-Invariant Artificial Neural Networks, SIANN）
+> 卷积神经网络（Convolutional Neural Networks, CNN）是一类包含卷积计算且具有深度结构的前馈神经网络（Feedforward Neural Networks），是深度学习（deep learning）的代表算法之一。卷积神经网络具有表征学习（representation learning）能力，能够按其阶层结构对输入信息进行平移不变分类（shift-invariant classification），因此也被称为“平移不变人工神经网络（Shift-Invariant Artificial Neural Networks, SIANN）
 
 ### 在线体验
 
@@ -14,11 +14,12 @@
 
 ![微信截图_20200313131713](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200313131713.png) -->
 
-### Tensorflow训练自定义图片分类器
+### 练习1：Tensorflow训练自定义图片分类器
 
 使用Tensorflow深度学习框架按类别训练图像。我们将使用狗狗的图片进行模型训练，测试图片分类器对狗的品种的识别。
 
 <center><iframe src="https://teachablemachine.withgoogle.com/train" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
 #### 环境准备
 
 1.在资源管理器中打开`learn-ai\codes\chapter1\part4_CNN\DogsBreedClassification`。下载数据库和模型文件，解压到项目文件夹中。
@@ -96,7 +97,7 @@ python classify.py
 
 > 你可以跳过上面教程中的第2步，直接使用提供的预训练模型（trained_model /retrained_graph.pb）来测试模型。
 
-### 图像风格迁移
+### 练习2：图像风格迁移
 
 ![Neural Style 图像风格迁移](http://pic-learn-ai.oss-cn-beijing.aliyuncs.com/neuralstyle.jpg)
 

@@ -2,9 +2,7 @@
 
 ---
 
->树莓派运行的`Raspberry Pi OS`操作系统是一个Linux的发行版本，我们需要了解Linux的基本概念和操作。
-
----
+> 树莓派运行的`Raspberry Pi OS`操作系统是一个Linux的发行版本，我们需要了解Linux的基本概念和操作。
 
 ### 内容提要
 

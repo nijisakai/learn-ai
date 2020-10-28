@@ -22,7 +22,7 @@
     * [第5节 循环神经网络—RNN](content/chapter2/第5节 循环神经网络—RNN.md)
     * [第6节 人工智能与游戏—DQN](content/chapter2/第6节 人工智能与游戏—DQN.md)
 * [第3章 硬件基础—智能小白](content/chapter3/第3章简介.md)
-    * [第1节 小白的心脏—esp8266开发板](content/chapter3/第1节 小白的心脏—esp8266开发板.md)
+    * [第1节 小白的心脏—ESP8266开发板](content/chapter3/第1节 小白的心脏—ESP8266开发板.md)
     * [第2节 无线控制—遥控小车](content/chapter3/第2节 无线控制—遥控小车.md)
     * [第3节 汽车人小白—机械臂](content/chapter3/第3节 汽车人小白—机械臂.md)
     * [第4节 视物而行—远程视频救援](content/chapter3/第4节 视物而行—远程视频救援.md)
