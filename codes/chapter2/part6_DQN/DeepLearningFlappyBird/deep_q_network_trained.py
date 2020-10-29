@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 from __future__ import print_function
-
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+#import tensorflow as tf
 import cv2
 import sys
 sys.path.append("game/")
@@ -22,7 +23,7 @@ BATCH = 32 # size of minibatch
 FRAME_PER_ACTION = 1
 
 def weight_variable(shape):
-    initial = tf.truncated_normal(shape, stddev = 0.01)
+    initial = tf.random.truncated_normal(shape, stddev = 0.01)
     return tf.Variable(initial)
 
 def bias_variable(shape):
@@ -204,7 +205,7 @@ def trainNetwork(s, readout, h_fc1, sess):
         '''
 
 def playGame():
-    sess = tf.InteractiveSession()
+    sess = tf.compat.v1.InteractiveSession()
     s, readout, h_fc1 = createNetwork()
     trainNetwork(s, readout, h_fc1, sess)
 

@@ -6,11 +6,9 @@
 
 ### 语音助手
 
-当你用小米手机呼叫小爱同学，让她帮你设定闹钟的时候，实际发生的事情如下
+当你呼叫小爱同学，让她帮你设定闹钟的时候，实际发生的事情如下
 
 ![1060404-667c04dab1571032](https://md.hass.live/1060404-667c04dab1571032.webp)
-
-步骤：
 
 - 将用户的语音转化为文字
 - 分析文字内容，进行填槽（Slot Filling）
@@ -31,7 +29,7 @@
 
 #### 在线版本
 
-<center><iframe src="http://hass.live:8000" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+<center><iframe src="http://code.yuanzhuo.bnu.edu.cn" width="100%" height="1000" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
 
 1.打开项目文件夹`learn-ai/codes/chapter1/part5_RNN/PoetAI`
 

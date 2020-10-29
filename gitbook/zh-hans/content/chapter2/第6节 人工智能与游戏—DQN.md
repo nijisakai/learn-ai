@@ -8,20 +8,22 @@
 
 ### 练习1：Flappy Bird
 
-![fbird](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190821174302.png)
+<center><iframe src="http://hass.live:8083" width="100%" height="580" scrolling="yes" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
 
-1.打开项目文件夹`learn-ai/codes/chapter1/part6_DQN/DeepLearningFlappyBird`
+<center><iframe src="http://code.yuanzhuo.bnu.edu.cn" width="100%" height="580" scrolling="yes" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+1.打开项目文件夹`learn-ai/codes/chapter2/part6_DQN/DeepLearningFlappyBird`
 
 2.打开Anaconda Prompt，进行训练：
 
 ```bash
-conda activate myenv
+conda activate learn-ai
 
 //Windows
-cd C:\\learn-ai\\codes\\chapter1\\part6_DQN\\DeepLearningFlappyBird
+cd C:\\learn-ai\\codes\\chapter2\\part6_DQN\\DeepLearningFlappyBird
 
-//macOS
-cd ~/Desktop/learn-ai/codes/chapter1/part6_DQN/DeepLearningFlappyBird
+//macOS，Linux
+cd ~/Desktop/learn-ai/codes/chapter2/part6_DQN/DeepLearningFlappyBird
 
 python deep_q_network.py
 ```
