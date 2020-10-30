@@ -37,27 +37,37 @@ OSI定义了网络互连的七层框架（物理层、数据链路层、网络�
 
 Apache是Apache软件基金会下的一个项目—Apache HTTP Server Project，Nginx同样也是一款开源的HTTP服务器软件。HTTP服务器软件本质上也是一种应用程序——它通常运行在服务器之上，绑定服务器的IP地址并监听某一个端口来接收并处理HTTP请求，这样客户端（一般来说是 IE, Firefox，Chrome这样的浏览器）就能够通过HTTP协议来获取服务器上的网页、文档、音频、视频等等资源。
 
-### 安装与配置Nginx
+### 练习1：使用Nginx发布网页
 
 我们后面使用的树莓派，运行的是Linux的一个重要的发行版Debian。在Debian操作系统，通过终端可以很方便地安装和部署Nginx服务器。
 
-#### 安装Nginx
+#### 在树莓派上安装Nginx
 
 1. 打开终端
 2. 运行命令`sudo apt install nginx`
 3. 安装完毕后，运行`sudo systemctl enable nginx`，`sudo systemctl status nginx`
-4. 打开浏览器，输入树莓派的IP地址，看看是不是打开了一个Nginx的说明呢，这就表示我们安装成功了。其他同学可以通过访问你的树莓派IP地址，来看到你发布的内容了。网站的搭建是不是非常简单呢？
+4. 打开浏览器，输入树莓派的IP地址，看看是不是打开了一个Nginx的说明页呢，这就表示我们安装成功了。其他同学可以通过访问你的树莓派IP地址，来看到你发布的内容了。网站的搭建是不是非常简单呢？
 
-#### 使用Gitbook，WordPress或Typecho，发布个人网站
+#### 在Windows上安装Nginx
+
+#### 练习2：搭建Scratch与Blockly编程平台
+
+![timg](https://md.hass.live/timg.jpg)
+
+这只可爱的小猫就是Scratch的吉祥物。Blockly和Scratch都是开源的网络程序。Scratch比Blockly更早诞生，到了Scratch 3.0，Scratch开始使用Blockly进行构建。我们可以比像部署WordPress或Typecho更容易来在服务器上部署Blockly和Scratch。
+
+![demoofblockly](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190717113246.png)
+
+上图是Blockly的一个Demo。通过它，我们可以用积木的方式来控制小车和机器人、灯、甚至是电视机和空调。在后面的学习中，我们将深入地了解它们。
+
+#### 练习3：使用Gitbook，WordPress或Typecho，发布个人网站（选做）
 
 同学们如果对搭建个人网站感兴趣，可以了解一下以下网站系统，WordPress是基于PHP和MySQL的一个个人博客网站系统，Typecho是一个较为轻量级的个人博客网站系统。
 本在线课程使用的是Gitbook服务，它的详细说明如下。
 
----
+##### Gitbook 简单使用方法
 
-#### Gitbook 简单使用方法
-
-##### 文件结构
+###### 文件结构
 
 `_book`： 为编译好的静态站点
 
@@ -69,38 +79,25 @@ Apache是Apache软件基金会下的一个项目—Apache HTTP Server Project，
 
 `SUMMARY.md`：gitbook 目录和文档架构，在 `content` 中更改文件名称或增加减少文件需要在`SUMMARY.md`中同步改动
 
-##### 安装和初始化
+###### 安装和初始化
 
-- 安装 [node.js](<https://nodejs.org/en/>)。推荐使用[nvm](https://github.com/nvm-sh/nvm)安装
+1. 安装 [node.js](<https://nodejs.org/en/>)。推荐使用[nvm](https://github.com/nvm-sh/nvm)安装
 
-- 安装 gitbook
+打开终端，执行`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
-   ```bash
-   npm install gitbook-cli -g
-   ```
+2. 安装 gitbook
 
-- 切换 terminal 路径到 `gitbook静态站点` 文件夹
-- 安装插件
+```bash
+npm install gitbook-cli -g
+```
 
-   ```bash
-   gitbook install
-   ```
+3. 建立工作文件夹  
 
-- 本地预览
+在`~`路径下使用`mkdir`命令新建一个名叫`mygitbook`的文件夹，并用`cd`命令切换到这个文件夹
 
-   ```bash
-   gitbook serve
-   ```
+![cdgitbook](https://md.hass.live/cdgitbook.png)
 
-##### 如何安装插件
-
-- 在 `book.json` 的 `"plugins"` 字段中添加需要安装的插件名称
-- 打开 terminal 切换到 gitbook 项目路径
-- 运行命令 `gitbook install`，程序会自动按照 `book.json` 中的配置安装插件
-
-#### 其他命令
-
-##### init—初始化一本书
+4. 初始化  
 
 ```bash
 gitbook init
@@ -108,24 +105,63 @@ gitbook init
 
 在使用 `gitbook init` 之后本地会生成两个文件 `README.md` 和 `SUMMARY.md` ，这两个文件都是必须的，一个为介绍，一个为目录结构。
 
-##### build—发布电子书
+
+![initgitbook](https://md.hass.live/initgitbook.png)
+
+5. 编辑README.md  
+
+还记得nano命令么？用它编辑README文件，随便写几句话然后保存。
+
+> gitbook使用Markdown语法书写。Markdown 是一种文本格式。你可以用它来控制文档的显示。使用 markdown，你可以创建粗体的文字，斜体的文字，添加图片，并且创建列表等等。基本上来讲，Markdown 就是普通的文字加上 # 或者 * 等符号。详细语法可参看[这里](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/markdown-basics)。
+
+6. 本地预览  
+
+```bash
+gitbook serve
+```
+执行这个命令后，可以按照提示打开地址，如<http://localhost:4000>地址查看你的站点。按`Ctrl`+`C`结束任务。
+
+![servegitbook](https://md.hass.live/servegitbook.png)
+
+![gitbooklook](https://md.hass.live/gitbooklook.png)
+7. 发布电子书
 
 ```bash
 gitbook build
 ```
 
-该命令会在当前文件夹中生成 `_book` 文件夹，这个文件夹中的内容就是静态网页版电子书。
+该命令会在当前文件夹中生成 `_book` 文件夹，这个文件夹中的内容就是静态网页版电子书。  
+![buildbook](https://md.hass.live/buildbook.png)
 
-在使用 `serve` 命令的同时一会调用 `build` 命令。
+在Nginx配置文件中正确配置此文件夹的路径，就可以通过Web服务访问到你的站点了。执行完下面的操作后，打开浏览器访问<http://localhost:8000>，邀请其他同学通过<http://你的IP地址:8000>访问你的站点吧。  
+如果你的IP地址是公网IP，那么世界上的任何人都可以通过它来访问你的站点了。
 
----
+```bash
+# 获取当前地址，这会输出`/home/你的用户名/mygitbook`
+pwd
+# Nginx配置
+sudo nano /etc/nginx/conf.d/mygitbook.conf
 
-#### Scratch与Blockly
+## 输入以下内容
+server{
+   listen 8000;
+   server_name _;
+   root /home/你的用户名/mygitbook/_book;
+   index index.html;
+}
 
-![timg](https://md.hass.live/timg.jpg)
+## 保存后退出nano，然后执行
+sudo nginx -s reload
+```
 
-这只可爱的小猫就是Scratch的吉祥物。Blockly和Scratch都是开源的网络程序。Scratch比Blockly更早诞生，到了Scratch 3.0，Scratch开始使用Blockly进行构建。我们可以比像部署WordPress或Typecho更容易来在服务器上部署Blockly和Scratch。
+###### 安装插件（选做）
 
-![demoofblockly](https://md.hass.live/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190717113246.png)
+gitbook拥有很多插件，使用这些插件，可以为站点增加不同的功能。
 
-上图是Blockly的一个Demo。通过它，我们可以用积木的方式来控制小车和机器人、灯、甚至是电视机和空调。在后面的学习中，我们将深入地了解它们。
+1. 在 `book.json` 的 `"plugins"` 字段中添加需要安装的插件名称
+2. 打开 terminal 切换到 gitbook 项目路径
+3. 运行命令 `gitbook install`，程序会自动按照 `book.json` 中的配置安装插件
+
+##### WordPress 和 Typecho
+
+暂略。
