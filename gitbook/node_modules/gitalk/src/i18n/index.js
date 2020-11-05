@@ -6,6 +6,8 @@ import ES from './es-ES.json'
 import FR from './fr.json'
 import RU from './ru.json'
 import DE from './de.json'
+import PL from './pl.json'
+import KO from './ko.json'
 
 const i18nMap = {
   'zh': ZHCN,
@@ -16,6 +18,8 @@ const i18nMap = {
   'fr': FR,
   'ru': RU,
   'de': DE,
+  'pl': PL,
+  'ko': KO,
 }
 
 export default function (language) {

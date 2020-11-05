@@ -13,7 +13,7 @@ Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。
 ## 特性
 
 - 使用 GitHub 登录
-- 支持多语言 [en, zh-CN, zh-TW, es-ES, fr, ru]
+- 支持多语言 [en, zh-CN, zh-TW, es-ES, fr, ru, de, pl, ko]
 - 支持个人或组织
 - 无干扰模式（设置 distractionFreeMode 为 true 开启）
 - 快捷键提交评论 （cmd|ctrl + enter）
@@ -50,6 +50,14 @@ import Gitalk from 'gitalk'
 
 ## 使用
 
+首先，您需要选择一个公共github存储库（已存在或创建一个新的github存储库）用于存储评论，
+
+然后需要创建 **GitHub Application**，如果没有 [点击这里申请](https://github.com/settings/applications/new)，`Authorization callback URL` 填写当前使用插件页面的域名。
+
+最后, 您可以选择如下的其中一种方式应用到页面：
+
+### 方式1
+
 添加一个容器：
 
 ```html
@@ -72,9 +80,7 @@ var gitalk = new Gitalk({
 gitalk.render('gitalk-container')
 ```
 
-需要 **GitHub Application**，如果没有 [点击这里申请](https://github.com/settings/applications/new)，`Authorization callback URL` 填写当前使用插件页面的域名。
-
-### 在React使用
+### 方式2：在React使用
 
 使用以下代码引入Gitalk组件
 
@@ -148,7 +154,7 @@ import GitalkComponent from "gitalk/dist/gitalk-component";
   
   Default: `navigator.language || navigator.userLanguage`.
 
-  设置语言，支持 [en, zh-CN, zh-TW]。
+  设置语言，支持 [en, zh-CN, zh-TW, es-ES, fr, ru, de, pl, ko]。
 
 - **perPage** `Number` 
   
