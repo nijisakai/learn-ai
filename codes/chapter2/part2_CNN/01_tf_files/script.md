@@ -1,0 +1,1 @@
+python .\tensorflow-1.7.0\tensorflow\examples\image_retraining\retrain.py --bottleneck_dir=.\bottlenecks --how_many_training_steps 100 --model_dir=.\inception --output_graph=.\retrained_graph.pb --output_labels=.\retrained_labels.txt --image_dir .\football_star
