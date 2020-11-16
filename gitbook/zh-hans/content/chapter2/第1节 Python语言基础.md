@@ -12,8 +12,6 @@
 
 ## Python特点
 
-![python](https://md.hass.live/python.png)
-
 - Python是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。  
 - Python是交互式语言： 这意味着，您可以在一个Python提示符`>>>` 后直接执行代码。  
 - Python是面向对象语言：这意味着Python支持面向对象的风格或代码封装在对象的编程技术。  

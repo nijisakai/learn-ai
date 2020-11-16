@@ -1,10 +1,9 @@
 {
   "gitbook": "3.2.2",
-  "description": "learn ai",
+  "description": "Interactive Book on Artificial Intelligence",
+  "language": "en",
     "plugins": [
-        "ancre-navigation",
-        "github-buttons",
-        "insert-logo",
+        "back-to-top-button",
         "flexible-alerts",
         "advanced-emoji",
         "chapter-fold",
@@ -13,7 +12,6 @@
         "fbqx",
         "spoiler",
         "youtubex",
-        "github",
         "splitter",
         "search-pro",
         "sectionx",
@@ -32,55 +30,76 @@
 		"tbfed-pagefooter",
         "flexible-alerts",
         "js-sequence-diagram-full@>=0.3.1",
-		"-sharing"
+        "-sharing",
+        "theme-fexa"
 	],
- 
-"title": "青少年人工智能实验教程",
- "author": "北京师范大学智慧学习研究院",
+    "variables": {
+        "themeFexa":{
+            "nav":[
+                {
+                    "url":"http://actionbook.bnu.edu.cn",
+                    "target":"_blank",
+                    "name": "主页"
+                },
+                {
+                    "url":"http://yuanzhuo.bnu.edu.cn",
+                    "target":"_blank",
+                    "name": "元卓资源平台"
+                },
+                {
+                    "url":"https://code.yuanzhuo.bnu.edu.cn",
+                    "target":"_blank",
+                    "name": "元卓在线编程平台"
+                },
+                {
+                    "url":"http://yuanzhuo.bnu.edu.cn/article/category/datasets",
+                    "target":"_blank",
+                    "name": "数据集"
+                },
+                {
+                    "url":"http://yuanzhuo.bnu.edu.cn/group",
+                    "target":"_blank",
+                    "name": "论坛"
+                }
+            ]
+        }
+    },
+"title": "ActionBook",
+ "author": "BNUSLI",
     "pluginsConfig": {
         "hide-element": {
             "elements": [".gitbook-link"]
         },
 		"tbfed-pagefooter": {
-            "copyright": "&copy 北京师范大学智慧学习研究院",
-            "modify_label": "修订时间：",
+            "copyright": "&copy 北京师范大学智慧学习研究院, 2020",
+            "modify_label": "Release Date：",
             "modify_format": "YYYY-MM-DD"
         },
         "sharing": {
-            "douban": true,
-            "facebook": false,
-            "google": false,
-            "pocket": false,
+            "douban": false,
+            "facebook": true,
+            "google": true,
+            "pocket": true,
             "qq": false,
-            "qzone": true,
-            "twitter": false,
-            "weibo": true
+            "qzone": false,
+            "twitter": true,
+            "weibo": false
         },
         "baidu-tongji": {
             "token": "8eb90132f665eaecfd1fe05951de80d3"
           },
-        "github": {
-            "url": "https://github.com/nijisakai"
-        },
-        "github-buttons": {
-            "buttons": [{
-              "user": "nijisakai",
-              "repo": "TeachableMachine_with_MQTTWSS_and_HomeAssistant",
-              "type": "star",
-              "size": "large"
-            }]
-        },
-        "insert-logo": {
-            "url": "http://yuanzhuo.bnu.edu.cn/files/system/2019/12-26/230202a57305799451.png",
-            "style": "background: none; max-height: 80px; min-height: 80px"
-        },
         "mygitalk": {
-            "clientID": "798b04735e47ac6c4c4c",
-            "clientSecret": "75ef25db8938a0cd8f88e0cdcf13d96441feeee8",
-            "repo": "learnaigitbook",
+            "clientID": "a6d694947f0f133ef9b8",
+            "clientSecret": "ef73e38bb6503051b4691b7b095e526ff312b560",
+            "repo": "actionbookforum",
             "owner": "nijisakai",
             "admin": ["nijisakai"],
+            "language": "en",
             "distractionFreeMode": false
+        },
+        "theme-fexa":{
+            "search-placeholder":"",
+            "logo":"./logo.png"
         }
     }
 }

@@ -6,7 +6,7 @@
 * [第1章 人工智能初体验](content/chapter1/第1章简介.md)
     * [第1节 初识人工智能](content/chapter1/第1节 初识人工智能.md)
     * [第2节 分类和识别—卷积神经网络](content/chapter1/第2节 分类和识别—卷积神经网络.md)
-    * [第3节 让照片动起来—生成对抗网络](content/chapter1/第3节 让照片动起来—生成对抗网络.md)
+    * [第3节 无中生有—生成对抗网络](content/chapter1/第3节 无中生有—生成对抗网络.md)
     * [第4节 藏头诗，对对联—循环神经网络](content/chapter1/第4节 藏头诗，对对联—循环神经网络.md)
     * [第5节 玩游戏—强化学习算法](content/chapter1/第5节 玩游戏—强化学习算法.md)
     * [第6节 你问我答—知识图谱](content/chapter1/第6节 你问我答—知识图谱.md)
